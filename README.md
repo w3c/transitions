@@ -2,6 +2,8 @@
 
 This is an experimentation around using GitHub for W3C transitions.
 
+See also [Organize a Technical Report Transition (2015 Process)](https://services.w3.org/xslt?xmlfile=https://www.w3.org/2005/08/01-transitions2015.html&xslfile=https://www.w3.org/2005/08/transitions2015.xsl).
+
 Select one of the transition template below:
 
 * [FPWD transition](https://github.com/plehegar/transitions/issues/new?assignee=plehegar&labels=FPWD&title=%5bFPWD+request%5d&body=%23+Document+title%2c+URLs%2c+estimated+publication+date%0d%0a%0d%0a%23+Abstract%0d%0a%0d%0a%23+Status%0d%0a%0d%0a%23+Is+it+a+delta+specification+intended+to+become+a+W3C+Recommendation%3f%0d%0a%0d%0a%23+Link+to+group%27s+decision+to+request+transition%0d%0a%0d%0a%23+Information+about+implementations+known+to+the+Working+Group%0d%0a)
