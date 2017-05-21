@@ -2,7 +2,7 @@
 
 This is an experimentation around using GitHub for W3C transitions.
 
-For all requests to advance a specification to a new [maturity level](https://www.w3.org/2015/Process-20150901/#maturity-levels) other than [Note](), the Working Group must obtain [Director approval](https://www.w3.org/2015/Process-20150901/#transition-reqs).
+For most of the requests to advance a specification to a new [maturity level](https://www.w3.org/2017/Process-20170301/#maturity-levels) other than [Note](), the Working Group must obtain [Director approval](https://www.w3.org/2017/Process-20170301/#transition-reqs).
 
 Select one of the transition templates below:
 
