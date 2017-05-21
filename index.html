@@ -1,0 +1,1638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How to Organize a Technical Report Transition (2017 Process)</title>
+  <link rel="stylesheet" href="https://www.w3.org/StyleSheets/generic-base-1.css" type="text/css"/>
+  <link rel="stylesheet" type="text/css" href="https://www.w3.org/Guide/guide2006.css" />
+  <link rel="shortcut icon" href="https://www.w3.org/Icons/WWW/Literature.gif" />
+  <style type="text/css">
+    form {  background: #eee5de; color: black; border: thin black solid; padding: .5em }
+    /******************************************************************************/
+/*                             Colored Boxes                                  */
+/******************************************************************************/
+
+	.issue, .note, .example, .advisement, blockquote {
+		padding: .5em;
+		border: .5em;
+		border-left-style: solid;
+		page-break-inside: avoid;
+	}
+	span.issue, span.note {
+		padding: .1em .5em .15em;
+		border-right-style: solid;
+	}
+
+	.issue,
+	.note,
+	.example,
+	.advisement,
+	blockquote {
+		margin: 1em auto;
+	}
+	.note  > p:first-child,
+	.issue > p:first-child,
+	blockquote > :first-child {
+		margin-top: 0;
+	}
+	blockquote > :last-child {
+		margin-bottom: 0;
+	}
+
+/** Blockquotes ***************************************************************/
+
+	blockquote {
+		border-color: silver;
+	}
+
+/** Open issue ****************************************************************/
+
+	.issue {
+		border-color: #E05252;
+		background: #FBE9E9;
+		counter-increment: issue;
+		overflow: auto;
+	}
+	.issue::before, .issue > .marker {
+		color: #AE1E1E;
+		padding-right: 1em;
+		text-transform: uppercase;
+	}
+	/* Add .issue::before { content: "Issue " counter(issue) " "; } for autogen numbers,
+	   or use class="marker" to mark up the issue number in source. */
+
+/** Example *******************************************************************/
+
+	.example {
+		border-color: #E0CB52;
+		background: #FCFAEE;
+		counter-increment: example;
+		overflow: auto;
+		clear: both;
+	}
+	.example::before, .example > .marker {
+		text-transform: uppercase;
+		color: #827017;
+		min-width: 7.5em;
+		display: block;
+	}
+	/* Add .example::before { content: "Example " counter(example) " "; } for autogen numbers,
+	   or use class="marker" to mark up the example number in source. */
+
+/** Non-normative Note ********************************************************/
+
+	.note {
+		border-color: #52E052;
+		background: #E9FBE9;
+		overflow: auto;
+	}
+
+	.note::before, .note > .marker,
+	details.note > summary::before,
+	details.note > summary > .marker {
+		text-transform: uppercase;
+		display: block;
+		color: hsl(120, 70%, 30%);
+	}
+	/* Add .note::before { content: "Note "; } for autogen label,
+	   or use class="marker" to mark up the label in source. */
+
+	details.note > summary {
+		display: block;
+		color: hsl(120, 70%, 30%);
+	}
+	details.note[open] > summary {
+		border-bottom: 1px silver solid;
+	}
+
+  </style>
+</head>
+<body>
+<div id="header">
+<span class="logo"><a href="https://www.w3.org/"><img src="https://www.w3.org/Icons/WWW/w3c_home_nb"
+alt="W3C" height="48" width="72"/></a></span>
+    <div class="breadcrumb">
+    <a href="https://www.w3.org/Member/">Member</a> &#x2192; <a href="https://www.w3.org/Guide/">The Art of
+Consensus</a> &#x2192;
+<h1>Organize a Technical Report Transition (2017 Process)</h1>
+</div>
+<p class="baseline">This <strong>Guidebook</strong> is the collected
+wisdom of the W3C Group Chairs and other collaborators.</p>
+</div>
+
+<div class="toc">
+ <h4>Also On This Page &#x2192;</h4>
+ <ul>
+   <li style="display: none"><a href="#sotd">Status</a>  &bull;</li>
+   <li><a href="#steps">Steps</a>  &bull;</li>
+   <li data-docstatus="fp-wd-tr|cr-tr|fp-ig-note-tr|fp-wg-note-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|subtantive" data-notehistory="notchartered|first"><a href="#transreq">Transition Request</a> &bull;</li>
+   <li data-docstatus="cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-rec="new" data-cr="new|subtantive"><a href="#dir-mtg">Meeting</a> &bull;</li>
+   <li data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr" data-echidna="false"><a href="#pubreq">Publication Request</a> &bull;</li>
+   <li data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr" data-echidna="false"><a href="#pubreq">Scheduling</a> &bull;</li>
+   <li data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr"><a href="#publication">Publication</a> &bull;</li>
+   <li data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|subtantive" data-notehistory="first|none"><a href="#trans-annc">Announcement</a></li>
+ </ul>
+</div>
+
+<div class="toolbox box" style="margin-bottom: 1em">
+<h4>Publication Policies</h4>
+<ul>
+  <li><a href="https://www.w3.org/pubrules/">Technical Report Publication Policy</a></li>
+
+  <li><a href="https://www.w3.org/pubrules/doc">About pubrules</a></li>
+  <li><a href="https://www.w3.org/2005/05/tr-versions">Version Management in W3C Technical Reports</a></li>
+  <li><a href="https://www.w3.org/2005/07/13-pubrules-disclosure">Guidelines for linking to
+  disclosure pages</a></li>
+  <li><a href="https://www.w3.org/2005/07/13-nsuri">URIs for W3C Namespaces</a></li>
+  <li><a href="https://www.w3.org/2002/06/registering-mediatype2014">How to Register a Media Type for a W3C Specification</a></li>
+  <li><a href="https://www.w3.org/2005/04/xpointer-policy">XPointer Scheme Name Registry Policy</a></li>
+</ul>
+<h4>Resources</h4>
+<ul>
+  <li>Organize Recommendation Track Transition</li>
+  <li><a href="https://www.w3.org/Guide/transitions-about">Details of Rec Track transitions</a></li>
+  <li><a
+	  href="https://www.w3.org/2017/Process-20170301/#Reports">Recommendation
+  Track Process</a></li>
+  <li><a href="https://www.w3.org/2003/Editors/">W3C Editors' Home Page</a></li>
+  <li><a href="https://www.w3.org/2001/06/manual/">Manual of Style</a></li>
+  <li><a href="https://www.w3.org/2005/03/28-editor-style.html">Style Guidelines for Group-Internal Drafts</a></li>
+</ul>
+<h4>Tools</h4>
+<ul>
+  <li><a href="https://validator.w3.org/checklink">Link checker</a></li>
+  <li><a href="https://validator.w3.org/">HTML Validator</a></li>
+  <li><a href="https://jigsaw.w3.org/css-validator/">CSS Validator</a></li>
+</ul>
+</div>
+      <form method="get" action="https://www.w3.org/2005/08/transition2017">
+         <p>
+            Select your steps <label><a href="https://www.w3.org/Consortium/Process/tr">transition steps</a> to</label>: 
+         <select id="docstatus" onchange="changeDocStatus()">
+					 <!-- @@ Mozilla Firefox  doesn't understand the label attribute ?!? -->
+               <option selected="selected" value="ord-wd-tr" label="Ordinary Working Draft" data-status="Working Draft">Ordinary Working Draft</option>
+               <option value="fp-wd-tr" label="First Public Working Draft" data-status="Working Draft">First Public Working Draft</option>
+               <option value="ord-wg-note-tr" label="Ordinary Working Group Note" data-status="Working Group Note">Ordinary Working Group Note</option>
+               <option value="ord-ig-note-tr" label="Ordinary Interest Group Note" data-status="Interest Group Note">Ordinary Interest Group Note</option>
+               <option value="fp-wg-note-tr" label="First Public Working Group Note" data-status="Working Group Note">First Public Working Group Note</option>
+               <option value="fp-ig-note-tr" label="First Public Interest Group Note" data-status="Interest Group Note">First Public Interest Group Note</option>
+               <option value="cr-tr" label="Candidate Recommendation">Candidate Recommendation</option>
+               <option value="pr-tr" label="Proposed Recommendation">Proposed Recommendation</option>
+               <option value="recommendation" label="Recommendation">Recommendation</option>
+               <option value="probsolete-tr" label="Proposed Obsolete Recommendation">Proposed Obsolete Recommendation</option>
+               <option value="prrescind-tr" label="Proposed Rescinded Recommendation">Proposed Rescinded Recommendation</option>
+               <option value="obsolete-rec-tr" label="Obsolete Recommendation">Obsolete Recommendation</option>
+               <option value="rescind-rec-tr" label="Rescinded Recommendation">Rescinded Recommendation</option>
+         </select>
+         </p>
+         <ul style="margin-left: 3em" data-docstatus="ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr">
+            <li style="list-style: none">
+               <input type="radio" id="echidna-false" name="echidna" value="false" checked="checked" onchange="changeEchidna(false);"/>
+               <label for="echidna-false">With a publication request to webreq@w3.org</label>
+            </li>
+            <li style="list-style: none">
+               <input type="radio" id="echidna-true" name="echidna" value="true" onchange="changeEchidna(true);"/>
+               <label for="echidna-true">With the <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>
+               </label>
+            </li>
+         </ul>
+         <ul style="margin-left: 3em" data-docstatus="cr-tr">
+            <li style="list-style: none">
+               <input type="radio" id="cr-new" name="cr" value="new" checked="checked" onchange="changeCR('new');"/>
+               <label for="cr-new">Previously published as a Working Draft or returning to Candidate Recommendation</label>
+            </li>
+            <li style="list-style: none">
+               <input type="radio" id="cr-editorial" name="cr" value="editorial" onchange="changeCR('editorial');"/>
+               <label for="cr-editorial">Updating an existing Candidate Recommendation with only editorial changes</label>
+            </li>
+            <li style="list-style: none">
+               <input type="radio" id="cr-substantive" name="cr" value="substantive" onchange="changeCR('substantive');"/>
+               <label for="cr-substantive">Updating an existing Candidate Recommendation with substantive changes</label>
+            </li>
+         </ul>
+         <ul style="margin-left: 3em" data-docstatus="recommendation">
+            <li style="list-style: none">
+               <input type="radio" id="rec-new" name="rec" value="new" checked="checked" onchange="changeREC('new');"/>
+               <label for="rec-new">Previously published as a Proposed Recommendation</label>
+            </li>
+            <li style="list-style: none">
+               <input type="radio" id="rec-editorial" name="rec" value="editorial" onchange="changeREC('editorial');"/>
+               <label for="rec-editorial">Updating an existing Recommendation with only editorial changes</label>
+            </li>
+         </ul>
+         <ul style="margin-left: 3em"  data-docstatus="fp-wg-note-tr|fp-ig-note-tr">
+            <li style="list-style: none">
+               <input type="radio" id="notehistory-first" name="notehistory" value="first" checked="checked" onchange="changeNoteHistory('first');"/>
+               <label for="notehistory-first">Chartered to be a group Note, never before published, group not closing</label>
+            </li>
+            <li style="list-style: none">
+               <input type="radio" id="notehistory-none" name="notehistory" value="none" onchange="changeNoteHistory('none');"/>
+               <label for="notehistory-none">Chartered to be a group Note and previously published as a Working Draft, group not closing</label>
+            </li>
+            <li style="list-style: none">
+               <input type="radio" id="notehistory-notchartered" name="notehistory" value="notchartered" onchange="changeNoteHistory('notchartered');"/>
+               <label for="notehistory-notchartered">Not chartered to be a group Note, group not closing</label>
+            </li>
+            <li style="list-style: none">
+               <input type="radio" id="notehistory-closure" name="notehistory" value="closure" onchange="changeNoteHistory('closure');"/>
+               <label for="notehistory-closure">Publication as a group Note since group closing</label>
+            </li>
+         </ul>
+      </form>
+
+<h2 id="sotd">About This Document</h2>
+
+<p>This resource describes the internal W3C Technical Report
+publication processes.  A <a
+href="https://www.w3.org/2005/08/01-transitions-about">companion document</a> provides
+more information about roles involved in these processes and
+interactions with the W3C Communications Team.</p>
+
+<div data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|editorial|substantive">
+
+<h2 id="steps">Steps for
+<span data-docstatus="fp-wd-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|fp-wg-note-tr|fp-ig-note-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="substantive">Transition to</span>
+<span data-docstatus="ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr">Publication of an</span>
+<span data-docstatus="cr-tr" data-cr="editorial">Publication of a</span>
+<span class="label-name">LABEL</span>
+</h2>
+
+<p data-docstatus="cr-tr" data-cr="editorial|substantive">
+  If the document contains <span data-docstatus="cr-tr" data-cr="editorial">some substantive</span><span data-docstatus="cr-tr" data-cr="substantive">only editorial</span> changes since the previous publication, <strong>NONE</strong> of steps below are applicable.
+</p>
+
+<p>
+<span data-docstatus="fp-wd-tr|cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|subtantive" data-cr="substantive">
+Once the Process Document <a
+id="reqs-adv">requirements for the transition to
+<span class="label-name">LABEL</span></a> have been satisfied
+(see
+<span class="procdocsection" data-docstatus="fp-wd-tr"><a
+      href="https://www.w3.org/2017/Process-20170301/#first-wd">section 6.3.1</a></span>
+<span class="procdocsection" data-docstatus="cr-tr" data-cr="new"><a
+      href="https://www.w3.org/2017/Process-20170301/#candidate-rec">section 6.4</a></span>
+<span class="procdocsection" data-docstatus="cr-tr" data-cr="substantive"><a
+      href="https://www.w3.org/2017/Process-20170301/#revised-cr">section 6.4.1</a></span>
+<span class="procdocsection" data-docstatus="pr-tr"><a
+      href="https://www.w3.org/2017/Process-20170301/#rec-pr">section 6.5</a></span>
+
+<span class="procdocsection" data-docstatus="recommendation" data-rec="editorial"><a
+      href="https://www.w3.org/2017/Process-20170301/#revised-rec">section 6.7.2</a></span>
+
+<span class="procdocsection" data-docstatus="recommendation" data-rec="new"><a
+      href="https://www.w3.org/2017/Process-20170301/#rec-publication">section 6.6</a>
+  or <a
+      href="https://www.w3.org/2017/Process-20170301/#rec-rescind">section 6.9</a> for restoring a <em>Recommendation</em></span>
+
+<span class="procdocsection" data-docstatus="probsolete-tr|prrescind-tr"><a
+      href="https://www.w3.org/2017/Process-20170301/#proposed-rescinded-rec">section 6.9</a></span>
+
+<span class="procdocsection" data-docstatus="obsolete|rescind-rec-tr"><a
+      href="https://www.w3.org/2017/Process-20170301/#rec-rescind">section 6.9</a></span>),
+W3C follows the steps described below to complete the transition.</span>
+<span data-docstatus="ord-wd-tr">
+Once the Group determined that the requirements of <span class="procdocsection"><a
+      href="https://www.w3.org/2017/Process-20170301/#revised-wd">section 6.3.2</a></span> apply, the W3C follows the steps described below to update a
+<span class="status-name">STATUS</span>.
+</span>
+<span data-docstatus="cr-tr" data-cr="editorial">
+Once the Group determined that the requirements of <span class="procdocsection"><a
+      href="https://www.w3.org/2017/Process-20170301/#revised-cr">section 6.4.1</a></span> do NOT apply, the W3C follows the steps described below to update a
+<span class="status-name">STATUS</span>.
+</span>
+<span data-docstatus="fp-ig-note-tr|fp-wg-note-tr">
+W3C follows the steps described below for transition to a
+First Public
+<span class="status-name">STATUS</span>.
+</span>
+These steps are
+grouped by theme. They are not strictly ordered; in practice, some
+steps are completed in parallel. For instance, groups often manage
+the transition request/meeting steps
+in parallel with the publication request steps.</p>
+
+<p class="internetmediatype" data-docstatus="fp-wd-tr|cr-tr|pr-tr|recommendation" data-rec="new" data-cr="new|substantive">
+<strong>Note:</strong> If your specification involves (or updates) an Internet
+Media Type, before the transition to
+<span data-docstatus="fp-wd-tr">First Public</span>
+<span
+class="status-name">STATUS</span>, see also <cite><a
+href="https://www.w3.org/2002/06/registering-mediatype2014">How to Register
+an Internet Media Type for a W3C Specification</a></cite>
+<span class="mediatypespecifics" data-docstatus="fp-wd-tr">to review the entire Internet Media Type
+registration process.</span>
+<span  class="mediatypespecifics" data-docstatus="ord-wd-tr">for information about
+what you should do several months <strong>before</strong> advancing
+to Candidate Recommendation.</span>
+<span  class="mediatypespecifics" data-docstatus="cr-tr" data-cr="new|substantive">for information about
+alerting the W3C liaisons to the
+IETF so that they may request formal review and approval by the
+IESG.</span>
+<span  class="mediatypespecifics" data-docstatus="pr-tr|recommendation">for information about
+how the W3C liaisons to the IETF track the registration process.</span>
+</p>
+
+<p class="xpointerregistry" data-docstatus="cr-tr" data-cr="new|substantive">
+<strong>Note:</strong> If your specification defines (or updates) an XPointer
+Scheme, before the transition to <span
+class="status-name">STATUS</span>, please register the scheme in the the <a
+href="https://www.w3.org/2005/04/xpointer-schemes/">W3C XPointer Scheme
+Registry</a>.</p>
+
+<dl style="margin-left: 0">
+<dt data-docstatus="cr-tr" data-cr="new|substantive">Negotiation of Review Schedule</dt>
+<dd class="negotiatereview" data-docstatus="cr-tr" data-cr="new|substantive">
+<ul>
+<li>
+The Chair negotiates the Candidate Recommendation review
+schedule with the Chairs of groups with dependencies (on chairs@w3.org).
+Securing review commitments <strong>before</strong> going to
+Candidate Recommendation will help ensure that your document receives
+<a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a>. The suggested way to negotiate a review schedule is to
+send a heads-up to the Chairs of groups with dependencies, cc'ing
+chairs@w3.org. Several weeks prior to the estimated review
+start date, the Working Group should negotiate schedules with
+groups where there are dependencies.</li>
+</ul>
+</dd>
+
+<dt data-docstatus="fp-wd-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|fp-wg-note-tr|fp-ig-note-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="notchartered|first">Transition request</dt>
+<dd data-docstatus="fp-wd-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|fp-wg-note-tr|fp-ig-note-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="notchartered|first">
+<ul>
+<li data-docstatus="fp-wd-tr|cr-tr|pr-tr|fp-wg-note-tr|fp-ig-note-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="notchartered|first">The Team Contact reviews the <a href="https://www.w3.org/Project/#proc-rec-track">(Team-only) pre-publication steps</a>.</li>
+<li id="webreqmail" data-docstatus="probsolete-tr|prrescind-tr" data-notehistory="notchartered|first">If an individual made a request to the relevant Working Group, or the TAG if such a group does not exist, to <span data-docstatus="probsolete-tr">obsolete</span><span data-docstatus="prrescind-tr">rescind</span> a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
+<li id="transreqmail" class="transitionreq" data-docstatus="fp-wd-tr|fp-wg-note-tr|fp-ig-note-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-rec="new" data-cr="new|substantive" data-notehistory="notchartered|first">
+<span class="transwhen" data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">At least one week prior to an expected
+decision from or <a href="#dir-mtg">meeting with the Director</a>, the</span>
+<span class="transwhen" data-docstatus="fp-wd-tr|fp-wg-note-tr|fp-ig-note-tr" data-notehistory="notchartered|first">The</span>
+<span  class="transitionreqwho" data-docstatus="fp-wd-tr|fp-wg-note-tr|fp-ig-note-tr|cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr" data-rec="editorial" data-cr="new|substantive" data-notehistory="notchartered|first">Chair (or Team Contact)</span><span
+ class="transitionreqwho" data-docstatus="recommendation|obsolete-rec-tr|rescind-rec-tr" data-rec="new">Team Contact</span>
+
+<span class="transwho" data-docstatus="fp-wd-tr|fp-wg-note-tr|fp-ig-note-tr" data-notehistory="notchartered|first">
+sends a <a href="#transreq">transition request</a> to
+plh@w3.org (as Project Management Lead), cc'ing w3t-comm@w3.org and chairs@w3.org.
+<strong>Note:</strong>
+For the TAG, no First Public Working Draft transition request is required; the request is assumed to be approved by the Director, who Chairs the TAG.
+</span>
+<span class="transwho" data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">
+sends a <a href="#transreq">transition request</a> to
+the Director (and anyone working with the Director on transitions): timbl@w3.org, ralph@w3.org, cc'ing plh@w3.org,
+ w3t-comm@w3.org,
+<span  class="transitionreq-ccemail" data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr" data-cr="new|substantive">and chairs@w3.org</span>. We recommend explicitly addressing the expected reviewer(s) by name in the body of the message.
+</span>
+</li>
+
+<li  class="transitionmtg" data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">
+The Team Contact <span class="rfc2119">MAY</span> need to organize a <a href="#dir-mtg">transition meeting
+with the Director</a> to discuss the request.
+<span data-docstatus="cr-tr|pr-tr" data-cr="new|substantive">
+<strong>Note:</strong> When the transition request indicates
+unambiguous support and sufficient wide review for the transition, the Director waives the need for a telephone
+call in general.
+</span>
+<span data-docstatus="recommendation|obsolete-rec-tr|rescind-rec-tr" data-rec="new">
+<strong>Note:</strong> When Advisory Committee review indicates
+unambiguous support, the Director waives the need for a telephone
+call in general.
+</span>
+</li>
+
+<li  class="transitionreq-approval" data-docstatus="fp-wd-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|fp-wg-note-tr|fp-ig-note-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="notchartered|first">
+<span class="transitionreq-approvalwho" data-docstatus="fp-wd-tr|fp-wg-note-tr|fp-ig-note-tr" data-notehistory="notchartered|first">
+The Project Management Lead approve the transition request.
+The Project Management Lead <span class="rfc2119">MAY</span> ask the
+Director (or someone assigned by the Director) to take responsibility for approving the transition request.
+</span>
+<span class="transitionreq-approvalwho" data-docstatus="cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|probsolete-tr|prrescind-tr" data-cr="new|substantive">
+The Director approves the transition request.
+</span>
+</li>
+
+</ul>
+</dd>
+<dt data-docstatus="fp-wd-tr|cr-tr|pr-tr|fp-ig-note-tr|fp-wg-note-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="first">Publication and Transition Planning</dt>
+<dt data-docstatus="fp-wg-note-tr|fp-ig-note-tr" data-notehistory="none|closure|notchartered">Publication Planning</dt>
+<dt id="publication-planning" data-docstatus="ord-wd-tr|cr-tr|ord-wg-note-tr|ord-ig-note-tr" data-cr="editorial">Publication Planning</dt>
+<dd class="docpreparation" data-docstatus="ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr" data-echidna="true">
+<ul>
+<li>The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> prepares the
+document in accordance with <a
+href="https://www.w3.org/pubrules/">pubrules</a>.
+<strong>Note:</strong> Director approval is required for
+some namespace URIs; see <a href="https://www.w3.org/2005/07/13-nsuri">URIs
+for W3C Namespaces</a> for details.</li>
+
+<li id="pubreqmail">
+If the publication is the result
+of returning a document to a Working Group for further work, the Team Contact
+alerts the W3C Communications Team by sending to w3t-comm@w3.org a draft
+announcement for the Membership (required by
+<a href="https://www.w3.org/2017/Process-20170301/#recs-and-notes">section 6.1.1 of the Process</a>) that explains why the document was
+returned for further work.
+</li>
+
+</ul>
+</dd>
+<dd class="docpreparation" data-docstatus="ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wd-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|fp-wg-note-tr|fp-ig-note-tr" data-echidna="false">
+<ul>
+<li>The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> prepares the
+document in accordance with <a
+href="https://www.w3.org/pubrules/">pubrules</a> and develops a proposed
+<a href="#schedule-pubreq">publication schedule</a>, taking into
+account possible <a href="https://www.w3.org/Guide/#current">publishing moratoria</a>. The
+<a href="#title-page-date">title page date</a>
+is chosen based on the anticipated publication schedule.
+<strong>Note:</strong> Director approval is required for
+some namespace URIs; see <a href="https://www.w3.org/2005/07/13-nsuri">URIs
+for W3C Namespaces</a> for details.</li>
+
+<li>Before sending the publication request, the <a
+href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> <span
+class="rfc2119">SHOULD</span> install the document in its final
+location. The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document
+Contact</a> <span class="rfc2119">MAY</span> request publication of a
+document that is not yet installed at its final location, but in this
+case <span class="rfc2119">MUST</span> provide installation
+instructions to the Webmaster.
+If a document to be published consists of more than one HTML
+    file (i.e., there are style sheets, schemas, etc.), all
+    materials <span class="rfc2119">MUST</span>
+    be made available to the Webmaster from a single
+    directory (which may include subdirectories).
+</li>
+
+<li id="pubreqmail">
+The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a <a href="#pubreq">publication request</a> to the
+<a href="01-transitions-about#Webmaster">Webmaster</a> at webreq@w3.org,
+optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
+See below for details about
+<a href="#title-page-date">scheduling a publication</a>, and specifically requirements about advance notice to the Webmaster.
+<span class="further-work-draft" data-docstatus="ord-wd-tr|cr-tr|ord-wg-note-tr" data-cr="new|substantive">
+<strong>Note:</strong>
+If the publication is the result
+of returning a document to a Working Group for further work, the Team Contact
+alerts the W3C Communications Team by sending to w3t-comm@w3.org a draft
+announcement for the Membership (required by
+<a href="https://www.w3.org/2017/Process-20170301/#recs-and-notes">section 6.1.1 of the Process</a>) that explains why the document was
+returned for further work.</span>
+</li>
+
+</ul>
+</dd>
+
+<dt class="listprep" data-docstatus="pr-tr|probsolete-tr|prrescind-tr">Form and Mailing List Preparation</dt>
+<dt class="listprep" data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="first">Mailing List Preparation</dt>
+<dt class="listprep" data-docstatus="recommendation">GitHub Preparation</dt>
+<dd data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|pr-tr|probsolete-tr|prrescind-tr" data-cr="new|substantive">
+<ul>
+<li class="mailinglist-prep" data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="first">
+The Team Contact ensures that there is a public archived place (github or mailing list)
+available for comments; (for mailing list, use the <a
+href="https://www.w3.org/Systems/Mail/ListRequest">mailing list request
+form</a>). <span data-docstatus="cr-tr|pr-tr" data-cr="new|substantive">
+The Team Contact also ensures that there is a mailing list with
+a Team-only archive available for AC Representative comments; this list
+is cited from the review form.</span>
+</li>
+<li class="mailinglist-prep" data-docstatus="recommendation">
+The Team Contact ensures that there is a public archived github repository
+available for comments.
+</li>
+
+<li class="reviewform-prep" data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr">
+The Team Contact builds a
+<span class="status-name">STATUS</span>
+<a
+href="https://www.w3.org/2002/09/wbs/33280/factory">review
+form</a> that the Project Manager reviews for correctness.
+<span class="reviewform-prep2" data-docstatus="pr-tr">
+<strong>Note:</strong>
+At the current time, WBS review forms are generated from
+installed documents, but before the Webmaster completes
+publication.</span></li>
+<li  class="transannc-draft" data-docstatus="cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">The
+Team Contact sends a draft <a href="#trans-annc">transition announcement</a>
+to the Communications Team at w3t-comm@w3.org.</li>
+</ul>
+</dd>
+
+<dt class="transition-announcement" data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="first">Publication and Transition Announcement</dt>
+<dt class="transition-announcement" data-docstatus="ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr" data-cr="editorial" data-notehistory="none|notchartered|closure">Publication</dt>
+<dt class="transition-announcement" data-docstatus="probsolete-tr|prrescind-tr">Transition Announcement</dt>
+<dd>
+<ul>
+<li class="publication-announcement" data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr" data-echidna="false">The Webmaster completes <a
+href="#publication">publication</a> and notifies the Chair and Team Contact of publication, cc'ing webreq@w3.org<span data-docstatus="fp-wd-tr|cr-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr" data-cr="new|substantive"> and w3t-comm@w3.org</span>.
+<span class="further-work-alert" data-docstatus="ord-wd-tr|cr-tr|ord-wg-note-tr" data-cr="new">
+<strong>Note:</strong>
+If the publication is the result
+of <a href="https://www.w3.org/2017/Process-20170301/#recs-and-notes">returning a document to a Working Group for further work</a>, the Webmaster
+alerts the W3C Communications Team.</span>
+</li>
+
+<li class="publication-announcement" data-docstatus="ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr" data-echidna="true">The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> 
+publishes the document using the  <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>.
+</li>
+
+<li class="publication-announcement"  data-docstatus="cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">
+After coordination with the Communications Team on the transition
+announcement timing (especially those accompanied
+by press releases; see more about
+<a href="https://www.w3.org/2005/08/01-transitions-about#commteam">interactions with the
+Communications Team</a>), the Webmaster completes <a
+href="#publication">publication</a> and notifies the person who
+sent the request, cc'ing webreq@w3.org and w3t-comm@w3.org.
+Publication <span
+class="rfc2119">SHOULD</span> precede the transition announcement by
+only a small amount of time.</li>
+
+
+<li class="trans-announcement" data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr" data-notehistory="first">
+In order to facilitate peer review, once the document has been
+published, the Chair sends a
+<a href="#trans-annc">transition announcement</a>
+to chairs@w3.org and the group's public mailing list.</li>
+
+<li class="trans-announcement"  data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">
+The W3C Communications Team sends a
+<a href="#trans-annc">transition announcement</a>
+to w3c-ac-members@w3.org
+<span data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">and chairs@w3.org</span>
+and on the <a href="https://www.w3.org/">W3C home page</a>.
+</li>
+
+<li  class="trans-announcement" data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr" data-cr="new|substantive">The Chair or Team Contact(s) <span
+class="rfc2119">SHOULD</span> forward the announcement to the Working
+Group's public mailing list <strong>taking caution</strong> not to
+send any Member-confidential information to a public list.</li>
+
+<li class="trans-announcement"  data-docstatus="ord-wd-tr|cr-tr|ord-wg-note-tr">
+If this publication is the result
+of <a href="https://www.w3.org/2017/Process-20170301/#recs-and-notes">returning a document to a Working Group for further work</a>, the
+Communications Team announces that to w3c-ac-members@w3.org and chairs@w3.org.</li>
+</ul>
+</dd>
+</dl>
+
+<p class="exclusion-annc" data-docstatus="fp-wd-tr|cr-tr" data-cr="new|substantive"><strong>Note:</strong> After announcement of a
+<span data-docstatus="fp-wd-tr">First Public Working Draft</span>
+<span data-docstatus="cr-tr" data-cr="new|substantive">Candidate Recommendation</span> the W3C Communications Team issues a <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">Call for Exclusions</a> in accordance with the
+<a href="https://www.w3.org/Consortium/Patent-Policy-20040205/">W3C Patent Policy</a>. See also the <a href="https://www.w3.org/wiki/ProcessTransition2016">2017 Process Transition FAQ</a>.</p>
+
+<p data-docstatus="ord-wg-note-tr|ord-ig-note-tr">
+<strong>Note:</strong> Instructions for publication of
+an Ordinary
+<span class="status-name">STATUS</span>
+ are included for convenience even though
+this is not a <a href="https://www.w3.org/2017/Process-20170301/#Reports">Recommendation
+Track transition</a> as defined in the W3C Process.</p>
+
+<p data-docstatus="probsolete-tr|prrescind-tr">
+<strong>Note:</strong> 
+<span class="status-name">STATUS</span>
+ is not a <a href="https://www.w3.org/2017/Process-20170301/#maturity-levels">maturity level</a> defined in the <a href="https://www.w3.org/2017/Process-20170301/">W3C Process</a> but is described as a proposal before the next step.</p>
+
+<p data-docstatus="ord-wd-tr|cr-tr" data-cr="editorial">Please take note of the W3C Process Document limitations regarding when to publish an updated <span class="status-name">STATUS</span> without Director's approval:
+</p>
+
+<ul data-docstatus="cr-tr" data-cr="editorial">
+<li>The previous publication <span class="rfc2119">must</span> be a Candidate Recommendation.</li>
+<li>The Group <span class="rfc2119">must not</span> make <a href="https://www.w3.org/2017/Process-20170301/#substantive-change">substantive changes</a> to the document since its previous publication.</li>
+<li>The Group <span class="rfc2119">should</span> update the deadline for further comments.</li>
+</ul>
+<p data-docstatus="cr-tr" data-cr="substantive">Please take note of the W3C Process Document provisions regarding when to publish an update to a <span class="status-name">STATUS</span> <em>with Director's approval</em>:
+</p>
+<ul data-docstatus="cr-tr" data-cr="substantive">
+<li>The previous publication <span class="rfc2119">must</span> be a Candidate Recommendation.</li>
+<li>The Group <span class="rfc2119">should</span> update the deadline for further comments.</li>
+</ul>
+<ul data-docstatus="ord-wd-tr">
+<li>The Group <span class="rfc2119">should</span>
+publish a Working Draft to the W3C Technical Reports page when there have been significant changes to the document that would benefit from review beyond the Working Group.</li>
+<li>The Group <span class="rfc2119">may</span> request publication of a Working Draft even if its content is considered unstable and does not meet all Working Group requirements.</li>
+</ul>
+
+<p data-docstatus="ord-wd-tr">Here are the W3C Process Document transition requirements for a <span class="status-name">STATUS</span>:
+</p>
+
+<ul data-docstatus="ord-wd-tr">
+<li>The Group <span class="rfc2119">must</span> record the group's decision to request publication.</li>
+<li>The Group <span class="rfc2119">must</span> provide public documentation of substantive changes to the technical report since the previous Working Draft.</li>
+<li>The Group <span class="rfc2119">should</span> document outstanding issues, and parts of the document on which the Working Group does not have consensus.</li>
+<li>The Group <span class="rfc2119">should</span> provide public documentation of significant editorial changes to the technical report since the previous step.</li>
+<li>The Group <span class="rfc2119">should</span> report which, if any, of the Working Group's requirements for this document have changed since the previous step.</li>
+<li>The Group <span class="rfc2119">should</span> report any changes in dependencies with other groups.</li>
+<li>The Group <span class="rfc2119">should</span> provide information about implementations known to the Working Group.</li>
+</ul>
+
+<p  class="revisions" data-docstatus="cr-tr" data-cr="new|substantive"><strong>Note:</strong> The Working Group
+<span class="rfc2119">MAY</span>
+publish a revision of a Candidate Recommendation with minor changes
+before the next transition.</p>
+
+<p  class="revisions" data-docstatus="cr-tr|pr-tr" data-cr="new|substantive"><strong>Note:</strong> The
+Working Group <span class="rfc2119">SHOULD NOT</span> publish a
+(new) revision of a <span class="status-name">STATUS</span> before the end
+of the (current) review period.</p>
+
+<hr/>
+
+<div class="transreq-section" data-docstatus="fp-wd-tr|cr-tr|fp-ig-note-tr|fp-wg-note-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="notchartered|first">
+<h2 id="transreq">Transition request</h2>
+
+<div class="note" data-docstatus="cr-tr" data-cr="substantive">
+  <p><strong>Tip:</strong> When updating an existing Candidate Recommendation, focus your new transition on what changed since the previous Candidate Recommendation transition. There is no need to repeat information included in the previous transition.</p>
+</div>
+
+<div class="transreq-section2" data-docstatus="fp-wd-tr|cr-tr|fp-ig-note-tr|fp-wg-note-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="notchartered|first">
+<p>The message subject line and body <span
+class="rfc2119">SHOULD</span> identify this as a "transition request";
+see above for <a href="#transreqmail">where to send the request</a>.
+A<span data-docstatus="obsolete-tr">n</span>
+<span data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr">First Public</span>
+<span class="status-name">STATUS</span> transition request <span
+class="rfc2119">MUST</span> include:</p>
+
+<ol>
+<li>Document title, URIs, and <a href="#schedule-pubreq">estimated
+publication date</a>.</li>
+
+<li>The document Abstract and Status sections, either
+by reference (e.g., the URI to the document) or direct inclusion.
+</li>
+
+<li data-docstatus="fp-wd-tr">
+A statement whether or not the group considers the document to be
+a <a href="https://www.w3.org/pubrules/doc#delta">delta specification</a>.
+This statement is only required for documents expected to become
+normative Recommendations under the W3C Patent Policy.</li>
+</ol>
+</div>
+<div class="transreq-section2" data-docstatus="probsolete-tr|prrescind-tr">
+<ol>
+<li>Document title and URIs of the W3C Recommendation.</li>
+<li>The request <span class="rfc2119">must</span>
+include rationale for <span data-docstatus="probsolete-tr">obsoleting</span><span data-docstatus="prrescind-tr">rescinding</span> the Recommendation.</li>
+</ol>
+</div>
+
+<div data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">
+
+<p data-docstatus="fp-wd-tr|cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">Furthermore,
+the transition request provides evidence that the group has
+satisfied the <a href="#reqs-adv">transition
+requirements</a>. The questions and observations in the subsections
+below provide examples of what
+<span class="rfc2119">SHOULD</span> be in the transition request
+to help the
+<span data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr">
+Project Management Lead
+</span>
+<span
+data-docstatus="cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">Director</span>
+assess whether the group has satisfied the transition requirements.
+<span class="transreq-as-agenda" data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">
+The transition request <span class="rfc2119">SHOULD</span> be
+organized so that it serves as the basis for the <a
+href="#sample-agenda">agenda</a> of the meeting with the Director.</span></p>
+
+<p class="shortname" data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr" data-notehistory="notchartered|first">The <strong>goal</strong> of the
+transition request is to secure an archived record of the
+<span data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr" data-notehistory="notchartered|first">
+Project Management Lead'
+</span>
+
+approval of the title, and shortname.
+In the past, shortnames have been changed
+between versions, and documents have been split and merged between
+versions. A conservative approach is to treat a merged or split
+document like a first publication.</p>
+
+<p data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr" data-notehistory="notchartered|first">
+The Team Contact(s) generally present the new draft for the entire W3C
+Team as soon as possible after the transition request (and possibly
+before Project Management Lead approval). The length of the presentation varies
+(from "more than a lightning talk" to a Project Review) depending on
+the technical or political complexity of the specification.</p>
+
+<p class="no-pr-when-open-excl"
+data-docstatus="pr-tr"><strong>Note:</strong> The Director <span
+class="rfc2119">SHOULD NOT</span> schedule a Proposed Recommendation
+review period to end
+less than 10 days
+after the end of an open "exclusion opportunity" as defined in the W3C Patent
+Policy (per section 5.2 of the W3C Process), or
+if there are any Patent Advisory Groups
+(PAGs) currently discussing the document
+(per the <a href="https://www.w3.org/2003/12/22-pp-faq.html#trpub-during-pag">Patent Policy FAQ, question 29</a>).</p>
+
+<div class="trans-decision" data-docstatus="fp-wd-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|fp-ig-note-tr|fp-wg-note-tr" data-cr="new|substantive" data-notehistory="notchartered|first">
+
+<div data-docstatus="cr-tr" data-cr="substantive">
+
+<h3><a name="previous-transition" id="previous-transition">Link to previous transition</a></h3>
+
+<ul>
+<li>The request
+<span class="rfc2119">must</span>
+include a link to the previous Candidate Recommendation transition request.</li>
+</ul>
+
+</div>
+
+<h3><a name="trans-decision" id="trans-decision">Decision to request transition</a></h3>
+
+<ul>
+<li>The request
+<span data-docstatus="fp-wd-tr|cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr" data-rec="editorial" data-cr="new|substantive">
+<span class="rfc2119">must</span>
+</span>
+<span data-docstatus="ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr">
+<span class="rfc2119">should</span>
+</span>
+record the group's decision <span data-docstatus="probsolete-tr|prrescind-tr">(or the individual request or the support of the Advisory Committee)</span><span data-docstatus="recommendation" data-rec="editorial">(or the individual request if no Working Group)</span> to request advancement (e.g.,
+a link to
+meeting minutes or email announcing the group's decision).</li>
+</ul>
+
+</div>
+
+<div class="changes" data-docstatus="cr-tr|pr-tr|recommendation" data-cr="new|substantive">
+<h3><a name="imp-changes" id="imp-changes">Changes</a></h3>
+
+<ul>
+<li data-docstatus="cr-tr|pr-tr|recommendation" data-cr="new|substantive">The group
+<span class="rfc2119">must</span>
+provide public documentation of all <a href="https://www.w3.org/2017/Process-20170301/#substantive-change">substantive changes</a> to the technical report since the previous publication<span data-docstatus="cr-tr|pr-tr|recommendation"> or a statement that there is no substantive changes</span>. Include, for example, a link to a change log
+where important changes are highlighted.
+<span data-docstatus="pr-tr|recommendation">If there have been substantive changes to the document since the
+previous transition<span data-docstatus="pr-tr"> (except for the removal of feature at risk)</span>,
+the Working Group <span class="rfc2119">must</span>  republish the document at an earlier status.</span>
+</li>
+<!-- Not necessary to say even though it's in the process -->
+<!--
+<li data-docstatus="recommendation">A Recommendation <span class="rfc2119">must not</span> include any substantive changes from the Proposed Recommendation on which it is based.</li>
+-->
+<li data-docstatus="cr-tr|pr-tr|recommendation" data-rec="new" data-cr="new|substantive">The group
+<span class="rfc2119">should</span>
+provide public documentation of changes that are not substantive.</li>
+<li data-docstatus="recommendation" data-rec="editorial">The group
+<span class="rfc2119">should</span>
+provide public documentation of editorial corrections.</li>
+<li class="features-at-risk" data-docstatus="pr-tr">Were features at risk removed?</li>
+
+<li class="relation-to-recs" data-docstatus="cr-tr|pr-tr|recommendation" data-rec="editorial">If this specification is a revision of a previous
+Recommendation, does the document clearly state the relation of
+this version to the previous one? For instance, does it supersede
+or obsolete the previous Recommendation? Where is this stated
+(e.g., the status section)? Does the specification explain whether
+authors should create content according to the previous or current
+version? Does the specification explain whether processors should
+continue to process content according to the previous
+Recommendation?</li>
+
+<li class="revision-info" data-docstatus="cr-tr|pr-tr">If there will be two Recommendations of different major
+revision numbers, does the newer specification explain the
+relationship?</li>
+<li data-docstatus="recommendation" data-rec="editorial">The group <span class="rfc2119">should</span>
+address all recorded errata.</li>
+</ul>
+</div>
+
+<div class="requirements-met" data-docstatus="cr-tr|pr-tr|recommendation" data-cr="new|substantive">
+<h3><a name="reqs-satisfied" id="reqs-satisfied">Requirements satisfied</a></h3>
+
+<ul>
+<li data-docstatus="cr-tr" data-cr="new|substantive">The Group <span class="rfc2119">must</span>
+show that the specification has met all Working Group requirements, or explain why the requirements have changed or been deferred. Where are the requirements defined (e.g,. a charter or requirements document)?</li>
+<li>The group <span class="rfc2119">should</span>
+report which, if any, of the Working Group's requirements for this document have changed since the previous step. Are any requirements previously satisfied no longer satisfied? Are any requirements previously unsatisfied now satisfied?</li>
+</ul>
+</div>
+
+<div class="dependencies-met" data-docstatus="cr-tr|pr-tr|recommendation" data-cr="new|substantive">
+<h3><a name="dependencies-met" id="dependencies-met">Dependencies met (or not)</a></h3>
+
+<ul>
+<li class="depreporting" data-docstatus="pr-tr|recommendation">The group <span class="rfc2119">should</span>
+report any changes in dependencies with other groups.</li>
+<li class="depreporting" data-docstatus="cr-tr" data-cr="new|substantive">The group <span class="rfc2119">must</span>
+document changes to dependencies during the development of the specification.</li>
+<li>Does this specification have any normative references to W3C
+specifications that are not yet
+<span class="normrefstatus" data-docstatus="pr-tr">
+Proposed Recommendations? See <a href="https://www.w3.org/2013/09/normative-references">Normative References Guidelines</a>.
+</span>
+<span  class="normrefstatus" data-docstatus="cr-tr" data-cr="new|substantive">
+Candidate Recommendations?
+</span>
+<span  class="normrefstatus" data-docstatus="recommendation">
+Recommendations?
+</span>
+<strong>Note:</strong> In general, documents do not advance to
+Recommendation with normative references to W3C
+specifications that are not yet Recommendations. See <a href="https://www.w3.org/2013/09/normative-references">Normative References Guidelines</a>.
+</li>
+
+<li class="groups-satisfied" data-docstatus="cr-tr" data-cr="new|substantive">Have other Groups confirmed that dependencies
+have been satisfied? For example, does the issues list show that
+these groups are satisfied as a result of their review of the
+document? Are there dependencies that have not been satisfied?</li>
+<li  class="new-impl-dependencies" data-docstatus="pr-tr">Is there evidence that additional dependencies
+related to implementation have been satisfied?</li>
+</ul>
+</div>
+
+<div class="wide-review" data-docstatus="cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr" data-cr="new|substantive">
+<h3><a name="wide-review" id="wide-review">Wide Review</a></h3>
+
+<ul>
+<li class="widereviewreq" data-docstatus="cr-tr|pr-tr|recommendation" data-rec="new" data-cr="new|substantive">The group <span class="rfc2119">must</span>
+show that the specification has received <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a> (unless <a href='https://www.w3.org/2017/Process-20170301/#rec-publication'>section 6.6</a> is applicable)</li>
+<li  class="widereviewreq" data-docstatus="recommendation" data-rec="editorial">The group <span class="rfc2119">must</span>
+show that the changes to the document have received <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a> (defined in
+section 6.2.3.1 of the Process).</li>
+<li data-docstatus="cr-tr" data-cr="new|substantive">The group <span class="rfc2119">may</span>
+identify features in the document as "at risk".</li>
+<li class="reviewers" data-docstatus="cr-tr" data-cr="new|substantive">
+Which are the groups with dependencies? Did they review the document?</li>
+
+<li class="reviewers" data-docstatus="prrescind-tr">
+The group <span class="rfc2119">must</span>
+show that the request to rescind has received
+<a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a>. If the Director is
+proposing to rescind or obsolete the Recommendation, the Director
+<span class="rfc2119">must</span> show that the request to rescind or obsolete is based on public comment.
+</li>
+
+<li class="reviewers" data-docstatus="probsolete-tr">
+The group <span class="rfc2119">must</span>
+show that the request to obsolete has received
+<a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a>. If the Director is
+proposing to obsolete the Recommendation, the Director
+<span class="rfc2119">must</span> show that the request to obsolete is based on public comment.
+</li>
+
+<li  class="reviewers" data-docstatus="cr-tr|pr-tr" data-cr="new|substantive">Was there review from implementers?</li>
+
+<li  class="reviewers" data-docstatus="recommendation" data-rec="new">Was there review from
+Advisory Committee representatives?</li>
+</ul>
+</div>
+
+<div class="issues" data-docstatus="cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">
+<h3><a name="formally-address" id="formally-address">Issues addressed</a></h3>
+
+<ul>
+<li>The group <span class="rfc2119">must</span>
+<a href="https://www.w3.org/2017/Process-20170301/#formal-address">formally address</a> all issues raised about the document since the previous maturity level. </li>
+<li data-docstatus="pr-tr">
+The group <span class="rfc2119">must</span>
+show that all issues raised during the Candidate Recommendation review period other than by Advisory Committee representatives acting in their formal AC representative role have been <a href="https://www.w3.org/2017/Process-20170301/#formal-address">formally addressed</a>.
+</li>
+<li data-docstatus="pr-tr">
+The group <span class="rfc2119">must</span>
+identify any substantive issues raised since the close of the Candidate Recommendation review period by parties other than Advisory Committee representatives acting in their formal AC representative role.</li>
+<li>Include a link to an issues list that indicates that the Group
+has been responsive to reviewers who have raised issues since
+the previous transition. The Director's expectations are
+that, as a document advances, the Working Group will keep an
+increasingly precise record of how it has formally addressed each
+issue.
+
+<span class="issues-during-pr" data-docstatus="recommendation" data-rec="new">The Director is responsible for addressing
+those issues raised by the Advisory Committee
+during a Proposed Recommendation review period.
+Typically the Director consults with the group.
+Per the <a
+href="https://www.w3.org/2017/Process-20170301/#doc-reviews">
+Process Document, section 6.2.3</a>, the Director
+<span class="rfc2119">MAY</span>
+respond to the reviewer after the close of the Proposed Recommendation
+review period (e.g., in the announcement of the transition
+to Recommendation).
+For substantive issues, especially substantive or
+serious technical issues the Team Contact should endeavor to understand the
+reviewer's issues and try to resolve them before sending the Director
+a request to advance to Recommendation.
+The request to advance to Recommendation
+should document the success or failure of these negotiations.</span></li>
+
+<li>For changes in the issues list since the previous transition:
+<ul>
+<li>Highlight issues where the Group has declined to make a change,
+with rationale. See also <a
+href="https://lists.w3.org/Archives/Member/chairs/2000JanMar/0109.html">
+Clarification: tables summarizing review</a> Tim Berners-Lee (Tue,
+Feb 15 2000).</li>
+
+<li>Highlight issues where the Group has not satisfied a reviewer
+and has either not yet responded to the reviewer, or the reviewer
+has not yet acknowledged the Group's decision.</li>
+
+<li>Show, without highlighting:
+<ul>
+<li>Issues where the Working Group has accepted a proposed
+change.</li>
+
+<li>Issues where the Working Group has clarified the specification
+to the satisfaction of the reviewer.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class="objections" data-docstatus="cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">
+<h3 id="objections">Formal Objections</h3>
+
+<ul>
+<li>The group
+<span class="rfc2119">must</span>
+provide public documentation of any Formal Objections. For each Objection, is there a public record of the decision, the objection, and attempts to satisfy the reviewer?</li>
+</ul>
+</div>
+
+<div class="implementation" data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr" data-rec="new" data-cr="new|substantive">
+<h3><a name="impl-reports" id="impl-reports">Implementation</a></h3>
+
+<ul>
+<li data-docstatus="cr-tr" data-cr="new|substantive">
+The group <span class="rfc2119">must</span>
+document how adequate implementation experience will be demonstrated.
+Are there tests or test suites available that will allow the WG
+to demonstrate/evaluate that features have been implemented
+(e.g., a matrix showing how different pieces or classes of
+software implement different features)?
+Is the expectation to show
+two complete implementations (e.g., there are two software
+instances, each of which conforms) or to show that each feature is
+implemented twice in <em>some</em> piece of software?
+</li>
+<li data-docstatus="pr-tr">
+The group <span class="rfc2119">must</span>
+show adequate <a href="https://www.w3.org/2017/Process-20170301/#implementation-experience">implementation experience</a> except where an exception is approved by the Director.
+Were the expectations set at Candidate Recommendation met?
+</li>
+<li class="impl-report" data-docstatus="pr-tr">The request <span class="rfc2119">MUST</span>
+Include a link to a
+final implementation report, or, if there is no such report,
+rationale why the Director should approve the request nonetheless.</li>
+<li class="optional-features" data-docstatus="cr-tr" data-cr="new|substantive">What are the Group's plans for showing implementation of
+optional features? In general, the Director expects mandatory
+features and optional features that affect interoperability to be
+handled similarly. Optional features that are truly optional (i.e.,
+that do not affect interoperability) may require less
+implementability testing.</li>
+<li class="other-interop-experience" data-docstatus="cr-tr" data-cr="new|substantive">Does the WG have additional implementation experience that will
+help demonstrate interoperability (e.g., has there been an
+interoperability day or workshop? Is one planned?)?</li>
+<li data-docstatus="ord-wd-tr|fp-wd-tr|recommendation|probsolete-tr|prrescind-tr" data-rec="new">The group <span class="rfc2119">should</span>
+provide information about implementations known to the Working Group.
+See the <a href="https://www.w3.org/2017/Process-20170301/#implementation-experience">definition
+of implementation experience</a> in section 6.2.4 of the Process.
+</li>
+</ul>
+</div>
+
+<div class="disclosures" data-docstatus="cr-tr|recommendation|rescind-rec-tr|prrescind-tr" data-rec="new|editorial" data-cr="new|substantive">
+<h3 id="disclosures">Patent disclosures</h3>
+
+<ul>
+<li>Has anything changed on the patent disclosure page since the
+previous transition?
+Have there been any incomplete or problematic disclosures?</li>
+
+<li class="openexclusions" data-docstatus="pr-tr">Are there any open exclusion opportunities?  The Director <span
+class="rfc2119">SHOULD NOT</span> schedule a Proposed Recommendation
+review period to end
+less than 10 days
+after the end of an open "exclusion opportunity" as defined in the W3C Patent
+Policy (per section 5.2.1 of the W3C Process), or
+if there are any Patent Advisory Groups
+(PAGs) currently discussing the document
+(per the <a href="https://www.w3.org/2003/12/22-pp-faq.html#trpub-during-pag">Patent Policy FAQ, question 29</a>).
+</li>
+
+<li>If the group is not using <a href="https://www.w3.org/2004/01/pp-impl/">IPP</a>: Does the disclosure page conform to the patent policy
+requirements?</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="trans-mtg-section" data-docstatus="cr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-rec="new|editorial" data-cr="new|substantive">
+<h2><a name="dir-mtg" id="dir-mtg">Transition
+Meeting with the Director</a></h2>
+
+<p>For a<span data-docstatus="obsolete-tr">n</span> <span class="status-name">STATUS</span> transition,
+the Director may need to attend a transition
+meeting attended by:</p>
+
+<ul>
+<li>The Team contact(s)</li>
+
+<li>The Project Management Lead (or someone appointed by him), who generally
+chairs the meeting.</li>
+
+<li>Those assigned by the Director to manage transitions.</li>
+
+<li>The Director should be invited to attend the meeting if the
+transition involves contentious issues such as IPR, technical or
+other concerns.</li>
+
+<li class="mtg-attendees-chair" data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr" data-cr="new|substantive">The Working Group Chair(s)</li>
+
+<li  class="mtg-attendees-others" data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr" data-cr="new|substantive">Others invited by the Project Management Lead (or whoever is chairing the
+transition meeting)</li>
+
+<li  class="mtg-attendees-dependent" data-docstatus="cr-tr|pr-tr|probsolete-tr|prrescind-tr" data-cr="new|substantive">In the event that the specification significantly affects the
+work of another WG, a (non-Team) representative of that Group
+should be invited to the call.</li>
+
+</ul>
+
+<p>The Team Contact is responsible for the execution of the
+following (under the supervision of the Project Management Lead):</p>
+
+<ol>
+<li>Scheduling the meeting. To allow chairs of WGs with
+dependencies and other commenters time to review the treatment of
+review comments in the disposition of comments document, the
+transition request <span class="rfc2119">MUST</span> be sent a minimum of seven days prior to the transition meeting.</li>
+
+<li>Reserving a <a
+href="https://www.w3.org/Guide/1998/08/TeleconferenceHowTo.htm">teleconference
+bridge</a>.</li>
+
+<li>Choosing a scribe prior to the meeting.</li>
+
+<li>Ensuring that the meeting record is distributed to the
+participants. The meeting record (typically a link to an IRC log)
+<strong>must</strong> include the decision, and should
+highlight all recommendations. The meeting record should be sent to
+all participants attendees, and
+<span class="rfc2119">MUST</span>
+ be cc'ed to <a
+href="mailto:w3t-archive@w3.org">w3t-archive@w3.org</a>.</li>
+</ol>
+
+<h3><a name="sample-agenda" id="sample-agenda">Sample agenda</a></h3>
+
+<dl>
+<dt>Administrative</dt>
+
+<dd>
+<ol>
+<li>Is everyone here?</li>
+
+<li>Confirmation of Chair, Scribe</li>
+
+<li>Are any changes required to the agenda?</li>
+</ol>
+</dd>
+
+<dt>Review of the <a href="#transreq">transition request</a></dt>
+<dd>In particular, review those items highlighted as
+requiring the Director's attention.</dd>
+
+<dt>Decision</dt>
+
+<dd>The Director assesses whether the W3C Process has been followed
+and whether there is sufficient consensus to support the transition
+request.
+In most cases the decision to make the transition
+is made during the teleconference.
+However the decision could take up to two weeks if any difficult
+issues arise during the meeting. The Director may delegate the
+W3C decision; see <a href="https://www.w3.org/Project/Reports.html">Team processes for TR
+publications</a>.</dd>
+
+<dt>Next steps</dt>
+
+<dd>
+<ol>
+<li>If the decision is negative: how do we repair the problem? what
+happens next? who does what? <strong>Note:</strong> If documents
+have been copied to /TR space, please remove them.</li>
+
+<li>If the decision is positive: how do we announce this decision?
+when? what is the plan and schedule for any
+communications opportunities, including <a
+href="https://www.w3.org/2004/12/testimonial_pr-guidelines.html">Member
+testimonials</a>?
+any action items from this meeting?</li>
+</ol>
+</dd>
+</dl>
+
+<h3>Some reasons for declining a transition request</h3>
+
+<ul>
+<li class="doc-subst-modified" data-docstatus="cr-tr|recommendation" data-cr="new|substantive">
+There have been <a href="https://www.w3.org/2017/Process-20170301/#substantive-change">substantive changes</a> since the
+previous transition. In this case, the document is <a
+href="https://www.w3.org/2017/Process-20170301/#recs-and-notes">returned to a lower maturity level</a>.</li>
+
+<li  data-docstatus="fp-wd-tr|ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="first|none">
+The Director is not satisfied with how the Working Group has
+addressed issues.</li>
+
+<li>
+The Working Group has issued a transition request despite a
+<a href='https://www.w3.org/2017/Process-20170301/#FormalObjection'>Formal Objection</a> and the Director is not satisfied with
+the Working Group's rationale.</li>
+
+<li class="extra-criteria-not-met" data-docstatus="pr-tr|recommendation|probsolete-tr|prrescind-tr" data-rec="editorial">The Director believes that special
+entrance criteria have not been satisfied.</li>
+</ul>
+
+<p data-docstatus="probsolete-tr|prrescind-tr|recommendation" data-rec="new">Per <a href="https://www.w3.org/2017/Process-20170301/#rec-rescind">section 6.9</a>, in some conditions, the Director is required
+to accept the transition request.</p>
+
+<p>Per <a href="https://www.w3.org/2017/Process-20170301/#recs-and-notes">section 6.1.1</a> of the Process, "The Director
+<span class="rfc2119">MUST</span> inform the
+Advisory Committee and Working Group Chairs when a Working Group's
+request for a specification to advance in maturity level is declined
+and the specification is returned to a Working Group for further
+work."</p>
+
+</div>
+
+
+<div class="pubreq-section" data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr" data-echidna="false">
+<h2 id="pubreq">Publication Request</h2>
+
+<p>A publication request is an assertion from the Document Contact
+that the document satisfies the <a href="https://www.w3.org/pubrules/">pubrules
+requirements</a>.  The subject line and body
+<span class="rfc2119">SHOULD</span> identify this as a "publication
+request";
+see above for <a href="#pubreqmail">where to send the request</a>.
+ A publication request <span
+class="rfc2119">MUST</span> include the following information.</p>
+
+<ol>
+<li>Document title and URI(s). Document URI requirements are described
+in <a href="https://www.w3.org/pubrules/">Publication Rules.</a></li>
+
+<!-- For all pubs for now -->
+<li>
+One or two sentences of description of the specification (for communication purposes on the "current status" pages). The sentence may be taken from the abstract. As an example, see <a href="https://www.w3.org/standards/techs/mobile#w3c_all">status section for specifications related to mobile web authoring</a>. These status pages, as their name suggests, let the community know about relationships among close specifications, what to use and not to use, how things fit together, etc. Contact the Comm Team with questions at w3t-comm@w3.org. <strong>Note:</strong> The Webmaster may also ask the Document Contact for assistance in categorizing the specification in an existing (or new) group on the TR page. If there is no change in the description since the previous publication, this can be ommitted.
+</li>
+
+<li>A proposed <a href="#schedule-pubreq">publication schedule</a>.</li>
+
+<li class="onlydeleted" data-docstatus="cr-tr" data-cr="new|substantive">
+If there has been a previous Candidate Recommendation, whether the
+only change is that <em>text has been deleted</em>; If so, W3C can skip the Patent Policy Exclusion (see the <a href="https://www.w3.org/2003/12/22-pp-faq.html#nonewtext">Patent Policy FAQ</a>).</li>
+
+<li data-docstatus="cr-tr" data-cr="editorial">
+Since there has been a previous Candidate Recommendation and the changes are <strong>only editorial</strong>, W3C can skip the Patent Policy Exclusion (see the <a href="https://www.w3.org/2003/12/22-pp-faq.html#nonewtext">Patent Policy FAQ</a>). If not, a proper <a href='transitions.html?docstatus=cr-tr&amp;cr=substantive'>transition request</a> with the approval of the Director will be needed.</li>
+
+<li class="transreq-dir-approval" data-docstatus="fp-wd-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|fp-ig-note-tr|fp-wg-note-tr" data-cr="new|substantive" data-notehistory="notchartered|first">Record of approval of the <a href="#transreq">transition request</a>.</li>
+<li class="transreq-dir-approval" data-docstatus="fp-ig-note-tr|fp-wg-note-tr" data-notehistory="closure">Record of W3M decision to close the group.</li>
+<li class="transreq-dir-approval" data-docstatus="fp-ig-note-tr|fp-wg-note-tr" data-notehistory="none">Evidence that publication is in accordance with expectations set by the group
+charter (e.g., quote the charter).</li>
+</ol>
+
+<p class="domain-lead-aware" data-docstatus="cr-tr" data-cr="new|substantive"><strong>Note:</strong>
+Someone from the W3C
+management team (usually the Project Management Lead) <span
+class="rfc2119">SHOULD</span> be aware of the status of the
+document.</p>
+
+<h2><a id="schedule-pubreq" name="schedule-pubreq">Scheduling
+Publication</a></h2>
+
+<p data-docstatus="ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr">
+  <strong>Note:</strong> <span class="status-name">STATUS</span>s published through the <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a> do not need to get scheduled with the Webmaster and are not subjected to <a href="https://www.w3.org/Guide/#current">publishing moratoria</a>.
+</p>
+
+<p id="title-page-date">The <a
+href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> negotiates
+a publication date with the Webmaster.  Each publication request <span
+class="rfc2119">SHOULD</span> propose a publication date. If the request does not include a proposed publication date, the Webmaster <span
+class="rfc2119">MAY</span> consider the title page date as the proposed publication date.</p>
+
+<p>The Webmaster publishes on <strong>Tuesdays and Thursdays</strong> (cf. the
+<a href="https://lists.w3.org/Archives/Member/chairs/2010JanMar/0037.html">announcement to chairs</a>). Regarding advance notice:</p>
+
+<ul>
+  <li>if the checker reports issues that are confusing, please send the
+publication request no later than <strong>3 business days prior to the desired
+publication date</strong> and in the request explicitly state which
+issues require Webmaster attention. </li>
+<li>otherwise, please send the publication request no later than <strong>1
+business day prior</strong> to the publication date (and 2 days is even better).</li>
+</ul>
+
+<p>If the Webmaster finds errors during the publication process, he will
+endeavor to publish on the desired date, but he <span
+class="rfc2119">MAY</span> also postpone
+publication to the next available publication date in order to resolve
+issues. In general, it
+will not be necessary to change the title page date of a document that
+is published a couple of days later than planned.
+If it becomes apparent that a publication date will be well after a
+title page date, the Webmaster <span class="rfc2119">SHOULD</span> ask
+the Document Contact to resubmit a revised document with a more
+current title page date.</p>
+
+<p>When scheduling
+publication, please note that publishing "blackouts" occur at the end
+of the calendar year and around certain W3C events such as AC
+meetings and All-Group meetings. The Communications Team announces
+these publishing moratoria with approximately six months notice. The
+announcements are linked from the <a href="https://www.w3.org/Guide/">Chairs' Guidebook</a>.</p>
+
+<h2> <a id="publication" name="publication">Publication</a></h2>
+
+<p>In order to ensure publication standards, upon receiving a
+publication request the Webmaster <span
+class="rfc2119">SHALL</span> make a best effort to verify that the
+document satisfies the <a href="https://www.w3.org/pubrules/">pubrules
+requirements</a> except for the accessibility requirements of <a
+href="https://www.w3.org/Guide/pubrules#access">section 1.6</a>. The Webmaster <span
+class="rfc2119">SHALL</span> publish the document (cf. the
+<a href="https://www.w3.org/1999/12/03-publishing">Webmaster's guide</a>) if the following
+conditions have been met:</p>
+
+<ol>
+<li>The <a href="#pubreq">publication request</a> is complete, and</li>
+<li>The document satisfies the pubrules requirements verified by
+the Webmaster.</li>
+</ol>
+
+<p>Otherwise the Webmaster <span class="rfc2119">SHALL NOT</span>
+publish. In this case, the Webmaster <span
+class="rfc2119">SHALL</span> provide details to the person who sent
+the request about which requirements have not been satisfied.</p>
+
+<p>The Webmaster <span class="rfc2119">SHALL NOT</span> publish the
+document until the date on the title page or later.  The Webmaster
+publishes the document by updating the appropriate technical report
+index and updating the latest version link, and then announcing
+publication as described above.</p>
+
+</div>
+
+<div data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="first">
+<h2 id="trans-annc">Transition Announcement</h2>
+
+<p>A<span data-docstatus="obsolete-tr">n</span>
+<span data-docstatus="fp-wd-tr|fp-wg-note-tr|fp-ig-note-tr">First Public</span>
+<span class="status-name">STATUS</span> transition announcement <span
+class="rfc2119">MUST</span> include the following information:</p>
+
+<div class="announcement-contents" data-docstatus="pr-tr|probsolete-tr|prrescind-tr">
+
+<ol>
+<li>That this is a
+<span class="status-name">STATUS</span>
+transition announcement.</li>
+
+<li>Document title, URIs<span data-docstatus="probsolete-tr|prrescind-tr"> of the W3C Recommendation</span>.</li>
+
+<li>Instructions for providing feedback.</li>
+
+<li>Review end date.</li>
+
+<li>Link to information about the review; this is the link
+to an <strong>online review form (WBS)</strong> created by the Team Contact. The following information from the <a href="#transreq">transition request</a>
+<span class="rfc2119">MUST</span> be available (generally in the
+form):
+<ul>
+<li>title, abstract, and status. <strong>Note</strong>: It is
+useful to draw the reviewer's attention in the
+review form to important information, even if some of that
+information is duplicated in the status section due to
+<a href="https://www.w3.org/pubrules/">pubrules requirements</a>.</li>
+<li>implementation information</li>
+<li>information about changes</li>
+<li>information about <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a></li>
+</ul>
+<p data-docstatus="pr-tr">
+  <strong>Note</strong>: if you created the review form (WBS) at Candidate Recommmendation phase, update the review form as needed, making it clear what the updates are, and update the closing date for the review.
+</p>
+</li>
+
+<li>Information about any Formal Objections.</li>
+
+<li>Link to a public (home) page for the group that produced the document.</li>
+</ol>
+
+
+<p data-docstatus="pr-tr">Please use the  <a
+href="https://www.w3.org/new-doc-from-template?location=%2FTeam%2F&amp;template=%2Fafs%2Fw3.org%2Fpub%2FWWW%2FTeam%2FTemplates%2Fproposed-rec.html&amp;submit=Continue...">Team-only transition
+announcement template</a> as a starting point.</p>
+
+</div>
+
+
+<div class="announcement-contents" data-docstatus="cr-tr" data-cr="new|substantive">
+
+<ol>
+<li>That this is a <span class="status-name">STATUS</span>
+transition announcement.</li>
+
+<li>Document title, URIs.</li>
+
+<li>Instructions for providing feedback.</li>
+
+<li>A link to the group's transition request.</li>
+
+<li>Review end date.</li>
+
+<li>Link to information about the review; this is the link
+to an <strong>online review form (WBS)</strong> created by the Team Contact. The following information from the <a href="#transreq">transition request</a>
+<span class="rfc2119">MUST</span> be available (generally in the
+form):
+<ul>
+<li>title, abstract, and status. <strong>Note</strong>: It is
+useful to draw the reviewer's attention in the
+review form to important information, even if some of that
+information is duplicated in the status section due to
+<a href="https://www.w3.org/pubrules/">pubrules requirements</a>.</li>
+<li>implementation information</li>
+<li>information about changes</li>
+<li>information about <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a></li>
+</ul>
+</li>
+
+<li>The names of groups with dependencies, explicitly inviting
+review from them.</li>
+
+<li>Information about any Formal Objections.</li>
+
+<li>Whether this publication is the result
+of <a href="https://www.w3.org/2017/Process-20170301/#recs-and-notes">returning a document to a working group for further work</a> as a Candidate Recommendation.</li>
+
+<li>Document abstract and status.</li>
+</ol>
+
+<p data-docstatus="cr-tr" data-cr="new|substantive">Please use the <a
+href="https://www.w3.org/new-doc-from-template?location=%2FTeam%2F&amp;template=%2Fafs%2Fw3.org%2Fpub%2FWWW%2FTeam%2FTemplates%2Fcfi.html&amp;submit=Continue...">Team-only transition
+announcement template</a> as a starting point.</p>
+
+<p>The Candidate Recommendation transition announcement <span
+class="rfc2119">SHOULD</span> provide information about where people
+can learn about issues raised during the Candidate Recommendation review period
+(e.g., a link to an issues list).</p>
+
+<p>The Candidate Recommendation transition announcement
+<span class="rfc2119">MAY</span> indicate priority feedback
+items. Please note that as of Candidate Recommendation, no technical issues should
+be open, even though the Working Group may request feedback on
+particular choices they have made.</p>
+
+
+<!--
+Note: Info about features at risk is required in status section per pubrules
+-->
+
+</div>
+
+<div class="announcement-contents" data-docstatus="recommendation|obsolete-rec-tr|rescind-rec-tr">
+
+<ol>
+<li>That this is a<span data-docstatus="obsolete-tr">n</span> <span class="status-name">STATUS</span>
+transition announcement.</li>
+
+<li>Document title, URIs.</li>
+
+<li>A paragraph introducing the work, usually the Abstract.</li>
+
+<li data-docstatus="recommendation|obsolete-rec-tr|rescind-rec-tr" data-rec="new" class="annc-objections">Indication, in general terms,
+of level of support of Membership.
+<span class="ac-review-details"><strong>Note:</strong>
+As a policy, the Team does not announce detailed results (i.e.,
+numbers of reviews) of a Proposed Recommendation review to the
+Membership or Public, except for information regarding formal
+objections.</span></li>
+
+<li>Information about any Formal Objections.</li>
+
+<li>Any additional information for companion document(s).</li>
+
+</ol>
+
+<p>Please use the <a href="https://www.w3.org/new-doc-from-template?location=%2FTeam%2F&amp;template=%2Fafs%2Fw3.org%2Fpub%2FWWW%2FTeam%2FTemplates%2Frec-announcement.html&amp;submit=Continue...">Team-only transition
+announcement template</a> as a starting point.</p>
+
+</div>
+
+<div class="announcement-contents" data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr" data-notehistory="first|notchartered|none">
+<ol>
+<li>That this is a
+<span data-docstatus="fp-wd-tr|fp-wg-note-tr|fp-ig-note-tr">First Public</span>
+<span class="status-name">STATUS</span>
+transition announcement.</li>
+
+<li>Document title, URIs.</li>
+
+<li>Instructions for providing feedback.</li>
+
+<li data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr" data-notehistory="first|notchartered|none">A reference to the group's transition request.</li>
+</ol>
+
+<p class="fpwd-exclusions" data-docstatus="fp-wd-tr">
+<strong>Note:</strong> The First Public Working Draft is
+significant with respect to the W3C Patent Policy. As explained in the
+<a
+href="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">Patent
+Policy FAQ</a>, the Communications Team issues a Call for Exclusions
+(see <a
+href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">
+section 4 of the W3C Patent Policy</a>) approximately ninety days
+after the publication of this draft.</p>
+</div>
+
+</div>
+
+</div>
+<hr />
+<address>Page owned and process managed by
+Philippe Le Hégaret and Ralph Swick on behalf of the W3C Director.<br />
+ <a href="https://www.w3.org/People/LeHegaret/">Philippe Le H&eacute;garet</a>, editor<br />
+ This document has been constructed by merging information from
+several "How to" documents created by Dan Connolly, Al Gilman, and
+others. A filter is applied to
+the <a href="https://www.w3.org/2005/08/01-transitions2017.html">document source</a> to provide
+transition-specific views.
+<br />
+ Last modified: $Date: 2017/05/19 18:31:14 $ by $Author: plehegar $</address>
+
+ <script>
+	 var config = {
+		 docstatus: "ord-wd-tr",
+		 cr: "new", rec: "new",
+		 notehistory: "first",
+		 echidna: false
+	 }	 
+  function updateStatus() {
+		 var option = document.getElementById("docstatus").querySelector("option[value=" + config.docstatus + "]");
+		 config.status = option.getAttribute("data-status");
+		 config.label = option.label;
+		 if (config.status === "" || config.status === null) config.status=config.label;
+		 console.log("Switched to " + config.label + " --  (" + config.status + ")");
+	}
+   function changeDocStatus() {
+		 config.docstatus = document.getElementById("docstatus").value;
+		 console.log("Switching to " + config.docstatus);
+   	 if (config.docstatus === "cr-tr") {
+			 config.cr = "new";
+			 document.getElementById("cr-" + config.cr).checked = true;
+		 } else if (config.docstatus === "recommendation") {
+			 config.rec = "new";
+			 document.getElementById("rec-" + config.rec).checked = true;
+		 } else if (config.docstatus.includes === "note-tr" && config.docstatus.includes === "fp-") {
+			 config.notehistory = "first";
+			 document.getElementById("notehistory-" + config.notehistory).checked = true;
+		 }
+		 config.echidna = "false";
+		 document.getElementById("echidna-" + config.echidna).checked = true;
+		 updateStatus();
+		 updateTree();
+   }
+   function changeEchidna(newval) {
+		 config.echidna = newval;
+		 console.log("Switching to echidna " + config.echidna);
+		 updateTree();
+   }
+   function changeNoteHistory(newval) {
+		 config.notehistory = newval;
+		 console.log("Switching to notehistory " + config.notehistory);
+		 updateTree();
+   }
+   function changeCR(newval) {
+		 config.cr = newval;
+		 console.log("Switching to CR " + config.cr);
+		 updateTree();
+   }
+
+   function changeREC(newval) {
+		 config.rec = newval;
+		 console.log("Switching to REC " + config.rec);
+		 updateTree();
+   }
+
+	 function titleMatch(node) {
+		 var doesMatch = true;
+		 if (node.dataset.docstatus !== undefined) {
+			 doesMatch = doesMatch && node.dataset.docstatus.includes(config.docstatus);
+			 if (doesMatch) {
+				 if (config.docstatus === "cr-tr") {
+					 if (node.dataset.cr !== undefined) {
+				     doesMatch = doesMatch && node.dataset.cr.includes(config.cr);
+					 }
+				 } else if (config.docstatus === "recommendation") {
+					 if (node.dataset.rec !== undefined) {
+				     doesMatch = doesMatch && node.dataset.rec.includes(config.rec);
+					 }
+				 } else if (config.docstatus.includes("note-tr") && config.docstatus.includes("fp-")) {
+		       if (node.dataset.notehistory !== undefined) {
+		         doesMatch = doesMatch && node.dataset.notehistory.includes(config.notehistory);
+					 }
+				 }
+			 }
+		 }
+		 if (doesMatch && node.dataset.echidna !== undefined)
+		   doesMatch = doesMatch && node.dataset.echidna.includes(config.echidna);// @@type conversion bool -> string
+   	 return doesMatch;
+	 }
+	 var walker = document.createTreeWalker(document.documentElement,
+	     NodeFilter.SHOW_ELEMENT, function (next) {
+				if (next.hasAttribute("data-docstatus") || next.classList.contains("status-name") || next.classList.contains("label-name")) {
+					return NodeFilter.FILTER_ACCEPT;
+				}
+				return NodeFilter.FILTER_SKIP;
+			 });
+	 // precompute the different attributes
+   var next = walker.nextNode();
+	 while (next != null) {
+		  next.dataset.display = next.style.display;
+		  next = walker.nextNode();
+	 }
+
+	 var activated = false;
+	 function updateTree() {
+		 if (!activated) return; // don't do anything during the init
+		 walker.currentNode = walker.root; // reset the tree walk
+	   var count = 0;
+	   var next = walker.nextNode();
+	   while (next != null) {
+	  	 if (next.dataset.docstatus !== undefined) {
+    	 	 if (!titleMatch(next)) {
+	   			 next.style.display = "none"; count++;
+	  	   } else {
+	  		   next.style.display = next.dataset.display;
+	  	   }
+	   	 }
+		 
+	  	 if (next.classList.contains("status-name")) {
+	  		 next.textContent = config.status;
+	  	 }
+	  	 if (next.classList.contains("label-name")) {
+	  		 next.textContent = config.label;
+	  	 }
+	  	 next = walker.nextNode();
+		 }
+		 console.log("We eliminated " + count + " elements.");
+	 }
+
+	 // initialization
+	 
+	 // #lazyweb
+	 function getJsonFromUrl() {
+     var query = location.search.substr(1);
+     var result = {};
+     query.split("&").forEach(function(part) {
+      var item = part.split("=");
+      result[item[0]] = decodeURIComponent(item[1]);
+     });
+    return result;
+  }
+  var init  = getJsonFromUrl();
+
+
+	if (init.docstatus !== undefined) {
+	 document.getElementById("docstatus").querySelector("option[value=" + init.docstatus + "]").selected = true;
+	 changeDocStatus();
+	} else {
+	  document.getElementById("docstatus").querySelector("option[value=" + config.docstatus + "]").selected = true;
+		updateStatus();
+	}
+	if (init.echidna !== undefined && init.echidna === "true") {
+			document.getElementById("echidna-true").checked = true;
+			changeEchidna(true);
+	} else {
+			document.getElementById("echidna-" + config.echidna).checked = true;
+	}
+	if (init.cr !== undefined) {
+  	document.getElementById("cr-" + init.cr).checked = true;
+		changeCR(init.cr);
+	} else {
+		document.getElementById("cr-" + config.cr).checked = true;
+	}
+	if (init.rec !== undefined) {
+  	document.getElementById("rec-" + init.rec).checked = true;
+		changeREC(init.rec);
+	} else {
+		document.getElementById("rec-" + config.rec).checked = true;
+	}
+	if (init.notehistory !== undefined) {
+  	document.getElementById("notehistory-" + init.notehistory).checked = true;
+		changeNoteHistory(init.notehistory);
+	} else {
+		document.getElementById("notehistory-" + config.notehistory).checked = true;
+	}
+  activated = true;
+	updateTree();
+</script>
+
+</body>
+</html>
