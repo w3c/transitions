@@ -217,7 +217,10 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
             </li>
             <li style="list-style: none">
                <input type="radio" id="rec-editorial" name="rec" value="editorial"/>
-               <label for="rec-editorial">Updating an existing Recommendation with only editorial changes</label>
+               <label for="rec-editorial">Updating an existing Recommendation with only editorial corrections</label>
+            </li>
+            <li style="list-style: none">
+               <p><strong>Note:</strong> Follow <a href="?docstatus=cr-tr&amp;cr=new">Candidate Recommendation</a> for substantive corrections</label>
             </li>
          </ul>
          <ul style="margin-left: 3em"  data-docstatus="fp-wg-note-tr|fp-ig-note-tr">
@@ -761,13 +764,14 @@ meeting minutes or email announcing the group's decision).</li>
 <h3><a name="imp-changes" id="imp-changes">Changes</a></h3>
 
 <ul>
-<li data-docstatus="cr-tr|pr-tr|recommendation" data-cr="new|substantive">The group
+<li data-docstatus="cr-tr" data-cr="new|substantive">The group
 <span class="rfc2119">must</span>
-provide public documentation of all <a href="https://www.w3.org/2017/Process-20170301/#substantive-change">substantive changes</a> to the technical report since the previous publication<span data-docstatus="cr-tr|pr-tr|recommendation"> or a statement that there is no substantive changes</span>. Include, for example, a link to a change log
+provide public documentation of all <a href="https://www.w3.org/2017/Process-20170301/#substantive-change">substantive changes</a> to the technical report since the previous publication. Include, for example, a link to a change log
 where important changes are highlighted.
-<span data-docstatus="pr-tr|recommendation">If there have been substantive changes to the document since the
-previous transition<span data-docstatus="pr-tr"> (except for the removal of feature at risk)</span>,
-the Working Group <span class="rfc2119">must</span>  republish the document at an earlier status.</span>
+</li>
+<li data-docstatus="pr-tr|recommendation">The group
+<span class="rfc2119">must not</span> include <a href="https://www.w3.org/2017/Process-20170301/#substantive-change">substantive changes</a> to the technical report since the previous publication<span data-docstatus="pr-tr"> (except for the removal of feature at risk)</span>. Include, for example, a link to a change log
+where most important changes are highlighted. Otherwise, the Working Group <span class="rfc2119">must</span>  republish the document at an earlier status.</span>
 </li>
 <!-- Not necessary to say even though it's in the process -->
 <!--
@@ -781,17 +785,19 @@ provide public documentation of changes that are not substantive.</li>
 provide public documentation of editorial corrections.</li>
 <li class="features-at-risk" data-docstatus="pr-tr">Were features at risk removed?</li>
 
-<li class="relation-to-recs" data-docstatus="cr-tr|pr-tr|recommendation" data-rec="editorial">If this specification is a revision of a previous
+<li class="relation-to-recs" data-docstatus="cr-tr|pr-tr|recommendation" data-rec="new">If this specification is a revision of a previous
 Recommendation, does the document clearly state the relation of
 this version to the previous one? For instance, does it supersede
-or obsolete the previous Recommendation? Where is this stated
+or <a href="https://www.w3.org/2017/Process-20170301/#rec-rescind">obsolete</a> the previous Recommendation? Where is this stated
 (e.g., the status section)? Does the specification explain whether
 authors should create content according to the previous or current
 version? Does the specification explain whether processors should
 continue to process content according to the previous
 Recommendation?</li>
 
-<li class="revision-info" data-docstatus="cr-tr|pr-tr">If there will be two Recommendations of different major
+<li class="relation-to-recs" data-docstatus="recommendation" data-rec="editorial">The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> <span class="rfc2119">should</span> consider obsoleting the previous Recommendation.
+</li>
+<li class="revision-info" data-docstatus="cr-tr|pr-tr|recommendation">If there will be two Recommendations of different major
 revision numbers, does the newer specification explain the
 relationship?</li>
 <li data-docstatus="recommendation" data-rec="editorial">The group <span class="rfc2119">should</span>
@@ -799,7 +805,7 @@ address all recorded errata.</li>
 </ul>
 </div>
 
-<div class="requirements-met" data-docstatus="cr-tr|pr-tr|recommendation" data-cr="new|substantive">
+<div class="requirements-met" data-docstatus="cr-tr|pr-tr|recommendation" data-rec="new" data-cr="new|substantive">
 <h3><a name="reqs-satisfied" id="reqs-satisfied">Requirements satisfied</a></h3>
 
 <ul>
@@ -810,7 +816,7 @@ report which, if any, of the Working Group's requirements for this document have
 </ul>
 </div>
 
-<div class="dependencies-met" data-docstatus="cr-tr|pr-tr|recommendation" data-cr="new|substantive">
+<div class="dependencies-met" data-docstatus="cr-tr|pr-tr|recommendation" data-rec="new" data-cr="new|substantive">
 <h3><a name="dependencies-met" id="dependencies-met">Dependencies met (or not)</a></h3>
 
 <ul>
@@ -848,10 +854,9 @@ related to implementation have been satisfied?</li>
 
 <ul>
 <li class="widereviewreq" data-docstatus="cr-tr|pr-tr|recommendation" data-rec="new" data-cr="new|substantive">The group <span class="rfc2119">must</span>
-show that the specification has received <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a> (unless <a href='https://www.w3.org/2017/Process-20170301/#rec-publication'>section 6.6</a> is applicable)</li>
+show that the specification has received <a href="https://www.w3.org/wiki/DocumentReview">wide review</a> (see <a href="https://www.w3.org/2017/Process-20170301/#wide-review">section 6.2.3.1</a>)</li>
 <li  class="widereviewreq" data-docstatus="recommendation" data-rec="editorial">The group <span class="rfc2119">must</span>
-show that the changes to the document have received <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a> (defined in
-section 6.2.3.1 of the Process).</li>
+show that the changes to the document have received <a href="https://www.w3.org/wiki/DocumentReview">wide review</a> (see <a href="https://www.w3.org/2017/Process-20170301/#wide-review">section 6.2.3.1</a>).</li>
 <li data-docstatus="cr-tr" data-cr="new|substantive">The group <span class="rfc2119">may</span>
 identify features in the document as "at risk".</li>
 <li class="reviewers" data-docstatus="cr-tr" data-cr="new|substantive">
@@ -880,7 +885,7 @@ Advisory Committee representatives?</li>
 </ul>
 </div>
 
-<div class="issues" data-docstatus="cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive">
+<div class="issues" data-docstatus="cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-rec="new" data-cr="new|substantive">
 <h3><a name="formally-address" id="formally-address">Issues addressed</a></h3>
 
 <ul>
@@ -1015,7 +1020,7 @@ if there are any Patent Advisory Groups
 (per the <a href="https://www.w3.org/2003/12/22-pp-faq.html#trpub-during-pag">Patent Policy FAQ, question 29</a>).
 </li>
 
-<li>If the group is not using <a href="https://www.w3.org/2004/01/pp-impl/">IPP</a>: Does the disclosure page conform to the patent policy
+<li data-docstatus="cr-tr|recommendation|rescind-rec-tr|prrescind-tr" data-rec="new" data-cr="new|substantive">If the group is not using <a href="https://www.w3.org/2004/01/pp-impl/">IPP</a>: Does the disclosure page conform to the patent policy
 requirements?</li>
 </ul>
 </div>
@@ -1466,10 +1471,13 @@ transition-specific views.
  Last modified: $Date: 2017/05/19 18:31:14 $ by $Author: plehegar $</address>
 
  <script>
-	 function trace(msg) {
-		 if (false) // CHANGE FOR DEBUG
+	 // For debugging
+	 var trace = function () {};
+   if (window.location.href.includes("file:")) {
+     trace = function trace(msg) {
 		   console.log(msg);
-	 }
+	   };
+   }
 
 	 // each one of those config parameters are matching the ones in the select/input elements
 	 var config = {
