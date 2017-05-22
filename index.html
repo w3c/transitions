@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,12 +125,12 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
  <ul>
    <li style="display: none"><a href="#sotd">Status</a>  &bull;</li>
    <li><a href="#steps">Steps</a>  &bull;</li>
-   <li data-docstatus="fp-wd-tr|cr-tr|fp-ig-note-tr|fp-wg-note-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|subtantive" data-notehistory="notchartered|first"><a href="#transreq">Transition Request</a> &bull;</li>
-   <li data-docstatus="cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-rec="new" data-cr="new|subtantive"><a href="#dir-mtg">Meeting</a> &bull;</li>
+   <li data-docstatus="fp-wd-tr|cr-tr|fp-ig-note-tr|fp-wg-note-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="notchartered|first"><a href="#transreq">Transition Request</a> &bull;</li>
+   <li data-docstatus="cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-rec="new" data-cr="new|substantive"><a href="#dir-mtg">Meeting</a> &bull;</li>
    <li data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr" data-echidna="false"><a href="#pubreq">Publication Request</a> &bull;</li>
    <li data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr" data-echidna="false"><a href="#pubreq">Scheduling</a> &bull;</li>
    <li data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|recommendation|obsolete-rec-tr|rescind-rec-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr"><a href="#publication">Publication</a> &bull;</li>
-   <li data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|subtantive" data-notehistory="first|none"><a href="#trans-annc">Announcement</a></li>
+   <li data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="first|none"><a href="#trans-annc">Announcement</a></li>
  </ul>
 </div>
 
@@ -169,8 +168,8 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
       <form method="get" action="https://www.w3.org/2005/08/transition2017">
          <p>
             Select your steps <label><a href="https://www.w3.org/Consortium/Process/tr">transition steps</a> to</label>: 
-         <select id="docstatus" onchange="changeDocStatus()">
-					 <!-- @@ Mozilla Firefox  doesn't understand the label attribute ?!? -->
+         <select id="docstatus" name="docstatus">
+					 <!-- @@ Mozilla Firefox  doesn't understand the label attribute ?!? so keeping the option element text content :( -->
                <option selected="selected" value="ord-wd-tr" label="Ordinary Working Draft" data-status="Working Draft">Ordinary Working Draft</option>
                <option value="fp-wd-tr" label="First Public Working Draft" data-status="Working Draft">First Public Working Draft</option>
                <option value="ord-wg-note-tr" label="Ordinary Working Group Note" data-status="Working Group Note">Ordinary Working Group Note</option>
@@ -188,54 +187,54 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
          </p>
          <ul style="margin-left: 3em" data-docstatus="ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr">
             <li style="list-style: none">
-               <input type="radio" id="echidna-false" name="echidna" value="false" checked="checked" onchange="changeEchidna(false);"/>
+               <input type="radio" id="echidna-false" name="echidna" value="false" checked="checked"/>
                <label for="echidna-false">With a publication request to webreq@w3.org</label>
             </li>
             <li style="list-style: none">
-               <input type="radio" id="echidna-true" name="echidna" value="true" onchange="changeEchidna(true);"/>
+               <input type="radio" id="echidna-true" name="echidna" value="true"/>
                <label for="echidna-true">With the <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>
                </label>
             </li>
          </ul>
          <ul style="margin-left: 3em" data-docstatus="cr-tr">
             <li style="list-style: none">
-               <input type="radio" id="cr-new" name="cr" value="new" checked="checked" onchange="changeCR('new');"/>
+               <input type="radio" id="cr-new" name="cr" value="new" checked="checked"/>
                <label for="cr-new">Previously published as a Working Draft or returning to Candidate Recommendation</label>
             </li>
             <li style="list-style: none">
-               <input type="radio" id="cr-editorial" name="cr" value="editorial" onchange="changeCR('editorial');"/>
+               <input type="radio" id="cr-editorial" name="cr" value="editorial"/>
                <label for="cr-editorial">Updating an existing Candidate Recommendation with only editorial changes</label>
             </li>
             <li style="list-style: none">
-               <input type="radio" id="cr-substantive" name="cr" value="substantive" onchange="changeCR('substantive');"/>
+               <input type="radio" id="cr-substantive" name="cr" value="substantive"/>
                <label for="cr-substantive">Updating an existing Candidate Recommendation with substantive changes</label>
             </li>
          </ul>
          <ul style="margin-left: 3em" data-docstatus="recommendation">
             <li style="list-style: none">
-               <input type="radio" id="rec-new" name="rec" value="new" checked="checked" onchange="changeREC('new');"/>
+               <input type="radio" id="rec-new" name="rec" value="new" checked="checked"/>
                <label for="rec-new">Previously published as a Proposed Recommendation</label>
             </li>
             <li style="list-style: none">
-               <input type="radio" id="rec-editorial" name="rec" value="editorial" onchange="changeREC('editorial');"/>
+               <input type="radio" id="rec-editorial" name="rec" value="editorial"/>
                <label for="rec-editorial">Updating an existing Recommendation with only editorial changes</label>
             </li>
          </ul>
          <ul style="margin-left: 3em"  data-docstatus="fp-wg-note-tr|fp-ig-note-tr">
             <li style="list-style: none">
-               <input type="radio" id="notehistory-first" name="notehistory" value="first" checked="checked" onchange="changeNoteHistory('first');"/>
+               <input type="radio" id="notehistory-first" name="notehistory" value="first" checked="checked"/>
                <label for="notehistory-first">Chartered to be a group Note, never before published, group not closing</label>
             </li>
             <li style="list-style: none">
-               <input type="radio" id="notehistory-none" name="notehistory" value="none" onchange="changeNoteHistory('none');"/>
+               <input type="radio" id="notehistory-none" name="notehistory" value="none"/>
                <label for="notehistory-none">Chartered to be a group Note and previously published as a Working Draft, group not closing</label>
             </li>
             <li style="list-style: none">
-               <input type="radio" id="notehistory-notchartered" name="notehistory" value="notchartered" onchange="changeNoteHistory('notchartered');"/>
+               <input type="radio" id="notehistory-notchartered" name="notehistory" value="notchartered"/>
                <label for="notehistory-notchartered">Not chartered to be a group Note, group not closing</label>
             </li>
             <li style="list-style: none">
-               <input type="radio" id="notehistory-closure" name="notehistory" value="closure" onchange="changeNoteHistory('closure');"/>
+               <input type="radio" id="notehistory-closure" name="notehistory" value="closure"/>
                <label for="notehistory-closure">Publication as a group Note since group closing</label>
             </li>
          </ul>
@@ -263,7 +262,7 @@ interactions with the W3C Communications Team.</p>
 </p>
 
 <p>
-<span data-docstatus="fp-wd-tr|cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|subtantive" data-cr="substantive">
+<span data-docstatus="fp-wd-tr|cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-cr="substantive">
 Once the Process Document <a
 id="reqs-adv">requirements for the transition to
 <span class="label-name">LABEL</span></a> have been satisfied
@@ -1467,60 +1466,53 @@ transition-specific views.
  Last modified: $Date: 2017/05/19 18:31:14 $ by $Author: plehegar $</address>
 
  <script>
+	 function trace(msg) {
+		 if (false) // CHANGE FOR DEBUG
+		   console.log(msg);
+	 }
+
+	 // each one of those config parameters are matching the ones in the select/input elements
 	 var config = {
 		 docstatus: "ord-wd-tr",
 		 cr: "new", rec: "new",
 		 notehistory: "first",
-		 echidna: false
-	 }	 
-  function updateStatus() {
-		 var option = document.getElementById("docstatus").querySelector("option[value=" + config.docstatus + "]");
-		 config.status = option.getAttribute("data-status");
-		 config.label = option.label;
-		 if (config.status === "" || config.status === null) config.status=config.label;
-		 console.log("Switched to " + config.label + " --  (" + config.status + ")");
-	}
-   function changeDocStatus() {
-		 config.docstatus = document.getElementById("docstatus").value;
-		 console.log("Switching to " + config.docstatus);
-   	 if (config.docstatus === "cr-tr") {
-			 config.cr = "new";
-			 document.getElementById("cr-" + config.cr).checked = true;
-		 } else if (config.docstatus === "recommendation") {
-			 config.rec = "new";
-			 document.getElementById("rec-" + config.rec).checked = true;
-		 } else if (config.docstatus.includes === "note-tr" && config.docstatus.includes === "fp-") {
-			 config.notehistory = "first";
-			 document.getElementById("notehistory-" + config.notehistory).checked = true;
+		 echidna: "false"
+	 }
+
+   // State and browser history handling
+
+   // browser history status push
+	 function onpushstate() {
+		 var query = "?docstatus=" + config.docstatus;
+		 // this query setup is more cumbersome to favor clean/reduced url parameters
+    	 if (config.docstatus === "cr-tr") {
+		    query += "&cr=" + config.cr;
+  	 } else if (config.docstatus === "recommendation") {
+		    query += "&rec=" + config.rec;
+  	 } else if (config.docstatus.includes("note-tr") && config.docstatus.includes("fp-")) {
+		    query += "&notehistory=" + config.notehistory;
+  	 }
+		  if (config.echidna === "true" &&
+		     config.docstatus.includes("ord")) {
+			  query += "&echidna=" + config.echidna;
 		 }
-		 config.echidna = "false";
-		 document.getElementById("echidna-" + config.echidna).checked = true;
-		 updateStatus();
 		 updateTree();
-   }
-   function changeEchidna(newval) {
-		 config.echidna = newval;
-		 console.log("Switching to echidna " + config.echidna);
-		 updateTree();
-   }
-   function changeNoteHistory(newval) {
-		 config.notehistory = newval;
-		 console.log("Switching to notehistory " + config.notehistory);
-		 updateTree();
-   }
-   function changeCR(newval) {
-		 config.cr = newval;
-		 console.log("Switching to CR " + config.cr);
-		 updateTree();
+      window.history.pushState(config, config.label, window.location.href.split('?')[0] + query);
+		 trace("pushed " +window.location.href);
    }
 
-   function changeREC(newval) {
-		 config.rec = newval;
-		 console.log("Switching to REC " + config.rec);
+   // browser back and forward buttons
+   window.onpopstate = function (e) {
+		 config = e.state;
+		 adjustForms();
 		 updateTree();
+		 trace("popped " +window.location.href);
    }
+
+   // Element matching according to its attrubtes and the current config
 
 	 function titleMatch(node) {
+		 // @@ using includes instead of parsing | values
 		 var doesMatch = true;
 		 if (node.dataset.docstatus !== undefined) {
 			 doesMatch = doesMatch && node.dataset.docstatus.includes(config.docstatus);
@@ -1541,9 +1533,11 @@ transition-specific views.
 			 }
 		 }
 		 if (doesMatch && node.dataset.echidna !== undefined)
-		   doesMatch = doesMatch && node.dataset.echidna.includes(config.echidna);// @@type conversion bool -> string
+		   doesMatch = doesMatch && node.dataset.echidna.includes(config.echidna);
    	 return doesMatch;
 	 }
+
+	 // create the walker, limiting its walk to relevant elements
 	 var walker = document.createTreeWalker(document.documentElement,
 	     NodeFilter.SHOW_ELEMENT, function (next) {
 				if (next.hasAttribute("data-docstatus") || next.classList.contains("status-name") || next.classList.contains("label-name")) {
@@ -1551,19 +1545,31 @@ transition-specific views.
 				}
 				return NodeFilter.FILTER_SKIP;
 			 });
-	 // precompute the different attributes
+
+   // Initial walk of the tree to save or prepare the future walks
    var next = walker.nextNode();
 	 while (next != null) {
-		  next.dataset.display = next.style.display;
+      // save the current display property values for the walked elements
+		  if (next.hasAttribute("data-docstatus")) {
+				next.dataset.display = next.style.display;
+			}
 		  next = walker.nextNode();
 	 }
 
-	 var activated = false;
+   // Flip the display of the elements and their contents depending on the config
 	 function updateTree() {
-		 if (!activated) return; // don't do anything during the init
+
+     // compute status and label name for the current docstatus
+		 var option = document.getElementById("docstatus").querySelector("option[value=" + config.docstatus + "]");
+		 var status = option.getAttribute("data-status");
+		 var label = option.label;
+		 if (status === "" || status === null) status=label; 
+
 		 walker.currentNode = walker.root; // reset the tree walk
 	   var count = 0;
 	   var next = walker.nextNode();
+
+     // the main refresh loop
 	   while (next != null) {
 	  	 if (next.dataset.docstatus !== undefined) {
     	 	 if (!titleMatch(next)) {
@@ -1574,15 +1580,30 @@ transition-specific views.
 	   	 }
 		 
 	  	 if (next.classList.contains("status-name")) {
-	  		 next.textContent = config.status;
+	  		 next.textContent = status;
 	  	 }
 	  	 if (next.classList.contains("label-name")) {
-	  		 next.textContent = config.label;
+	  		 next.textContent = label;
 	  	 }
 	  	 next = walker.nextNode();
 		 }
-		 console.log("We eliminated " + count + " elements.");
+		 trace("  Eliminated " + count + " elements.");
 	 }
+
+  function adjustForms() {
+		// adjust the HTML forms according to the config
+		trace("adjustForms for " + JSON.stringify(config));
+    for (var key in config) {
+  		var input;
+    	if (key === "docstatus") {
+  		  input = document.getElementById("docstatus").querySelector("option[value=" + config.docstatus + "]");
+				input.selected = true;
+  		} else {
+  			input = document.getElementById(key + "-" + config[key]);
+				input.checked = true;
+  		}
+  	}
+	}
 
 	 // initialization
 	 
@@ -1598,41 +1619,32 @@ transition-specific views.
   }
   var init  = getJsonFromUrl();
 
+  for (var key in init) {
+		var input;
+  	if (key === "docstatus") {
+		  input = document.getElementById("docstatus").querySelector("option[value=" + init.docstatus + "]");
+		} else {
+			input = document.getElementById(key + "-" + init[key]);
+		}
+	  if (input !== null) {
+		    config[key] = init[key];
+	  }
+	}
+  adjustForms();
 
-	if (init.docstatus !== undefined) {
-	 document.getElementById("docstatus").querySelector("option[value=" + init.docstatus + "]").selected = true;
-	 changeDocStatus();
-	} else {
-	  document.getElementById("docstatus").querySelector("option[value=" + config.docstatus + "]").selected = true;
-		updateStatus();
-	}
-	if (init.echidna !== undefined && init.echidna === "true") {
-			document.getElementById("echidna-true").checked = true;
-			changeEchidna(true);
-	} else {
-			document.getElementById("echidna-" + config.echidna).checked = true;
-	}
-	if (init.cr !== undefined) {
-  	document.getElementById("cr-" + init.cr).checked = true;
-		changeCR(init.cr);
-	} else {
-		document.getElementById("cr-" + config.cr).checked = true;
-	}
-	if (init.rec !== undefined) {
-  	document.getElementById("rec-" + init.rec).checked = true;
-		changeREC(init.rec);
-	} else {
-		document.getElementById("rec-" + config.rec).checked = true;
-	}
-	if (init.notehistory !== undefined) {
-  	document.getElementById("notehistory-" + init.notehistory).checked = true;
-		changeNoteHistory(init.notehistory);
-	} else {
-		document.getElementById("notehistory-" + config.notehistory).checked = true;
-	}
-  activated = true;
+	// set up the event handlers
+  function changeInput(e) {
+		trace("changeInput for " + e.target.name + " = " + e.target.value);
+ 	  config[e.target.name] = e.target.value;
+		onpushstate();
+  }
+	document.getElementById("docstatus").onchange = changeInput;
+  var nodes = document.querySelectorAll("input");
+	for (var i = 0; i < nodes.length; i++)
+	  nodes[i].onchange=changeInput;
+
 	updateTree();
-</script>
+  trace("restored " + window.location.href);</script>
 
 </body>
 </html>
