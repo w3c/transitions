@@ -182,19 +182,23 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
             Select your steps <label><a href="https://www.w3.org/Consortium/Process/tr">transition steps</a> to</label>: 
          <select id="profile" name="profile">
 					 <!-- @@ Mozilla Firefox  doesn't understand the label attribute ?!? so keeping the option element text content :( -->
-               <option selected="selected" value="WD" label="Ordinary Working Draft" data-status="Working Draft">Ordinary Working Draft</option>
+					   <optgroup label="Recommendations">
                <option value="FPWD" label="First Public Working Draft" data-status="Working Draft">First Public Working Draft</option>
-               <option value="WG-NOTE" label="Ordinary Working Group Note" data-status="Working Group Note">Ordinary Working Group Note</option>
-               <option value="IG-NOTE" label="Ordinary Interest Group Note" data-status="Interest Group Note">Ordinary Interest Group Note</option>
-               <option value="FPWG-NOTE" label="First Public Working Group Note" data-status="Working Group Note">First Public Working Group Note</option>
-               <option value="FPIG-NOTE" label="First Public Interest Group Note" data-status="Interest Group Note">First Public Interest Group Note</option>
+               <option selected="selected" value="WD" label="Working Draft">Working Draft</option>
                <option value="CR" label="Candidate Recommendation">Candidate Recommendation</option>
                <option value="PR" label="Proposed Recommendation">Proposed Recommendation</option>
                <option value="REC" label="Recommendation">Recommendation</option>
-               <option value="PR-OBSL" label="Proposed Obsolete Recommendation">Proposed Obsolete Recommendation</option>
                <option value="PR-RSCND" label="Proposed Rescinded Recommendation">Proposed Rescinded Recommendation</option>
-               <option value="OBSL" label="Obsolete Recommendation">Obsolete Recommendation</option>
+               <option value="PR-OBSL" label="Proposed Obsolete Recommendation">Proposed Obsolete Recommendation</option>
                <option value="RSCND" label="Rescinded Recommendation">Rescinded Recommendation</option>
+               <option value="OBSL" label="Obsolete Recommendation">Obsolete Recommendation</option>
+					   </optgroup>
+					   <optgroup label="Notes">
+               <option value="WG-NOTE" label="Working Group Note">Working Group Note</option>
+               <option value="IG-NOTE" label="Interest Group Note">Interest Group Note</option>
+               <option value="FPWG-NOTE" label="First Public Working Group Note" data-status="Working Group Note">First Public Working Group Note</option>
+               <option value="FPIG-NOTE" label="First Public Interest Group Note" data-status="Interest Group Note">First Public Interest Group Note</option>
+					   </optgroup>
          </select>
          </p>
          <ul id='echidna-selection' style="margin-left: 3em" data-profile="WD|WG-NOTE|IG-NOTE">
