@@ -6,6 +6,10 @@
   <link rel="stylesheet" href="https://www.w3.org/StyleSheets/generic-base-1.css" type="text/css"/>
   <link rel="stylesheet" type="text/css" href="https://www.w3.org/Guide/guide2006.css" />
   <link rel="shortcut icon" href="https://www.w3.org/Icons/WWW/Literature.gif" />
+
+<!-- Go to the bottom of this document for help in editing it -->
+
+
   <style type="text/css">
     form {  background: #eee5de; color: black; border: thin black solid; padding: .5em }
     /******************************************************************************/
@@ -104,8 +108,14 @@
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
 	}
-
   </style>
+	<style>
+		/*for the SVG - navigation highlighting */
+
+     :focus path, :focus polygon, :focus ellipse { stroke-width: 4}
+     g g:hover path, g g:hover polygon, g g:hover ellipse { stroke-width: 4}
+     :focus text, g g:hover text { stroke: black; stroke-width: .5}
+		</style>
 </head>
 <body>
 <div id="header">
@@ -120,6 +130,7 @@ Consensus</a> &#x2192;
 wisdom of the W3C Group Chairs and other collaborators.</p>
 </div>
 
+<!--
 <div class="toc">
  <h4>Also On This Page &#x2192;</h4>
  <ul>
@@ -133,6 +144,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
    <li data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="first|none"><a href="#trans-annc">Announcement</a></li>
  </ul>
 </div>
+-->
 
 <div class="toolbox box" style="margin-bottom: 1em">
 <h4>Publication Policies</h4>
@@ -185,7 +197,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
                <option value="rescind-rec-tr" label="Rescinded Recommendation">Rescinded Recommendation</option>
          </select>
          </p>
-         <ul style="margin-left: 3em" data-docstatus="ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr">
+         <ul id='echidna-selection" style="margin-left: 3em" data-docstatus="ord-wd-tr|ord-wg-note-tr|ord-ig-note-tr">
             <li style="list-style: none">
                <input type="radio" id="echidna-false" name="echidna" value="false" checked="checked"/>
                <label for="echidna-false">With a publication request to webreq@w3.org</label>
@@ -194,6 +206,17 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
                <input type="radio" id="echidna-true" name="echidna" value="true"/>
                <label for="echidna-true">With the <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>
                </label>
+            </li>
+         </ul>
+         <ul style="margin-left: 3em" data-docstatus="fp-wd-tr">
+            <li style="list-style: none">
+               <input type="radio" id="patentpolicy-true" name="patentpolicy" value="true" checked="checked"/>
+               <label for="patentpolicy-true">Intended to become a normative Recommendation
+               </label>
+            </li>
+            <li style="list-style: none">
+               <input type="radio" id="patentpolicy-false" name="patentpolicy" value="false"/>
+               <label for="patentpolicy-false">Not intended to become a normative Recommendation</label>
             </li>
          </ul>
          <ul style="margin-left: 3em" data-docstatus="cr-tr">
@@ -251,7 +274,8 @@ href="https://www.w3.org/2005/08/01-transitions-about">companion document</a> pr
 more information about roles involved in these processes and
 interactions with the W3C Communications Team.</p>
 
-<div data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="new|editorial|substantive">
+
+<div data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|ord-wg-note-tr|ord-ig-note-tr|fp-wg-note-tr|fp-ig-note-tr|recommendation|obsolete-rec-tr|rescind-rec-tr">
 
 <h2 id="steps">Steps for
 <span data-docstatus="fp-wd-tr|cr-tr|pr-tr|probsolete-tr|prrescind-tr|fp-wg-note-tr|fp-ig-note-tr|recommendation|obsolete-rec-tr|rescind-rec-tr" data-cr="substantive">Transition to</span>
@@ -577,11 +601,6 @@ Communications Team announces that to w3c-ac-members@w3.org and chairs@w3.org.</
 </dd>
 </dl>
 
-<p class="exclusion-annc" data-docstatus="fp-wd-tr|cr-tr" data-cr="new|substantive"><strong>Note:</strong> After announcement of a
-<span data-docstatus="fp-wd-tr">First Public Working Draft</span>
-<span data-docstatus="cr-tr" data-cr="new|substantive">Candidate Recommendation</span> the W3C Communications Team issues a <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">Call for Exclusions</a> in accordance with the
-<a href="https://www.w3.org/Consortium/Patent-Policy-20040205/">W3C Patent Policy</a>. See also the <a href="https://www.w3.org/wiki/ProcessTransition2016">2017 Process Transition FAQ</a>.</p>
-
 <p data-docstatus="ord-wg-note-tr|ord-ig-note-tr">
 <strong>Note:</strong> Instructions for publication of
 an Ordinary
@@ -664,11 +683,10 @@ publication date</a>.</li>
 by reference (e.g., the URI to the document) or direct inclusion.
 </li>
 
-<li data-docstatus="fp-wd-tr">
+<li data-docstatus="fp-wd-tr" data-patentpolicy="true">
 A statement whether or not the group considers the document to be
 a <a href="https://www.w3.org/pubrules/doc#delta">delta specification</a>.
-This statement is only required for documents expected to become
-normative Recommendations under the W3C Patent Policy.</li>
+</li>
 </ol>
 </div>
 <div class="transreq-section2" data-docstatus="probsolete-tr|prrescind-tr">
@@ -1440,17 +1458,45 @@ transition announcement.</li>
 
 <li data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr" data-notehistory="first|notchartered|none">A reference to the group's transition request.</li>
 </ol>
+</div>
+<div data-docstatus="fp-wd-tr|cr-tr" data-cr="new|substantive" data-patentpolicy="true">
+<h2 id="call-for-exclusions">Call for Exclusions</h2>
 
-<p class="fpwd-exclusions" data-docstatus="fp-wd-tr">
-<strong>Note:</strong> The First Public Working Draft is
-significant with respect to the W3C Patent Policy. As explained in the
-<a
-href="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">Patent
-Policy FAQ</a>, the Communications Team issues a Call for Exclusions
-(see <a
-href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">
-section 4 of the W3C Patent Policy</a>) approximately ninety days
-after the publication of this draft.</p>
+ <p>The <a href="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">Patent Policy FAQ</a> clarifies
+ when  <a
+href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">Call for Exclusions</a> are sent
+out.</p>
+
+<blockquote  data-docstatus="fp-wd-tr" data-patentpolicy="true" cite="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">
+<p>
+A Working Group under the W3C Patent Policy publishes a <span class='label-name'>LABEL</span> that is intended to
+become a W3C Recommendation. The Team sends a <a
+href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">Call for Exclusion</a> to
+participants. The exclusion opportunity lasts 150 days. At approximately 90 days, the Team sends out a
+reminder with a pointer to the "Reference Draft", i.e., the latest draft available at that time. Exclusions are
+with respect to the set of features in the Reference Draft.
+</p>
+</blockquote>
+
+<blockquote  data-docstatus="cr-tr" data-cr="new" cite="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">
+<p>
+	A Working Group under the W3C Patent Policy publishes a <span class='status-name'>STATUS</span>.
+	The Team sends the second <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">exclusion opportunity</a>.
+	The exclusion opportunity lasts 60 days. Any exclusions are with respect
+	to new features in the <span class='status-name'>STATUS</span> added since the exclusion
+	opportunity of the First Public Working Draft.
+</p>
+</blockquote>
+
+<blockquote  data-docstatus="cr-tr" data-cr="substantive" cite="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">
+<p>
+The Working Group changes the document substantially after <span class='status-name'>STATUS</span> and published a
+new <span class='status-name'>STATUS</span>. The Team sends a new <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">exclusion opportunity</a>. It lasts 60
+days. Exclusions are with respect to new features in the specification since the previous exclusion
+opportunity, i.e., the previous <span class='label-name'>LABEL</span>.
+</p>
+</blockquote>
+
 </div>
 
 </div>
@@ -1460,15 +1506,13 @@ after the publication of this draft.</p>
 <address>Page owned and process managed by
 Philippe Le Hégaret and Ralph Swick on behalf of the W3C Director.<br />
  <a href="https://www.w3.org/People/LeHegaret/">Philippe Le H&eacute;garet</a>, editor<br />
- This document has been constructed by merging information from
-several "How to" documents created by Dan Connolly, Al Gilman, and
-others. A filter is applied to
-the <a href="https://www.w3.org/2005/08/01-transitions2017.html">document source</a> to provide
-transition-specific views.
-<br />
- Last modified: $Date: 2017/05/19 18:31:14 $ by $Author: plehegar $</address>
+ This document has been constructed by merging information from several "How to" documents created by Dan Connolly, Al Gilman, Ian Jacobs, and
+others.<br />
+This document is maintained on <a href='https://github.com/w3c/transitions/'>GitHub</a>. <a href="https://github.com/w3c/transitions/issues">Issues</a> are welcome.
+</address>
 
  <script>
+(function() {
 	 // For debugging
 	 var trace = function () {};
    if (window.location.href.includes("file:")) {
@@ -1482,6 +1526,7 @@ transition-specific views.
 		 docstatus: "ord-wd-tr",
 		 cr: "new", rec: "new",
 		 notehistory: "first",
+		 patentpolicy: "true",
 		 echidna: "false"
 	 }
 
@@ -1490,20 +1535,23 @@ transition-specific views.
    // browser history status push
 	 function onpushstate() {
 		 var query = "?docstatus=" + config.docstatus;
-		 // this query setup is more cumbersome to favor clean/reduced url parameters
-    	 if (config.docstatus === "cr-tr") {
+		 // this query setup is more cumbersome but it favors clean/reduced url query
+   	 if (config.docstatus === "cr-tr") {
 		    query += "&cr=" + config.cr;
   	 } else if (config.docstatus === "recommendation") {
 		    query += "&rec=" + config.rec;
+  	 } else if (config.patentpolicy === "false" &&
+		            config.docstatus === "fp-wd-tr") {
+		    query += "&patentpolicy=" + config.patentpolicy;
   	 } else if (config.docstatus.includes("note-tr") && config.docstatus.includes("fp-")) {
 		    query += "&notehistory=" + config.notehistory;
   	 }
 		  if (config.echidna === "true" &&
-		     config.docstatus.includes("ord")) {
+		      config.docstatus.includes("ord")) {
 			  query += "&echidna=" + config.echidna;
 		 }
 		 updateTree();
-      window.history.pushState(config, config.label, window.location.href.split('?')[0] + query);
+      window.history.pushState(config, config.label, query);
 		 trace("pushed " +window.location.href);
    }
 
@@ -1531,6 +1579,10 @@ transition-specific views.
 					 if (node.dataset.rec !== undefined) {
 				     doesMatch = doesMatch && node.dataset.rec.includes(config.rec);
 					 }
+				 } else if (config.docstatus === "fp-wd-tr") {
+					 if (node.dataset.patentpolicy !== undefined) {
+				     doesMatch = doesMatch && node.dataset.patentpolicy.includes(config.patentpolicy);
+					 }
 				 } else if (config.docstatus.includes("note-tr") && config.docstatus.includes("fp-")) {
 		       if (node.dataset.notehistory !== undefined) {
 		         doesMatch = doesMatch && node.dataset.notehistory.includes(config.notehistory);
@@ -1538,7 +1590,7 @@ transition-specific views.
 				 }
 			 }
 		 }
-		 if (doesMatch && node.dataset.echidna !== undefined)
+		 if (doesMatch && config.docstatus.includes("ord") && node.dataset.echidna !== undefined)
 		   doesMatch = doesMatch && node.dataset.echidna.includes(config.echidna);
    	 return doesMatch;
 	 }
@@ -1557,7 +1609,7 @@ transition-specific views.
 	 while (next != null) {
       // save the current display property values for the walked elements
 		  if (next.hasAttribute("data-docstatus")) {
-				next.dataset.display = next.style.display;
+				next.dataset.display = window.getComputedStyle(next,null).getPropertyValue("display");
 			}
 		  next = walker.nextNode();
 	 }
@@ -1600,7 +1652,7 @@ transition-specific views.
 		// adjust the HTML forms according to the config
 		trace("adjustForms for " + JSON.stringify(config));
     for (var key in config) {
-  		var input;
+  		var input = null;
     	if (key === "docstatus") {
   		  input = document.getElementById("docstatus").querySelector("option[value=" + config.docstatus + "]");
 				input.selected = true;
@@ -1650,7 +1702,50 @@ transition-specific views.
 	  nodes[i].onchange=changeInput;
 
 	updateTree();
-  trace("restored " + window.location.href);</script>
+  trace("restored " + window.location.href);
+})();
+	</script>
+<!--
 
+HTML elements are turned on or off by scripting using data attributes.
+
+So far, we have the following data attributes:
+1. data-docstatus for a |-separated list of docstatus
+2. data-rec for a |-separated list of REC paths
+3. data-cr for a |-separated list of CR paths
+3. data-patentpolicy for a |-separated list of FPWD paths
+4. data-notehistory for a |-separated list of first [working|interest] group note paths
+
+e.g.
+<div data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr|cr-tr|pr-tr|recommendation|probsolete-tr|prrescind-tr|obsolete-rec-tr|rescind-rec-tr" data-cr="new|substantive" data-notehistory="first">
+
+To find the possible values for each data attributes, look at the HTML option and input elements.
+
+If a data attribute is not present, it means the element will get displayed for all states
+of that attribute. eg to display an element for all types of Recommendations, use data-docstatus="rec"
+and don't use the data-rec attribute on that element.'
+
+If data attributes are used, one of them must be data-docstatus, otherwise the other data
+attributes will be ignored.
+
+To add or remove a document status, one must:
+
+1. remove or add the status in the HTML option elements (id="docstatus")
+2. add or remove HTML input elements if applicable
+3. Update the data-docstatus attributes
+4. If HTML input elements were added or removed:
+  a- update the corresponding data- attributes
+  b- update the config object near the top of the script
+  c- update the JS functions onpushstate (URL) and titleMatch (attribute matching)
+
+For echidna updates:
+1. Update data-docstatus on the ul element with id='echidna-selection"
+2. Update the data-echidna as needed (you're likely to add data-echidna="false"')
+3- Update the JS functions onpushstate (URL) and titleMatch (attribute matching) for echidna inclusion with the docstatus
+
+Originally based on
+ https://services.w3.org/xslt?xmlfile=https://www.w3.org/2005/08/01-transitions2017.html&xslfile=https://www.w3.org/2005/08/transitions2017.xsl
+
+	-->
 </body>
 </html>
