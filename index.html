@@ -136,12 +136,12 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
  <ul>
    <li style="display: none"><a href="#sotd">Status</a>  &bull;</li>
    <li><a href="#steps">Steps</a>  &bull;</li>
-   <li data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first"><a href="#transreq">Transition Request</a> &bull;</li>
-   <li data-profile="CR|PR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-rec="new" data-cr="new|substantive"><a href="#dir-mtg">Meeting</a> &bull;</li>
+   <li data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first"><a href="#transreq">Transition Request</a> &bull;</li>
+   <li data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-rec="new" data-cr="new|substantive"><a href="#dir-mtg">Meeting</a> &bull;</li>
    <li data-profile="WD|FPWD|CR|PR|REC|OBSL|RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-echidna="false"><a href="#pubreq">Publication Request</a> &bull;</li>
    <li data-profile="WD|FPWD|CR|PR|REC|OBSL|RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-echidna="false"><a href="#pubreq">Scheduling</a> &bull;</li>
    <li data-profile="WD|FPWD|CR|PR|REC|OBSL|RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE"><a href="#publication">Publication</a> &bull;</li>
-   <li data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|probsolete-tr|prrescind-tr|REC|OBSL|RSCND" data-cr="new|substantive" data-notehistory="first|none"><a href="#trans-annc">Announcement</a></li>
+   <li data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive" data-notehistory="first|none"><a href="#trans-annc">Announcement</a></li>
  </ul>
 </div>
 -->
@@ -191,32 +191,24 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
                <option value="CR" label="Candidate Recommendation">Candidate Recommendation</option>
                <option value="PR" label="Proposed Recommendation">Proposed Recommendation</option>
                <option value="REC" label="Recommendation">Recommendation</option>
-               <option value="probsolete-tr" label="Proposed Obsolete Recommendation">Proposed Obsolete Recommendation</option>
-               <option value="prrescind-tr" label="Proposed Rescinded Recommendation">Proposed Rescinded Recommendation</option>
+               <option value="PR-OBSL" label="Proposed Obsolete Recommendation">Proposed Obsolete Recommendation</option>
+               <option value="PR-RSCND" label="Proposed Rescinded Recommendation">Proposed Rescinded Recommendation</option>
                <option value="OBSL" label="Obsolete Recommendation">Obsolete Recommendation</option>
                <option value="RSCND" label="Rescinded Recommendation">Rescinded Recommendation</option>
          </select>
          </p>
          <ul id='echidna-selection' style="margin-left: 3em" data-profile="WD|WG-NOTE|IG-NOTE">
             <li style="list-style: none">
-               <input type="radio" id="echidna-false" name="echidna" value="false" checked="checked"/>
-               <label for="echidna-false">With a publication request to webreq@w3.org</label>
-            </li>
-            <li style="list-style: none">
-               <input type="radio" id="echidna-true" name="echidna" value="true"/>
-               <label for="echidna-true">With the <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>
+               <input type="checkbox" id="echidna-checkbox" name="echidna-checkbox"/>
+               <label for="echidna-checkbox">With the <a href="https://github.com/w3c/echidna/wiki">W3C automatic publishing system</a>
                </label>
             </li>
          </ul>
          <ul style="margin-left: 3em" data-profile="FPWD|WD">
             <li style="list-style: none">
-               <input type="radio" id="informativeOnly-false" name="informativeOnly" value="false" checked="checked"/>
-               <label for="informativeOnly-false">Intended to become a normative Recommendation
+               <input type="checkbox" id="informativeOnly-checkbox" name="informativeOnly-checkbox" />
+               <label for="informativeOnly-checkbox">Not intended to become a normative Recommendation
                </label>
-            </li>
-            <li style="list-style: none">
-               <input type="radio" id="informativeOnly-true" name="informativeOnly" value="true"/>
-               <label for="informativeOnly-true">Not intended to become a normative Recommendation</label>
             </li>
          </ul>
          <ul style="margin-left: 3em" data-profile="CR">
@@ -275,10 +267,10 @@ more information about roles involved in these processes and
 interactions with the W3C Communications Team.</p>
 
 
-<div data-profile="WD|FPWD|CR|PR|probsolete-tr|prrescind-tr|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND">
+<div data-profile="WD|FPWD|CR|PR|PR-OBSL|PR-RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND">
 
 <h2 id="steps">Steps for
-<span data-profile="FPWD|CR|PR|probsolete-tr|prrescind-tr|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="substantive">Transition to</span>
+<span data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="substantive">Transition to</span>
 <span data-profile="WD|WG-NOTE|IG-NOTE">Publication of an</span>
 <span data-profile="CR" data-cr="editorial">Publication of a</span>
 <span class="label-name">LABEL</span>
@@ -289,7 +281,7 @@ interactions with the W3C Communications Team.</p>
 </p>
 
 <p>
-<span data-profile="FPWD|CR|PR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-cr="new|substantive" data-cr="substantive">
+<span data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive" data-cr="substantive">
 Once the Process Document <a
 id="reqs-adv">requirements for the transition to
 <span class="label-name">LABEL</span></a> have been satisfied
@@ -311,7 +303,7 @@ id="reqs-adv">requirements for the transition to
   or <a
       href="https://www.w3.org/2017/Process-20170301/#rec-rescind">section 6.9</a> for restoring a <em>Recommendation</em></span>
 
-<span class="procdocsection" data-profile="probsolete-tr|prrescind-tr"><a
+<span class="procdocsection" data-profile="PR-OBSL|PR-RSCND"><a
       href="https://www.w3.org/2017/Process-20170301/#proposed-rescinded-rec">section 6.9</a></span>
 
 <span class="procdocsection" data-profile="obsolete|RSCND"><a
@@ -383,16 +375,16 @@ groups where there are dependencies.</li>
 </ul>
 </dd>
 
-<dt data-profile="FPWD|CR|PR|probsolete-tr|prrescind-tr|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first">Transition request</dt>
-<dd data-profile="FPWD|CR|PR|probsolete-tr|prrescind-tr|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first">
+<dt data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first">Transition request</dt>
+<dd data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first">
 <ul>
-<li id="obs-webreqmail" data-profile="probsolete-tr|prrescind-tr" data-notehistory="notchartered|first">If an individual made a request to the relevant Working Group, or the <a href="https://github.com/w3ctag/obsoletion">TAG</a> if such a group does not exist, to <span data-profile="probsolete-tr">obsolete</span><span data-profile="prrescind-tr">rescind</span> a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
+<li id="obs-webreqmail" data-profile="PR-OBSL|PR-RSCND" data-notehistory="notchartered|first">If an individual made a request to the relevant Working Group, or the <a href="https://github.com/w3ctag/obsoletion">TAG</a> if such a group does not exist, to <span data-profile="PR-OBSL">obsolete</span><span data-profile="PR-RSCND">rescind</span> a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
 <li id="edrec-webreqmail" data-profile="REC" data-rec="editorial">If an individual made a request to the relevant Working Group, or the maintenance contact if such a group does not exist, to update a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
-<li id="transreqmail" class="transitionreq" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|probsolete-tr|prrescind-tr|REC|OBSL|RSCND" data-rec="new" data-cr="new|substantive" data-notehistory="notchartered|first">
-<span class="transwhen" data-profile="CR|PR|probsolete-tr|prrescind-tr|REC|OBSL|RSCND" data-cr="new|substantive">At least one week prior to an expected
+<li id="transreqmail" class="transitionreq" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-rec="new" data-cr="new|substantive" data-notehistory="notchartered|first">
+<span class="transwhen" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive">At least one week prior to an expected
 decision from or <a href="#dir-mtg">meeting with the Director</a>, the</span>
 <span class="transwhen" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE" data-notehistory="notchartered|first">The</span>
-<span  class="transitionreqwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|REC|probsolete-tr|prrescind-tr" data-rec="editorial" data-cr="new|substantive" data-notehistory="notchartered|first">Chair (or Team Contact)</span><span
+<span  class="transitionreqwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial" data-cr="new|substantive" data-notehistory="notchartered|first">Chair (or Team Contact)</span><span
  class="transitionreqwho" data-profile="REC|OBSL|RSCND" data-rec="new">Team Contact</span>
 
 <span class="transwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE" data-notehistory="notchartered|first">
@@ -401,15 +393,15 @@ plh@w3.org (as Project Management Lead), cc'ing w3t-comm@w3.org and chairs@w3.or
 <strong>Note:</strong>
 For the TAG, no First Public Working Draft transition request is required; the request is assumed to be approved by the Director, who Chairs the TAG.
 </span>
-<span class="transwho" data-profile="CR|PR|probsolete-tr|prrescind-tr|REC|OBSL|RSCND" data-cr="new|substantive">
+<span class="transwho" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive">
 sends a <a href="#transreq">transition request</a> to
 the Director (and anyone working with the Director on transitions): timbl@w3.org, ralph@w3.org, cc'ing plh@w3.org,
  w3t-comm@w3.org,
-<span  class="transitionreq-ccemail" data-profile="CR|PR|probsolete-tr|prrescind-tr" data-cr="new|substantive">and chairs@w3.org</span>. We recommend explicitly addressing the expected reviewer(s) by name in the body of the message.
+<span  class="transitionreq-ccemail" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive">and chairs@w3.org</span>. We recommend explicitly addressing the expected reviewer(s) by name in the body of the message.
 </span>
 </li>
 
-<li  class="transitionmtg" data-profile="CR|PR|probsolete-tr|prrescind-tr|REC|OBSL|RSCND" data-cr="new|substantive">
+<li  class="transitionmtg" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive">
 The Team Contact <span class="rfc2119">MAY</span> need to organize a <a href="#dir-mtg">transition meeting
 with the Director</a> to discuss the request.
 <span data-profile="CR|PR" data-cr="new|substantive">
@@ -424,13 +416,13 @@ call in general.
 </span>
 </li>
 
-<li  class="transitionreq-approval" data-profile="FPWD|CR|PR|probsolete-tr|prrescind-tr|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first">
+<li  class="transitionreq-approval" data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first">
 <span class="transitionreq-approvalwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE" data-notehistory="notchartered|first">
 The Project Management Lead approve the transition request.
 The Project Management Lead <span class="rfc2119">MAY</span> ask the
 Director (or someone assigned by the Director) to take responsibility for approving the transition request.
 </span>
-<span class="transitionreq-approvalwho" data-profile="CR|PR|REC|OBSL|RSCND|probsolete-tr|prrescind-tr" data-cr="new|substantive">
+<span class="transitionreq-approvalwho" data-profile="CR|PR|REC|OBSL|RSCND|PR-OBSL|PR-RSCND" data-cr="new|substantive">
 The Director approves the transition request.
 </span>
 </li>
@@ -444,7 +436,7 @@ The Director approves the transition request.
 <ul>
 <li>The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> prepares the
 document in accordance with <a
-href="https://www.w3.org/pubrules/">pubrules</a>.
+href="https://www.w3.org/pubrules/">pubrules</a> (use the "Echidna-ready" check).
 <strong>Note:</strong> Director approval is required for
 some namespace URIs; see <a href="https://www.w3.org/2005/07/13-nsuri">URIs
 for W3C Namespaces</a> for details.</li>
@@ -507,12 +499,12 @@ returned for further work.</span>
 </ul>
 </dd>
 
-<dt class="listprep" data-profile="PR|probsolete-tr|prrescind-tr">Form and Mailing List Preparation</dt>
+<dt class="listprep" data-profile="PR|PR-OBSL|PR-RSCND">Form and Mailing List Preparation</dt>
 <dt class="listprep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|OBSL|RSCND" data-cr="new|substantive" data-notehistory="first">Mailing List Preparation</dt>
 <dt class="listprep" data-profile="REC">GitHub Preparation</dt>
-<dd data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|REC|OBSL|RSCND|PR|probsolete-tr|prrescind-tr" data-cr="new|substantive">
+<dd data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|REC|OBSL|RSCND|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive">
 <ul>
-<li class="mailinglist-prep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|probsolete-tr|prrescind-tr|OBSL|RSCND" data-cr="new|substantive" data-notehistory="first">
+<li class="mailinglist-prep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive" data-notehistory="first">
 The Team Contact ensures that there is a public archived place (github or mailing list)
 available for comments; (for mailing list, use the <a
 href="https://www.w3.org/Systems/Mail/ListRequest">mailing list request
@@ -526,7 +518,7 @@ The Team Contact ensures that there is a public archived github repository
 available for comments.
 </li>
 
-<li class="reviewform-prep" data-profile="CR|PR|probsolete-tr|prrescind-tr">
+<li class="reviewform-prep" data-profile="CR|PR|PR-OBSL|PR-RSCND">
 The Team Contact builds a
 <span class="status-name">STATUS</span>
 <a
@@ -537,7 +529,7 @@ form</a> that the Project Manager reviews for correctness.
 At the current time, WBS review forms are generated from
 installed documents, but before the Webmaster completes
 publication.</span></li>
-<li  class="transannc-draft" data-profile="CR|PR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-cr="new|substantive">The
+<li  class="transannc-draft" data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive">The
 Team Contact sends a draft <a href="#trans-annc">transition announcement</a>
 to the Communications Team at w3t-comm@w3.org.</li>
 </ul>
@@ -545,7 +537,7 @@ to the Communications Team at w3t-comm@w3.org.</li>
 
 <dt class="transition-announcement" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND" data-cr="new|substantive" data-notehistory="first">Publication and Transition Announcement</dt>
 <dt class="transition-announcement" data-profile="WD|WG-NOTE|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR" data-cr="editorial" data-notehistory="none|notchartered|closure">Publication</dt>
-<dt class="transition-announcement" data-profile="probsolete-tr|prrescind-tr">Transition Announcement</dt>
+<dt class="transition-announcement" data-profile="PR-OBSL|PR-RSCND">Transition Announcement</dt>
 <dd>
 <ul>
 <li class="publication-announcement" data-profile="WD|FPWD|CR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-echidna="false">The Webmaster completes <a
@@ -580,15 +572,15 @@ published, the Chair sends a
 <a href="#trans-annc">transition announcement</a>
 to chairs@w3.org and the group's public mailing list.</li>
 
-<li class="trans-announcement"  data-profile="CR|PR|probsolete-tr|prrescind-tr|REC|OBSL|RSCND" data-cr="new|substantive">
+<li class="trans-announcement"  data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive">
 The W3C Communications Team sends a
 <a href="#trans-annc">transition announcement</a>
 to w3c-ac-members@w3.org
-<span data-profile="CR|PR|probsolete-tr|prrescind-tr|REC|OBSL|RSCND" data-cr="new|substantive">and chairs@w3.org</span>
+<span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive">and chairs@w3.org</span>
 and on the <a href="https://www.w3.org/">W3C home page</a>.
 </li>
 
-<li  class="trans-announcement" data-profile="CR|PR|probsolete-tr|prrescind-tr" data-cr="new|substantive">The Chair or Team Contact(s) <span
+<li  class="trans-announcement" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive">The Chair or Team Contact(s) <span
 class="rfc2119">SHOULD</span> forward the announcement to the Working
 Group's public mailing list <strong>taking caution</strong> not to
 send any Member-confidential information to a public list.</li>
@@ -609,7 +601,7 @@ an Ordinary
 this is not a <a href="https://www.w3.org/2017/Process-20170301/#Reports">Recommendation
 Track transition</a> as defined in the W3C Process.</p>
 
-<p data-profile="probsolete-tr|prrescind-tr">
+<p data-profile="PR-OBSL|PR-RSCND">
 <strong>Note:</strong> 
 <span class="status-name">STATUS</span>
  is not a <a href="https://www.w3.org/2017/Process-20170301/#maturity-levels">maturity level</a> defined in the <a href="https://www.w3.org/2017/Process-20170301/">W3C Process</a> but is described as a proposal before the next step.</p>
@@ -659,7 +651,7 @@ of the (current) review period.</p>
 
 <hr/>
 
-<div class="transreq-section" data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first">
+<div class="transreq-section" data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first">
 <h2 id="transreq">Transition request</h2>
 
 <div class="note" data-profile="CR" data-cr="substantive">
@@ -689,17 +681,17 @@ a <a href="https://www.w3.org/pubrules/doc#delta">delta specification</a>.
 </li>
 </ol>
 </div>
-<div class="transreq-section2" data-profile="probsolete-tr|prrescind-tr">
+<div class="transreq-section2" data-profile="PR-OBSL|PR-RSCND">
 <ol>
 <li>Document title and URIs of the W3C Recommendation.</li>
 <li>The request <span class="rfc2119">must</span>
-include rationale for <span data-profile="probsolete-tr">obsoleting</span><span data-profile="prrescind-tr">rescinding</span> the Recommendation.</li>
+include rationale for <span data-profile="PR-OBSL">obsoleting</span><span data-profile="PR-RSCND">rescinding</span> the Recommendation.</li>
 </ol>
 </div>
 
-<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-cr="new|substantive">
+<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive">
 
-<p data-profile="FPWD|CR|PR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-cr="new|substantive">Furthermore,
+<p data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive">Furthermore,
 the transition request provides evidence that the group has
 satisfied the <a href="#reqs-adv">transition
 requirements</a>. The questions and observations in the subsections
@@ -710,9 +702,9 @@ to help the
 Project Management Lead
 </span>
 <span
-data-profile="CR|PR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-cr="new|substantive">Director</span>
+data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive">Director</span>
 assess whether the group has satisfied the transition requirements.
-<span class="transreq-as-agenda" data-profile="CR|PR|probsolete-tr|prrescind-tr|REC|OBSL|RSCND" data-cr="new|substantive">
+<span class="transreq-as-agenda" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive">
 The transition request <span class="rfc2119">SHOULD</span> be
 organized so that it serves as the basis for the <a
 href="#sample-agenda">agenda</a> of the meeting with the Director.</span></p>
@@ -747,7 +739,7 @@ if there are any Patent Advisory Groups
 (PAGs) currently discussing the document
 (per the <a href="https://www.w3.org/2003/12/22-pp-faq.html#trpub-during-pag">Patent Policy FAQ, question 29</a>).</p>
 
-<div class="trans-decision" data-profile="FPWD|CR|PR|probsolete-tr|prrescind-tr|FPIG-NOTE|FPWG-NOTE" data-cr="new|substantive" data-notehistory="notchartered|first">
+<div class="trans-decision" data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPIG-NOTE|FPWG-NOTE" data-cr="new|substantive" data-notehistory="notchartered|first">
 
 <div data-profile="CR" data-cr="substantive">
 
@@ -765,13 +757,13 @@ include a link to the previous Candidate Recommendation transition request.</li>
 
 <ul>
 <li>The request
-<span data-profile="FPWD|CR|PR|REC|probsolete-tr|prrescind-tr" data-rec="editorial" data-cr="new|substantive">
+<span data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial" data-cr="new|substantive">
 <span class="rfc2119">must</span>
 </span>
 <span data-profile="WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE">
 <span class="rfc2119">should</span>
 </span>
-record the group's decision <span data-profile="probsolete-tr|prrescind-tr">(or the individual request or the support of the Advisory Committee)</span><span data-profile="REC" data-rec="editorial">(or the individual request if no Working Group)</span> to request advancement (e.g.,
+record the group's decision <span data-profile="PR-OBSL|PR-RSCND">(or the individual request or the support of the Advisory Committee)</span><span data-profile="REC" data-rec="editorial">(or the individual request if no Working Group)</span> to request advancement (e.g.,
 a link to
 meeting minutes or email announcing the group's decision).</li>
 </ul>
@@ -865,7 +857,7 @@ related to implementation have been satisfied?</li>
 </ul>
 </div>
 
-<div class="wide-review" data-profile="CR|PR|REC|probsolete-tr|prrescind-tr" data-cr="new|substantive">
+<div class="wide-review" data-profile="CR|PR|REC|PR-OBSL|PR-RSCND" data-cr="new|substantive">
 <h3><a name="wide-review" id="wide-review">Wide Review</a></h3>
 
 <ul>
@@ -878,7 +870,7 @@ identify features in the document as "at risk".</li>
 <li class="reviewers" data-profile="CR" data-cr="new|substantive">
 Which are the groups with dependencies? Did they review the document?</li>
 
-<li class="reviewers" data-profile="prrescind-tr">
+<li class="reviewers" data-profile="PR-RSCND">
 The group <span class="rfc2119">must</span>
 show that the request to rescind has received
 <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a>. If the Director is
@@ -886,7 +878,7 @@ proposing to rescind or obsolete the Recommendation, the Director
 <span class="rfc2119">must</span> show that the request to rescind or obsolete is based on public comment.
 </li>
 
-<li class="reviewers" data-profile="probsolete-tr">
+<li class="reviewers" data-profile="PR-OBSL">
 The group <span class="rfc2119">must</span>
 show that the request to obsolete has received
 <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a>. If the Director is
@@ -975,7 +967,7 @@ provide public documentation of any Formal Objections. For each Objection, is th
 </ul>
 </div>
 
-<div class="implementation" data-profile="WD|FPWD|CR|PR|REC|probsolete-tr|prrescind-tr" data-rec="new" data-cr="new|substantive">
+<div class="implementation" data-profile="WD|FPWD|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="new" data-cr="new|substantive">
 <h3><a name="impl-reports" id="impl-reports">Implementation</a></h3>
 
 <ul>
@@ -1009,7 +1001,7 @@ implementability testing.</li>
 <li class="other-interop-experience" data-profile="CR" data-cr="new|substantive">Does the WG have additional implementation experience that will
 help demonstrate interoperability (e.g., has there been an
 interoperability day or workshop? Is one planned?)?</li>
-<li data-profile="WD|FPWD|REC|probsolete-tr|prrescind-tr" data-rec="new">The group <span class="rfc2119">should</span>
+<li data-profile="WD|FPWD|REC|PR-OBSL|PR-RSCND" data-rec="new">The group <span class="rfc2119">should</span>
 provide information about implementations known to the Working Group.
 See the <a href="https://www.w3.org/2017/Process-20170301/#implementation-experience">definition
 of implementation experience</a> in section 6.2.4 of the Process.
@@ -1017,7 +1009,7 @@ of implementation experience</a> in section 6.2.4 of the Process.
 </ul>
 </div>
 
-<div class="disclosures" data-profile="CR|REC|RSCND|prrescind-tr" data-rec="new|editorial" data-cr="new|substantive">
+<div class="disclosures" data-profile="CR|REC|RSCND|PR-RSCND" data-rec="new|editorial" data-cr="new|substantive">
 <h3 id="disclosures">Patent disclosures</h3>
 
 <ul>
@@ -1036,7 +1028,7 @@ if there are any Patent Advisory Groups
 (per the <a href="https://www.w3.org/2003/12/22-pp-faq.html#trpub-during-pag">Patent Policy FAQ, question 29</a>).
 </li>
 
-<li data-profile="CR|REC|RSCND|prrescind-tr" data-rec="new" data-cr="new|substantive">If the group is not using <a href="https://www.w3.org/2004/01/pp-impl/">IPP</a>: Does the disclosure page conform to the patent policy
+<li data-profile="CR|REC|RSCND|PR-RSCND" data-rec="new" data-cr="new|substantive">If the group is not using <a href="https://www.w3.org/2004/01/pp-impl/">IPP</a>: Does the disclosure page conform to the patent policy
 requirements?</li>
 </ul>
 </div>
@@ -1044,7 +1036,7 @@ requirements?</li>
 </div>
 </div>
 
-<div class="trans-mtg-section" data-profile="CR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-rec="new|editorial" data-cr="new|substantive">
+<div class="trans-mtg-section" data-profile="CR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-rec="new|editorial" data-cr="new|substantive">
 <h2><a name="dir-mtg" id="dir-mtg">Transition
 Meeting with the Director</a></h2>
 
@@ -1064,12 +1056,12 @@ chairs the meeting.</li>
 transition involves contentious issues such as IPR, technical or
 other concerns.</li>
 
-<li class="mtg-attendees-chair" data-profile="CR|PR|probsolete-tr|prrescind-tr" data-cr="new|substantive">The Working Group Chair(s)</li>
+<li class="mtg-attendees-chair" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive">The Working Group Chair(s)</li>
 
-<li  class="mtg-attendees-others" data-profile="CR|PR|probsolete-tr|prrescind-tr" data-cr="new|substantive">Others invited by the Project Management Lead (or whoever is chairing the
+<li  class="mtg-attendees-others" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive">Others invited by the Project Management Lead (or whoever is chairing the
 transition meeting)</li>
 
-<li  class="mtg-attendees-dependent" data-profile="CR|PR|probsolete-tr|prrescind-tr" data-cr="new|substantive">In the event that the specification significantly affects the
+<li  class="mtg-attendees-dependent" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive">In the event that the specification significantly affects the
 work of another WG, a (non-Team) representative of that Group
 should be invited to the call.</li>
 
@@ -1166,11 +1158,11 @@ The Working Group has issued a transition request despite a
 <a href='https://www.w3.org/2017/Process-20170301/#FormalObjection'>Formal Objection</a> and the Director is not satisfied with
 the Working Group's rationale.</li>
 
-<li class="extra-criteria-not-met" data-profile="PR|REC|probsolete-tr|prrescind-tr" data-rec="editorial">The Director believes that special
+<li class="extra-criteria-not-met" data-profile="PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial">The Director believes that special
 entrance criteria have not been satisfied.</li>
 </ul>
 
-<p data-profile="probsolete-tr|prrescind-tr|REC" data-rec="new">Per <a href="https://www.w3.org/2017/Process-20170301/#rec-rescind">section 6.9</a>, in some conditions, the Director is required
+<p data-profile="PR-OBSL|PR-RSCND|REC" data-rec="new">Per <a href="https://www.w3.org/2017/Process-20170301/#rec-rescind">section 6.9</a>, in some conditions, the Director is required
 to accept the transition request.</p>
 
 <p>Per <a href="https://www.w3.org/2017/Process-20170301/#recs-and-notes">section 6.1.1</a> of the Process, "The Director
@@ -1300,7 +1292,7 @@ publication as described above.</p>
 
 </div>
 
-<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-cr="new|substantive" data-notehistory="first">
+<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive" data-notehistory="first">
 <h2 id="trans-annc">Transition Announcement</h2>
 
 <p>A<span data-profile="obsolete-tr">n</span>
@@ -1308,14 +1300,14 @@ publication as described above.</p>
 <span class="status-name">STATUS</span> transition announcement <span
 class="rfc2119">MUST</span> include the following information:</p>
 
-<div class="announcement-contents" data-profile="PR|probsolete-tr|prrescind-tr">
+<div class="announcement-contents" data-profile="PR|PR-OBSL|PR-RSCND">
 
 <ol>
 <li>That this is a
 <span class="status-name">STATUS</span>
 transition announcement.</li>
 
-<li>Document title, URIs<span data-profile="probsolete-tr|prrescind-tr"> of the W3C Recommendation</span>.</li>
+<li>Document title, URIs<span data-profile="PR-OBSL|PR-RSCND"> of the W3C Recommendation</span>.</li>
 
 <li>Instructions for providing feedback.</li>
 
@@ -1525,7 +1517,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 		 profile: "WD",
 		 cr: "new", rec: "new",
 		 notehistory: "first",
-		 informativeOnly: "true",
+		 informativeOnly: "false",
 		 echidna: "false"
 	 }
  
@@ -1670,8 +1662,15 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
   		  input = document.getElementById("profile").querySelector("option[value=" + config.profile + "]");
 				input.selected = true;
   		} else {
-  			input = document.getElementById(key + "-" + config[key]);
-				input.checked = true;
+  			input = document.getElementById(key + "-checkbox");
+				if (input != null) {
+					if (config[key] === "true") {
+					  input.checked = true;
+				  }
+				} else {
+  			  input = document.getElementById(key + "-" + config[key]);
+				  input.checked = true;
+				}
   		}
   	}
 	}
@@ -1695,11 +1694,14 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
   	if (key === "profile") {
 		  input = document.getElementById("profile").querySelector("option[value=" + init.profile + "]");
 		} else {
-			input = document.getElementById(key + "-" + init[key]);
+			input = document.getElementById(key + "-checkbox");
+  	  if (input === null) {
+  			input = document.getElementById(key + "-" + init[key]);
+	   	}
 		}
 	  if (input !== null) {
-		    config[key] = init[key];
-	  }
+	    config[key] = init[key];
+    }
 	}
   adjustForms();
 
@@ -1709,11 +1711,20 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
  	  config[e.target.name] = e.target.value;
 		onpushstate();
   }
+  function changeCheckbox(e) {
+		trace("changeCheckbox for " + e.target.name + " = " + e.target.checked);
+ 	  config[e.target.name.split('-')[0]] = "" + e.target.checked;
+		onpushstate();
+  }
 	document.getElementById("profile").onchange = changeInput;
   var nodes = document.querySelectorAll("input");
-	for (var i = 0; i < nodes.length; i++)
-	  nodes[i].onchange=changeInput;
-
+	for (var i = 0; i < nodes.length; i++) {
+	  if (nodes[i].type === "checkbox") {
+			nodes[i].onchange = changeCheckbox;
+		} else {
+			nodes[i].onchange=changeInput;
+		}
+	}
 	updateTree();
   trace("restored " + window.location.href);
 })();
@@ -1730,7 +1741,7 @@ So far, we have the following data attributes:
 4. data-notehistory for a |-separated list of first [working|interest] group note paths
 
 e.g.
-<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|probsolete-tr|prrescind-tr|OBSL|RSCND" data-cr="new|substantive" data-notehistory="first">
+<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive" data-notehistory="first">
 
 To find the possible values for each data attributes, look at the HTML option and input elements.
 
