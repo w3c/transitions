@@ -1521,7 +1521,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 	   };
    }
 
-	 // each one of those config parameters are matching the ones in the select/input elements
+	 // each one of those config parameters are matching the ones in the option/input elements
 	 var config = {
 		 docstatus: "ord-wd-tr",
 		 cr: "new", rec: "new",
@@ -1563,7 +1563,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 		 trace("popped " +window.location.href);
    }
 
-   // Element matching according to its attrubtes and the current config
+   // Element matching according to its attributes and the current config
 
 	 function titleMatch(node) {
 		 // @@ using includes instead of parsing | values
@@ -1583,15 +1583,18 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 					 if (node.dataset.patentpolicy !== undefined) {
 				     doesMatch = doesMatch && node.dataset.patentpolicy.includes(config.patentpolicy);
 					 }
-				 } else if (config.docstatus.includes("note-tr") && config.docstatus.includes("fp-")) {
+				 } else if (config.docstatus === "fp-wg-note-tr" || config.docstatus === "fp-ig-note-tr") {
 		       if (node.dataset.notehistory !== undefined) {
 		         doesMatch = doesMatch && node.dataset.notehistory.includes(config.notehistory);
+					 }
+				 } else if (config.docstatus.includes("ord")) {
+					 // only ordinary updates are supported by echidna so far
+					 if (node.dataset.echidna !== undefined) {
+   		       doesMatch = doesMatch && node.dataset.echidna.includes(config.echidna);
 					 }
 				 }
 			 }
 		 }
-		 if (doesMatch && config.docstatus.includes("ord") && node.dataset.echidna !== undefined)
-		   doesMatch = doesMatch && node.dataset.echidna.includes(config.echidna);
    	 return doesMatch;
 	 }
 
