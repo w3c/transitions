@@ -208,7 +208,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
                </label>
             </li>
          </ul>
-         <ul style="margin-left: 3em" data-docstatus="fp-wd-tr">
+         <ul style="margin-left: 3em" data-docstatus="fp-wd-tr|ord-wd-tr">
             <li style="list-style: none">
                <input type="radio" id="patentpolicy-true" name="patentpolicy" value="true" checked="checked"/>
                <label for="patentpolicy-true">Intended to become a normative Recommendation
@@ -1459,7 +1459,8 @@ transition announcement.</li>
 <li data-docstatus="fp-wd-tr|fp-ig-note-tr|fp-wg-note-tr" data-notehistory="first|notchartered|none">A reference to the group's transition request.</li>
 </ol>
 </div>
-<div data-docstatus="fp-wd-tr|cr-tr" data-cr="new|substantive" data-patentpolicy="true">
+</div>
+<div data-docstatus="ord-wd-tr|fp-wd-tr|cr-tr" data-cr="new|substantive" data-patentpolicy="true">
 <h2 id="call-for-exclusions">Call for Exclusions</h2>
 
  <p>The <a href="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">Patent Policy FAQ</a> clarifies
@@ -1467,37 +1468,35 @@ transition announcement.</li>
 href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">Call for Exclusions</a> are sent
 out.</p>
 
-<blockquote  data-docstatus="fp-wd-tr" data-patentpolicy="true" cite="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">
-<p>
-A Working Group under the W3C Patent Policy publishes a <span class='label-name'>LABEL</span> that is intended to
-become a W3C Recommendation. The Team sends a <a
-href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">Call for Exclusion</a> to
-participants. The exclusion opportunity lasts 150 days. At approximately 90 days, the Team sends out a
-reminder with a pointer to the "Reference Draft", i.e., the latest draft available at that time. Exclusions are
-with respect to the set of features in the Reference Draft.
-</p>
-</blockquote>
 
-<blockquote  data-docstatus="cr-tr" data-cr="new" cite="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">
-<p>
+<p data-docstatus="fp-wd-tr" data-patentpolicy="true">
+The Team sends a <a
+href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">Call for Exclusion</a> to
+participants. The exclusion opportunity lasts 150 days. At approximately 90 days, The Team sends out a
+reminder with a pointer to the "<a href="https://github.com/w3c/charter-drafts/blob/gh-pages/draft-states.md#reference-draft">Reference Draft</a>".
+</p>
+
+<p data-docstatus="ord-wd-tr" data-patentpolicy="true">
+If the document was published within 90 days of the First Public
+Working Draft, it becomes the new <a href="https://github.com/w3c/charter-drafts/blob/gh-pages/draft-states.md#reference-draft">Reference Draft</a>
+for the Call for Exclusions started at the time of the First Public Working Draft publication.
+ Exclusions are with respect to the set of features in this new <span class='status-name'>STATUS</span>.
+</p>
+
+<p data-docstatus="cr-tr" data-cr="new">
 	A Working Group under the W3C Patent Policy publishes a <span class='status-name'>STATUS</span>.
 	The Team sends the second <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">exclusion opportunity</a>.
 	The exclusion opportunity lasts 60 days. Any exclusions are with respect
 	to new features in the <span class='status-name'>STATUS</span> added since the exclusion
 	opportunity of the First Public Working Draft.
 </p>
-</blockquote>
 
-<blockquote  data-docstatus="cr-tr" data-cr="substantive" cite="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">
-<p>
+<p data-docstatus="cr-tr" data-cr="substantive">
 The Working Group changes the document substantially after <span class='status-name'>STATUS</span> and published a
 new <span class='status-name'>STATUS</span>. The Team sends a new <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">exclusion opportunity</a>. It lasts 60
 days. Exclusions are with respect to new features in the specification since the previous exclusion
 opportunity, i.e., the previous <span class='label-name'>LABEL</span>.
 </p>
-</blockquote>
-
-</div>
 
 </div>
 
@@ -1540,18 +1539,20 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 		    query += "&cr=" + config.cr;
   	 } else if (config.docstatus === "recommendation") {
 		    query += "&rec=" + config.rec;
-  	 } else if (config.patentpolicy === "false" &&
-		            config.docstatus === "fp-wd-tr") {
-		    query += "&patentpolicy=" + config.patentpolicy;
-  	 } else if (config.docstatus.includes("note-tr") && config.docstatus.includes("fp-")) {
+  	 } else if (config.docstatus === "fp-wd-tr"
+								|| config.docstatus === "ord-wd-tr") {
+		    if (config.patentpolicy === "false") {
+					query += "&patentpolicy=" + config.patentpolicy;
+				}
+  	 } else if (config.docstatus === "fp-wg-note-tr"
+								|| config.docstatus === "fp-ig-note-tr") {
 		    query += "&notehistory=" + config.notehistory;
   	 }
-		  if (config.echidna === "true" &&
-		      config.docstatus.includes("ord")) {
-			  query += "&echidna=" + config.echidna;
-		 }
+  	 if (config.docstatus.includes("ord") && config.echidna === "true") {
+		    query += "&echidna=true";
+  	 }
 		 updateTree();
-      window.history.pushState(config, config.label, query);
+     window.history.pushState(config, config.label, query);
 		 trace("pushed " +window.location.href);
    }
 
@@ -1579,7 +1580,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 					 if (node.dataset.rec !== undefined) {
 				     doesMatch = doesMatch && node.dataset.rec.includes(config.rec);
 					 }
-				 } else if (config.docstatus === "fp-wd-tr") {
+				 } else if (config.docstatus === "fp-wd-tr" || config.docstatus === "ord-wd-tr") {
 					 if (node.dataset.patentpolicy !== undefined) {
 				     doesMatch = doesMatch && node.dataset.patentpolicy.includes(config.patentpolicy);
 					 }
@@ -1587,11 +1588,12 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 		       if (node.dataset.notehistory !== undefined) {
 		         doesMatch = doesMatch && node.dataset.notehistory.includes(config.notehistory);
 					 }
-				 } else if (config.docstatus.includes("ord")) {
-					 // only ordinary updates are supported by echidna so far
-					 if (node.dataset.echidna !== undefined) {
-   		       doesMatch = doesMatch && node.dataset.echidna.includes(config.echidna);
-					 }
+				 }
+			 }
+			 if (config.docstatus.includes("ord")) {
+				 // only ordinary updates are supported by echidna so far
+				 if (node.dataset.echidna !== undefined) {
+   		     doesMatch = doesMatch && node.dataset.echidna.includes(config.echidna);
 				 }
 			 }
 		 }
