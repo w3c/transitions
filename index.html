@@ -1571,7 +1571,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 	 function titleMatch(node) {
 		 // @@ using includes instead of parsing | values
 		 var doesMatch = true;
-		 if (node.dataset.profile !== undefined) {
+		 if (node.rules !== undefined) {
 			 doesMatch = doesMatch && node.rules.profile.includes(config.profile);
 			 if (doesMatch) {
 				 if (config.profile === "CR") {
@@ -1617,7 +1617,6 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
       // save the current display property values for the walked elements
 		  if (next.hasAttribute("data-profile")) {
 				next.rules = {}
-				next.rules.display = window.getComputedStyle(next,null).getPropertyValue("display");
 				next.rules.profile = next.dataset.profile.split("|");
 			}
 		  next = walker.nextNode();
@@ -1640,9 +1639,9 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 	   while (next != null) {
 	  	 if (next.dataset.profile !== undefined) {
     	 	 if (!titleMatch(next)) {
-	   			 next.style.display = "none"; count++;
+						next.setAttribute("hidden", "hidden"); count++;
 	  	   } else {
-	  		   next.style.display = next.rules.display;
+						next.removeAttribute("hidden");
 	  	   }
 	   	 }
 		 
