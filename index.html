@@ -391,11 +391,15 @@ decision from or <a href="#dir-mtg">meeting with the Director</a>, the</span>
 <span  class="transitionreqwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial" data-cr="new|substantive" data-notehistory="notchartered|first">Chair (or Team Contact)</span><span
  class="transitionreqwho" data-profile="REC|OBSL|RSCND" data-rec="new">Team Contact</span>
 
-<span class="transwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE" data-notehistory="notchartered|first">
+<span class="transwho" data-profile="FPWD|FPWG-NOTE" data-notehistory="notchartered|first">
 sends a <a href="#transreq">transition request</a> to
 plh@w3.org (as Project Management Lead), cc'ing w3t-comm@w3.org and chairs@w3.org.
 <strong>Note:</strong>
 For the TAG, no First Public Working Draft transition request is required; the request is assumed to be approved by the Director, who Chairs the TAG.
+</span>
+<span class="transwho" data-profile="FPIG-NOTE" data-notehistory="notchartered|first">
+sends a <a href="#transreq">transition request</a> to
+ph@w3.org (as Industry Lead) or wseltzer@w3.org (as Strategy Lead), cc'ing w3t-comm@w3.org and chairs@w3.org.
 </span>
 <span class="transwho" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive">
 sends a <a href="#transreq">transition request</a> to
@@ -422,8 +426,9 @@ call in general.
 
 <li  class="transitionreq-approval" data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive" data-notehistory="notchartered|first">
 <span class="transitionreq-approvalwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE" data-notehistory="notchartered|first">
-The Project Management Lead approve the transition request.
-The Project Management Lead <span class="rfc2119">MAY</span> ask the
+The <span data-profile="FPWD|FPWG-NOTE">Project Management</span>
+<span data-profile="FPIG-NOTE">Industry or Strategy</span> Lead approve the transition request.
+The Lead <span class="rfc2119">MAY</span> ask the
 Director (or someone assigned by the Director) to take responsibility for approving the transition request.
 </span>
 <span class="transitionreq-approvalwho" data-profile="CR|PR|REC|OBSL|RSCND|PR-OBSL|PR-RSCND" data-cr="new|substantive">
@@ -715,10 +720,8 @@ href="#sample-agenda">agenda</a> of the meeting with the Director.</span></p>
 
 <p class="shortname" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE" data-notehistory="notchartered|first">The <strong>goal</strong> of the
 transition request is to secure an archived record of the
-<span data-profile="FPWD|FPIG-NOTE|FPWG-NOTE" data-notehistory="notchartered|first">
-Project Management Lead'
-</span>
-
+<span data-profile="FPWD|FPWG-NOTE">Project Management</span>
+<span data-profile="FPIG-NOTE">Industry or Strategy</span> Lead'
 approval of the title, and shortname.
 In the past, shortnames have been changed
 between versions, and documents have been split and merged between
@@ -728,7 +731,9 @@ document like a first publication.</p>
 <p data-profile="FPWD|FPIG-NOTE|FPWG-NOTE" data-notehistory="notchartered|first">
 The Team Contact(s) generally present the new draft for the entire W3C
 Team as soon as possible after the transition request (and possibly
-before Project Management Lead approval). The length of the presentation varies
+before <span data-profile="FPWD|FPWG-NOTE">Project Management</span>
+<span data-profile="FPIG-NOTE">Industry or Strategy</span> Lead
+approval). The length of the presentation varies
 (from "more than a lightning talk" to a Project Review) depending on
 the technical or political complexity of the specification.</p>
 
