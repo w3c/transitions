@@ -279,10 +279,12 @@ interactions with the W3C Communications Team.</p>
 
 <h2 id="steps">Steps for
 <span data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">transition to</span>
-<span data-profile="WD|WG-NOTE|IG-NOTE">publication of an</span>
+<span data-profile="WD|WG-NOTE">publication of a</span>
+<span data-profile="IG-NOTE">publication of an</span>
 <span data-profile="CR" data-cr="editorial">publication of a</span>
 <span class="label-name">LABEL</span>
-<span data-profile="CR" data-cr="substantive|rec-update">(update with substantive changes)</span>
+<span data-profile="CR" data-cr="substantive">(update with substantive changes)</span>
+<span data-profile="CR" data-cr="rec-update">(update with substantive corrections)</span>
 <span data-profile="CR" data-cr="editorial">(update with editorial changes)</span>
 </h2>
 
@@ -316,7 +318,7 @@ id="reqs-adv">requirements for the transition to
 <span class="procdocsection" data-profile="PR-OBSL|PR-RSCND"><a
       href="https://www.w3.org/2017/Process-20170301/#proposed-rescinded-rec">section 6.9</a></span>
 
-<span class="procdocsection" data-profile="obsolete|RSCND"><a
+<span class="procdocsection" data-profile="OBSL|RSCND"><a
       href="https://www.w3.org/2017/Process-20170301/#rec-rescind">section 6.9</a></span>),
 W3C follows the steps described below to complete the transition.</span>
 <span data-profile="WD">
@@ -373,15 +375,13 @@ Registry</a>.</p>
 <dd class="negotiatereview" data-profile="CR" data-cr="new|substantive|rec-update">
 <ul>
 <li>
-The Chair negotiates the Candidate Recommendation review
-schedule with the Chairs of groups with dependencies (on chairs@w3.org).
-Securing review commitments <strong>before</strong> going to
-Candidate Recommendation will help ensure that your document receives
-<a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a>. The suggested way to negotiate a review schedule is to
-send a heads-up to the Chairs of groups with dependencies, cc'ing
-chairs@w3.org. Several weeks prior to the estimated review
-start date, the Working Group should negotiate schedules with
-groups where there are dependencies.</li>
+The Chair negotiates the <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a>
+schedule with the Chairs of groups with dependencies (on chairs@w3.org) <strong>before</strong> going to
+Candidate Recommendation.
+The Group <span class="rfc2119">MUST</span> show that the specification has received
+wide review in order to move to Candidate Recommendation.
+See the <a href="https://www.w3.org/wiki/DocumentReview">considerations, guidelines and best practices</a>
+ that groups should follow to get early and wide review of a document.</li>
 </ul>
 </dd>
 
@@ -657,11 +657,6 @@ publish a Working Draft to the W3C Technical Reports page when there have been s
 <li>The Group <span class="rfc2119">should</span> provide information about implementations known to the Working Group.</li>
 </ul>
 
-<p  class="revisions" data-profile="CR" data-cr="new|substantive|rec-update"><strong>Note:</strong> The Working Group
-<span class="rfc2119">MAY</span>
-publish a revision of a Candidate Recommendation with minor changes
-before the next transition.</p>
-
 <p  class="revisions" data-profile="CR|PR" data-cr="new|substantive|rec-update"><strong>Note:</strong> The
 Working Group <span class="rfc2119">SHOULD NOT</span> publish a
 (new) revision of a <span class="status-name">STATUS</span> before the end
@@ -868,7 +863,8 @@ Recommendations?
 Recommendation with normative references to W3C
 specifications that are not yet Recommendations. See <a href="https://www.w3.org/2013/09/normative-references">Normative References Guidelines</a>.
 </li>
-
+<li>Does this specification have any normative references to a Rescinded Recommendation? Documents <span class="rfc2119">must not</span> include normative references to a Rescinded Recommendation.
+</li>
 <li class="groups-satisfied" data-profile="CR" data-cr="new|substantive|rec-update">Have other Groups confirmed that dependencies
 have been satisfied? For example, does the issues list show that
 these groups are satisfied as a result of their review of the
@@ -1300,7 +1296,9 @@ conditions have been met:</p>
 <ol>
 <li>The <a href="#pubreq">publication request</a> is complete, and</li>
 <li>The document satisfies the pubrules requirements verified by
-the Webmaster.</li>
+the Webmaster.
+<span data-profile="OBSL|RSCND"><strong>Note:</strong> The updated version <span
+class="rfc2119">may</span> remove the main body of the document.</span></li>
 </ol>
 
 <p>Otherwise the Webmaster <span class="rfc2119">SHALL NOT</span>
@@ -1507,11 +1505,18 @@ for the Call for Exclusions started at the time of the First Public Working Draf
 	opportunity of the First Public Working Draft.
 </p>
 
-<p data-profile="CR" data-cr="substantive|rec-update">
+<p data-profile="CR" data-cr="substantive">
 The Working Group changes the document substantially after <span class='status-name'>STATUS</span> and published a
 new <span class='status-name'>STATUS</span>. The Team sends a new <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">exclusion opportunity</a>. It lasts 60
 days. Exclusions are with respect to new features in the specification since the previous exclusion
 opportunity, i.e., the previous <span class='label-name'>LABEL</span>.
+</p>
+
+<p data-profile="CR" data-cr="rec-update">
+The Working Group updates the document substantially since the Recommendation and published a
+ <span class='status-name'>STATUS</span>. The Team sends a <a href="https://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Exclusion">exclusion opportunity</a>. It lasts 60
+days. Exclusions are with respect to new features in the specification since the previous exclusion
+opportunity, i.e., the one applying to the previous Recommendation.
 </p>
 
 </div>
