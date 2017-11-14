@@ -1,8 +1,6 @@
 # Getting Director's approval for a new W3C maturity level (aka transition requests)
 
-This is repository for managing W3C spec transitions. It contains the transition requirements document, available from [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions), and an issues tracker for managing transition requests. Tags are used to manage the transitions, keeping track of who has the “ball”.
-
-For all requests to advance a specification to a new [maturity level](https://www.w3.org/2015/Process-20150901/#maturity-levels) other than [Note](), the Working Group must obtain [Director approval](https://www.w3.org/2015/Process-20150901/#transition-reqs).
+For all requests to advance a specification to a new [maturity level](https://www.w3.org/2015/Process-20150901/#maturity-levels) other than [Note](), the Working Group must obtain [Director approval](https://www.w3.org/2015/Process-20150901/#transition-reqs). This is repository for managing W3C spec transitions. It contains the transition requirements document, available from [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions), and an issues tracker for managing transition requests. Tags are used to manage the transitions, keeping track of who has the “ball”.
 
 Select one of the transition templates below:
 
@@ -24,3 +22,5 @@ Select one of the transition templates below:
   * If you're not sure how to fill the template properly, see [Organize a Technical Report Transition (2017 Process)](https://www.w3.org/Guide/transitions).
   * If you need to convey Member-confidential information, start a thread on w3c-archive@w3.org and link it from your issue; lists.w3.org's access control will manage permissions. Analogously for Team-confidential infos.
   * Your WG code is your WG's preferred (unique) abbreviation: it is included in the title template to help you search for transition requests relevant to your WG and manage the official or unofficial pestering of whoever has the “ball”.
+  * Assign your editor(s) and staff contact(s) to the issues to facilitate automatic pestering.
+  
