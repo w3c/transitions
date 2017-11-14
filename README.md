@@ -23,4 +23,5 @@ Select one of the transition templates below:
   * If you need to convey Member-confidential information, start a thread on w3c-archive@w3.org and link it from your issue; lists.w3.org's access control will manage permissions. Analogously for Team-confidential infos.
   * Your WG code is your WG's preferred (unique) abbreviation: it is included in the title template to help you search for transition requests relevant to your WG and manage the official or unofficial pestering of whoever has the “ball”.
   * Assign your editor(s) and staff contact(s) to the issues to facilitate automatic pestering.
-  
+  * Don't forget to tag/untag “Awaiting ...” so that issues show up in the appropriate to-do queues.
+  * Issues get closed once publication is complete *and* relevant announcements are posted.
