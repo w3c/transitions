@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>How to Organize a Technical Report Transition (2017 Process)</title>
+<title>How to Organize a Technical Report Transition (2018 Process)</title>
   <link rel="stylesheet" href="https://www.w3.org/StyleSheets/generic-base-1.css" type="text/css"/>
   <link rel="stylesheet" type="text/css" href="https://www.w3.org/Guide/guide2006.css" />
   <link rel="shortcut icon" href="https://www.w3.org/Icons/WWW/Literature.gif" />
@@ -124,7 +124,7 @@ alt="W3C" height="48" width="72"/></a></span>
     <div class="breadcrumb">
     <a href="https://www.w3.org/Member/">Member</a> &#x2192; <a href="https://www.w3.org/Guide/">The Art of
 Consensus</a> &#x2192;
-<h1>Organize a Technical Report Transition (2017 Process)</h1>
+<h1>Organize a Technical Report Transition (2018 Process)</h1>
 </div>
 <p class="baseline">This <strong>Guidebook</strong> is the collected
 wisdom of the W3C Group Chairs and other collaborators.</p>
@@ -136,12 +136,12 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
  <ul>
    <li style="display: none"><a href="#sotd">Status</a>  &bull;</li>
    <li><a href="#steps">Steps</a>  &bull;</li>
-   <li data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="notchartered|first"><a href="#transreq">Transition Request</a> &bull;</li>
-   <li data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-rec="new" data-cr="new|substantive|rec-update"><a href="#dir-mtg">Meeting</a> &bull;</li>
+   <li data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first"><a href="#transreq">Transition Request</a> &bull;</li>
+   <li data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-rec="new" data-cr="new|substantive|rec-update|rec-amended"><a href="#dir-mtg">Meeting</a> &bull;</li>
    <li data-profile="WD|FPWD|CR|PR|REC|OBSL|RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-echidna="false"><a href="#pubreq">Publication Request</a> &bull;</li>
    <li data-profile="WD|FPWD|CR|PR|REC|OBSL|RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-echidna="false"><a href="#pubreq">Scheduling</a> &bull;</li>
    <li data-profile="WD|FPWD|CR|PR|REC|OBSL|RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE"><a href="#publication">Publication</a> &bull;</li>
-   <li data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="first|none"><a href="#trans-annc">Announcement</a></li>
+   <li data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first|none"><a href="#trans-annc">Announcement</a></li>
  </ul>
 </div>
 -->
@@ -189,9 +189,9 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
                <option value="PR" label="Proposed Recommendation">Proposed Recommendation</option>
                <option value="REC" label="Recommendation">Recommendation</option>
                <option value="PR-RSCND" label="Proposed Rescinded Recommendation">Proposed Rescinded Recommendation</option>
-               <option value="PR-OBSL" label="Proposed Obsolete Recommendation">Proposed Obsolete Recommendation</option>
+               <option value="PR-OBSL" label="Proposed Obsolete or Superseded Recommendation">Proposed Obsolete or Superseded Recommendation</option>
                <option value="RSCND" label="Rescinded Recommendation">Rescinded Recommendation</option>
-               <option value="OBSL" label="Obsolete Recommendation">Obsolete Recommendation</option>
+               <option value="OBSL" label="Obsolete or Superseded Recommendation">Obsolete or Superseded Recommendation</option>
 					   </optgroup>
 					   <optgroup label="Notes">
                <option value="FPIG-NOTE" label="First Public Interest Group Note" data-status="Interest Group Note">First Public Interest Group Note</option>
@@ -232,8 +232,24 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
                <input type="radio" id="cr-rec-update" name="cr" value="rec-update"/>
                <label for="cr-rec-update">Intended to become an Edited Recommendation (substantive corrections)</label>
             </li>
-         </ul>
-         <ul style="margin-left: 3em" data-profile="REC">
+  					<li style="list-style: none">
+							<input type="radio" id="cr-rec-amended" name="cr" value="rec-amended"/>
+						  <label for="cr-rec-amended">Intended to become an <a href="https://w3c.github.io/w3process/#rec-amended">Amended Recommendation</a> (no active Working Group)
+	  				 </label>
+		  			</li>
+			 </ul>
+			 <ul style="margin-left: 3em" data-profile="PR">
+				<li style="list-style: none">
+					 <input type="radio" id="pr-new" name="pr" value="new" checked="checked"/>
+					 <label for="pr-new">Proposed by an active Working Group</label>
+				</li>
+				<li style="list-style: none">
+					<input type="radio" id="pr-rec-amended" name="pr" value="rec-amended"/>
+					<label for="pr-rec-amended">Intended to become an <a href="https://w3c.github.io/w3process/#rec-amended">Amended Recommendation</a> (no active Working Group)
+				 </label>
+				</li>
+	 </ul>
+	 <ul style="margin-left: 3em" data-profile="REC">
             <li style="list-style: none">
                <input type="radio" id="rec-new" name="rec" value="new" checked="checked"/>
                <label for="rec-new">Previously published as a Proposed Recommendation</label>
@@ -278,7 +294,7 @@ interactions with the W3C Communications Team.</p>
 <div data-profile="WD|FPWD|CR|PR|PR-OBSL|PR-RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND">
 
 <h2 id="steps">Steps for
-<span data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">transition to</span>
+<span data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">transition to</span>
 <span data-profile="WD|WG-NOTE">publication of a</span>
 <span data-profile="IG-NOTE">publication of an</span>
 <span data-profile="CR" data-cr="editorial">publication of a</span>
@@ -286,10 +302,11 @@ interactions with the W3C Communications Team.</p>
 <span data-profile="CR" data-cr="substantive">(update with substantive changes)</span>
 <span data-profile="CR" data-cr="rec-update">(update with substantive corrections)</span>
 <span data-profile="CR" data-cr="editorial">(update with editorial changes)</span>
+<span data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">(to become an Amended Recommendation)</span>
 </h2>
 
 <p>
-<span data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update">
+<span data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
 Once the Process Document <a
 id="reqs-adv">requirements for the transition to
 <span class="label-name">LABEL</span></a> have been satisfied
@@ -303,7 +320,7 @@ id="reqs-adv">requirements for the transition to
 <span class="procdocsection" data-profile="PR"><a
       href="https://www.w3.org/2017/Process-20170301/#rec-pr">section 6.5</a></span>
 
-<span class="procdocsection" data-profile="CR|REC" data-rec="editorial" data-cr="rec-update"><a
+<span class="procdocsection" data-profile="CR|PR|REC" data-rec="editorial" data-cr="rec-update|rec-amended"  data-pr="rec-amended"><a
       href="https://www.w3.org/2017/Process-20170301/#revised-rec">section 6.7.2</a></span>
 
 <span class="procdocsection" data-profile="REC" data-rec="new"><a
@@ -338,7 +355,7 @@ steps are completed in parallel. For instance, groups often manage
 the transition request/meeting steps
 in parallel with the publication request steps.</p>
 
-<p class="internetmediatype" data-profile="FPWD|CR|PR|REC" data-rec="new" data-cr="new|substantive|rec-update">
+<p class="internetmediatype" data-profile="FPWD|CR|PR|REC" data-rec="new" data-cr="new|substantive|rec-update|rec-amended">
 <strong>Note:</strong> If your specification involves (or updates) an Internet
 Media Type, before the transition to
 <span data-profile="FPWD">First Public</span>
@@ -351,7 +368,7 @@ registration process.</span>
 <span  class="mediatypespecifics" data-profile="WD">for information about
 what you should do several months <strong>before</strong> advancing
 to Candidate Recommendation.</span>
-<span  class="mediatypespecifics" data-profile="CR" data-cr="new|substantive|rec-update">for information about
+<span  class="mediatypespecifics" data-profile="CR" data-cr="new|substantive|rec-update|rec-amended">for information about
 alerting the W3C liaisons to the
 IETF so that they may request formal review and approval by the
 IESG.</span>
@@ -359,7 +376,7 @@ IESG.</span>
 how the W3C liaisons to the IETF track the registration process.</span>
 </p>
 
-<p class="xpointerregistry" data-profile="CR" data-cr="new|substantive|rec-update">
+<p class="xpointerregistry" data-profile="CR" data-cr="new|substantive|rec-update|rec-amended">
 <strong>Note:</strong> If your specification defines (or updates) an XPointer
 Scheme, before the transition to <span
 class="status-name">STATUS</span>, please register the scheme in the the <a
@@ -381,17 +398,18 @@ See the <a href="https://www.w3.org/wiki/DocumentReview">considerations, guideli
 </ul>
 </dd>
 
-<dt data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="notchartered|first">Transition request</dt>
-<dd data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="notchartered|first">
+<dt data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">Transition request</dt>
+<dd data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
 <ul>
-<li id="obs-webreqmail" data-profile="PR-OBSL|PR-RSCND" data-notehistory="notchartered|first">If an individual made a request to the relevant Working Group, or the <a href="https://github.com/w3ctag/obsoletion">TAG</a> if such a group does not exist, to <span data-profile="PR-OBSL">obsolete</span><span data-profile="PR-RSCND">rescind</span> a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
+<li id="obs-webreqmail" data-profile="PR-OBSL|PR-RSCND" data-notehistory="notchartered|first">If an individual made a request to the relevant Working Group, or the <a href="https://github.com/w3ctag/obsoletion">TAG</a> if such a group does not exist, to <span data-profile="PR-OBSL">obsolete or to supersede</span><span data-profile="PR-RSCND">rescind</span> a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
 <li id="edrec-webreqmail" data-profile="REC" data-rec="editorial">If an individual made a request to the relevant Working Group, or the maintenance contact if such a group does not exist, to update a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
-<li id="transreqmail" class="transitionreq" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-rec="new" data-cr="new|substantive|rec-update" data-notehistory="notchartered|first">
-<span class="transwhen" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">At least one week prior to an expected
+<li id="transreqmail" class="transitionreq" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-rec="new" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
+<span class="transwhen" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">At least one week prior to an expected
 decision from or <a href="#dir-mtg">meeting with the Director</a>, the</span>
 <span class="transwhen" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE" data-notehistory="notchartered|first">The</span>
-<span  class="transitionreqwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial" data-cr="new|substantive|rec-update" data-notehistory="notchartered|first">Chair (or Team Contact)</span><span
- class="transitionreqwho" data-profile="REC|OBSL|RSCND" data-rec="new">Team Contact</span>
+<span  class="transitionreqwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial" data-cr="new|substantive|rec-update" data-pr="new" data-notehistory="notchartered|first">Chair (or Team Contact)</span><span
+ class="transitionreqwho" data-profile="PR|REC|OBSL|RSCND" data-pr="rec-amended" data-rec="new">Team Contact</span><span
+ class="transitionreqwho" data-profile="CR" data-cr="rec-amended"><a href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></span>
 
 <span class="transwho" data-profile="FPWD|FPWG-NOTE" data-notehistory="notchartered|first">
 sends a <a href="#transreq">transition request</a> to
@@ -403,18 +421,19 @@ For the TAG, no First Public Working Draft transition request is required; the r
 sends a <a href="#transreq">transition request</a> to
 jeff@w3.org (as Interim Industry Lead) or wseltzer@w3.org (as Strategy Lead), cc'ing w3t-comm@w3.org and chairs@w3.org.
 </span>
-<span class="transwho" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">
+<span class="transwho" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
 sends a <a href="#transreq">transition request</a> to
 the Director (and anyone working with the Director on transitions): timbl@w3.org, ralph@w3.org, cc'ing plh@w3.org,
  w3t-comm@w3.org,
-<span  class="transitionreq-ccemail" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">and chairs@w3.org</span>. We recommend explicitly addressing the expected reviewer(s) by name in the body of the message.
+<span  class="transitionreq-ccemail" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">and chairs@w3.org</span>. We recommend explicitly addressing the expected reviewer(s) by name in the body of the message.
 </span>
 </li>
 
-<li  class="transitionmtg" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">
-The Team Contact <span class="rfc2119">MAY</span> need to organize a <a href="#dir-mtg">transition meeting
+<li  class="transitionmtg" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
+The <span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">Team Contact</span><span
+class="transitionreqwho" data-profile="CR" data-cr="rec-amended"><a href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></span> <span class="rfc2119">MAY</span> need to organize a <a href="#dir-mtg">transition meeting
 with the Director</a> to discuss the request.
-<span data-profile="CR|PR" data-cr="new|substantive|rec-update">
+<span data-profile="CR|PR" data-cr="new|substantive|rec-update|rec-amended">
 <strong>Note:</strong> When the transition request indicates
 unambiguous support and sufficient wide review for the transition, the Director waives the need for a telephone
 call in general.
@@ -426,21 +445,21 @@ call in general.
 </span>
 </li>
 
-<li  class="transitionreq-approval" data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="notchartered|first">
+<li  class="transitionreq-approval" data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
 <span class="transitionreq-approvalwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE" data-notehistory="notchartered|first">
 The <span data-profile="FPWD|FPWG-NOTE">Project Management</span>
 <span data-profile="FPIG-NOTE">Industry or Strategy</span> Lead approve the transition request.
 The Lead <span class="rfc2119">MAY</span> ask the
 Director (or someone assigned by the Director) to take responsibility for approving the transition request.
 </span>
-<span class="transitionreq-approvalwho" data-profile="CR|PR|REC|OBSL|RSCND|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">
+<span class="transitionreq-approvalwho" data-profile="CR|PR|REC|OBSL|RSCND|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">
 The Director approves the transition request.
 </span>
 </li>
 
 </ul>
 </dd>
-<dt data-profile="FPWD|CR|PR|FPIG-NOTE|FPWG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="first">Publication and Transition Planning</dt>
+<dt data-profile="FPWD|CR|PR|FPIG-NOTE|FPWG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Publication and Transition Planning</dt>
 <dt data-profile="FPWG-NOTE|FPIG-NOTE" data-notehistory="none|closure|notchartered">Publication Planning</dt>
 <dt id="publication-planning" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-cr="editorial">Publication Planning</dt>
 <dd class="docpreparation" data-profile="WD|WG-NOTE|IG-NOTE" data-echidna="true">
@@ -505,7 +524,7 @@ The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Documen
 optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
 See below for details about
 <a href="#title-page-date">scheduling a publication</a>, and specifically requirements about advance notice to the Webmaster.
-<span class="further-work-draft" data-profile="WD|CR|WG-NOTE" data-cr="new|substantive|rec-update">
+<span class="further-work-draft" data-profile="WD|CR|WG-NOTE" data-cr="new|substantive|rec-update|rec-amended">
 <strong>Note:</strong>
 If the publication is the result
 of returning a document to a Working Group for further work, the Team Contact
@@ -519,20 +538,20 @@ returned for further work.</span>
 </dd>
 
 <dt class="listprep" data-profile="PR|PR-OBSL|PR-RSCND">Form and Mailing List Preparation</dt>
-<dt class="listprep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="first">Mailing List Preparation</dt>
+<dt class="listprep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Mailing List Preparation</dt>
 <dt class="listprep" data-profile="REC">GitHub Preparation</dt>
-<dd data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|REC|OBSL|RSCND|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">
+<dd data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|REC|OBSL|RSCND|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">
 <ul>
-<li class="mailinglist-prep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="first">
+<li class="mailinglist-prep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new" data-notehistory="first">
 The Team Contact ensures that there is a public archived place (github or mailing list)
 available for comments; (for mailing list, use the <a
 href="https://www.w3.org/Systems/Mail/ListRequest">mailing list request
-form</a>). <span data-profile="CR|PR" data-cr="new|substantive|rec-update">
+form</a>). <span data-profile="PR" data-pr="new">
 The Team Contact also ensures that there is a mailing list with
 a Team-only archive available for AC Representative comments; this list
 is cited from the review form.</span>
 </li>
-<li class="mailinglist-prep" data-profile="REC">
+<li class="mailinglist-prep" data-profile="CR|PR|REC" data-cr="rec-amended" data-pr="rec-amended">
 The Team Contact ensures that there is a public archived github repository
 available for comments.
 </li>
@@ -548,19 +567,19 @@ form</a> that the Project Manager reviews for correctness.
 At the current time, WBS review forms are generated from
 installed documents, but before the Webmaster completes
 publication.</span></li>
-<li  class="transannc-draft" data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update">The
+<li  class="transannc-draft" data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">The
 Team Contact sends a draft <a href="#trans-annc">transition announcement</a>
 to the Communications Team at w3t-comm@w3.org.</li>
 </ul>
 </dd>
 
-<dt class="transition-announcement" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="first">Publication and Transition Announcement</dt>
+<dt class="transition-announcement" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Publication and Transition Announcement</dt>
 <dt class="transition-announcement" data-profile="WD|WG-NOTE|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR" data-cr="editorial" data-notehistory="none|notchartered|closure">Publication</dt>
 <dt class="transition-announcement" data-profile="PR-OBSL|PR-RSCND">Transition Announcement</dt>
 <dd>
 <ul>
 <li class="publication-announcement" data-profile="WD|FPWD|CR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-echidna="false">The Webmaster completes <a
-href="#publication">publication</a> and notifies the Chair and Team Contact of publication, cc'ing webreq@w3.org<span data-profile="FPWD|CR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-cr="new|substantive|rec-update"> and w3t-comm@w3.org</span>.
+href="#publication">publication</a> and notifies the Chair and Team Contact of publication, cc'ing webreq@w3.org<span data-profile="FPWD|CR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-cr="new|substantive|rec-update|rec-amended"> and w3t-comm@w3.org</span>.
 <span class="further-work-alert" data-profile="WD|CR|WG-NOTE" data-cr="new">
 <strong>Note:</strong>
 If the publication is the result
@@ -572,7 +591,7 @@ alerts the W3C Communications Team.</span>
 publishes the document using the  <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>.
 </li>
 
-<li class="publication-announcement"  data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">
+<li class="publication-announcement"  data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
 After coordination with the Communications Team on the transition
 announcement timing (especially those accompanied
 by press releases; see more about
@@ -584,19 +603,23 @@ Publication <span
 class="rfc2119">SHOULD</span> precede the transition announcement by
 only a small amount of time.</li>
 
-<li class="trans-announcement"  data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">
+<li class="trans-announcement"  data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
 The W3C Communications Team sends a
 <a href="#trans-annc">transition announcement</a>
 to w3c-ac-members@w3.org
-<span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">and chairs@w3.org</span>
+<span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">and chairs@w3.org</span>
 and on the <a href="https://www.w3.org/">W3C home page</a>.
 </li>
 
-<li  class="trans-announcement" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">The Chair or Team Contact(s) <span
+<li  class="trans-announcement" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update" data-pr="new">The Chair or Team Contact(s) <span
 class="rfc2119">SHOULD</span> forward the announcement to the Working
 Group's public mailing list <strong>taking caution</strong> not to
 send any Member-confidential information to a public list.</li>
 
+<li  class="trans-announcement" data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">The Team Contact <span
+	class="rfc2119">SHOULD</span> forward the announcement to the appropriate public forum <strong>taking caution</strong> not to
+	send any Member-confidential information to a public list.</li>
+	
 <li class="trans-announcement"  data-profile="WD|CR|WG-NOTE">
 If this publication is the result
 of <a href="https://www.w3.org/2017/Process-20170301/#recs-and-notes">returning a document to a Working Group for further work</a>, the
@@ -635,7 +658,8 @@ Track transition</a> as defined in the W3C Process.</p>
 <li>The Group <span class="rfc2119">should</span> update the deadline for further comments.</li>
 </ul>
 </div>
-<ul data-profile="WD">
+
+	<ul data-profile="WD">
 <li>The Group <span class="rfc2119">should</span>
 publish a Working Draft to the W3C Technical Reports page when there have been significant changes to the document that would benefit from review beyond the Working Group.</li>
 <li>The Group <span class="rfc2119">may</span> request publication of a Working Draft even if its content is considered unstable and does not meet all Working Group requirements.</li>
@@ -654,24 +678,24 @@ publish a Working Draft to the W3C Technical Reports page when there have been s
 <li>The Group <span class="rfc2119">should</span> provide information about implementations known to the Working Group.</li>
 </ul>
 
-<p  class="revisions" data-profile="CR|PR" data-cr="new|substantive|rec-update"><strong>Note:</strong> The
+<p  class="revisions" data-profile="CR|PR" data-cr="new|substantive|rec-update" data-pr="new"><strong>Note:</strong> The
 Working Group <span class="rfc2119">SHOULD NOT</span> publish a
 (new) revision of a <span class="status-name">STATUS</span> before the end
 of the (current) review period.</p>
 
 <hr/>
 
-<div class="transreq-section" data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="notchartered|first">
+<div class="transreq-section" data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
 <h2 id="transreq">Transition request</h2>
 
 <div class="note" data-profile="CR" data-cr="substantive">
   <p><strong>Tip:</strong> When updating an existing Candidate Recommendation, focus your new transition on what changed since the previous Candidate Recommendation transition. There is no need to repeat information included in the previous transition.</p>
 </div>
-<div class="note" data-profile="CR" data-cr="rec-update">
+<div class="note" data-profile="CR" data-cr="rec-update|rec-amended">
   <p><strong>Tip:</strong> When proposing an update of an existing Recommendation, focus your new transition on what parts of the errata of the Recommendation is intended to be applied.</p>
 </div>
 
-<div class="transreq-section2" data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="notchartered|first">
+<div class="transreq-section2" data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
 <p>The message subject line and body <span
 class="rfc2119">SHOULD</span> identify this as a "transition request";
 see above for <a href="#transreqmail">where to send the request</a>.
@@ -698,13 +722,13 @@ a <a href="https://www.w3.org/pubrules/doc#delta">delta specification</a>.
 <ol>
 <li>Document title and URIs of the W3C Recommendation.</li>
 <li>The request <span class="rfc2119">must</span>
-include rationale for <span data-profile="PR-OBSL">obsoleting</span><span data-profile="PR-RSCND">rescinding</span> the Recommendation.</li>
+include rationale for <span data-profile="PR-OBSL">obsoleting or superseding </span><span data-profile="PR-RSCND">rescinding</span> the Recommendation.</li>
 </ol>
 </div>
 
-<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update">
+<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
 
-<p data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update">Furthermore,
+<p data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">Furthermore,
 the transition request provides evidence that the group has
 satisfied the <a href="#reqs-adv">transition
 requirements</a>. The questions and observations in the subsections
@@ -715,9 +739,9 @@ to help the
 Project Management Lead
 </span>
 <span
-data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update">Director</span>
+data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">Director</span>
 assess whether the group has satisfied the transition requirements.
-<span class="transreq-as-agenda" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">
+<span class="transreq-as-agenda" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
 The transition request <span class="rfc2119">SHOULD</span> be
 organized so that it serves as the basis for the <a
 href="#sample-agenda">agenda</a> of the meeting with the Director.</span></p>
@@ -742,7 +766,7 @@ approval). The length of the presentation varies
 the technical or political complexity of the specification.</p>
 
 <p class="no-pr-when-open-excl"
-data-profile="PR"><strong>Note:</strong> The Director <span
+data-profile="PR" data-pr="new"><strong>Note:</strong> The Director <span
 class="rfc2119">SHOULD NOT</span> schedule a Proposed Recommendation
 review period to end
 less than 10 days
@@ -752,7 +776,7 @@ if there are any Patent Advisory Groups
 (PAGs) currently discussing the document
 (per the <a href="https://www.w3.org/2003/12/22-pp-faq.html#trpub-during-pag">Patent Policy FAQ, question 29</a>).</p>
 
-<div class="trans-decision" data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPIG-NOTE|FPWG-NOTE|REC" data-rec="editorial" data-cr="new|substantive|rec-update" data-notehistory="notchartered|first">
+<div class="trans-decision" data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPIG-NOTE|FPWG-NOTE|REC" data-rec="editorial" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
 
 <div data-profile="CR" data-cr="substantive">
 
@@ -770,55 +794,57 @@ include a link to the previous Candidate Recommendation transition request.</li>
 
 <ul>
 <li>The request
-<span data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial" data-cr="new|substantive|rec-update">
+<span data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial" data-cr="new|substantive|rec-update|rec-amended">
 <span class="rfc2119">must</span>
 </span>
 <span data-profile="WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE">
 <span class="rfc2119">should</span>
 </span>
-record the group's decision <span data-profile="PR-OBSL|PR-RSCND">(or the individual request or the support of the Advisory Committee)</span><span data-profile="REC" data-rec="editorial">(or the individual request if no Working Group)</span> to request advancement (e.g.,
+record the <span data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPIG-NOTE|FPWG-NOTE|REC" data-cr="new|substantive|rec-update" data-pr="new" data-rec="new">group's</span><span data-profile="CR|PR|REC" data-cr="rec-amended" data-pr="rec-amended" data-rec="editorial">individual(s)</span>
+ decision <span data-profile="PR-OBSL|PR-RSCND">(or the support of the Advisory Committee/TAG)</span> to request advancement (e.g.,
 a link to
-meeting minutes or email announcing the group's decision).</li>
+meeting minutes, github issues, or email announcing the decision).</li>
+
 </ul>
 
 </div>
 
-<div class="changes" data-profile="CR|PR|REC" data-cr="new|substantive|rec-update">
+<div class="changes" data-profile="CR|PR|REC" data-cr="new|substantive|rec-update|rec-amended">
 <h3><a name="imp-changes" id="imp-changes">Changes</a></h3>
 
 <ul>
-<li data-profile="CR" data-cr="new|substantive|rec-update">The group
+<li data-profile="CR" data-cr="new|substantive|rec-update|rec-amended">The <span data-profile="CR" data-cr="new|substantive|rec-update">group</span><span data-profile="CR" data-cr="rec-amended">individual(s)</span>
 <span class="rfc2119">must</span>
 provide public documentation of all <a href="https://www.w3.org/2017/Process-20170301/#substantive-change">substantive changes</a> to the technical report since the previous publication. Include, for example, a link to a change log
 where important changes are highlighted.
 </li>
-<li data-profile="PR|REC">The group
-<span class="rfc2119">must not</span> include <a href="https://www.w3.org/2017/Process-20170301/#substantive-change">substantive changes</a> to the technical report since the previous publication<span data-profile="PR"> (except for the removal of feature at risk)</span>. Include, for example, a link to a change log
-where most important changes are highlighted. Otherwise, the Working Group <span class="rfc2119">must</span>  republish the document at an earlier status.</span>
+<li data-profile="PR|REC">The <span data-profile="PR|REC" data-pr="new">group</span><span data-profile="PR" data-pr="rec-amended">individual(s)</span>
+<span class="rfc2119">must not</span> include <a href="https://www.w3.org/2017/Process-20170301/#substantive-change">substantive changes</a> to the technical report since the previous publication<span data-profile="PR" data-pr="new"> (except for the removal of feature at risk)</span>. Include, for example, a link to a change log
+where most important changes are highlighted. Otherwise, the <span data-profile="PR|REC" data-pr="new">Working Group</span><span data-profile="PR" data-cr="rec-amended">individual(s)</span> <span class="rfc2119">must</span>  republish the document at an earlier status.</span>
 </li>
 <!-- Not necessary to say even though it's in the process -->
 <!--
 <li data-profile="REC">A Recommendation <span class="rfc2119">must not</span> include any substantive changes from the Proposed Recommendation on which it is based.</li>
 -->
-<li data-profile="CR|PR|REC" data-rec="new" data-cr="new|substantive|rec-update">The group
+<li data-profile="CR|PR|REC" data-rec="new" data-cr="new|substantive|rec-update|rec-amended">The <span data-profile="CR|PR|REC" data-cr="new|substantive|rec-update" data-pr="new">group</span><span data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span>
 <span class="rfc2119">should</span>
 provide public documentation of changes that are not substantive.</li>
 <li data-profile="REC" data-rec="editorial">The group
 <span class="rfc2119">should</span>
 provide public documentation of editorial corrections.</li>
-<li class="features-at-risk" data-profile="PR">Were features at risk removed?</li>
+<li class="features-at-risk" data-profile="PR" data-pr="new">Were features at risk removed?</li>
 
-<li class="relation-to-recs" data-profile="CR|PR|REC" data-rec="new">If this specification is a revision of a previous
-Recommendation, does the document clearly state the relation of
-this version to the previous one? For instance, does it supersede
-or <a href="https://www.w3.org/2017/Process-20170301/#rec-rescind">obsolete</a> the previous Recommendation? Where is this stated
+<li class="relation-to-recs" data-profile="CR|PR|REC" data-rec="new"><span data-profile="CR|PR|REC" data-cr="new|substantive" data-pr="new">If this specification is a revision of a previous
+Recommendation, does</span><span data-profile="CR|PR" data-cr="rec-update|rec-amended" data-pr="rec-amended">Does</span> the document clearly state the relation of
+this version to the previous one? For instance, does it <a href="https://www.w3.org/2017/Process-20170301/#rec-rescind">obsolete
+or supersede</a> the previous Recommendation? Where is this stated
 (e.g., the status section)? Does the specification explain whether
 authors should create content according to the previous or current
 version? Does the specification explain whether processors should
 continue to process content according to the previous
 Recommendation?</li>
 
-<li class="revision-info" data-profile="CR|PR|REC" data-rec="new">If there will be two Recommendations of different major
+<li class="revision-info" data-profile="CR|PR|REC" data-cr="new|substantive" data-pr="new" data-rec="new">If there will be two Recommendations of different major
 revision numbers, does the newer specification explain the
 relationship?</li>
 <li data-profile="REC" data-rec="editorial">The group <span class="rfc2119">should</span>
@@ -826,31 +852,31 @@ address all recorded errata.</li>
 </ul>
 </div>
 
-<div class="requirements-met" data-profile="CR|PR|REC" data-rec="new" data-cr="new|substantive">
+<div class="requirements-met" data-profile="CR|PR|REC" data-rec="new" data-cr="new|substantive" data-pr="new">
 <h3><a name="reqs-satisfied" id="reqs-satisfied">Requirements satisfied</a></h3>
 
 <ul>
-<li data-profile="CR" data-cr="new|substantive|rec-update">The Group <span class="rfc2119">must</span>
+<li data-profile="CR" data-cr="new|substantive|rec-update|rec-amended">The Group <span class="rfc2119">must</span>
 show that the specification has met all Working Group requirements, or explain why the requirements have changed or been deferred. Where are the requirements defined (e.g,. a charter or requirements document)?</li>
 <li>The group <span class="rfc2119">should</span>
 report which, if any, of the Working Group's requirements for this document have changed since the previous step. Are any requirements previously satisfied no longer satisfied? Are any requirements previously unsatisfied now satisfied?</li>
 </ul>
 </div>
 
-<div class="dependencies-met" data-profile="CR|PR|REC" data-rec="new" data-cr="new|substantive|rec-update">
+<div class="dependencies-met" data-profile="CR|PR|REC" data-rec="new" data-cr="new|substantive|rec-update|rec-amended">
 <h3><a name="dependencies-met" id="dependencies-met">Dependencies met (or not)</a></h3>
 
 <ul>
-<li class="depreporting" data-profile="PR|REC">The group <span class="rfc2119">should</span>
+<li class="depreporting" data-profile="PR|REC" data-pr="new">The group <span class="rfc2119">should</span>
 report any changes in dependencies with other groups.</li>
 <li class="depreporting" data-profile="CR" data-cr="new|substantive|rec-update">The group <span class="rfc2119">must</span>
 document changes to dependencies during the development of the specification.</li>
-<li>Does this specification have any normative references to W3C
+<li data-profile="CR|PR|REC">Does this specification have any normative references to W3C
 specifications that are not yet
 <span class="normrefstatus" data-profile="PR">
 Proposed Recommendations? See <a href="https://www.w3.org/2013/09/normative-references">Normative References Guidelines</a>.
 </span>
-<span  class="normrefstatus" data-profile="CR" data-cr="new|substantive|rec-update">
+<span  class="normrefstatus" data-profile="CR" data-cr="new|substantive|rec-update|rec-amended">
 Candidate Recommendations?
 </span>
 <span  class="normrefstatus" data-profile="REC">
@@ -860,7 +886,7 @@ Recommendations?
 Recommendation with normative references to W3C
 specifications that are not yet Recommendations. See <a href="https://www.w3.org/2013/09/normative-references">Normative References Guidelines</a>.
 </li>
-<li>Does this specification have any normative references to a Rescinded Recommendation? Documents <span class="rfc2119">must not</span> include normative references to a Rescinded Recommendation.
+<li>Does this specification have any normative references to a Rescinded/Obsolete/Superseded Recommendation? Documents <span class="rfc2119">must not</span> include normative references to a Rescinded/Obsolete/Superseded Recommendation.
 </li>
 <li class="groups-satisfied" data-profile="CR" data-cr="new|substantive|rec-update">Have other Groups confirmed that dependencies
 have been satisfied? For example, does the issues list show that
@@ -871,11 +897,11 @@ related to implementation have been satisfied?</li>
 </ul>
 </div>
 
-<div class="wide-review" data-profile="CR|PR|REC|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">
+<div class="wide-review" data-profile="CR|PR|REC|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">
 <h3><a name="wide-review" id="wide-review">Wide Review</a></h3>
 
 <ul>
-<li class="widereviewreq" data-profile="CR|PR|REC" data-rec="new" data-cr="new|substantive">The group <span class="rfc2119">must</span>
+<li class="widereviewreq" data-profile="CR|PR|REC" data-rec="new" data-cr="new|substantive" data-pr="new">The group <span class="rfc2119">must</span>
 show that the specification has received <a href="https://www.w3.org/wiki/DocumentReview">wide review</a> (see <a href="https://www.w3.org/2017/Process-20170301/#wide-review">section 6.2.3.1</a>)</li>
 <li class="widereviewreq" data-profile="CR" data-rec="new" data-cr="rec-update">The group <span class="rfc2119">must</span>
 show that the changes have received <a href="https://www.w3.org/wiki/DocumentReview">wide review</a> (see <a href="https://www.w3.org/2017/Process-20170301/#wide-review">section 6.2.3.1</a>)</li>
@@ -885,26 +911,26 @@ show that the changes to the document have received <a href="https://www.w3.org/
 identify features in the document as "at risk".</li>
 <li class="reviewers" data-profile="CR" data-cr="new|substantive|rec-update">
 Which are the groups with dependencies? Did they review the document?</li>
-<li class="reviewers" data-profile="CR" data-cr="rec-update">
+<li class="reviewers" data-profile="CR" data-cr="rec-update|rec-amended">
 Are the changes listed on the errata page of the Recommendation?</li>
 
 <li class="reviewers" data-profile="PR-RSCND">
 The group <span class="rfc2119">must</span>
 show that the request to rescind has received
 <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a>. If the Director is
-proposing to rescind or obsolete the Recommendation, the Director
-<span class="rfc2119">must</span> show that the request to rescind or obsolete is based on public comment.
+proposing to rescind the Recommendation, the Director
+<span class="rfc2119">must</span> show that the request to rescind is based on public comment.
 </li>
 
 <li class="reviewers" data-profile="PR-OBSL">
 The group <span class="rfc2119">must</span>
-show that the request to obsolete has received
+show that the request to obsolete or to supersede has received
 <a href="https://www.w3.org/2017/Process-20170301/#wide-review">wide review</a>. If the Director is
-proposing to obsolete the Recommendation, the Director
-<span class="rfc2119">must</span> show that the request to obsolete is based on public comment.
+proposing to obsolete or supersede the Recommendation, the Director
+<span class="rfc2119">must</span> show that the request to obsolete or to supersede is based on public comment.
 </li>
 
-<li  class="reviewers" data-profile="CR|PR" data-cr="new|substantive">Was there review from implementers?</li>
+<li  class="reviewers" data-profile="CR|PR" data-cr="new|substantive|rec-amended" data-pr="rec-amended">Was there review from implementers?</li>
 
 <li  class="reviewers" data-profile="CR">Are the changes already deployed in implementations?</li>
 
@@ -913,25 +939,26 @@ Advisory Committee representatives?</li>
 </ul>
 </div>
 
-<div class="issues" data-profile="CR|PR|REC|OBSL|RSCND" data-rec="new" data-cr="new|substantive|rec-update">
+<div class="issues" data-profile="CR|PR|REC|OBSL|RSCND" data-rec="new" data-cr="new|substantive|rec-update|rec-amended">
 <h3><a name="formally-address" id="formally-address">Issues addressed</a></h3>
 
 <ul>
-<li data-profile="CR" data-cr="rec-update">The group <span class="rfc2119">should</span> address all
+<li data-profile="CR" data-cr="rec-update|rec-amended">The <span data-profile="CR" data-cr="rec-update">group</span><span data-profile="CR" data-cr="rec-amended">individual(s)</span> <span class="rfc2119">should</span> address all
 recorded errata.</p>
-<li data-profile="CR|PR|REC|OBSL|RSCND" data-rec="new" data-cr="new">The group <span class="rfc2119">must</span>
+<li data-profile="CR|PR|REC|OBSL|RSCND" data-rec="new" data-cr="new" data-pr="new">The group <span class="rfc2119">must</span>
 <a href="https://www.w3.org/2017/Process-20170301/#formal-address">formally address</a> all issues raised about the document since the previous maturity level. </li>
 <li data-profile="PR">
-The group <span class="rfc2119">must</span>
-show that all issues raised during the Candidate Recommendation review period other than by Advisory Committee representatives acting in their formal AC representative role have been <a href="https://www.w3.org/2017/Process-20170301/#formal-address">formally addressed</a>.
+The <span data-profile="PR" data-pr="new">group</span><span data-profile="PR" data-pr="rec-amended">individual(s)</span> <span class="rfc2119">must</span>
+show that all issues raised during the Candidate Recommendation review period have been <a href="https://www.w3.org/2017/Process-20170301/#formal-address">formally addressed</a>.
 </li>
 <li data-profile="PR">
-The group <span class="rfc2119">must</span>
-identify any substantive issues raised since the close of the Candidate Recommendation review period by parties other than Advisory Committee representatives acting in their formal AC representative role.</li>
-<li>Include a link to an issues list that indicates that the Group
+The <span data-profile="PR" data-pr="new">group</span><span data-profile="PR" data-pr="rec-amended">individual(s)</span> <span class="rfc2119">must</span>
+identify any substantive issues raised since the close of the Candidate Recommendation review period by parties.</li>
+<li>Include a link to an issues list that indicates that the <span data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new">group</span><span
+	data-profile="CR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span>
 has been responsive to reviewers who have raised issues since
 the previous transition. The Director's expectations are
-that, as a document advances, the Working Group will keep an
+that, as a document advances, there will be an
 increasingly precise record of how it has formally addressed each
 issue.
 
@@ -955,22 +982,27 @@ should document the success or failure of these negotiations.</span></li>
 
 <li>For changes in the issues list since the previous transition:
 <ul>
-<li>Highlight issues where the Group has declined to make a change,
+<li>Highlight issues where the <span data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new">Group</span><span
+	data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span> has declined to make a change,
 with rationale. See also <a
 href="https://lists.w3.org/Archives/Member/chairs/2000JanMar/0109.html">
 Clarification: tables summarizing review</a> Tim Berners-Lee (Tue,
 Feb 15 2000).</li>
 
-<li>Highlight issues where the Group has not satisfied a reviewer
+<li>Highlight issues where the <span data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new">Group</span><span
+	data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span> has not satisfied a reviewer
 and has either not yet responded to the reviewer, or the reviewer
-has not yet acknowledged the Group's decision.</li>
+has not yet acknowledged the <span data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new">Group's</span><span
+data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span> decision.</li>
 
 <li>Show, without highlighting:
 <ul>
-<li>Issues where the Working Group has accepted a proposed
+<li>Issues where the <span data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new">Working Group</span><span
+	data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span> has accepted a proposed
 change.</li>
 
-<li>Issues where the Working Group has clarified the specification
+<li>Issues where the <span data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new">Working Group</span><span
+	data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span> has clarified the specification
 to the satisfaction of the reviewer.</li>
 </ul>
 </li>
@@ -979,17 +1011,18 @@ to the satisfaction of the reviewer.</li>
 </ul>
 </div>
 
-<div class="objections" data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">
+<div class="objections" data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
 <h3 id="objections">Formal Objections</h3>
 
 <ul>
-<li>The group
+<li>The <span data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new">group</span><span
+	data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span>
 <span class="rfc2119">must</span>
 provide public documentation of any Formal Objections. For each Objection, is there a public record of the decision, the objection, and attempts to satisfy the reviewer?</li>
 </ul>
 </div>
 
-<div class="implementation" data-profile="WD|FPWD|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="new" data-cr="new|substantive|rec-update">
+<div class="implementation" data-profile="WD|FPWD|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="new" data-cr="new|substantive|rec-update|rec-amended">
 <h3><a name="impl-reports" id="impl-reports">Implementation</a></h3>
 
 <ul>
@@ -1005,15 +1038,18 @@ two complete implementations (e.g., there are two software
 instances, each of which conforms) or to show that each feature is
 implemented twice in <em>some</em> piece of software?
 </li>
-<li data-profile="CR" data-cr="rec-update">
-The group <span class="rfc2119">must</span> document how adequate
+<li data-profile="CR" data-cr="rec-update|rec-amended">
+The <span data-profile="CR" data-cr="rec-update">Working Group</span><span
+data-profile="CR" data-cr="rec-amended">individual(s)</span> <span class="rfc2119">must</span> document how adequate
 implementation experience is demonstrated. Are there tests or test
-suites available that allows the WG	to demonstrate/evaluate that
+suites available that allows the <span data-profile="CR" data-cr="rec-update">Working Group</span><span
+data-profile="CR" data-cr="rec-amended">individual(s)</span>	to demonstrate/evaluate that
 features have been implemented (e.g., a matrix showing how different
 pieces or classes of software implement different substantive corrections)?
 </li>
 <li data-profile="PR">
-The group <span class="rfc2119">must</span>
+The <span data-profile="PR" data-pr="new">Working Group</span><span
+data-profile="PR" data-pr="rec-amended">individual(s)</span> <span class="rfc2119">must</span>
 show adequate <a href="https://www.w3.org/2017/Process-20170301/#implementation-experience">implementation experience</a> except where an exception is approved by the Director.
 Were the expectations set at Candidate Recommendation met?
 </li>
@@ -1030,15 +1066,16 @@ implementability testing.</li>
 <li class="other-interop-experience" data-profile="CR" data-cr="new|substantive">Does the WG have additional implementation experience that will
 help demonstrate interoperability (e.g., has there been an
 interoperability day or workshop? Is one planned?)?</li>
-<li data-profile="WD|FPWD|REC|PR-OBSL|PR-RSCND" data-rec="new">The group <span class="rfc2119">should</span>
-provide information about implementations known to the Working Group.
+<li data-profile="WD|FPWD|CR|REC|PR-OBSL|PR-RSCND" data-rec="new" data-cr="rec-amended">The <span data-profile="WD|FPWD|CR|REC|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">Working Group</span><span
+	data-profile="CR" data-cr="rec-amended">individual(s)</span> <span class="rfc2119">should</span>
+provide information about implementations <span data-profile="WD|FPWD|CR|REC|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">known to the Working Group</span>.
 See the <a href="https://www.w3.org/2017/Process-20170301/#implementation-experience">definition
 of implementation experience</a> in section 6.2.4 of the Process.
 </li>
 </ul>
 </div>
 
-<div class="disclosures" data-profile="CR|REC|RSCND|PR-RSCND" data-rec="new|editorial" data-cr="new|substantive|rec-update">
+<div class="disclosures" data-profile="CR|REC|RSCND|PR-RSCND" data-rec="new|editorial" data-cr="new|substantive|rec-update|rec-amended">
 <h3 id="disclosures">Patent disclosures</h3>
 
 <ul>
@@ -1046,7 +1083,7 @@ of implementation experience</a> in section 6.2.4 of the Process.
 previous transition?
 Have there been any incomplete or problematic disclosures?</li>
 
-<li class="openexclusions" data-profile="PR">Are there any open exclusion opportunities?  The Director <span
+<li class="openexclusions" data-profile="PR" data-pr="new">Are there any open exclusion opportunities?  The Director <span
 class="rfc2119">SHOULD NOT</span> schedule a Proposed Recommendation
 review period to end
 less than 10 days
@@ -1056,16 +1093,13 @@ if there are any Patent Advisory Groups
 (PAGs) currently discussing the document
 (per the <a href="https://www.w3.org/2003/12/22-pp-faq.html#trpub-during-pag">Patent Policy FAQ, question 29</a>).
 </li>
-
-<li data-profile="CR|REC|RSCND|PR-RSCND" data-rec="new" data-cr="new|substantive|rec-update">If the group is not using <a href="https://www.w3.org/2004/01/pp-impl/">IPP</a>: Does the disclosure page conform to the patent policy
-requirements?</li>
 </ul>
 </div>
 
 </div>
 </div>
 
-<div class="trans-mtg-section" data-profile="CR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-rec="new|editorial" data-cr="new|substantive|rec-update">
+<div class="trans-mtg-section" data-profile="CR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-rec="new|editorial" data-cr="new|substantive|rec-update|rec-amended">
 <h2><a name="dir-mtg" id="dir-mtg">Transition
 Meeting with the Director</a></h2>
 
@@ -1076,6 +1110,8 @@ meeting attended by:</p>
 <ul>
 <li>The Team contact(s)</li>
 
+<li data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">The <a href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></li>
+
 <li>The Project Management Lead (or someone appointed by him), who generally
 chairs the meeting.</li>
 
@@ -1085,12 +1121,13 @@ chairs the meeting.</li>
 transition involves contentious issues such as IPR, technical or
 other concerns.</li>
 
-<li class="mtg-attendees-chair" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">The Working Group Chair(s)</li>
+<li class="mtg-attendees-chair" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">The <span data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">Working Group Chair(s)</span><span
+	data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span></li>
 
-<li  class="mtg-attendees-others" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">Others invited by the Project Management Lead (or whoever is chairing the
+<li  class="mtg-attendees-others" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">Others invited by the Project Management Lead (or whoever is chairing the
 transition meeting)</li>
 
-<li  class="mtg-attendees-dependent" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">In the event that the specification significantly affects the
+<li  class="mtg-attendees-dependent" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">In the event that the specification significantly affects the
 work of another WG, a (non-Team) representative of that Group
 should be invited to the call.</li>
 
@@ -1173,16 +1210,20 @@ any action items from this meeting?</li>
 <h3>Some reasons for declining a transition request</h3>
 
 <ul>
-<li  data-profile="FPWD|WD|WG-NOTE|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="first|none">
+<li data-profile="FPWD|WD|WG-NOTE|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="first|none" data-pr="new">
 The Director is not satisfied with how the Working Group has
 addressed issues.</li>
 
-<li>
+<li data-profile="FPWD|WD|WG-NOTE|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new">
 The Working Group has issued a transition request despite a
 <a href='https://www.w3.org/2017/Process-20170301/#FormalObjection'>Formal Objection</a> and the Director is not satisfied with
 the Working Group's rationale.</li>
 
-<li class="extra-criteria-not-met" data-profile="PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial">The Director believes that special
+<li  data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">
+	The Director is not satisfied with how the individual(s) has
+	addressed issues.</li>
+	
+ <li class="extra-criteria-not-met" data-profile="PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial">The Director believes that special
 entrance criteria have not been satisfied.</li>
 </ul>
 
@@ -1222,7 +1263,7 @@ One or two sentences of description of the specification (for communication purp
 
 <li>A proposed <a href="#schedule-pubreq">publication schedule</a>.</li>
 
-<li class="onlydeleted" data-profile="CR" data-cr="new|substantive|rec-update">
+<li class="onlydeleted" data-profile="CR" data-cr="new|substantive|rec-update|rec-amended">
 If there has been a previous Candidate Recommendation, whether the
 only change is that <em>text has been deleted</em>; If so, W3C can skip the Patent Policy Exclusion (see the <a href="https://www.w3.org/2003/12/22-pp-faq.html#nonewtext">Patent Policy FAQ</a>).</li>
 
@@ -1234,13 +1275,13 @@ of stopping work on a specification.
 <li data-profile="CR" data-cr="editorial">
 Since there has been a previous Candidate Recommendation and the changes are <strong>only editorial</strong>, W3C can skip the Patent Policy Exclusion (see the <a href="https://www.w3.org/2003/12/22-pp-faq.html#nonewtext">Patent Policy FAQ</a>). If not, a proper <a href='transitions.html?profile=CR&amp;cr=substantive'>transition request</a> with the approval of the Director will be needed.</li>
 
-<li class="transreq-dir-approval" data-profile="FPWD|CR|PR|REC|OBSL|RSCND|FPIG-NOTE|FPWG-NOTE" data-cr="new|substantive|rec-update" data-notehistory="notchartered|first">Record of approval of the <a href="#transreq">transition request</a>.</li>
+<li class="transreq-dir-approval" data-profile="FPWD|CR|PR|REC|OBSL|RSCND|FPIG-NOTE|FPWG-NOTE" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">Record of approval of the <a href="#transreq">transition request</a>.</li>
 <li class="transreq-dir-approval" data-profile="FPIG-NOTE|FPWG-NOTE" data-notehistory="closure">Record of W3M decision to close the group.</li>
 <li class="transreq-dir-approval" data-profile="FPIG-NOTE|FPWG-NOTE" data-notehistory="none">Evidence that publication is in accordance with expectations set by the group
 charter (e.g., quote the charter).</li>
 </ol>
 
-<p class="domain-lead-aware" data-profile="CR" data-cr="new|substantive|rec-update"><strong>Note:</strong>
+<p class="domain-lead-aware" data-profile="CR" data-cr="new|substantive|rec-update|rec-amended"><strong>Note:</strong>
 Someone from the W3C
 management team (usually the Project Management Lead) <span
 class="rfc2119">SHOULD</span> be aware of the status of the
@@ -1323,7 +1364,7 @@ publication as described above.</p>
 
 </div>
 
-<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="first">
+<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">
 <h2 id="trans-annc">Transition Announcement</h2>
 
 <p>A<span data-profile="OBSL">n</span>
@@ -1376,7 +1417,7 @@ announcement template</a> as a starting point.</p>
 </div>
 
 
-<div class="announcement-contents" data-profile="CR" data-cr="new|substantive|rec-update">
+<div class="announcement-contents" data-profile="CR" data-cr="new|substantive|rec-update|rec-amended">
 
 <ol>
 <li>That this is a <span class="status-name">STATUS</span>
@@ -1401,7 +1442,7 @@ of <a href="https://www.w3.org/2017/Process-20170301/#recs-and-notes">returning 
 <li>Document abstract and status.</li>
 </ol>
 
-<p data-profile="CR" data-cr="new|substantive|rec-update">Please use the <a
+<p data-profile="CR" data-cr="new|substantive|rec-update|rec-amended">Please use the <a
 href="https://www.w3.org/new-doc-from-template?location=%2FTeam%2F&amp;template=%2Fafs%2Fw3.org%2Fpub%2FWWW%2FTeam%2FTemplates%2Fcfi.html&amp;submit=Continue...">Team-only transition
 announcement template</a> as a starting point.</p>
 
@@ -1467,7 +1508,7 @@ transition announcement.</li>
 </ol>
 </div>
 </div>
-<div data-profile="WD|FPWD|CR" data-cr="new|substantive|rec-update" data-informativeOnly="false">
+<div data-profile="WD|FPWD|CR" data-cr="new|substantive|rec-update|rec-amended" data-informativeOnly="false">
 <h2 id="call-for-exclusions">Call for Exclusions</h2>
 
  <p>The <a href="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">Patent Policy FAQ</a> clarifies
@@ -1537,7 +1578,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 	 // each one of those config parameters are matching the ones in the option/input elements
 	 var config = {
 		 profile: "WD",
-		 cr: "new", rec: "new",
+		 cr: "new", pr: "new", rec: "new",
 		 notehistory: "first",
 		 informativeOnly: "false",
 		 echidna: "false"
@@ -1559,6 +1600,8 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 		    query += "&cr=" + config.cr;
   	 } else if (config.profile === "REC") {
 		    query += "&rec=" + config.rec;
+			} else if (config.profile === "PR") {
+		    query += "&pr=" + config.pr;
   	 } else if (config.profile === "FPWD"
 								|| config.profile === "WD") {
 		    if (config.informativeOnly === "true") {
@@ -1599,6 +1642,10 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 				 } else if (config.profile === "REC") {
 					 if (node.dataset.rec !== undefined) {
 				     doesMatch = doesMatch && node.dataset.rec.includes(config.rec);
+					 }
+					} else if (config.profile === "PR") {
+					 if (node.dataset.pr !== undefined) {
+				     doesMatch = doesMatch && node.dataset.pr.includes(config.pr);
 					 }
 				 } else if (config.profile === "FPWD" || config.profile === "WD") {
 					 if (node.dataset.informativeonly !== undefined) {
@@ -1762,7 +1809,7 @@ So far, we have the following data attributes:
 4. data-notehistory for a |-separated list of first [working|interest] group note paths
 
 e.g.
-<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="first">
+<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">
 
 To find the possible values for each data attributes, look at the HTML option and input elements.
 
