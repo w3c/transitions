@@ -178,6 +178,10 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
 </ul>
 </div>
       <form>
+				 <p>
+					 You may use a TR shortname to see your next step: <input type=text placeholder="shortname" id="shortname" size="30" minlength="3" maxlength="40" pattern="[-a-zA-Z0-9]{3,40}">
+					 <span id='stext'></span>
+					</p>
          <p>
             Select your steps <label><a href="https://www.w3.org/Consortium/Process/tr">transition steps</a> to</label>: 
          <select id="profile" name="profile">
@@ -1568,6 +1572,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
  <script>
 (function() {
 	 // For debugging
+	 var API_KEY = "sdqupwhg51c0o4ww488w40og4kkog8s";
 	 var trace = function () {};
    if (window.location.href.includes("file:")) {
      trace = function trace(msg) {
@@ -1785,10 +1790,55 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 		onpushstate();
   }
 	document.getElementById("profile").onchange = changeInput;
+
+	function shortname(e) {
+		var stext = document.getElementById("stext");
+		var s = e.target.value;
+		if (s.length > 2) {
+			fetch("https://api.w3.org/specifications/" + s + "?apikey=" + API_KEY).then(res => res.json())
+			 .then(spec => {
+				 if (spec.title === undefined) throw new Error(s + " wasn't found");
+				 var latest = spec["_links"]["latest-version"];
+				 if (latest !== undefined) return latest;
+				 throw new Error(s + " doesn't have a latest version");
+			 }).then(latest => {
+				return fetch(latest.href+ "?apikey=" + API_KEY).then(res => res.json());
+			 }).then(spec => {
+				  var newprofile = config.profile;
+					var cr = config.cr;
+				  stext.innerHTML = "Found this <a href='" + spec.uri + "'>" + spec.status + "</a> (" + spec.date + ")";
+				  if (spec.status === "Working Draft") {
+						newprofile = "CR";
+						cr = "new";
+					} else if (spec.status === "Candidate Recommendation") {
+						newprofile = "PR";
+					} else if (spec.status === "Proposed Recommendation") {
+						newprofile = "REC";
+					} else if (spec.status === "Recommendation") {
+						newprofile = "CR";
+						cr = "rec-update";
+					} else if (spec.status === "Group Note") {
+						newprofile = "WG-NOTE";
+					}
+					if (newprofile !== config.profile || cr !== config.cr) {
+						config.profile = newprofile;
+						if (config.profile === "CR") {
+							config.cr = cr;
+						}
+						onpushstate();
+						adjustForms();
+					}
+			 }).catch(err => {
+				 stext.textContent = err.message;
+			 });
+		}
+	}
   var nodes = document.querySelectorAll("input");
 	for (var i = 0; i < nodes.length; i++) {
 	  if (nodes[i].type === "checkbox") {
 			nodes[i].onchange = changeCheckbox;
+		} else if (nodes[i].type === "text") {
+			nodes[i].oninput = shortname;
 		} else {
 			nodes[i].onchange=changeInput;
 		}
