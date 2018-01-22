@@ -17,10 +17,12 @@ Select one of the transition templates below:
 -->
 * Edited Recommendation: [Edited REC transition](https://github.com/plehegar/transitions/issues/new?assignee=swickr&labels=Entering+Edited+REC&title=%5BYOURWGCODEHERE%5D+REC+update+for+SHORTNAME&body=%23+Document+title%2c+URLs%2c+estimated+publication+date%0d%0a%0d%0a%23+Abstract%0d%0a%0d%0a%23+Status%0d%0a%0d%0a%23+Link+to+group%27s+decision+to+request+transition%0d%0a%0d%0a%23+Changes%0d%0a%0d%0a%23+Any+changes+in+requirements%3f%0d%0a%0d%0a%23+Dependencies+met+(or+not)%0d%0a%0d%0a%23+Advisory+Committee+Review%0d%0a%0d%0a%23+Issues+addressed%0d%0a%0d%0a%23+Formal+Objections%0d%0a%0d%0a%23+Any+changes+in+patent+disclosures%3f%0d%0a%0d%0a)
 
+If you're not sure what transition template to use, check out our [next step finder](https://w3c.github.io/transitions/nextstep.html) to see your choices.
+
 ## Further Guidance
 
   * If you're not sure how to fill the template properly, see [Organize a Technical Report Transition (2017 Process)](https://www.w3.org/Guide/transitions).
-  * If you need to convey Member-confidential information, start a thread on w3c-archive@w3.org and link it from your issue; lists.w3.org's access control will manage permissions. Analogously for Team-confidential infos.
+  * If you need to convey Member-confidential information, start a thread on w3c-archive@w3.org and link it from your issue; lists.w3.org's access control will manage permissions. Use w3t-archive@w3.org instead for Team-confidential infos.
   * Your WG code is your WG's preferred (unique) abbreviation: it is included in the title template to help you search for transition requests relevant to your WG and manage the official or unofficial pestering of whoever has the “ball”.
   * Assign your editor(s) and staff contact(s) to the issues to facilitate automatic pestering.
   * Don't forget to tag/untag “Awaiting ...” so that issues show up in the appropriate to-do queues.
