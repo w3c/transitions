@@ -288,17 +288,17 @@ publication processes.</p>
 		} else if (spec.status === "Working Draft") {
 			list.innerHTML = listItem("Update the Working Draft", "profile=WD")
 			  + listItem("Advance to Candidate Recommendation", "profile=CR&cr=new")
-				+ listItem("Publish to Working Group Note", "profile=WG-NOTE");
+				+ listItem("Publish to Working Group Note (which may be marked as retired)", "profile=WG-NOTE");
   	} else if (spec.status === "Candidate Recommendation") {
 			list.innerHTML = listItem("Update the Candidate Recommendation with only editorial changes", "profile=CR&cr=editorial")
 			 + listItem("Update the Candidate Recommendation with substantive changes", "profile=CR&cr=substantive")
 			 + listItem("Advance to Proposed Recommendation", "profile=PR")
 				+ listItem("Return to Working Draft", "profile=WD")
-				+ listItem("Publish as a Working Group Note", "profile=WG-NOTE");
+				+ listItem("Publish as a Working Group Note (which may be marked as retired)", "profile=WG-NOTE");
 		} else if (spec.status === "Proposed Recommendation") {
 			list.innerHTML = listItem("Advance to Recommendation", "profile=REC&rec=new")
 				+ listItem("Return to Working Draft", "profile=WD")
-				+ listItem("Publish as a Working Group Note", "profile=WG-NOTE");
+				+ listItem("Publish as a Working Group Note (which may be marked as retired)", "profile=WG-NOTE");
 		} else if (spec.status === "Recommendation") {
 			list.innerHTML = listItem("Update the Recommendation with only editorial changes", "profile=REC&rec=editorial")
 			+ listItem("Publish a Candidate Recommendation with substantive changes", "profile=CR&cr=rec-update")
@@ -306,7 +306,7 @@ publication processes.</p>
 				+ listItem("Propose to rescind the Recommendation", "profile=PR-RSCND")
 				+ listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
 		} else if (spec.status === "Group Note") {
-			list.innerHTML = listItem("Update the Working Group Note", "profile=WG-NOTE");
+			list.innerHTML = listItem("Update the Working Group Note (which may be marked as retired)", "profile=WG-NOTE");
 		} else {
 			list.innerHTML = listItem("... Not sure yet. See the transition requirements", "");
 		}
