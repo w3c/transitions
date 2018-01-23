@@ -282,14 +282,8 @@ publication processes.</p>
 			   + listItem("Publish a Candidate Recommendation with substantive changes (but no new features)", "profile=CR&cr=rec-amended")
 				 + listItem("Propose to rescind the Recommendation", "profile=PR-RSCND")
 				 + listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
-			} else if (spec.status === "Candidate Recommendation") {
-				list.innerHTML = listItem("Update the Candidate Recommendation", "profile=CR&cr=rec-amended")
-			 + listItem("Advance to Proposed Recommendation", "profile=PR&pr=rec-amended");
-			} else if (spec.status === "Proposed Recommendation") {
-  			list.innerHTML = listItem("Advance to Recommendation", "profile=REC&rec=new")
-				+ listItem("Return to Candidate Recommendation", "profile=CR&cr=rec-amended");
 			} else {
-			  list.innerHTML = listItem("Publish as Working Group Note", "profile=WG-NOTE");	
+			  list.innerHTML = listItem("Publish as Working Group Note (oops, this should have been done already)", "profile=WG-NOTE");	
 			}
 		} else if (spec.status === "Working Draft") {
 			list.innerHTML = listItem("Update the Working Draft", "profile=WD")
