@@ -264,11 +264,19 @@ publication processes.</p>
 		return "<li><a href='" + BASE + query + "'>" + text + "</a></li>";
 	}
 
+  function isGroupClosed(spec) {
+		var closed = true;
+		for (let index = 0; index < spec.groups.length; index++) {
+			closed = (closed && spec.groups[index]["is-closed"]);
+		}
+		return closed;
+	}
+
 	function nextSteps(spec) {
 		var base = "https://www.w3.org/Guide/transitions?";
 		var next = document.getElementById("next");
 		var list = document.getElementById("step_list");
-		if (spec.groups[0]["is-closed"]) {
+		if (isGroupClosed(spec)) {
 			if (spec.status === "Recommendation") {
 				list.innerHTML = listItem("Publish an Amended Recommendation with only editorial changes", "profile=REC&rec=editorial")
 			   + listItem("Publish a Candidate Recommendation with substantive changes (but no new features)", "profile=CR&cr=rec-amended")
