@@ -237,7 +237,8 @@ publication processes.</p>
 				var index = 0;
 				spec.groups = [];
 				function fetchGroup() {
-					if (index < length) {
+					// avoid looking at submissions
+					if ((index < length) && (spec._deliverers[index].title !== "UNKNOWN WORKING GROUP")) {
   				  return fetch(spec._deliverers[index].href+ "?apikey=" + API_KEY).then(res => res.json()).then(deliverer => {
 						  spec.groups[index++] = deliverer;
 					    return fetchGroup();
