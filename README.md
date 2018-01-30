@@ -1,6 +1,6 @@
 # Getting Director's approval for a new W3C maturity level (aka transition requests)
 
-For all requests to advance a specification to a new [maturity level](https://www.w3.org/2015/Process-20150901/#maturity-levels) other than [Note](), the Working Group must obtain [Director approval](https://www.w3.org/2015/Process-20150901/#transition-reqs). This is repository for managing W3C spec transitions. It contains the transition requirements document, available from [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions), and an issues tracker for managing transition requests. Tags are used to manage the transitions, keeping track of who has the “ball”.
+For all requests to advance a specification to a new [maturity level](https://www.w3.org/Consortium/Process/#maturity-levels) other than [Note](), the Working Group must obtain [Director approval](https://www.w3.org/Consortium/Process/#transition-reqs). This is repository for managing W3C spec transitions. It contains the transition requirements document, available from [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions), and an issues tracker for managing transition requests. Tags are used to manage the transitions, keeping track of who has the “ball”.
 
 Select one of the transition templates below:
 
