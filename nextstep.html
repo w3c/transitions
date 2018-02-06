@@ -150,10 +150,10 @@ publication processes.</p>
   <h2 id="snext">Next Steps</h2>
 
 		<p>
-		 You may use a TR shortname to find out your next step: <input type=text placeholder="shortname" id="shortname" size="30" minlength="3" maxlength="40" pattern="[-a-zA-Z0-9]{3,40}"> <span id='stext'></span>
+		 You may use a TR <span id="shortnameLabel">shortname</a> to find out your next step: <input type=text aria-labelledby="shortnameLabel" placeholder="shortname" id="shortname" size="30" minlength="3" maxlength="40" pattern="[-a-zA-Z0-9]{3,40}"> <span id='stext'></span>
 		</p>
 	
-	<div id='next'>
+	<div aria-live="assertive" aria-atomic="true" id='next'>
 
 	<p>Your possible next steps are:</p>
 	<ul id='step_list'>
