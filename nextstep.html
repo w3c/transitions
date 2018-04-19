@@ -152,14 +152,14 @@ publication processes.</p>
 		<p>
 		 You may use a TR <label id="shortnameLabel">shortname</label> to find out your next step: <input type=text aria-labelledby="shortnameLabel" placeholder="shortname" id="shortname" size="30" minlength="3" maxlength="40" pattern="[-a-zA-Z0-9]{3,40}"> <span id='stext'></span>
 		</p>
-	
+
 	<div aria-live="assertive" aria-atomic="true" id='next'>
 
 	<p>Your possible next steps are:</p>
 	<ul id='step_list'>
 	</ul>
 
-	 
+
  <div id='spec'>
   <p>We found the following information:</p>
   <ul>
@@ -193,9 +193,9 @@ publication processes.</p>
 
 	 // each one of those config parameters are matching the ones in the option/input elements
 	 var config = {
-		 
+
 	 };
- 
+
    // State and browser history handling
 
    // browser history status push
@@ -261,6 +261,7 @@ publication processes.</p>
 	}
 
 	var BASE = "https://www.w3.org/Guide/transitions?";
+	var INPLACE = "<li><a href='https://www.w3.org/2003/01/republishing/'>In-place modification of W3C Technical Reports</a></li>";
   function listItem(text, query) {
 		return "<li><a href='" + BASE + query + "'>" + text + "</a></li>";
 	}
@@ -277,16 +278,17 @@ publication processes.</p>
 		var base = "https://www.w3.org/Guide/transitions?";
 		var next = document.getElementById("next");
 		var list = document.getElementById("step_list");
+
 		if (isGroupClosed(spec)) {
 			if (spec.status === "Recommendation") {
-				list.innerHTML = listItem("Publish an Amended Recommendation with only editorial changes", "profile=REC&rec=editorial")
+				list.innerHTML = INPLACE + listItem("Publish an Amended Recommendation with only editorial changes", "profile=REC&rec=editorial")
 			   + listItem("Publish a Candidate Recommendation with substantive changes (but no new features)", "profile=CR&cr=rec-amended")
 				 + listItem("Propose to rescind the Recommendation", "profile=PR-RSCND")
 				 + listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
 			} else if (spec.status === "Group Note") {
-				list.innerHTML = listItem("contact webreq@w3.org", "profile=WG-NOTE");
+				list.innerHTML = INPLACE + listItem("contact webreq@w3.org", "profile=WG-NOTE");
 			} else {
-			  list.innerHTML = listItem("Publish as Working Group Note (oops, this should have been done already)", "profile=WG-NOTE");	
+			  list.innerHTML = listItem("Publish as Working Group Note (oops, this should have been done already)", "profile=WG-NOTE");
 			}
 		} else if (spec.status === "Working Draft") {
 			list.innerHTML = listItem("Update the Working Draft", "profile=WD")
@@ -303,13 +305,13 @@ publication processes.</p>
 				+ listItem("Return to Working Draft", "profile=WD")
 				+ listItem("Publish as a Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
 		} else if (spec.status === "Recommendation") {
-			list.innerHTML = listItem("Update the Recommendation with only editorial changes", "profile=REC&rec=editorial")
+			list.innerHTML = INPLACE + listItem("Update the Recommendation with only editorial changes", "profile=REC&rec=editorial")
 			+ listItem("Publish a Candidate Recommendation with substantive changes", "profile=CR&cr=rec-update")
 				+ listItem("Publish as a First Public Working Draft with new features", "profile=FPWD")
 				+ listItem("Propose to rescind the Recommendation", "profile=PR-RSCND")
 				+ listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
 		} else if (spec.status === "Group Note") {
-			list.innerHTML = listItem("Update the Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
+			list.innerHTML = INPLACE + listItem("Update the Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
 		} else {
 			list.innerHTML = listItem("... Not sure yet. See the transition requirements", "");
 		}
@@ -345,7 +347,7 @@ publication processes.</p>
 							a.textContent = group.name;
 							elt.appendChild(a);
 							if (group["is-closed"]) {
-								elt.appendChild(document.createTextNode(" (closed) "));	
+								elt.appendChild(document.createTextNode(" (closed) "));
 							}
 							elt.appendChild(document.createTextNode(", "));
 						}
@@ -374,7 +376,7 @@ publication processes.</p>
 	}
 
 	// initialization
-	 
+
 	document.getElementById("spec").style.display = "none";
 	document.getElementById("next").style.display = "none";
 
