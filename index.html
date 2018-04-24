@@ -181,7 +181,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
 </div>
       <form>
          <p>
-            Select your steps <label><a href="https://www.w3.org/Consortium/Process/tr">transition steps</a> to</label>: 
+            Select your steps <label><a href="https://www.w3.org/Consortium/Process/tr">transition steps</a> to</label>:
          <select id="profile" name="profile">
 					 <!-- @@ Mozilla Firefox  doesn't understand the label attribute ?!? so keeping the option element text content :( -->
 					   <optgroup label="Recommendations">
@@ -622,7 +622,7 @@ send any Member-confidential information to a public list.</li>
 <li  class="trans-announcement" data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">The Team Contact <span
 	class="rfc2119">SHOULD</span> forward the announcement to the appropriate public forum <strong>taking caution</strong> not to
 	send any Member-confidential information to a public list.</li>
-	
+
 <li class="trans-announcement"  data-profile="WD|CR|WG-NOTE">
 If this publication is the result
 of <a href="https://www.w3.org/2018/Process-20180201/#recs-and-notes">returning a document to a Working Group for further work</a>, the
@@ -640,7 +640,7 @@ this is not a <a href="https://www.w3.org/2018/Process-20180201/#Reports">Recomm
 Track transition</a> as defined in the W3C Process.</p>
 
 <p data-profile="PR-OBSL|PR-RSCND">
-<strong>Note:</strong> 
+<strong>Note:</strong>
 <span class="status-name">STATUS</span>
  is not a <a href="https://www.w3.org/2018/Process-20180201/#maturity-levels">maturity level</a> defined in the <a href="https://www.w3.org/2018/Process-20180201/">W3C Process</a> but is described as a proposal before the next step.</p>
 
@@ -717,7 +717,7 @@ by reference (e.g., the URI to the document) or direct inclusion.
 
 <li data-profile="FPWD" data-informativeOnly="false">
 A statement whether or not the group considers the document to be
-a <a href="https://www.w3.org/pubrules/doc#delta">delta specification</a>.
+a <a href="https://www.w3.org/2005/07/13-pubrules-about#delta">delta specification</a>.
 </li>
 </ol>
 </div>
@@ -1225,7 +1225,7 @@ the Working Group's rationale.</li>
 <li  data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">
 	The Director is not satisfied with how the individual(s) has
 	addressed issues.</li>
-	
+
  <li class="extra-criteria-not-met" data-profile="PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial">The Director believes that special
 entrance criteria have not been satisfied.</li>
 </ul>
@@ -1587,7 +1587,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 		 informativeOnly: "false",
 		 echidna: "false"
 	 }
- 
+
    function hasEchidna(profile) {
 		 return (config.profile === "WD"
 		     || config.profile === "WG-NOTE"
@@ -1698,7 +1698,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 		 var option = document.getElementById("profile").querySelector("option[value=" + config.profile + "]");
 		 var status = option.getAttribute("data-status");
 		 var label = option.label;
-		 if (status === "" || status === null) status=label; 
+		 if (status === "" || status === null) status=label;
 
 		 walker.currentNode = walker.root; // reset the tree walk
 	   var count = 0;
@@ -1713,7 +1713,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 						next.removeAttribute("hidden");
 	  	   }
 	   	 }
-		 
+
 	  	 if (next.classList.contains("status-name")) {
 	  		 next.textContent = status;
 	  	 }
@@ -1748,7 +1748,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 	}
 
 	 // initialization
-	 
+
 	 // #lazyweb
 	 function getJsonFromUrl() {
      var query = location.search.substr(1);
