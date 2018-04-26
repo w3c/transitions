@@ -218,7 +218,7 @@ publication processes.</p>
 
 	function findShortname(s) {
 		var stext = document.getElementById("stext");
-		var isFPWD = false;
+		var isFirst = false;
 		if (s.length > 2) {
 			fetch("https://api.w3.org/specifications/" + s + "?apikey=" + API_KEY).then(res => res.json())
 			 .then(spec => {
@@ -227,14 +227,14 @@ publication processes.</p>
 				 var first = spec["_links"]["first-version"];
 				 if (latest === undefined) throw new Error(s + " doesn't have a latest version");
 				 if (first !== undefined)
-				   isFPWD = (latest.href === first.href);
+				   isFirst = (latest.href === first.href);
 				 return latest;
 			 }).then(latest => {
 				return fetch(latest.href+ "?apikey=" + API_KEY).then(res => res.json());
 			}).then(spec => {
 				return fetch(spec._links.deliverers.href+ "?apikey=" + API_KEY).then(res => res.json()).then(deliverers => {
 					spec._deliverers = deliverers._links.deliverers;
-					spec.isFPWD = isFPWD;
+					spec.isFirst = isFirst;
 					return spec;
 				});
 			}).then(spec => {
@@ -296,7 +296,7 @@ publication processes.</p>
 			}
 		} else if (spec.status === "Working Draft") {
 			var WD = "";
-			if (!spec.isFPWD) {
+			if (!spec.isFirst) {
 				function formatNumber(n) {
 					return (n < 10)? "0" + n: n;
 				}
