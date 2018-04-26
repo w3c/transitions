@@ -218,18 +218,23 @@ publication processes.</p>
 
 	function findShortname(s) {
 		var stext = document.getElementById("stext");
+		var isFPWD = false;
 		if (s.length > 2) {
 			fetch("https://api.w3.org/specifications/" + s + "?apikey=" + API_KEY).then(res => res.json())
 			 .then(spec => {
 				 if (spec.title === undefined) throw new Error(s + " wasn't found");
 				 var latest = spec["_links"]["latest-version"];
-				 if (latest !== undefined) return latest;
-				 throw new Error(s + " doesn't have a latest version");
+				 var first = spec["_links"]["first-version"];
+				 if (latest === undefined) throw new Error(s + " doesn't have a latest version");
+				 if (first !== undefined)
+				   isFPWD = (latest.href === first.href);
+				 return latest;
 			 }).then(latest => {
 				return fetch(latest.href+ "?apikey=" + API_KEY).then(res => res.json());
 			}).then(spec => {
 				return fetch(spec._links.deliverers.href+ "?apikey=" + API_KEY).then(res => res.json()).then(deliverers => {
 					spec._deliverers = deliverers._links.deliverers;
+					spec.isFPWD = isFPWD;
 					return spec;
 				});
 			}).then(spec => {
@@ -283,7 +288,6 @@ publication processes.</p>
 			if (spec.status === "Recommendation") {
 				list.innerHTML = INPLACE + listItem("Publish an Amended Recommendation with only editorial changes", "profile=REC&rec=editorial")
 			   + listItem("Publish a Candidate Recommendation with substantive changes (but no new features)", "profile=CR&cr=rec-amended")
-				 + listItem("Propose to rescind the Recommendation", "profile=PR-RSCND")
 				 + listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
 			} else if (spec.status === "Group Note") {
 				list.innerHTML = INPLACE + listItem("contact webreq@w3.org", "profile=WG-NOTE");
@@ -291,7 +295,16 @@ publication processes.</p>
 			  list.innerHTML = listItem("Publish as Working Group Note (oops, this should have been done already)", "profile=WG-NOTE");
 			}
 		} else if (spec.status === "Working Draft") {
-			list.innerHTML = listItem("Update the Working Draft", "profile=WD")
+			var WD = "";
+			if (!spec.isFPWD) {
+				function formatNumber(n) {
+					return (n < 10)? "0" + n: n;
+				}
+				var today = new Date();
+				var sToday = today.getUTCFullYear() + "-" + formatNumber(today.getUTCMonth()) + "-" + formatNumber(today.getUTCDate());
+				if (sToday === spec.date) WD = INPLACE; // same day only
+			}
+			list.innerHTML = WD + listItem("Update the Working Draft", "profile=WD")
 			  + listItem("Advance to Candidate Recommendation", "profile=CR&cr=new")
 				+ listItem("Publish to Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
   	} else if (spec.status === "Candidate Recommendation") {
