@@ -724,10 +724,10 @@ a <a href="https://www.w3.org/2005/07/13-pubrules-about#delta">delta specificati
 <div class="transreq-section2" data-profile="PR-OBSL|PR-RSCND">
 <ol>
 <li>Document title and URIs of the W3C Recommendation.</li>
-<li>The request <span class="rfc2119">must</span>
-include rationale for <span data-profile="PR-OBSL">obsoleting or superseding </span><span data-profile="PR-RSCND">rescinding</span> the Recommendation.</li>
+<li data-profile="PR-OBSL">Document title and URIs of the newer version, if any.</li>
 </ol>
 </div>
+
 
 <div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
 
@@ -900,7 +900,15 @@ related to implementation have been satisfied?</li>
 </ul>
 </div>
 
-<div class="wide-review" data-profile="CR|PR|REC|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">
+<div class="rationale" data-profile="PR-OBSL|PR-RSCND">
+		<h3 id="rationale">Rationale</h3>
+<ul>
+		<li>The request <span class="rfc2119">must</span>
+			include rationale for <span data-profile="PR-OBSL">obsoleting or superseding </span><span data-profile="PR-RSCND">rescinding</span> the Recommendation.</li>
+		</ul>
+</div>
+
+<div class="wide-review" data-profile="CR|PR|REC" data-cr="new|substantive|rec-update|rec-amended">
 <h3><a name="wide-review" id="wide-review">Wide Review</a></h3>
 
 <ul>
@@ -923,14 +931,6 @@ show that the request to rescind has received
 <a href="https://www.w3.org/2018/Process-20180201/#wide-review">wide review</a>. If the Director is
 proposing to rescind the Recommendation, the Director
 <span class="rfc2119">must</span> show that the request to rescind is based on public comment.
-</li>
-
-<li class="reviewers" data-profile="PR-OBSL">
-The group <span class="rfc2119">must</span>
-show that the request to obsolete or to supersede has received
-<a href="https://www.w3.org/2018/Process-20180201/#wide-review">wide review</a>. If the Director is
-proposing to obsolete or supersede the Recommendation, the Director
-<span class="rfc2119">must</span> show that the request to obsolete or to supersede is based on public comment.
 </li>
 
 <li  class="reviewers" data-profile="CR|PR" data-cr="new|substantive|rec-amended" data-pr="rec-amended">Was there review from implementers?</li>
@@ -1069,11 +1069,11 @@ implementability testing.</li>
 <li class="other-interop-experience" data-profile="CR" data-cr="new|substantive">Does the WG have additional implementation experience that will
 help demonstrate interoperability (e.g., has there been an
 interoperability day or workshop? Is one planned?)?</li>
-<li data-profile="WD|FPWD|CR|REC|PR-OBSL|PR-RSCND" data-rec="new" data-cr="rec-amended">The <span data-profile="WD|FPWD|CR|REC|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">group</span><span
-	data-profile="CR" data-cr="rec-amended">individual(s)</span> <span class="rfc2119">should</span>
+<li data-profile="WD|FPWD|CR|REC|PR-OBSL|PR-RSCND" data-rec="new" data-cr="rec-amended">The <span data-profile="WD|FPWD|CR|REC" data-cr="new|substantive|rec-update">group</span><span
+	data-profile="CR|PR-OBSL|PR-RSCND" data-cr="rec-amended">request</span> <span class="rfc2119">should</span>
 provide information about implementations <span data-profile="WD|FPWD|CR|REC|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">known to them</span>.
-See the <a href="https://www.w3.org/2018/Process-20180201/#implementation-experience">definition
-of implementation experience</a> in section 6.2.4 of the Process.
+<span data-profile="WD|FPWD|CR|REC">See the <a href="https://www.w3.org/2018/Process-20180201/#implementation-experience">definition
+of implementation experience</a> in section 6.2.4 of the Process.</span>
 </li>
 </ul>
 </div>
