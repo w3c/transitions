@@ -1625,6 +1625,7 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 
    // browser back and forward buttons
    window.onpopstate = function (e) {
+		 if (!e.state) return; // #fragid navigation
 		 config = e.state;
 		 adjustForms();
 		 updateTree();
