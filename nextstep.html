@@ -180,10 +180,10 @@ publication processes.</p>
  This document is maintained on <a href='https://github.com/w3c/transitions/'>GitHub</a>. <a href="https://github.com/w3c/transitions/issues">Issues</a> are welcome.
 </address>
 
+<script src="js/tr.js"></script>
 <script>
 (function() {
 	 // For debugging
-	 var API_KEY = "sdqupwhg51c0o4ww488w40og4kkog8s";
 	 var trace = function () {};
    if (window.location.href.includes("file:")) {
      trace = function trace(msg) {
@@ -218,50 +218,18 @@ publication processes.</p>
 
 	function findShortname(s) {
 		var stext = document.getElementById("stext");
-		var isFirst = false;
 		if (s.length > 2) {
-			fetch("https://api.w3.org/specifications/" + s + "?apikey=" + API_KEY).then(res => res.json())
-			 .then(spec => {
-				 if (spec.title === undefined) throw new Error(s + " wasn't found");
-				 var latest = spec["_links"]["latest-version"];
-				 var first = spec["_links"]["first-version"];
-				 if (latest === undefined) throw new Error(s + " doesn't have a latest version");
-				 if (first !== undefined)
-				   isFirst = (latest.href === first.href);
-				 return latest;
-			 }).then(latest => {
-				return fetch(latest.href+ "?apikey=" + API_KEY).then(res => res.json());
-			}).then(spec => {
-				return fetch(spec._links.deliverers.href+ "?apikey=" + API_KEY).then(res => res.json()).then(deliverers => {
-					spec._deliverers = deliverers._links.deliverers;
-					spec.isFirst = isFirst;
-					return spec;
-				});
-			}).then(spec => {
-				var length = spec._deliverers.length;
-				var index = 0;
-				spec.groups = [];
-				function fetchGroup() {
-					// avoid looking at submissions
-					if ((index < length) && (spec._deliverers[index].title !== "UNKNOWN WORKING GROUP")) {
-  				  return fetch(spec._deliverers[index].href+ "?apikey=" + API_KEY).then(res => res.json()).then(deliverer => {
-						  spec.groups[index++] = deliverer;
-					    return fetchGroup();
-				    });
-					} else {
-						return spec;
-					}
-				}
-				return fetchGroup();
-			}).then(spec => {
+			return w3c_tr.findLatest(s)
+		    .then(spec => {
   				stext.textContent = "";
 				  config.shortname = s;
 					updateSpec(spec);
 					onpushstate();
-			 }).catch(err => {
-				 stext.textContent = err.message;
-				 updateSpec();
-			 });
+					console.log(spec);
+			  }).catch(err => {
+				  stext.textContent = err.message;
+				  updateSpec();
+			  });
 		}
 	}
 
@@ -296,7 +264,7 @@ publication processes.</p>
 			}
 		} else if (spec.status === "Working Draft") {
 			var WD = "";
-			if (!spec.isFirst) {
+			if (!spec["_links"]["predecessor-version"]) {
 				function formatNumber(n) {
 					return (n < 10)? "0" + n: n;
 				}
@@ -325,6 +293,8 @@ publication processes.</p>
 				+ listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
 		} else if (spec.status === "Group Note") {
 			list.innerHTML = INPLACE + listItem("Update the Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
+		} else if (spec.status === "Retired") {
+			list.innerHTML = listItem("Propose to restore the Recommendation", "");
 		} else {
 			list.innerHTML = listItem("... Not sure yet. See the transition requirements", "");
 		}
