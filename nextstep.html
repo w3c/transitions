@@ -259,6 +259,8 @@ publication processes.</p>
 				 + listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
 			} else if (spec.status === "Group Note") {
 				list.innerHTML = INPLACE + listItem("contact webreq@w3.org", "profile=WG-NOTE");
+			} else if (spec.status === "Retired") {
+				list.innerHTML = listItem("Propose to restore the Recommendation", "");
 			} else {
 			  list.innerHTML = listItem("Publish as Working Group Note (oops, this should have been done already)", "profile=WG-NOTE");
 			}
