@@ -203,7 +203,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
 					   </optgroup>
          </select>
          </p>
-         <ul id='echidna-selection' style="margin-left: 3em" data-profile="WD|WG-NOTE|IG-NOTE">
+         <ul id='echidna-selection' style="margin-left: 3em" data-cr="editorial" data-profile="WD|WG-NOTE|IG-NOTE|CR">
             <li style="list-style: none">
                <input type="checkbox" id="echidna-checkbox" name="echidna-checkbox"/>
                <label for="echidna-checkbox">With the <a href="https://github.com/w3c/echidna/wiki">W3C automatic publishing system</a>
@@ -465,7 +465,7 @@ The Director approves the transition request.
 <dt data-profile="FPWD|CR|PR|FPIG-NOTE|FPWG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Publication and Transition Planning</dt>
 <dt data-profile="FPWG-NOTE|FPIG-NOTE" data-notehistory="none|closure|notchartered">Publication Planning</dt>
 <dt id="publication-planning" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-cr="editorial">Publication Planning</dt>
-<dd class="docpreparation" data-profile="WD|WG-NOTE|IG-NOTE" data-echidna="true">
+<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-cr="editorial" data-echidna="true">
 <ul>
 <li>The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> prepares the
 document in accordance with <a
@@ -482,7 +482,7 @@ alerts the
 optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
 </li>
 
-<li id="pubreqmail">
+<li id="pubreqmail"  data-profile="WD|CR" data-cr="new|substantive">
 If the publication is the result
 of returning a document to a Working Group for further work, the Team Contact
 alerts the W3C Communications Team by sending to w3t-comm@w3.org a draft
@@ -590,7 +590,7 @@ of <a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">returning 
 alerts the W3C Communications Team.</span>
 </li>
 
-<li class="publication-announcement" data-profile="WD|WG-NOTE|IG-NOTE" data-echidna="true">The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a>
+<li class="publication-announcement" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-echidna="true">The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a>
 publishes the document using the  <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>.
 </li>
 
@@ -1302,7 +1302,7 @@ document.</p>
 <h2><a id="schedule-pubreq" name="schedule-pubreq">Scheduling
 Publication</a></h2>
 
-<p data-profile="WD|WG-NOTE|IG-NOTE">
+<p data-profile="WD|CR|WG-NOTE|IG-NOTE">
   <strong>Note:</strong> <span class="status-name">STATUS</span>s published through the <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a> do not need to get scheduled with the Webmaster and are not subjected to <a href="https://www.w3.org/Guide/#current">publishing moratoria</a>.
 </p>
 
@@ -1585,7 +1585,6 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
  <script>
 (function() {
 	 // For debugging
-	 var API_KEY = "sdqupwhg51c0o4ww488w40og4kkog8s";
 	 var trace = function () {};
    if (window.location.href.includes("file:")) {
      trace = function trace(msg) {
@@ -1605,7 +1604,8 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
    function hasEchidna(profile) {
 		 return (config.profile === "WD"
 		     || config.profile === "WG-NOTE"
-		     || config.profile === "IG-NOTE");
+		     || config.profile === "IG-NOTE"
+				 || config.profile === "CR");
 	 }
 
    // State and browser history handling
