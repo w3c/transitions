@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>What's your next step? (2018 Process)</title>
+<title>What's your next step? (2019 Process)</title>
   <link rel="stylesheet" href="https://www.w3.org/StyleSheets/generic-base-1.css" type="text/css"/>
   <link rel="stylesheet" type="text/css" href="https://www.w3.org/Guide/assets/main.css" />
   <link rel="shortcut icon" href="https://www.w3.org/Icons/WWW/Literature.gif" />
@@ -124,7 +124,7 @@ alt="W3C" height="48" width="72"/></a></span>
     <div class="breadcrumb">
     <a href="https://www.w3.org/Member/">Member</a> &#x2192; <a href="https://www.w3.org/Guide/">The Art of
 Consensus</a> &#x2192;
-<h1>Organize a Technical Report Transition (2018 Process)</h1>
+<h1>Organize a Technical Report Transition (2019 Process)</h1>
 </div>
 <p class="baseline">This <strong>Guidebook</strong> is the collected
 wisdom of the W3C Group Chairs and other collaborators.</p>
@@ -137,7 +137,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
 		<li><a href="https://w3c.github.io/spec-releases/milestones/">Milestones planning</a></li>
 		<li><a href="https://w3c.github.io/spec-releases/timeline.svg">174 days to W3C Recommendation</a></li>
 		<li><a
-			href="https://www.w3.org/2018/Process-20180201/#Reports">Recommendation
+			href="https://www.w3.org/2019/Process-20190301/#Reports">Recommendation
 		Track Process</a></li>
 	</ul>
 </div>
@@ -180,10 +180,10 @@ publication processes.</p>
  This document is maintained on <a href='https://github.com/w3c/transitions/'>GitHub</a>. <a href="https://github.com/w3c/transitions/issues">Issues</a> are welcome.
 </address>
 
+<script src="js/tr.js"></script>
 <script>
 (function() {
 	 // For debugging
-	 var API_KEY = "sdqupwhg51c0o4ww488w40og4kkog8s";
 	 var trace = function () {};
    if (window.location.href.includes("file:")) {
      trace = function trace(msg) {
@@ -218,50 +218,18 @@ publication processes.</p>
 
 	function findShortname(s) {
 		var stext = document.getElementById("stext");
-		var isFirst = false;
 		if (s.length > 2) {
-			fetch("https://api.w3.org/specifications/" + s + "?apikey=" + API_KEY).then(res => res.json())
-			 .then(spec => {
-				 if (spec.title === undefined) throw new Error(s + " wasn't found");
-				 var latest = spec["_links"]["latest-version"];
-				 var first = spec["_links"]["first-version"];
-				 if (latest === undefined) throw new Error(s + " doesn't have a latest version");
-				 if (first !== undefined)
-				   isFirst = (latest.href === first.href);
-				 return latest;
-			 }).then(latest => {
-				return fetch(latest.href+ "?apikey=" + API_KEY).then(res => res.json());
-			}).then(spec => {
-				return fetch(spec._links.deliverers.href+ "?apikey=" + API_KEY).then(res => res.json()).then(deliverers => {
-					spec._deliverers = deliverers._links.deliverers;
-					spec.isFirst = isFirst;
-					return spec;
-				});
-			}).then(spec => {
-				var length = spec._deliverers.length;
-				var index = 0;
-				spec.groups = [];
-				function fetchGroup() {
-					// avoid looking at submissions
-					if ((index < length) && (spec._deliverers[index].title !== "UNKNOWN WORKING GROUP")) {
-  				  return fetch(spec._deliverers[index].href+ "?apikey=" + API_KEY).then(res => res.json()).then(deliverer => {
-						  spec.groups[index++] = deliverer;
-					    return fetchGroup();
-				    });
-					} else {
-						return spec;
-					}
-				}
-				return fetchGroup();
-			}).then(spec => {
+			return w3c_tr.findLatest(s)
+		    .then(spec => {
   				stext.textContent = "";
 				  config.shortname = s;
 					updateSpec(spec);
 					onpushstate();
-			 }).catch(err => {
-				 stext.textContent = err.message;
-				 updateSpec();
-			 });
+					console.log(spec);
+			  }).catch(err => {
+				  stext.textContent = err.message;
+				  updateSpec();
+			  });
 		}
 	}
 
@@ -291,12 +259,14 @@ publication processes.</p>
 				 + listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
 			} else if (spec.status === "Group Note") {
 				list.innerHTML = INPLACE + listItem("contact webreq@w3.org", "profile=WG-NOTE");
+			} else if (spec.status === "Retired") {
+				list.innerHTML = listItem("Propose to restore the Recommendation", "");
 			} else {
 			  list.innerHTML = listItem("Publish as Working Group Note (oops, this should have been done already)", "profile=WG-NOTE");
 			}
 		} else if (spec.status === "Working Draft") {
 			var WD = "";
-			if (!spec.isFirst) {
+			if (!spec["_links"]["predecessor-version"]) {
 				function formatNumber(n) {
 					return (n < 10)? "0" + n: n;
 				}
@@ -325,6 +295,8 @@ publication processes.</p>
 				+ listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
 		} else if (spec.status === "Group Note") {
 			list.innerHTML = INPLACE + listItem("Update the Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
+		} else if (spec.status === "Retired") {
+			list.innerHTML = listItem("Propose to restore the Recommendation", "");
 		} else {
 			list.innerHTML = listItem("... Not sure yet. See the transition requirements", "");
 		}
