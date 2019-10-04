@@ -2,7 +2,7 @@
 name: PR-new
 about: Request Director's Approval for a Proposed Recommendation
 title: PR Request for <title>
-labels: Entering PR, Awaiting Director
+labels: Awaiting Director, Entering PR
 assignees: swickr
 
 ---
