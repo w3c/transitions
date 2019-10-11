@@ -24,6 +24,7 @@ If you're not sure what transition template to use, check out our [next step fin
   * If you're not sure how to fill the template properly, see [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions).
   * If you need to convey Member-confidential information, start a thread on w3c-archive@w3.org and link it from your issue; lists.w3.org's access control will manage permissions. Use w3t-archive@w3.org instead for Team-confidential infos.
   * Assign your editor(s) and staff contact(s) to the transition request issue to facilitate automatic pestering.
+  * Untag "Awaiting ..." if you intend to continue editing the issue before requesting action; you will need to add these back later.
   * Issues get closed once publication is complete *and* relevant announcements are posted.
 
 ## How does the monitoring work?
