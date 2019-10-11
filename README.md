@@ -1,6 +1,6 @@
 # Getting Director's approval for a new W3C maturity level (aka transition requests)
 
-For all requests to advance a specification to a new [maturity level](https://www.w3.org/Consortium/Process/#maturity-levels) other than [Note](), the Working Group must obtain [Director approval](https://www.w3.org/Consortium/Process/#transition-reqs). This is a  repository for managing W3C spec transitions. It contains the transition requirements document, available from [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions), and an issues tracker for managing transition requests. Tags are used to manage the transitions, keeping track of who has the “ball”.
+For all requests to advance a specification to a new [maturity level](https://www.w3.org/Consortium/Process/#maturity-levels) other than [Note](), the Working Group must obtain [Director approval](https://www.w3.org/Consortium/Process/#transition-reqs). This is a  repository for requesting Director's approval when advancing on the W3C Recommendation track. It contains the transition requirements document, available from [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions), and an issues tracker for managing transition requests. Tags are used to manage the transitions, keeping track of who has the “ball”. Notifications are sent by email to various mailing lists, include [public-transition-announce](https://lists.w3.org/Archives/Public/public-transition-announce/) and [chairs](https://lists.w3.org/Archives/Member/chairs/).
 
 Select one of the transition templates below:
 
@@ -23,7 +23,11 @@ If you're not sure what transition template to use, check out our [next step fin
 
   * If you're not sure how to fill the template properly, see [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions).
   * If you need to convey Member-confidential information, start a thread on w3c-archive@w3.org and link it from your issue; lists.w3.org's access control will manage permissions. Use w3t-archive@w3.org instead for Team-confidential infos.
-  * Your WG code is your WG's preferred (unique) abbreviation: it is included in the title template to help you search for transition requests relevant to your WG and manage the official or unofficial pestering of whoever has the “ball”.
   * Assign your editor(s) and staff contact(s) to the transition request issue to facilitate automatic pestering.
-  * Don't forget to tag/untag “Awaiting ...” so that issues show up in the appropriate to-do queues.
   * Issues get closed once publication is complete *and* relevant announcements are posted.
+
+## How does the monitoring work?
+
+You may [add your own hook](https://labs.w3.org/transition-issues-bot/doc/hook) to get those notifications.
+
+This repository is monitored using [transition-issues-bot](https://github.com/w3c/transition-issues-bot).
