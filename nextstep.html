@@ -218,6 +218,7 @@ publication processes.</p>
 
 	function findShortname(s) {
 		var stext = document.getElementById("stext");
+		stext.textContent = "Looking for " + s + " ...";
 		if (s.length > 2) {
 			return w3c_tr.findLatest(s)
 		    .then(spec => {
