@@ -405,7 +405,7 @@ See the <a href="https://www.w3.org/wiki/DocumentReview">considerations, guideli
 <dd data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
 <ul>
 <li id="obs-webreqmail" data-profile="PR-OBSL|PR-RSCND" data-notehistory="notchartered|first">If an individual made a request to the relevant Working Group, or the TAG (using <a href="https://github.com/w3ctag/obsoletion/issues">w3ctag/obsoletion</a>) if such a group does not exist, to <span data-profile="PR-OBSL">obsolete or to supersede</span><span data-profile="PR-RSCND">rescind</span> a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
-<li id="edrec-webreqmail" data-profile="REC" data-rec="editorial">If an individual made a request to the relevant Working Group, or the maintenance contact if such a group does not exist, to update a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
+<li id="edrec-webreqmail" data-profile="REC" data-rec="editorial">If an individual made a request to the relevant Working Group, or the maintenance contact if such a group does not exist, to update a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should	create a <a href="#transreq">transition request</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.</li>
 <li id="transreqmail" class="transitionreq" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-rec="new" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
 <span class="transwhen" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">At least one week prior to an expected
 decision from or <a href="#dir-mtg">meeting with the Director</a>, the</span>
@@ -415,20 +415,20 @@ decision from or <a href="#dir-mtg">meeting with the Director</a>, the</span>
  class="transitionreqwho" data-profile="CR" data-cr="rec-amended"><a href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></span>
 
 <span class="transwho" data-profile="FPWD|FPWG-NOTE" data-notehistory="notchartered|first">
-sends a <a href="#transreq">transition request</a> to
-plh@w3.org (as Project Management Lead), cc'ing w3t-comm@w3.org and chairs@w3.org.
+creates a <a href="#transreq">transition request</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.
 <strong>Note:</strong>
 For the TAG, no First Public Working Draft transition request is required; the request is assumed to be approved by the Director, who Chairs the TAG.
 </span>
 <span class="transwho" data-profile="FPIG-NOTE" data-notehistory="notchartered|first">
-sends a <a href="#transreq">transition request</a> to
-jeff@w3.org (as Interim Industry Lead) or wseltzer@w3.org (as Strategy Lead), cc'ing w3t-comm@w3.org and chairs@w3.org.
+	creates a <a href="#transreq">transition request</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.
 </span>
-<span class="transwho" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
-sends a <a href="#transreq">transition request</a> to
-the Director (and anyone working with the Director on transitions): timbl@w3.org, ralph@w3.org, cc'ing plh@w3.org,
- w3t-comm@w3.org,
-<span  class="transitionreq-ccemail" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">and chairs@w3.org</span>. We recommend explicitly addressing the expected reviewer(s) by name in the body of the message.
+<span class="transwho" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">
+	creates a <a href="#transreq">transition request</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.
+</span>
+<span class="transwho" data-profile="REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
+	sends a <a href="#transreq">transition request</a> to
+	the Director: timbl@w3.org, ralph@w3.org, cc'ing plh@w3.org,
+	 w3t-comm@w3.org.
 </span>
 </li>
 
