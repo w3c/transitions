@@ -225,8 +225,9 @@ publication processes.</p>
 				  config.shortname = s;
 					updateSpec(spec);
 					onpushstate();
-					console.log(spec);
+					trace(spec);
 			  }).catch(err => {
+					console.error(err);
 				  stext.textContent = err.message;
 				  updateSpec();
 			  });
