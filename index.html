@@ -611,7 +611,7 @@ The W3C Communications Team sends a
 <a href="#trans-annc">transition announcement</a>
 to w3c-ac-members@w3.org
 <span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">and chairs@w3.org</span>
-and on the <a href="https://www.w3.org/">W3C home page</a>.
+<span data-profile="CR|PR|REC" data-cr="new|substantive|rec-update|rec-amended">and on the <a href="https://www.w3.org/">W3C home page</a></span>.
 </li>
 
 <li  class="trans-announcement" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update" data-pr="new">The Chair or Team Contact(s) <span
@@ -1186,11 +1186,10 @@ requiring the Director's attention.</dd>
 and whether there is sufficient consensus to support the transition
 request.
 In most cases the decision to make the transition
-is made during the teleconference.
-However the decision could take up to two weeks if any difficult
-issues arise during the meeting. The Director may delegate the
-W3C decision; see <a href="https://www.w3.org/Project/Reports.html">Team processes for TR
-publications</a>.</dd>
+is made on Fridays.
+However the decision could take more time if any difficult
+issues arise during the meeting and the teleconference might be needed. The Director may delegate the
+W3C decision.</dd>
 
 <dt>Next steps</dt>
 
@@ -1247,8 +1246,8 @@ work."</p>
 <h2 id="pubreq">Publication Request</h2>
 
 <p>A publication request is an assertion from the Document Contact
-that the document satisfies the <a href="https://www.w3.org/pubrules/">pubrules
-requirements</a>.  The subject line and body
+that the document <span data-profile="WD|FPWD|CR|PR|REC|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE">satisfies the <a href="https://www.w3.org/pubrules/">pubrules
+requirements</a></span><span data-profile="OBSL|RSCND">is ready for publication</span>.  The subject line and body
 <span class="rfc2119">SHOULD</span> identify this as a "publication
 request";
 see above for <a href="#pubreqmail">where to send the request</a>.
@@ -1352,6 +1351,7 @@ announcements are linked from the <a href="https://www.w3.org/Guide/">Chairs' Gu
 
 <h2> <a id="publication" name="publication">Publication</a></h2>
 
+<div data-profile="WD|FPWD|CR|PR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE|REC">
 <p>In order to ensure publication standards, upon receiving a
 publication request the Webmaster <span
 class="rfc2119">SHALL</span> make a best effort to verify that the
@@ -1366,10 +1366,26 @@ conditions have been met:</p>
 <li>The <a href="#pubreq">publication request</a> is complete, and</li>
 <li>The document satisfies the pubrules requirements verified by
 the Webmaster.
-<span data-profile="OBSL|RSCND"><strong>Note:</strong> The updated version <span
-class="rfc2119">may</span> remove the main body of the document.</span></li>
+</li>
 </ol>
-
+</div>
+<div data-profile="OBSL|RSCND">
+	<p>In order to ensure publication standards, upon receiving a
+		publication request the Webmaster <span
+		class="rfc2119">SHALL</span> make a best effort to verify that the
+		document satisfies the minimum of the <a href="https://www.w3.org/pubrules/">pubrules
+		requirements</a>. The Webmaster <span
+		class="rfc2119">SHALL</span> publish the document (cf. the
+		<a href="https://www.w3.org/1999/12/03-publishing">Webmaster's guide</a>) if the following
+		conditions have been met:</p>
+		
+		<ol>
+		<li>The <a href="#pubreq">publication request</a> is complete, and</li>
+		<li>The document indicates clearly its new status verified by
+		the Webmaster. The updated version <span
+		class="rfc2119">may</span> remove the main body of the document.</span></li>
+		</ol>			
+</div>
 <p>Otherwise the Webmaster <span class="rfc2119">SHALL NOT</span>
 publish. In this case, the Webmaster <span
 class="rfc2119">SHALL</span> provide details to the person who sent
