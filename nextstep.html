@@ -148,11 +148,14 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
 publication processes.</p>
 
   <h2 id="snext">Next Steps</h2>
-
+	<div>
 		<p>
-		 You may use a TR <label id="shortnameLabel">shortname</label> to find out your next step: <input type=text aria-labelledby="shortnameLabel" placeholder="shortname" id="shortname" size="30" minlength="3" maxlength="40" pattern="[-a-zA-Z0-9]{3,40}"> <span id='stext'></span>
-		</p>
-
+			You may use a TR <label id="shortnameLabel">shortname</label> to find out your next step:<br>
+	  </p>
+		<input type=text aria-labelledby="shortnameLabel" placeholder="shortname" id="shortname" size="30" minlength="3" maxlength="40" pattern="[-a-zA-Z0-9]{3,40}" list="w3ctr">
+		<datalist id='w3ctr'>
+		</datalist>
+	</div>
 	<div aria-live="assertive" aria-atomic="true" id='next'>
 
 	<p>Your possible next steps are:</p>
@@ -217,21 +220,29 @@ publication processes.</p>
    }
 
 	function findShortname(s) {
-		var stext = document.getElementById("stext");
-		stext.textContent = "Looking for " + s + " ...";
+		var w3ctr = document.getElementById("w3ctr");
 		if (s.length > 2) {
-			return w3c_tr.findLatest(s)
-		    .then(spec => {
-  				stext.textContent = "";
-				  config.shortname = s;
-					updateSpec(spec);
-					onpushstate();
-					trace(spec);
-			  }).catch(err => {
-					console.error(err);
-				  stext.textContent = err.message;
-				  updateSpec();
-			  });
+			while (w3ctr.firstChild) {
+				w3ctr.removeChild(w3ctr.firstChild);
+			}
+			w3c_tr.findOptions(s).then(options => {
+				options.forEach(option => {
+					let elt = document.createElement('option');
+					elt.value = option;
+					w3ctr.appendChild(elt);
+				});
+				w3c_tr.findLatest(s)
+					.then(spec => {
+						stext.textContent = "";
+					  config.shortname = s;
+						updateSpec(spec);
+						onpushstate();
+						trace(spec);
+					}).catch(err => {
+						// console.error(err);
+					  updateSpec();
+					});
+			});
 		}
 	}
 
@@ -266,7 +277,7 @@ publication processes.</p>
 			} else {
 			  list.innerHTML = listItem("Publish as Working Group Note (oops, this should have been done already)", "profile=WG-NOTE");
 			}
-		} else if (spec.status === "Working Draft") {
+		} else if (spec.status === "Working Draft") { // !isGroupClosed(spec)
 			var WD = "";
 			if (!spec["_links"]["predecessor-version"]) {
 				function formatNumber(n) {
