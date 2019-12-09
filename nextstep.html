@@ -398,25 +398,13 @@ publication processes.</p>
 	document.getElementById("spec").style.display = "none";
 	document.getElementById("next").style.display = "none";
 
-	// #lazyweb
-	function getJsonFromUrl() {
-		var query = location.search.substr(1);
-		var result = {};
-		 query.split("&").forEach(function(part) {
-		 var item = part.split("=");
-			result[item[0]] = decodeURIComponent(item[1]);
-		 });
-		return result;
-	}
- var init	= getJsonFromUrl();
-
-	for (let key in init) {
+	for (const [key, value] of (new URL(location)).searchParams) {
 		let input;
 		if (key === "shortname") {
-		input = document.getElementById("shortname");
+			input = document.getElementById("shortname");
 		}
-	if (input !== undefined) {
-	config[key] = init[key];
+		if (input !== undefined) {
+			config[key] = value;
 		}
 	}
 	if (config.shortname !== undefined) {

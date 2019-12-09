@@ -1378,13 +1378,13 @@ the Webmaster.
 		class="rfc2119">SHALL</span> publish the document (cf. the
 		<a href="https://www.w3.org/1999/12/03-publishing">Webmaster's guide</a>) if the following
 		conditions have been met:</p>
-		
+
 		<ol>
 		<li>The <a href="#pubreq">publication request</a> is complete, and</li>
 		<li>The document indicates clearly its new status verified by
 		the Webmaster. The updated version <span
 		class="rfc2119">may</span> remove the main body of the document.</span></li>
-		</ol>			
+		</ol>
 </div>
 <p>Otherwise the Webmaster <span class="rfc2119">SHALL NOT</span>
 publish. In this case, the Webmaster <span
@@ -1780,30 +1780,18 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 
 	 // initialization
 
-	 // #lazyweb
-	 function getJsonFromUrl() {
-     var query = location.search.substr(1);
-     var result = {};
-     query.split("&").forEach(function(part) {
-      var item = part.split("=");
-      result[item[0]] = decodeURIComponent(item[1]);
-     });
-    return result;
-  }
-  var init  = getJsonFromUrl();
-
-  for (var key in init) {
-		var input;
+	for (const [key, value] of (new URL(location)).searchParams) {
+		let input;
   	if (key === "profile") {
-		  input = document.getElementById("profile").querySelector("option[value=" + init.profile + "]");
+		  input = document.getElementById("profile").querySelector("option[value=" + value + "]");
 		} else {
 			input = document.getElementById(key + "-checkbox");
   	  if (input === null) {
-  			input = document.getElementById(key + "-" + init[key]);
+				input = document.getElementById(key + "-" + value);
 	   	}
 		}
 	  if (input !== null) {
-	    config[key] = init[key];
+	    config[key] = value;
     }
 	}
   adjustForms();
