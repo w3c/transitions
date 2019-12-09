@@ -1782,17 +1782,17 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 
 	for (const [key, value] of (new URL(location)).searchParams) {
 		let input;
-  	if (key === "profile") {
-		  input = document.getElementById("profile").querySelector("option[value=" + value + "]");
+		if (key === "profile") {
+			input = document.getElementById("profile").querySelector("option[value=" + value + "]");
 		} else {
 			input = document.getElementById(key + "-checkbox");
-  	  if (input === null) {
+			if (input === null) {
 				input = document.getElementById(key + "-" + value);
 	   	}
 		}
-	  if (input !== null) {
-	    config[key] = value;
-    }
+		if (input !== null) {
+			config[key] = value;
+		}
 	}
   adjustForms();
 
