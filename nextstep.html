@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en"  data-apiary-key="sdqupwhg51c0o4ww488w40og4kkog8s">
+<html lang="en"	data-apiary-key="sdqupwhg51c0o4ww488w40og4kkog8s">
 <head>
 <meta charset="utf-8">
 <title>What's your next step? (2019 Process)</title>
-  <link rel="stylesheet" href="https://www.w3.org/StyleSheets/generic-base-1.css" type="text/css"/>
-  <link rel="stylesheet" type="text/css" href="https://www.w3.org/Guide/assets/main.css" />
-  <link rel="shortcut icon" href="https://www.w3.org/Icons/WWW/Literature.gif" />
+	<link rel="stylesheet" href="https://www.w3.org/StyleSheets/generic-base-1.css" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="https://www.w3.org/Guide/assets/main.css" />
+	<link rel="shortcut icon" href="https://www.w3.org/Icons/WWW/Literature.gif" />
 
 <!-- Go to the bottom of this document for help in editing it -->
 
 
-  <style type="text/css">
-    form {  border: thin black solid; padding: .5em }
-    /******************************************************************************/
-/*                             Colored Boxes                                  */
+	<style type="text/css">
+		form {	border: thin black solid; padding: .5em }
+		/******************************************************************************/
+/*														 Colored Boxes																	*/
 /******************************************************************************/
 
 	.issue, .note, .example, .advisement, blockquote {
@@ -34,7 +34,7 @@
 	blockquote {
 		margin: 1em auto;
 	}
-	.note  > p:first-child,
+	.note	> p:first-child,
 	.issue > p:first-child,
 	blockquote > :first-child {
 		margin-top: 0;
@@ -63,7 +63,7 @@
 		text-transform: uppercase;
 	}
 	/* Add .issue::before { content: "Issue " counter(issue) " "; } for autogen numbers,
-	   or use class="marker" to mark up the issue number in source. */
+	or use class="marker" to mark up the issue number in source. */
 
 /** Example *******************************************************************/
 
@@ -81,7 +81,7 @@
 		display: block;
 	}
 	/* Add .example::before { content: "Example " counter(example) " "; } for autogen numbers,
-	   or use class="marker" to mark up the example number in source. */
+	or use class="marker" to mark up the example number in source. */
 
 /** Non-normative Note ********************************************************/
 
@@ -99,7 +99,7 @@
 		color: hsl(120, 70%, 30%);
 	}
 	/* Add .note::before { content: "Note "; } for autogen label,
-	   or use class="marker" to mark up the label in source. */
+	or use class="marker" to mark up the label in source. */
 
 	details.note > summary {
 		display: block;
@@ -108,21 +108,21 @@
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
 	}
-  </style>
+	</style>
 	<style>
 		/*for the SVG - navigation highlighting */
 
-     :focus path, :focus polygon, :focus ellipse { stroke-width: 4}
-     g g:hover path, g g:hover polygon, g g:hover ellipse { stroke-width: 4}
-     :focus text, g g:hover text { stroke: black; stroke-width: .5}
+		 :focus path, :focus polygon, :focus ellipse { stroke-width: 4}
+		 g g:hover path, g g:hover polygon, g g:hover ellipse { stroke-width: 4}
+		 :focus text, g g:hover text { stroke: black; stroke-width: .5}
 		</style>
 </head>
 <body>
 <div id="header">
 <span class="logo"><a href="https://www.w3.org/"><img src="https://www.w3.org/Icons/WWW/w3c_home_nb"
 alt="W3C" height="48" width="72"/></a></span>
-    <div class="breadcrumb">
-    <a href="https://www.w3.org/Member/">Member</a> &#x2192; <a href="https://www.w3.org/Guide/">The Art of
+		<div class="breadcrumb">
+		<a href="https://www.w3.org/Member/">Member</a> &#x2192; <a href="https://www.w3.org/Guide/">The Art of
 Consensus</a> &#x2192;
 <h1>Organize a Technical Report Transition (2019 Process)</h1>
 </div>
@@ -147,11 +147,11 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
 <p>This resource assists in finding the internal W3C Technical Report
 publication processes.</p>
 
-  <h2 id="snext">Next Steps</h2>
+	<h2 id="snext">Next Steps</h2>
 	<div>
 		<p>
 			You may use a TR <label id="shortnameLabel">shortname</label> to find out your next step:<br>
-	  </p>
+	</p>
 		<input type=text aria-labelledby="shortnameLabel" placeholder="shortname" id="shortname" size="30" minlength="3" maxlength="40" pattern="[-a-zA-Z0-9]{3,40}" list="w3ctr">
 		<datalist id='w3ctr'>
 		</datalist>
@@ -164,15 +164,16 @@ publication processes.</p>
 
 
  <div id='spec'>
-  <p>We found the following information:</p>
-  <ul>
-	  <li>Title: <span id='spec_title'></span></li>
-	  <li>Date: <span id='spec_date'></span></li>
-	  <li>Shortlink: <span id='spec_shortlink'></span></li>
-	  <li>URL: <span id='spec_uri'></span></li>
-	  <li>Status: <span id='spec_status'></span></li>
-	  <li>Published by: <span id='spec_groups'></span></li>
-  </ul>
+	<p>We found the following information:</p>
+	<ul>
+	<li>Title: <span id='spec_title'></span></li>
+	<li>Date: <span id='spec_date'></span></li>
+	<li>Shortname: <span id='spec_shortname'></span></li>
+	<li>Shortlink: <span id='spec_shortlink'></span></li>
+	<li>URL: <span id='spec_uri'></span></li>
+	<li>Status: <span id='spec_status'></span></li>
+	<li>Published by: <span id='spec_deliverers'></span></li>
+	</ul>
  </div>
 
 </div>
@@ -183,116 +184,132 @@ publication processes.</p>
  This document is maintained on <a href='https://github.com/w3c/transitions/'>GitHub</a>. <a href="https://github.com/w3c/transitions/issues">Issues</a> are welcome.
 </address>
 
-<script src="js/tr.js"></script>
-<script>
-(function() {
-	 // For debugging
-	 var trace = function () {};
-   if (window.location.href.includes("file:")) {
-     trace = function trace(msg) {
-		   console.log(msg);
-	   };
-   }
+<script type="module">
+	import { setW3CKey, fetchW3C } from 'https://w3c.github.io/gargantua/fetch-utils.js';
 
-	 // each one of those config parameters are matching the ones in the option/input elements
-	 var config = {
+	setW3CKey(document.documentElement.getAttribute("data-apiary-key"));
 
-	 };
+	function getLatestSpec(shortname) {
+		return fetchW3C("https://api.w3.org/specifications/" + shortname).then(spec => {
+			let shortname = spec.shortname;
+			return spec["latest-version"].then(latest => {
+				latest.shortname = shortname;
+				return latest;
+			});
+		});
+	}
 
-   // State and browser history handling
+	function findSpecOptions(shortname) {
+			return fetchW3C("https://api.w3.org/specifications-by-shortname/" + shortname)
+				.then(data => {
+					return (data.length > 0)?
+					data.map(s => s.shortname)
+					: [];
+				});
+		}
 
-   // browser history status push
-	 function onpushstate() {
-		 var query = "";
-		 // this query setup is more cumbersome but it favors clean/reduced url query
-   	 if (config.shortname !== undefined) {
-		    query = "?shortname=" + config.shortname;
-  	 }
-     window.history.pushState(config, config.shortname, query);
-		 trace("pushed " +window.location.href);
-   }
+	// For debugging
+	var trace = function () {};
+	if (window.location.href.includes("file:")) {
+		trace = function trace(msg) {
+			console.log(msg);
+		};
+	}
+	// each one of those config parameters are matching the ones in the option/input elements
+	var config = {
+	};
 
-   // browser back and forward buttons
-   window.onpopstate = function (e) {
-		 config = e.state;
-		 adjustForms();
-		 trace("popped " +window.location.href);
-   }
+	// State and browser history handling
+	// browser history status push
+	function onpushstate() {
+		var query = "";
+		// this query setup is more cumbersome but it favors clean/reduced url query
+		if (config.shortname !== undefined) {
+			query = "?shortname=" + config.shortname;
+		}
+		window.history.pushState(config, config.shortname, query);
+			trace("pushed " +window.location.href);
+		}
+		// browser back and forward buttons
+		window.onpopstate = function (e) {
+		config = e.state;
+		adjustForms();
+		trace("popped " +window.location.href);
+	}
 
 	function findShortname(s) {
-		var w3ctr = document.getElementById("w3ctr");
+		let w3ctr = document.getElementById("w3ctr");
 		if (s.length > 2) {
 			while (w3ctr.firstChild) {
 				w3ctr.removeChild(w3ctr.firstChild);
 			}
-			w3c_tr.findOptions(s).then(options => {
+			findSpecOptions(s).then(options => {
+				// dynamic autocompletion
 				options.forEach(option => {
 					let elt = document.createElement('option');
 					elt.value = option;
 					w3ctr.appendChild(elt);
 				});
-				w3c_tr.findLatest(s)
-					.then(spec => {
-					  config.shortname = s;
+				// display a spec if we find one
+				getLatestSpec(s)
+				.then(spec => {
+						return spec.deliverers.then(deliverers => {
+							spec.isGroupClosed = deliverers.reduce((a,c) => a && c["is_closed"], true);
+							return spec;
+						});
+					}).then(spec => {
+						config.shortname = s;
 						updateSpec(spec);
 						onpushstate();
 						trace(spec);
 					}).catch(err => {
-						console.error(err);
-					  updateSpec();
+						// console.error(err);
+						updateSpec();
 					});
 			});
 		}
 	}
 
-	var BASE = "https://www.w3.org/Guide/transitions?";
-	var INPLACE = "<li><a href='https://www.w3.org/2003/01/republishing/'>In-place modification of W3C Technical Reports</a></li>";
-  function listItem(text, query) {
+	let BASE = "https://www.w3.org/Guide/transitions?";
+	let INPLACE = "<li><a href='https://www.w3.org/2003/01/republishing/'>In-place modification of W3C Technical Reports</a></li>";
+	function listItem(text, query) {
 		return "<li><a href='" + BASE + query + "'>" + text + "</a></li>";
 	}
 
-  function isGroupClosed(spec) {
-		var closed = true;
-		for (let index = 0; index < spec.groups.length; index++) {
-			closed = (closed && spec.groups[index]["is-closed"]);
-		}
-		return closed;
-	}
-
 	function nextSteps(spec) {
-		var base = "https://www.w3.org/Guide/transitions?";
-		var next = document.getElementById("next");
-		var list = document.getElementById("step_list");
+		let base = "https://www.w3.org/Guide/transitions?";
+		let next = document.getElementById("next");
+		let list = document.getElementById("step_list");
 
-		if (isGroupClosed(spec)) {
+		if (spec.isGroupClosed) {
 			if (spec.status === "Recommendation") {
 				list.innerHTML = INPLACE + listItem("Publish an Amended Recommendation with only editorial changes", "profile=REC&rec=editorial")
-			   + listItem("Publish a Candidate Recommendation with substantive changes (but no new features)", "profile=CR&cr=rec-amended")
-				 + listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
+			+ listItem("Publish a Candidate Recommendation with substantive changes (but no new features)", "profile=CR&cr=rec-amended")
+				+ listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
 			} else if (spec.status === "Group Note") {
 				list.innerHTML = INPLACE + listItem("contact webreq@w3.org", "profile=WG-NOTE");
 			} else if (spec.status === "Retired") {
 				list.innerHTML = listItem("Propose to restore the Recommendation", "");
 			} else {
-			  list.innerHTML = listItem("Publish as Working Group Note (oops, this should have been done already)", "profile=WG-NOTE");
+			list.innerHTML = listItem("Publish as Working Group Note (oops, this should have been done already)", "profile=WG-NOTE");
 			}
 		} else if (spec.status === "Working Draft") { // !isGroupClosed(spec)
-			var WD = "";
+			let WD = "";
 			if (!spec["_links"]["predecessor-version"]) {
 				function formatNumber(n) {
 					return (n < 10)? "0" + n: n;
 				}
-				var today = new Date();
-				var sToday = today.getUTCFullYear() + "-" + formatNumber(today.getUTCMonth()) + "-" + formatNumber(today.getUTCDate());
+				let today = new Date();
+				let sToday = today.getUTCFullYear() + "-" + formatNumber(today.getUTCMonth()) + "-" + formatNumber(today.getUTCDate());
 				if (sToday === spec.date) WD = INPLACE; // same day only
 			}
 			list.innerHTML = WD + listItem("Update the Working Draft", "profile=WD")
-			  + listItem("Advance to Candidate Recommendation", "profile=CR&cr=new")
+			+ listItem("Advance to Candidate Recommendation", "profile=CR&cr=new")
 				+ listItem("Publish to Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
-  	} else if (spec.status === "Candidate Recommendation") {
+		} else if (spec.status === "Candidate Recommendation") {
 			list.innerHTML = listItem("Update the Candidate Recommendation with only editorial changes", "profile=CR&cr=editorial")
-			 + listItem("Update the Candidate Recommendation with substantive changes", "profile=CR&cr=substantive")
-			 + listItem("Advance to Proposed Recommendation", "profile=PR")
+			+ listItem("Update the Candidate Recommendation with substantive changes", "profile=CR&cr=substantive")
+			+ listItem("Advance to Proposed Recommendation", "profile=PR")
 				+ listItem("Return to Working Draft", "profile=WD")
 				+ listItem("Publish as a Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
 		} else if (spec.status === "Proposed Recommendation") {
@@ -316,38 +333,42 @@ publication processes.</p>
 	}
 
 	function defaultStep() {
-		var base = "https://www.w3.org/Guide/transitions?";
-		var next = document.getElementById("next");
-		var list = document.getElementById("step_list");
+		let base = "https://www.w3.org/Guide/transitions?";
+		let next = document.getElementById("next");
+		let list = document.getElementById("step_list");
 		list.innerHTML = listItem("Publish as a First Public Working Draft", "profile=FPWD")
 		+ listItem("Publish as a Working Group Note", "profile=WG-NOTE");
 		next.style.display = "block";
 	}
 
 	function updateSpec(spec) {
-		var div = document.getElementById("spec");
+		let div = document.getElementById("spec");
 		if (spec === undefined) {
 			div.style.display = "none";
 			document.getElementById("next").style.display = "none";
 			defaultStep();
 		} else {
-			for (var key in spec) {
-				var elt = document.getElementById("spec_" + key);
+			for (let key in spec) {
+				let elt = document.getElementById("spec_" + key);
 				if (elt !== null) {
-					var obj = spec[key];
-					if (key === "groups") {
+					let obj = spec[key];
+					if (key === "deliverers") {
 						elt.innerHTML = "";
-						for (let index = 0; index < obj.length; index++) {
-							var group = obj[index];
-							var a = document.createElement("a");
+						spec.deliverers.then(groups => {
+							for (let index = 0; index < groups.length; index++) {
+							let group = groups[index];
+							let a = document.createElement("a");
 							a.href = group._links.homepage.href;
 							a.textContent = group.name;
 							elt.appendChild(a);
-							if (group["is-closed"]) {
+							if (group["is_closed"]) {
 								elt.appendChild(document.createTextNode(" (closed) "));
 							}
 							elt.appendChild(document.createTextNode(", "));
-						}
+							}
+						});
+					} else if (obj instanceof Promise) {
+						console.log("[Promise] " + key)
 					} else if ((obj.indexOf("https://") !== -1) || (obj.indexOf("http://") !== -1)) {
 						elt.innerHTML = "<a href='" + obj + "'>" + obj + "</a>";
 					} else {
@@ -360,16 +381,16 @@ publication processes.</p>
 		}
 	}
 
-  function adjustForms() {
+	function adjustForms() {
 		// adjust the HTML forms according to the config
 		trace("adjustForms for " + JSON.stringify(config));
-    for (var key in config) {
-  		var input = null;
-    	if (key === "shortname") {
-  		  input = document.getElementById("shortname");
+		for (let key in config) {
+			let input = null;
+			if (key === "shortname") {
+			input = document.getElementById("shortname");
 				input.value = config.shortname;
-  		}
-  	}
+			}
+		}
 	}
 
 	// initialization
@@ -379,44 +400,43 @@ publication processes.</p>
 
 	// #lazyweb
 	function getJsonFromUrl() {
-     var query = location.search.substr(1);
-     var result = {};
-     query.split("&").forEach(function(part) {
-      var item = part.split("=");
-      result[item[0]] = decodeURIComponent(item[1]);
-     });
-    return result;
-  }
-  var init  = getJsonFromUrl();
+		var query = location.search.substr(1);
+		var result = {};
+		 query.split("&").forEach(function(part) {
+		 var item = part.split("=");
+			result[item[0]] = decodeURIComponent(item[1]);
+		 });
+		return result;
+	}
+ var init	= getJsonFromUrl();
 
-  for (var key in init) {
-		var input;
-  	if (key === "shortname") {
-		  input = document.getElementById("shortname");
+	for (let key in init) {
+		let input;
+		if (key === "shortname") {
+		input = document.getElementById("shortname");
 		}
-	  if (input !== undefined) {
-	    config[key] = init[key];
-    }
+	if (input !== undefined) {
+	config[key] = init[key];
+		}
 	}
 	if (config.shortname !== undefined) {
 		findShortname(config.shortname);
 	}
-  adjustForms();
+	adjustForms();
 
 	function shortname(e) {
-		var s = e.target.value;
+		let s = e.target.value;
 		if (s.length > 2) {
 			findShortname(s);
 		}
 	}
-  var nodes = document.querySelectorAll("input");
-	for (var i = 0; i < nodes.length; i++) {
-     if (nodes[i].type === "text") {
+ var nodes = document.querySelectorAll("input");
+	for (let i = 0; i < nodes.length; i++) {
+		 if (nodes[i].type === "text") {
 			nodes[i].oninput = shortname;
 		}
 	}
-  trace("restored " + window.location.href);
-})();
-	</script>
+	trace("restored " + window.location.href);
+</script>
 </body>
 </html>
