@@ -14,7 +14,7 @@ Select one of the transition templates below:
 * Proposed Recommendation: [PR transition](https://github.com/w3c/transitions/issues/new/choose)
 * Proposal to Supersede a Recommendation: [Superseded transition](https://github.com/w3c/transitions/issues/new/choose)
 * Proposal to Obsolete a Recommendation: [Obsoleted transition](https://github.com/w3c/transitions/issues/new/choose)
-* Recommendation: Due to the need to look at the AC Review comments, those transitions are done by the Team separately
+* Recommendation: Due to the need to look at the AC Review comments, those transitions are  [done by the Team](https://github.com/w3c/transitions/issues/new/choose) separately. But you can find traces of them in [issues](https://github.com/w3c/transitions/issues/).
 * Edited Recommendation: [Edited REC transition](https://github.com/w3c/transitions/issues/new/choose)
 
 If you're not sure what transition template to use, check out our [next step finder](https://w3c.github.io/transitions/nextstep.html) to see your choices.
