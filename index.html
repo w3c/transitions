@@ -176,7 +176,6 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
   <li><a
 	  href="https://www.w3.org/2019/Process-20190301/#Reports">Recommendation
   Track Process</a></li>
-	<li><a href="https://w3c.github.io/spec-releases/timeline.svg">174 days to W3C Recommendation</a></li>
   <li><a href="https://www.w3.org/2003/Editors/">W3C Editors' Home Page</a></li>
   <li><a href="https://www.w3.org/2001/06/manual/">Manual of Style</a></li>
   <li><a href="https://www.w3.org/2005/03/28-editor-style.html">Style Guidelines for Group-Internal Drafts</a></li>
@@ -462,9 +461,9 @@ The Director approves the transition request.
 <span data-profile="CR|PR">Approvals are expected to appear as an issue comment <a href="https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L31">"Transition approved."</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>
 	<span data-profile="CR" data-cr="substantive" data-echidna="true">and
 	the label '<a href='https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L40'>Awaiting Publication</a>' will need to be set</span>.</span>
-	<strong>Note:</strong> Director approval is required for
-some namespace URIs; see <a href="https://www.w3.org/2005/07/13-nsuri">URIs
-for W3C Namespaces</a> for details.
+<span class="transitionreq-approvalwho-when" data-profile="CR|PR|REC|OBSL|RSCND|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">
+In most cases the decision to approve the transition is made on Fridays.
+</span>
 </li>
 
 </ul>
@@ -532,7 +531,6 @@ The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Documen
 optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
 See below for details about
 <a href="#title-page-date">scheduling a publication</a>, and specifically requirements about advance notice to the Webmaster.
-<span class="further-work-draft" data-profile="WD|CR|WG-NOTE" data-cr="new|substantive|rec-update|rec-amended">
 </li>
 
 </ul>
@@ -544,7 +542,7 @@ See below for details about
 <ul>
 <li  class="transannc-draft" data-profile="WD" data-returning="true">
 The
-<a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a draft announcement
+<a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a a draft <a href="#trans-annc">transition announcement</a>
 to the Communications Team at w3t-comm@w3.org, which explains why the document was returned for further work.
 </li>
 <li class="reviewform-prep" data-profile="PR|PR-OBSL|PR-RSCND">
@@ -570,7 +568,7 @@ explains why the document was returned for further work.</span>
 <li data-profile="CR"  data-cr="substantive" data-echidna="true">The Communications Team
 approves the draft using an issue comment
 <a href="https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L32">"Draft transition approved"</a>
-in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.
+in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>
 </li>
 </ul>
 </dd>
@@ -703,10 +701,13 @@ of the (current) review period.</p>
 </div>
 
 <div class="transreq-section2" data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
-<p>The message subject line and body <span
+<p data-profile="REC|OBSL|RSCND">The message subject line and body <span
+		class="rfc2119">SHOULD</span> identify this as a "transition request";
+		see above for <a href="#transreqmail">where to send the request</a>.</p>
+<p data-profile="FPWD|CR|FPIG-NOTE|FPWG-NOTE|PR">The issue title and labels <span
 class="rfc2119">SHOULD</span> identify this as a "transition request";
-see above for <a href="#transreqmail">where to send the request</a>.
-A<span data-profile="OBSL">n</span>
+see above for <a href="#transreqmail">where to create the request</a>.</p>
+<p>A<span data-profile="OBSL">n</span>
 <span data-profile="FPWD|FPIG-NOTE|FPWG-NOTE">First Public</span>
 <span class="status-name">STATUS</span> transition request <span
 class="rfc2119">MUST</span> include:</p>
@@ -716,7 +717,7 @@ class="rfc2119">MUST</span> include:</p>
 publication date</a>.</li>
 
 <li>The document Abstract and Status sections, either
-by reference (e.g., the URI to the document) or direct inclusion.
+by reference (e.g., the URL to the document) or direct inclusion.
 </li>
 
 <li data-profile="FPWD" data-informativeOnly="false">
@@ -748,10 +749,7 @@ Project Management Lead
 <span
 data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">Director</span>
 assess whether the group has satisfied the transition requirements.
-<span class="transreq-as-agenda" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
-The transition request <span class="rfc2119">SHOULD</span> be
-organized so that it serves as the basis for the <a
-href="#sample-agenda">agenda</a> of the meeting with the Director.</span></p>
+</p>
 
 <p class="shortname" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE" data-notehistory="notchartered|first">The <strong>goal</strong> of the
 transition request is to secure an archived record of the
@@ -778,7 +776,7 @@ class="rfc2119">SHOULD NOT</span> schedule a Proposed Recommendation
 review period to end
 less than 10 days
 after the end of an open "exclusion opportunity" as defined in the W3C Patent
-Policy (per section 5.2 of the W3C Process), or
+Policy (per <a href='https://www.w3.org/2019/Process-20190301/#rec-pr'>section 6.5 of the W3C Process</a>), or
 if there are any Patent Advisory Groups
 (PAGs) currently discussing the document
 (per the <a href="https://www.w3.org/2003/12/22-pp-faq.html#trpub-during-pag">Patent Policy FAQ, question 29</a>).</p>
@@ -1106,12 +1104,11 @@ if there are any Patent Advisory Groups
 </div>
 </div>
 
-<div class="trans-mtg-section" data-profile="CR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-rec="new|editorial" data-cr="new|substantive|rec-update|rec-amended">
-<h2><a name="dir-mtg" id="dir-mtg">Transition
-Meeting with the Director</a></h2>
+<div class="trans-mtg-section" data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
+<h2><a name="dir-mtg" id="dir-mtg">Transition Meeting with the Director</a></h2>
 
 <p>For a<span data-profile="OBSL">n</span> <span class="status-name">STATUS</span> transition,
-the Director may need to attend a transition
+the Director <span class="rfc2119">MAY</span> request a transition
 meeting attended by:</p>
 
 <ul>
@@ -1124,9 +1121,7 @@ chairs the meeting.</li>
 
 <li>Those assigned by the Director to manage transitions.</li>
 
-<li>The Director should be invited to attend the meeting if the
-transition involves contentious issues such as IPR, technical or
-other concerns.</li>
+<li>The Director (or someone appointed by him).</li>
 
 <li class="mtg-attendees-chair" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">The <span data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">Working Group Chair(s)</span><span
 	data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span></li>
@@ -1189,10 +1184,8 @@ requiring the Director's attention.</dd>
 <dd>The Director assesses whether the W3C Process has been followed
 and whether there is sufficient consensus to support the transition
 request.
-In most cases the decision to make the transition
-is made on Fridays.
-However the decision could take more time if any difficult
-issues arise during the meeting and the teleconference might be needed. The Director may delegate the
+In many cases the decision to allow the transition
+is NOT made by the end of the call and will take more time. The Director may delegate the
 W3C decision.</dd>
 
 <dt>Next steps</dt>
@@ -1305,8 +1298,8 @@ document.</p>
 <h2><a id="schedule-pubreq" name="schedule-pubreq">Scheduling
 Publication</a></h2>
 
-<p data-profile="WD|CR|WG-NOTE|IG-NOTE">
-  <strong>Note:</strong> <span class="status-name">STATUS</span>s published through the <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a> do not need to get scheduled with the Webmaster and are not subjected to <a href="https://www.w3.org/Guide/#current">publishing moratoria</a>.
+<p class='note' data-profile="WD|CR|WG-NOTE|IG-NOTE" data-returning='false' data-cr="substantive" data-echidna='false'>
+  <strong>Tip:</strong> <span class="status-name">STATUS</span>s published through the <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a> do not need to get scheduled with the Webmaster and are not subjected to <a href="https://www.w3.org/Guide/#current">publishing moratoria</a>.
 </p>
 
 <p id='seven_days' data-profile="CR|PR">Unless there are exceptional circumstances, the Director requires a minimum of 7 days period between the <a href='#transreqmail'>transition request</a> and the publication.
@@ -1403,13 +1396,44 @@ publication as described above.</p>
 
 </div>
 
-<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">
+<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|WD|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-returning='true' data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">
 <h2 id="trans-annc">Transition Announcement</h2>
 
 <p>A<span data-profile="OBSL">n</span>
 <span data-profile="FPWD|FPWG-NOTE|FPIG-NOTE">First Public</span>
 <span class="status-name">STATUS</span> transition announcement <span
 class="rfc2119">MUST</span> include the following information:</p>
+
+<div class="announcement-contents" data-profile="WD">
+
+	<ol>
+	<li>That this is a document returning to Working Draft announcement.</li>
+
+	<li>Document title, URIs.</li>
+
+	<li>Instructions for providing feedback.</li>
+
+	<li>Explanation for the <a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">document returning to Working Draft for further work</a>.</li>
+
+	<li>Document abstract and status.</li>
+	</ol>
+
+
+	<p>The announcement <span
+		class="rfc2119">SHOULD</span> provide information about where people
+		can learn about issues raised during the Candidate or Proposed Recommendation review period
+		(e.g., a link to an issues list).</p>
+
+	<p>The announcement
+	<span class="rfc2119">MAY</span> indicate priority feedback
+	items.</p>
+
+
+	<!--
+	Note: Info about features at risk is required in status section per pubrules
+	-->
+
+	</div>
 
 <div class="announcement-contents" data-profile="PR|PR-OBSL|PR-RSCND">
 
@@ -1490,9 +1514,7 @@ can learn about issues raised during the Candidate Recommendation review period
 
 <p>The Candidate Recommendation transition announcement
 <span class="rfc2119">MAY</span> indicate priority feedback
-items. Please note that as of Candidate Recommendation, no technical issues should
-be open, even though the Working Group may request feedback on
-particular choices they have made.</p>
+items.</p>
 
 
 <!--
