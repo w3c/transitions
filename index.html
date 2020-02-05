@@ -219,7 +219,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
                </label>
             </li>
          </ul>
-         <ul style="margin-left: 3em" data-profile="FPWD|WD">
+         <ul id='draft-options' style="margin-left: 3em" data-profile="FPWD|WD">
 					<li style="list-style: none" data-profile="WD">
 						<input type="checkbox" id="returning-checkbox" name="returning-checkbox" />
 						<label for="returning-checkbox">Returning to a Working Draft <a href='https://www.w3.org/2019/Process-20190301/#recs-and-notes'>for further work</a>
@@ -231,7 +231,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
                </label>
             </li>
          </ul>
-         <ul style="margin-left: 3em" data-profile="CR">
+         <ul id='cr-options' style="margin-left: 3em" data-profile="CR">
             <li style="list-style: none">
                <input type="radio" id="cr-new" name="cr" value="new" checked="checked"/>
                <label for="cr-new">Previously published as a Working Draft or returning from Proposed Recommendation</label>
@@ -254,7 +254,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
 	  				 </label>
 		  			</li>
 			 </ul>
-			 <ul style="margin-left: 3em" data-profile="PR">
+			 <ul id='pr-options' style="margin-left: 3em" data-profile="PR">
 				<li style="list-style: none">
 					 <input type="radio" id="pr-new" name="pr" value="new" checked="checked"/>
 					 <label for="pr-new">Proposed by an active Working Group</label>
@@ -265,7 +265,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
 				 </label>
 				</li>
 	 </ul>
-	 <ul style="margin-left: 3em" data-profile="REC">
+	 <ul id='rec-ptions' style="margin-left: 3em" data-profile="REC">
             <li style="list-style: none">
                <input type="radio" id="rec-new" name="rec" value="new" checked="checked"/>
                <label for="rec-new">Previously published as a Proposed Recommendation</label>
@@ -278,7 +278,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
                <p><strong>Note:</strong> Follow <a href="?profile=CR&amp;cr=rec-update">Candidate Recommendation</a> for substantive corrections (Edited Recommendation)</label>
             </li>
          </ul>
-         <ul style="margin-left: 3em"  data-profile="FPWG-NOTE|FPIG-NOTE">
+         <ul id='fp-note-options' style="margin-left: 3em"  data-profile="FPWG-NOTE|FPIG-NOTE">
             <li style="list-style: none">
                <input type="radio" id="notehistory-first" name="notehistory" value="first" checked="checked"/>
                <label for="notehistory-first">Chartered to be a group Note, never before published, group not closing</label>
@@ -531,7 +531,14 @@ The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Documen
 optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
 See below for details about
 <a href="#title-page-date">scheduling a publication</a>, and specifically requirements about advance notice to the Webmaster.
-</li>
+
+<span data-profile="FPWG-NOTE|WG-NOTE|IG-NOTE" data-notehistory="none|closure">
+	If the publication is the result
+	of stopping work on a specification, the <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a>
+	alerts the
+	<a href="01-transitions-about#Webmaster">Webmaster</a> as well.
+	</span>
+	</li>
 
 </ul>
 </dd>
@@ -1865,6 +1872,7 @@ So far, we have the following data attributes:
 3. data-informativeOnly for a |-separated list of FPWD and WD paths
 4. data-returning for a |-separated list of FPWD and WD paths
 5. data-notehistory for a |-separated list of first [working|interest] group note paths
+7. data-echidna for automatic publishing
 
 e.g.
 <div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">
