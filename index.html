@@ -108,6 +108,16 @@
 	details.note[open] > summary {
 		border-bottom: 1px silver solid;
 	}
+
+	a.gh-label {
+		font-weight: 600; line-height: 1.25!important; text-decoration: none;
+		padding: 4px 8px; font-size: 14px; border-radius: 3px; box-sizing: border-box; margin-top:-1px;
+	}
+
+	a.gh-label-state {
+		background: #d93f0b;
+		color: white;
+	}
   </style>
 	<style>
 		/*for the SVG - navigation highlighting */
@@ -203,7 +213,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
 					   </optgroup>
          </select>
          </p>
-         <ul id='echidna-selection' style="margin-left: 3em" data-cr="editorial" data-profile="WD|WG-NOTE|IG-NOTE|CR">
+         <ul id='echidna-selection' style="margin-left: 3em" data-profile="WD|WG-NOTE|IG-NOTE|CR">
             <li style="list-style: none">
                <input type="checkbox" id="echidna-checkbox" name="echidna-checkbox"/>
                <label for="echidna-checkbox">With the <a href="https://github.com/w3c/echidna/wiki">W3C automatic publishing system</a>
@@ -410,20 +420,16 @@ See the <a href="https://www.w3.org/wiki/DocumentReview">considerations, guideli
 <span class="transwhen" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">At least one week prior to an expected
 decision from or <a href="#dir-mtg">meeting with the Director</a>, the</span>
 <span class="transwhen" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE" data-notehistory="notchartered|first">The</span>
-<span  class="transitionreqwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial" data-cr="new|substantive|rec-update" data-pr="new" data-notehistory="notchartered|first">Chair (or Team Contact)</span><span
+<span  class="transitionreqwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial" data-cr="new|substantive|rec-update" data-pr="new" data-notehistory="notchartered|first"><a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a></span><span
  class="transitionreqwho" data-profile="PR|REC|OBSL|RSCND" data-pr="rec-amended" data-rec="new">Team Contact</span><span
  class="transitionreqwho" data-profile="CR" data-cr="rec-amended"><a href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></span>
 
-<span class="transwho" data-profile="FPWD|FPWG-NOTE" data-notehistory="notchartered|first">
+<span class="transwho" data-profile="FPWD|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
 creates a <a href="#transreq">transition request</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.
-<strong>Note:</strong>
+<span data-profile="CR" data-echidna='true'>For the purpose of the automatic publishing system, it's <strong>important</strong> that the title of the issue ends with the shortname of your specification.</span>
+<span data-profile="FPWD|FPWG-NOTE" data-notehistory="notchartered|first"><strong>Note:</strong>
 For the TAG, no First Public Working Draft transition request is required; the request is assumed to be approved by the Director, who Chairs the TAG.
-</span>
-<span class="transwho" data-profile="FPIG-NOTE" data-notehistory="notchartered|first">
-	creates a <a href="#transreq">transition request</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.
-</span>
-<span class="transwho" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">
-	creates a <a href="#transreq">transition request</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.
+</spandata-profile="FPWD|FPWG-NOTE" data-notehistory="notchartered|first">
 </span>
 <span class="transwho" data-profile="REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
 	sends a <a href="#transreq">transition request</a> to
@@ -433,19 +439,9 @@ For the TAG, no First Public Working Draft transition request is required; the r
 </li>
 
 <li  class="transitionmtg" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
-The <span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">Team Contact</span><span
+Following an initial review by the Director, the <span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update">Team Contact</span><span
 class="transitionreqwho" data-profile="CR" data-cr="rec-amended"><a href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></span> <span class="rfc2119">MAY</span> need to organize a <a href="#dir-mtg">transition meeting
 with the Director</a> to discuss the request.
-<span data-profile="CR|PR" data-cr="new|substantive|rec-update|rec-amended">
-<strong>Note:</strong> When the transition request indicates
-unambiguous support and sufficient wide review for the transition, the Director waives the need for a telephone
-call in general.
-</span>
-<span data-profile="REC|OBSL|RSCND" data-rec="new">
-<strong>Note:</strong> When Advisory Committee review indicates
-unambiguous support, the Director waives the need for a telephone
-call in general.
-</span>
 </li>
 
 <li  class="transitionreq-approval" data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
@@ -458,15 +454,25 @@ Director (or someone assigned by the Director) to take responsibility for approv
 <span class="transitionreq-approvalwho" data-profile="CR|PR|REC|OBSL|RSCND|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">
 The Director approves the transition request.
 </span>
+<span data-profile="CR|PR">Approvals are expected to appear as an issue comment <a href="https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L31">"Transition approved."</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a> and
+	<span data-profile="CR" data-echidna="true">the label '<a href='https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L40'>Awaiting Publication</a>' will need to be set.</span></span>
 </li>
 
 </ul>
 </dd>
-<dt data-profile="FPWD|CR|PR|FPIG-NOTE|FPWG-NOTE|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Publication and Transition Planning</dt>
-<dt data-profile="FPWG-NOTE|FPIG-NOTE" data-notehistory="none|closure|notchartered">Publication Planning</dt>
-<dt id="publication-planning" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-cr="editorial">Publication Planning</dt>
-<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-cr="editorial" data-echidna="true">
+<dt data-profile="FPWD|CR|PR|FPIG-NOTE|FPWG-NOTE|WD|CR|WG-NOTE|IG-NOTE|REC|OBSL|RSCND">Publication Planning</dt>
+<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-echidna="true">
 <ul>
+<li class="mailinglist-prep" data-profile="CR|WG-NOTE|IG-NOTE" data-cr="new|substantive|rec-update" data-notehistory="first">
+The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> ensures that there is a public archived place (github or mailing list)
+available for comments; (for mailing list, the Team Contact uses the <a
+href="https://www.w3.org/Systems/Mail/ListRequest">mailing list request
+form</a>).
+</li>
+<li class="mailinglist-prep" data-profile="CR" data-cr="rec-amended" data-pr="rec-amended">
+The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> ensures that there is a public archived github repository
+available for comments.
+</li>
 <li>The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> prepares the
 document in accordance with <a
 href="https://www.w3.org/pubrules/">pubrules</a> (use the "Echidna-ready" check).
@@ -482,19 +488,24 @@ alerts the
 optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
 </li>
 
-<li id="pubreqmail"  data-profile="WD|CR" data-cr="new|substantive">
-If the publication is the result
-of returning a document to a Working Group for further work, the Team Contact
-alerts the W3C Communications Team by sending to w3t-comm@w3.org a draft
-announcement for the Membership (required by
-<a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">section 6.1.1 of the Process</a>) that explains why the document was
-returned for further work.
-</li>
 
 </ul>
 </dd>
 <dd class="docpreparation" data-profile="WD|WG-NOTE|IG-NOTE|FPWD|CR|PR|REC|OBSL|RSCND|FPWG-NOTE|FPIG-NOTE" data-echidna="false">
 <ul>
+<li class="mailinglist-prep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new" data-notehistory="first">
+The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> ensures that there is a public archived place (github or mailing list)
+available for comments; (for mailing list, the Team Contact uses the <a
+href="https://www.w3.org/Systems/Mail/ListRequest">mailing list request
+form</a>). <span data-profile="PR" data-pr="new">
+The Team Contact also ensures that there is a mailing list with
+a Team-only archive available for AC Representative comments; this list
+is cited from the review form.</span>
+</li>
+<li class="mailinglist-prep" data-profile="CR|PR|REC" data-cr="rec-amended" data-pr="rec-amended">
+The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> ensures that there is a public archived github repository
+available for comments.
+</li>
 <li>The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> prepares the
 document in accordance with <a
 href="https://www.w3.org/pubrules/">pubrules</a> and develops a proposed
@@ -506,8 +517,7 @@ is chosen based on the anticipated publication schedule.
 some namespace URIs; see <a href="https://www.w3.org/2005/07/13-nsuri">URIs
 for W3C Namespaces</a> for details.</li>
 
-<li>Before sending the publication request, the <a
-href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> <span
+<li>Before sending the publication request, the Team Contact <span
 class="rfc2119">SHOULD</span> install the document in its final
 location. The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document
 Contact</a> <span class="rfc2119">MAY</span> request publication of a
@@ -528,37 +538,22 @@ optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
 See below for details about
 <a href="#title-page-date">scheduling a publication</a>, and specifically requirements about advance notice to the Webmaster.
 <span class="further-work-draft" data-profile="WD|CR|WG-NOTE" data-cr="new|substantive|rec-update|rec-amended">
-<strong>Note:</strong>
-If the publication is the result
-of returning a document to a Working Group for further work, the Team Contact
-alerts the W3C Communications Team by sending to w3t-comm@w3.org a draft
-announcement for the Membership (required by
-<a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">section 6.1.1 of the Process</a>) that explains why the document was
-returned for further work.</span>
 </li>
 
 </ul>
 </dd>
 
-<dt class="listprep" data-profile="PR|PR-OBSL|PR-RSCND">Form and Mailing List Preparation</dt>
-<dt class="listprep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Mailing List Preparation</dt>
-<dt class="listprep" data-profile="REC">GitHub Preparation</dt>
-<dd data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|REC|OBSL|RSCND|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">
+<dt class="listprep" data-profile="PR|PR-OBSL|PR-RSCND">Form and Announcement Preparation</dt>
+<dt class="listprep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|WD|CR|OBSL|RSCND|REC" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Announcement Preparation</dt>
+<dd data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|WD|CR|REC|OBSL|RSCND|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">
 <ul>
-<li class="mailinglist-prep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new" data-notehistory="first">
-The Team Contact ensures that there is a public archived place (github or mailing list)
-available for comments; (for mailing list, use the <a
-href="https://www.w3.org/Systems/Mail/ListRequest">mailing list request
-form</a>). <span data-profile="PR" data-pr="new">
-The Team Contact also ensures that there is a mailing list with
-a Team-only archive available for AC Representative comments; this list
-is cited from the review form.</span>
+<li  class="transannc-draft" data-profile="WD">
+If the publication is the result
+of <a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">returning a document to a Working Group for further work</a>, the
+<a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a draft announcement
+to the Communications Team at w3t-comm@w3.org, which explains why the document was returned for further work.
+</span>
 </li>
-<li class="mailinglist-prep" data-profile="CR|PR|REC" data-cr="rec-amended" data-pr="rec-amended">
-The Team Contact ensures that there is a public archived github repository
-available for comments.
-</li>
-
 <li class="reviewform-prep" data-profile="PR|PR-OBSL|PR-RSCND">
 The Team Contact builds a
 <span class="status-name">STATUS</span>
@@ -570,9 +565,18 @@ form</a> that the Project Manager reviews for correctness.
 At the current time, WBS review forms are generated from
 installed documents, but before the Webmaster completes
 publication.</span></li>
-<li  class="transannc-draft" data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">The
-Team Contact sends a draft <a href="#trans-annc">transition announcement</a>
-to the Communications Team at w3t-comm@w3.org.</li>
+<li  class="transannc-draft" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">The
+<a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a draft <a href="#trans-annc">transition announcement</a>
+to the Communications Team at w3t-comm@w3.org. <span data-profile="CR" data-echidna="true">The Communications Team
+approvals for the draft are expected to appear as an issue comment
+<a href="https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L32">"Draft transition approved"</a>
+in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.</span>
+<span  data-profile="CR" data-cr="new|substantive">
+If the publication is the result
+of <a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">returning a document to a Working Group for further work</a>, the announcement
+explains why the document was returned for further work.
+</span>
+</li>
 </ul>
 </dd>
 
@@ -583,18 +587,13 @@ to the Communications Team at w3t-comm@w3.org.</li>
 <ul>
 <li class="publication-announcement" data-profile="WD|FPWD|CR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-echidna="false">The Webmaster completes <a
 href="#publication">publication</a> and notifies the Chair and Team Contact of publication, cc'ing webreq@w3.org<span data-profile="FPWD|CR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-cr="new|substantive|rec-update|rec-amended"> and w3t-comm@w3.org</span>.
-<span class="further-work-alert" data-profile="WD|CR|WG-NOTE" data-cr="new">
-<strong>Note:</strong>
-If the publication is the result
-of <a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">returning a document to a Working Group for further work</a>, the Webmaster
-alerts the W3C Communications Team.</span>
 </li>
 
 <li class="publication-announcement" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-echidna="true">The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a>
 publishes the document using the  <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>.
 </li>
 
-<li class="publication-announcement"  data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
+<li class="publication-announcement"  data-profile="CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-echidna="false">
 After coordination with the Communications Team on the transition
 announcement timing (especially those accompanied
 by press releases; see more about
@@ -612,17 +611,22 @@ only a small amount of time.</li>
 </li>
 
 <li class="trans-announcement"  data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
-The W3C Communications Team sends a
+The W3C Communications Team sends the
 <a href="#trans-annc">transition announcement</a>
 to w3c-ac-members@w3.org
 <span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">and chairs@w3.org</span>
 <span data-profile="CR|PR|REC" data-cr="new|substantive|rec-update|rec-amended">and on the <a href="https://www.w3.org/">W3C home page</a></span>.
 </li>
 
-<li  class="trans-announcement" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update" data-pr="new">The Chair or Team Contact(s) <span
+<li  class="trans-announcement" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update" data-pr="new" data-echidna="false">The	Chair or Team Contact(s) <span
 class="rfc2119">SHOULD</span> forward the announcement to the Working
 Group's public mailing list <strong>taking caution</strong> not to
 send any Member-confidential information to a public list.</li>
+
+<li  class="trans-announcement" data-profile="CR" data-cr="new|substantive|rec-update" data-echidna="true">The
+<span data-echidna="true"><a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> <span
+class="rfc2119">SHOULD</span> forward the announcement to the Working
+Group's public mailing list.</li>
 
 <li  class="trans-announcement" data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">The Team Contact <span
 	class="rfc2119">SHOULD</span> forward the announcement to the appropriate public forum <strong>taking caution</strong> not to
