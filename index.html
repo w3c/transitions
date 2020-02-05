@@ -454,8 +454,9 @@ Director (or someone assigned by the Director) to take responsibility for approv
 <span class="transitionreq-approvalwho" data-profile="CR|PR|REC|OBSL|RSCND|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">
 The Director approves the transition request.
 </span>
-<span data-profile="CR|PR">Approvals are expected to appear as an issue comment <a href="https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L31">"Transition approved."</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a> and
-	<span data-profile="CR" data-echidna="true">the label '<a href='https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L40'>Awaiting Publication</a>' will need to be set.</span></span>
+<span data-profile="CR|PR">Approvals are expected to appear as an issue comment <a href="https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L31">"Transition approved."</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>
+	<span data-profile="CR" data-echidna="true">and
+	the label '<a href='https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L40'>Awaiting Publication</a>' will need to be set</span>.</span>
 </li>
 
 </ul>
@@ -544,15 +545,15 @@ See below for details about
 </dd>
 
 <dt class="listprep" data-profile="PR|PR-OBSL|PR-RSCND">Form and Announcement Preparation</dt>
-<dt class="listprep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|WD|CR|OBSL|RSCND|REC" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Announcement Preparation</dt>
+<dt class="listprep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|WD|WG-NOTE|CR|OBSL|RSCND|REC" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Announcement Preparation</dt>
 <dd data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|WD|CR|REC|OBSL|RSCND|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">
 <ul>
-<li  class="transannc-draft" data-profile="WD">
+<li  class="transannc-draft" data-profile="WD|WG-NOTE">
 If the publication is the result
 of <a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">returning a document to a Working Group for further work</a>, the
 <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a draft announcement
 to the Communications Team at w3t-comm@w3.org, which explains why the document was returned for further work.
-</span>
+<span  data-profile="WD"><br><strong>Note:</strong> Since September 2015, the Communications Team no longer posts homepage news for regular WDs, unless explicitely requested.</span>
 </li>
 <li class="reviewform-prep" data-profile="PR|PR-OBSL|PR-RSCND">
 The Team Contact builds a
@@ -571,7 +572,7 @@ to the Communications Team at w3t-comm@w3.org. <span data-profile="CR" data-echi
 approvals for the draft are expected to appear as an issue comment
 <a href="https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L32">"Draft transition approved"</a>
 in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.</span>
-<span  data-profile="CR" data-cr="new|substantive">
+<span  data-profile="CR" data-cr="new">
 If the publication is the result
 of <a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">returning a document to a Working Group for further work</a>, the announcement
 explains why the document was returned for further work.
@@ -616,6 +617,7 @@ The W3C Communications Team sends the
 to w3c-ac-members@w3.org
 <span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">and chairs@w3.org</span>
 <span data-profile="CR|PR|REC" data-cr="new|substantive|rec-update|rec-amended">and on the <a href="https://www.w3.org/">W3C home page</a></span>.
+<p  data-profile="WD"><strong>Note:</strong> Since September 2015, the Communications Team no longer posts homepage news for regular WDs, unless explicitely requested.</p>
 </li>
 
 <li  class="trans-announcement" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update" data-pr="new" data-echidna="false">The	Chair or Team Contact(s) <span
@@ -631,13 +633,6 @@ Group's public mailing list.</li>
 <li  class="trans-announcement" data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">The Team Contact <span
 	class="rfc2119">SHOULD</span> forward the announcement to the appropriate public forum <strong>taking caution</strong> not to
 	send any Member-confidential information to a public list.</li>
-
-<li class="trans-announcement"  data-profile="WD|CR|WG-NOTE" data-cr="new">
-If this publication is the result
-of <a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">returning a document to a Working Group for further work</a>, the
-Communications Team announces that to w3c-ac-members@w3.org and chairs@w3.org.
-
-<p  data-profile="WD"><strong>Note:</strong> Since September 2015, the Communications Team no longer posts homepage news for regular WDs, unless explicitely requested.</p></li>
 </ul>
 </dd>
 </dl>
