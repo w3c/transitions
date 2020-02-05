@@ -213,7 +213,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
 					   </optgroup>
          </select>
          </p>
-         <ul id='echidna-selection' style="margin-left: 3em" data-profile="WD|WG-NOTE|IG-NOTE|CR">
+         <ul id='echidna-selection' style="margin-left: 3em" data-profile="WD|WG-NOTE|IG-NOTE|CR" data-cr="editorial|substantive">
             <li style="list-style: none">
                <input type="checkbox" id="echidna-checkbox" name="echidna-checkbox"/>
                <label for="echidna-checkbox">With the <a href="https://github.com/w3c/echidna/wiki">W3C automatic publishing system</a>
@@ -221,7 +221,12 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
             </li>
          </ul>
          <ul style="margin-left: 3em" data-profile="FPWD|WD">
-            <li style="list-style: none">
+					<li style="list-style: none" data-profile="WD">
+						<input type="checkbox" id="returning-checkbox" name="returning-checkbox" />
+						<label for="returning-checkbox">Returning to a Working Draft <a href='https://www.w3.org/2019/Process-20190301/#recs-and-notes'>for further work</a>
+						</label>
+				 </li>
+				 <li style="list-style: none">
                <input type="checkbox" id="informativeOnly-checkbox" name="informativeOnly-checkbox" />
                <label for="informativeOnly-checkbox">Not intended to become a normative Recommendation
                </label>
@@ -230,7 +235,7 @@ wisdom of the W3C Group Chairs and other collaborators.</p>
          <ul style="margin-left: 3em" data-profile="CR">
             <li style="list-style: none">
                <input type="radio" id="cr-new" name="cr" value="new" checked="checked"/>
-               <label for="cr-new">Previously published as a Working Draft or returning to Candidate Recommendation</label>
+               <label for="cr-new">Previously published as a Working Draft or returning from Proposed Recommendation</label>
             </li>
             <li style="list-style: none">
                <input type="radio" id="cr-editorial" name="cr" value="editorial"/>
@@ -426,7 +431,7 @@ decision from or <a href="#dir-mtg">meeting with the Director</a>, the</span>
 
 <span class="transwho" data-profile="FPWD|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="notchartered|first">
 creates a <a href="#transreq">transition request</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.
-<span data-profile="CR" data-echidna='true'>For the purpose of the automatic publishing system, it's <strong>important</strong> that the title of the issue ends with the shortname of your specification.</span>
+<span data-profile="CR" data-cr="substantive" data-echidna='true'>For the purpose of the automatic publishing system, it's <strong>important</strong> that the title of the issue ends with the shortname of your specification.</span>
 <span data-profile="FPWD|FPWG-NOTE" data-notehistory="notchartered|first"><strong>Note:</strong>
 For the TAG, no First Public Working Draft transition request is required; the request is assumed to be approved by the Director, who Chairs the TAG.
 </spandata-profile="FPWD|FPWG-NOTE" data-notehistory="notchartered|first">
@@ -455,14 +460,17 @@ Director (or someone assigned by the Director) to take responsibility for approv
 The Director approves the transition request.
 </span>
 <span data-profile="CR|PR">Approvals are expected to appear as an issue comment <a href="https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L31">"Transition approved."</a> in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>
-	<span data-profile="CR" data-echidna="true">and
+	<span data-profile="CR" data-cr="substantive" data-echidna="true">and
 	the label '<a href='https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L40'>Awaiting Publication</a>' will need to be set</span>.</span>
+	<strong>Note:</strong> Director approval is required for
+some namespace URIs; see <a href="https://www.w3.org/2005/07/13-nsuri">URIs
+for W3C Namespaces</a> for details.
 </li>
 
 </ul>
 </dd>
 <dt data-profile="FPWD|CR|PR|FPIG-NOTE|FPWG-NOTE|WD|CR|WG-NOTE|IG-NOTE|REC|OBSL|RSCND">Publication Planning</dt>
-<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-echidna="true">
+<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-cr="editorial|substantive" data-echidna="true">
 <ul>
 <li class="mailinglist-prep" data-profile="CR|WG-NOTE|IG-NOTE" data-cr="new|substantive|rec-update" data-notehistory="first">
 The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> ensures that there is a public archived place (github or mailing list)
@@ -477,9 +485,7 @@ available for comments.
 <li>The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> prepares the
 document in accordance with <a
 href="https://www.w3.org/pubrules/">pubrules</a> (use the "Echidna-ready" check).
-<strong>Note:</strong> Director approval is required for
-some namespace URIs; see <a href="https://www.w3.org/2005/07/13-nsuri">URIs
-for W3C Namespaces</a> for details.</li>
+</li>
 
 <li data-profile="WG-NOTE|IG-NOTE">
 If the publication is the result
@@ -514,9 +520,7 @@ href="https://www.w3.org/pubrules/">pubrules</a> and develops a proposed
 account possible <a href="https://www.w3.org/Guide/#current">publishing moratoria</a>. The
 <a href="#title-page-date">title page date</a>
 is chosen based on the anticipated publication schedule.
-<strong>Note:</strong> Director approval is required for
-some namespace URIs; see <a href="https://www.w3.org/2005/07/13-nsuri">URIs
-for W3C Namespaces</a> for details.</li>
+</li>
 
 <li>Before sending the publication request, the Team Contact <span
 class="rfc2119">SHOULD</span> install the document in its final
@@ -545,15 +549,13 @@ See below for details about
 </dd>
 
 <dt class="listprep" data-profile="PR|PR-OBSL|PR-RSCND">Form and Announcement Preparation</dt>
-<dt class="listprep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|WD|WG-NOTE|CR|OBSL|RSCND|REC" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Announcement Preparation</dt>
+<dt class="listprep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|WD|WG-NOTE|CR|OBSL|RSCND|REC" data-returning="true" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">Announcement Preparation</dt>
 <dd data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|WD|CR|REC|OBSL|RSCND|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">
 <ul>
-<li  class="transannc-draft" data-profile="WD|WG-NOTE">
-If the publication is the result
-of <a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">returning a document to a Working Group for further work</a>, the
+<li  class="transannc-draft" data-profile="WD|WG-NOTE" data-returning="true">
+The
 <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a draft announcement
 to the Communications Team at w3t-comm@w3.org, which explains why the document was returned for further work.
-<span  data-profile="WD"><br><strong>Note:</strong> Since September 2015, the Communications Team no longer posts homepage news for regular WDs, unless explicitely requested.</span>
 </li>
 <li class="reviewform-prep" data-profile="PR|PR-OBSL|PR-RSCND">
 The Team Contact builds a
@@ -568,15 +570,15 @@ installed documents, but before the Webmaster completes
 publication.</span></li>
 <li  class="transannc-draft" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">The
 <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a draft <a href="#trans-annc">transition announcement</a>
-to the Communications Team at w3t-comm@w3.org. <span data-profile="CR" data-echidna="true">The Communications Team
-approvals for the draft are expected to appear as an issue comment
-<a href="https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L32">"Draft transition approved"</a>
-in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.</span>
-<span  data-profile="CR" data-cr="new">
-If the publication is the result
+to the Communications Team at w3t-comm@w3.org.
+<span  data-profile="CR" data-cr="new">If the publication is the result
 of <a href="https://www.w3.org/2019/Process-20190301/#recs-and-notes">returning a document to a Working Group for further work</a>, the announcement
-explains why the document was returned for further work.
-</span>
+explains why the document was returned for further work.</span>
+</li>
+<li data-profile="CR"  data-cr="substantive" data-echidna="true">The Communications Team
+approves the draft using an issue comment
+<a href="https://github.com/w3c/echidna/blob/master/lib/transition-checker.js#L32">"Draft transition approved"</a>
+in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.
 </li>
 </ul>
 </dd>
@@ -590,7 +592,7 @@ explains why the document was returned for further work.
 href="#publication">publication</a> and notifies the Chair and Team Contact of publication, cc'ing webreq@w3.org<span data-profile="FPWD|CR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-cr="new|substantive|rec-update|rec-amended"> and w3t-comm@w3.org</span>.
 </li>
 
-<li class="publication-announcement" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-echidna="true">The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a>
+<li class="publication-announcement" data-profile="WD|CR|WG-NOTE|IG-NOTE"  data-cr="editorial|substantive" data-echidna="true">The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a>
 publishes the document using the  <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>.
 </li>
 
@@ -610,14 +612,18 @@ only a small amount of time.</li>
 	The W3C Communications Team makes an
 	announcement on the <a href="https://www.w3.org/">W3C home page</a>.
 </li>
-
+<li  class="trans-announcement" data-profile="WD|WG-NOTE" data-returning="true">
+The W3C Communications Team sends the	<a href="#trans-annc">transition announcement</a>	to w3c-ac-members@w3.org and chairs@w3.org.
+</li>
+<li  class="trans-announcement" data-profile="WD|WG-NOTE" data-returning="false">
+Since September 2015, the Communications Team no longer posts homepage news for regular WDs, unless explicitely requested.
+</li>
 <li class="trans-announcement"  data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">
 The W3C Communications Team sends the
 <a href="#trans-annc">transition announcement</a>
 to w3c-ac-members@w3.org
 <span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended">and chairs@w3.org</span>
 <span data-profile="CR|PR|REC" data-cr="new|substantive|rec-update|rec-amended">and on the <a href="https://www.w3.org/">W3C home page</a></span>.
-<p  data-profile="WD"><strong>Note:</strong> Since September 2015, the Communications Team no longer posts homepage news for regular WDs, unless explicitely requested.</p>
 </li>
 
 <li  class="trans-announcement" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update" data-pr="new" data-echidna="false">The	Chair or Team Contact(s) <span
@@ -625,8 +631,8 @@ class="rfc2119">SHOULD</span> forward the announcement to the Working
 Group's public mailing list <strong>taking caution</strong> not to
 send any Member-confidential information to a public list.</li>
 
-<li  class="trans-announcement" data-profile="CR" data-cr="new|substantive|rec-update" data-echidna="true">The
-<span data-echidna="true"><a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> <span
+<li  class="trans-announcement" data-profile="CR" data-cr="substantive" data-echidna="true">The
+<a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> <span
 class="rfc2119">SHOULD</span> forward the announcement to the Working
 Group's public mailing list.</li>
 
@@ -1547,7 +1553,7 @@ transition announcement.</li>
 </ol>
 </div>
 </div>
-<div data-profile="WD|FPWD|CR" data-cr="new|substantive|rec-update" data-informativeOnly="false">
+<div data-profile="WD|FPWD|CR" data-cr="new|substantive|rec-update" data-informativeOnly="false" data-returning="false">
 <h2 id="call-for-exclusions">Call for Exclusions</h2>
 
  <p>The <a href="https://www.w3.org/2003/12/22-pp-faq.html#exclusion-date">Patent Policy FAQ</a> clarifies
@@ -1620,14 +1626,15 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 		 cr: "new", pr: "new", rec: "new",
 		 notehistory: "first",
 		 informativeOnly: "false",
+		 returning: "false",
 		 echidna: "false"
 	 }
 
-   function hasEchidna(profile) {
+   function hasEchidna() {
 		 return (config.profile === "WD"
 		     || config.profile === "WG-NOTE"
 		     || config.profile === "IG-NOTE"
-				 || config.profile === "CR");
+				 || (config.profile === "CR" && (config.cr === "editorial" || config.cr === "substantive")));
 	 }
 
    // State and browser history handling
@@ -1645,13 +1652,16 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
   	 } else if (config.profile === "FPWD"
 								|| config.profile === "WD") {
 		    if (config.informativeOnly === "true") {
-					query += "&informativeOnly=" + config.informativeOnly;
+					query += "&informativeOnly=true";
+				}
+		    if (config.returning === "true") {
+					query += "&returning=true";
 				}
   	 } else if (config.profile === "FPWG-NOTE"
 								|| config.profile === "FPIG-NOTE") {
 		    query += "&notehistory=" + config.notehistory;
   	 }
-  	 if (hasEchidna(config.profile) && config.echidna === "true") {
+  	 if (hasEchidna() && config.echidna === "true") {
 		    query += "&echidna=true";
   	 }
 		 updateTree();
@@ -1692,13 +1702,16 @@ This document is maintained on <a href='https://github.com/w3c/transitions/'>Git
 					 if (node.dataset.informativeonly !== undefined) {
 				     doesMatch = doesMatch && node.dataset.informativeonly.includes(config.informativeOnly);
 					 }
+					 if (node.dataset.returning !== undefined) {
+				     doesMatch = doesMatch && node.dataset.returning.includes(config.returning);
+					 }
 				 } else if (config.profile === "FPWG-NOTE" || config.profile === "FPIG-NOTE") {
 		       if (node.dataset.notehistory !== undefined) {
 		         doesMatch = doesMatch && node.dataset.notehistory.includes(config.notehistory);
 					 }
 				 }
 			 }
-			 if (hasEchidna(config.profile)) {
+			 if (hasEchidna()) {
 				 // only ordinary updates are supported by echidna so far
 				 if (node.dataset.echidna !== undefined) {
    		     doesMatch = doesMatch && node.dataset.echidna.includes(config.echidna);
@@ -1836,7 +1849,8 @@ So far, we have the following data attributes:
 2. data-rec for a |-separated list of REC paths
 3. data-cr for a |-separated list of CR paths
 3. data-informativeOnly for a |-separated list of FPWD and WD paths
-4. data-notehistory for a |-separated list of first [working|interest] group note paths
+4. data-returning for a |-separated list of FPWD and WD paths
+5. data-notehistory for a |-separated list of first [working|interest] group note paths
 
 e.g.
 <div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|substantive|rec-update|rec-amended" data-notehistory="first">
@@ -1863,7 +1877,7 @@ To add or remove a document status, one must:
 For echidna updates:
 1. Update data-profile on the ul element with id='echidna-selection"
 2. Update the data-echidna as needed (you're likely to add data-echidna="false"')
-3- Update the JS function hasEchidna(profile)
+3- Update the JS function hasEchidna()
 
 Originally based on
  https://services.w3.org/xslt?xmlfile=https://www.w3.org/2005/08/01-transitions2017.html&xslfile=https://www.w3.org/2005/08/transitions2017.xsl
