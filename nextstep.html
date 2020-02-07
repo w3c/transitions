@@ -310,11 +310,11 @@ publication processes.</p>
 			list.innerHTML = listItem("Update the Candidate Recommendation with only editorial changes", "profile=CR&cr=editorial")
 			+ listItem("Update the Candidate Recommendation with substantive changes", "profile=CR&cr=substantive")
 			+ listItem("Advance to Proposed Recommendation", "profile=PR")
-				+ listItem("Return to Working Draft", "profile=WD")
+				+ listItem("Return to Working Draft", "profile=WD&returning=true")
 				+ listItem("Publish as a Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
 		} else if (spec.status === "Proposed Recommendation") {
 			list.innerHTML = listItem("Advance to Recommendation", "profile=REC&rec=new")
-				+ listItem("Return to Working Draft", "profile=WD")
+				+ listItem("Return to Working Draft", "profile=WD&returning=true")
 				+ listItem("Publish as a Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
 		} else if (spec.status === "Recommendation") {
 			list.innerHTML = INPLACE + listItem("Update the Recommendation with only editorial changes", "profile=REC&rec=editorial")
