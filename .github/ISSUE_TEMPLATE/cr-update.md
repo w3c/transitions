@@ -9,25 +9,34 @@ assignees: swickr
 ---
 
 # Document URLs
+[TODO: add links]
 
 # Link to group's decision to request transition
+[TODO: eg minutes, CfC in GitHub, email]
 
 # Link to previous Candidate Recommendation transition request
+[TODO: add link]
 
 # Substantive changes
-
-# Any changes in normative references?
+[TODO: focus on substantive changes]
 
 # Any changes in requirements?
+[TODO: add "None" or explain]
 
 # Wide Review of substantive changes
+[TODO: list of issues? email thread? horizontal review?]
 
 # Issues status
+[TODO: list of issues]
 
 # Formal Objections
+[TODO: link to those if any]
 
 # Any changes in implementation information?
+[TODO: any preliminary implementation information? exit criteria? minimum CR duration?]
 
 # Deadline for further comments
+[TODO: add date or duration]
 
 # Any changes in patent disclosures?
+[TODO: "None" or link to IPP]

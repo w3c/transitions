@@ -28,7 +28,7 @@ assignees: swickr
 [TODO: are your dependencies likely to change and impact your document?]
 
 # Wide Review
-[TODO: list of issues? email thread?]
+[TODO: list of issues? email thread? horizontal review?]
 
 # Issues addressed
 [TODO: list of issues]
