@@ -1,7 +1,7 @@
 ---
 name: REC-editorial-update
 about: Request Director's Approval to Update a Recommendation with editorial changes
-title: REC update for <title>
+title: [WGNAME] REC update for <title>
 labels: Awaiting Director
 assignees: swickr
 

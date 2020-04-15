@@ -1,7 +1,7 @@
 ---
 name: CR-new
 about: Request Director's approval to transition to Candidate Recommendation
-title: CR Request for <title>
+title: [WGNAME] CR Request for <title>
 labels: Awaiting Director, Entering CR
 assignees: swickr
 
