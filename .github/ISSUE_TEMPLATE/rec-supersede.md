@@ -1,7 +1,7 @@
 ---
 name: REC-supersede
 about: Request Director's Approval to Supersede a Recommendation
-title: [WGNAME] Supersede <title>
+title: Supersede <title>
 labels: Awaiting Director
 assignees: swickr
 

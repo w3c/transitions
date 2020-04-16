@@ -1,7 +1,7 @@
 ---
 name: PR-new
 about: Request Director's Approval for a Proposed Recommendation
-title: [WGNAME] PR Request for <title>
+title: PR Request for <title>
 labels: Awaiting Director, Entering PR
 assignees: swickr
 

@@ -2,7 +2,7 @@
 name: CR-update
 about: Request Director's Approval to update a Candidate Recommendation with substantive
   changes
-title: [WGNAME] CR Update Request for <title>
+title: CR Update Request for <title>
 labels: Awaiting Director, Updating CR
 assignees: swickr
 

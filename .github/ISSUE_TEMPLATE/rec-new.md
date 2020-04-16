@@ -1,7 +1,7 @@
 ---
 name: REC-new
 about: Point to the internal REC transition for tracking purposes
-title: [WGNAME] REC Request for <title>
+title: REC Request for <title>
 labels: Awaiting Director, Entering REC
 assignees: swickr
 

@@ -1,7 +1,7 @@
 ---
 name: REC-obsolete
 about: Request Director's Approval to Obsolete a Recommendation
-title: [WGNAME] Obsolete <title>
+title: Obsolete <title>
 labels: Awaiting Director
 assignees: swickr
 

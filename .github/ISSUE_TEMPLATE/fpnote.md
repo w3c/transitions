@@ -1,7 +1,7 @@
 ---
 name: FPNote
 about: Request Director's approval for First Public Working or Interest Group Note
-title: [WGNAME] FPNote for <title>
+title: FPNote for <title>
 labels: Entering FPNote, Awaiting Director
 assignees: plehegar
 

@@ -1,7 +1,7 @@
 ---
 name: FPWD
 about: Request Director's approval for First Public Working Draft
-title: [WGNAME] FPWD Request for <title>
+title: FPWD Request for <title>
 labels: Awaiting Director, Entering FPWD
 assignees: plehegar
 
