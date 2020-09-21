@@ -8,9 +8,9 @@ Select one of the transition templates below:
 * First Public Working|Interest Note: [FPNote transition](https://github.com/w3c/transitions/issues/new/choose)
 * Ordinary Working Draft: no Director's approval needed, just use Echidna.
 * Ordinary Working|Interest Group Note: no Director's approval needed, just use Echidna.
-* Candidate Recommendation: [CR transition](https://github.com/w3c/transitions/issues/new/choose)
-* Updating a Candidate Recommendation with only editorial changes: no Director's approval needed, just use Echidna.
-* Updating a Candidate Recommendation with substantive changes: [Updated CR transition](https://github.com/w3c/transitions/issues/new/choose)
+* Transitioning to Candidate Recommendation: [CR transition](https://github.com/w3c/transitions/issues/new/choose)
+* Publishing a Candidate Recommendation Draft: no Director's approval needed, just use Echidna.
+* Updating a Candidate Recommendation Snapshot: [Updated CR transition](https://github.com/w3c/transitions/issues/new/choose)
 * Proposed Recommendation: [PR transition](https://github.com/w3c/transitions/issues/new/choose)
 * Proposal to Supersede a Recommendation: [Superseded transition](https://github.com/w3c/transitions/issues/new/choose)
 * Proposal to Obsolete a Recommendation: [Obsoleted transition](https://github.com/w3c/transitions/issues/new/choose)

@@ -1,8 +1,7 @@
 ---
 name: CR-update
-about: Request Director's Approval to update a Candidate Recommendation with substantive
-  changes
-title: CR Update Request for <title>
+about: Request Director's Approval to update a Candidate Recommendation Snapshot
+title: CR Snapshot Update Request for <title>
 labels: Awaiting Director, Updating CR
 assignees: swickr
 
@@ -14,7 +13,7 @@ assignees: swickr
 # Link to group's decision to request transition
 [TODO: eg minutes, CfC in GitHub, email]
 
-# Link to previous Candidate Recommendation transition request
+# Link to previous Candidate Recommendation transition or update request
 [TODO: add link]
 
 # Substantive changes
@@ -40,3 +39,5 @@ assignees: swickr
 
 # Any changes in patent disclosures?
 [TODO: "None" or link to IPP]
+
+See [Requirements for updating a Candidate Recommendation Snapshot](https://www.w3.org/Guide/transitions?profile=CR&cr=snapshot) for further information.
