@@ -307,8 +307,15 @@ publication processes.</p>
 			+ listItem("Advance to Candidate Recommendation", "profile=CR&cr=new")
 				+ listItem("Publish to Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
 		} else if (spec.status === "Candidate Recommendation") {
-			list.innerHTML = listItem("Update the Candidate Recommendation with only editorial changes", "profile=CR&cr=editorial")
-			+ listItem("Update the Candidate Recommendation with substantive changes", "profile=CR&cr=substantive")
+			list.innerHTML = listItem("Update the Candidate Recommendation Draft", "profile=CR&cr=draft")
+			+ listItem("Update as a Candidate Recommendation Snapshot", "profile=CR&cr=snapshot")
+			+ listItem("Advance to Proposed Recommendation", "profile=PR")
+				+ listItem("Return to Working Draft", "profile=WD&returning=true")
+				+ listItem("Publish as a Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
+		} else if (spec.status === "Candidate Recommendation Draft"
+		          || spec.status === "Candidate Recommendation Snapshot") {
+			list.innerHTML = listItem("Update the Candidate Recommendation Draft", "profile=CR&cr=draft")
+			+ listItem("Update as a Candidate Recommendation Snapshot", "profile=CR&cr=snapshot")
 			+ listItem("Advance to Proposed Recommendation", "profile=PR")
 				+ listItem("Return to Working Draft", "profile=WD&returning=true")
 				+ listItem("Publish as a Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
@@ -318,8 +325,11 @@ publication processes.</p>
 				+ listItem("Publish as a Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
 		} else if (spec.status === "Recommendation") {
 			list.innerHTML = INPLACE + listItem("Update the Recommendation with only editorial changes", "profile=REC&rec=editorial")
-			+ listItem("Publish a Candidate Recommendation with substantive changes", "profile=CR&cr=rec-update")
-				+ listItem("Publish as a First Public Working Draft with new features", "profile=FPWD")
+			+ listItem("Publish as a Recommendation with candidate corrections (substantive changes)", "profile=REC&cr=candidate-corrections")
+			+ listItem("Publish as a Recommendation with candidate additions (new features)", "profile=REC&cr=candidate-additions")
+			+ listItem("Incorporate candidate corrections (substantive changes)", "profile=REC&cr=substantive")
+			+ listItem("Incorporate candidate additions (new features)", "profile=REC&cr=features")
+				+ listItem("Publish as a First Public Working Draft with new features (if your current Recommendation doesn't allow those)", "profile=FPWD")
 				+ listItem("Propose to rescind the Recommendation", "profile=PR-RSCND")
 				+ listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
 		} else if (spec.status === "Group Note") {
