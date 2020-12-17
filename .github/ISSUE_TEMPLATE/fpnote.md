@@ -15,4 +15,4 @@ assignees: plehegar
 
 # Link to group's decision to request transition
 
-# Information about implementations known to the Working Group
+# Information about implementations known to the Group (if relevant)
