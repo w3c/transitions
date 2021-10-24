@@ -1,8 +1,8 @@
 ---
-name: STMT-update
+name: Note Track - Updating a W3C Statement
 about: Incorporating Proposed Amendments into a Statement
-title: Statement Request for <title>
-labels: Awaiting Director, Updating STMT
+title: Statement Update Request for <title>
+labels: Awaiting Director, Updating Statement
 assignees: swickr
 
 ---

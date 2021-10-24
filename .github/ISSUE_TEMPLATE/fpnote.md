@@ -2,7 +2,7 @@
 name: Note Track - First publication of a Group Note or Draft Group Note
 about: Request Team approval for the first publication of a new document on the Note track
 title: First Note request for <title>
-labels: Entering Note, Awaiting Director
+labels: Entering Note Track, Awaiting Director
 assignees: plehegar
 
 ---
@@ -16,3 +16,4 @@ assignees: plehegar
 # Link to group's decision to request transition
 
 # Is it intended to be a W3C Statement?
+

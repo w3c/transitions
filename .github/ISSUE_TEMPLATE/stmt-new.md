@@ -1,8 +1,8 @@
 ---
-name: STMT-update
+name: Note Track - First publication of a W3C Statement
 about: Request Director's Approval for a Statement
 title: Statement Request for <title>
-labels: Awaiting Director, Entering STMT
+labels: Awaiting Director, Entering Statement
 assignees: swickr
 
 ---
