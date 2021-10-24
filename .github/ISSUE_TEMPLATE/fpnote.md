@@ -1,7 +1,7 @@
 ---
-name: FPNote
-about: Request Director's approval for First Public Group Note
-title: FPNote for <title>
+name: Note Track: First Public Group Note
+about: Request Director's approval for a [First Public Group Note](https://www.w3.org/2021/Process-20211102/)
+title: FPNote request for <title>
 labels: Entering FPNote, Awaiting Director
 assignees: plehegar
 
