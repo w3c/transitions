@@ -1,6 +1,6 @@
 ---
 name: CR-update
-about: Request Director's Approval to update a Candidate Recommendation Snapshot
+about: Request Director's Approval to update a Candidate Recommendation with a CR Snapshot
 title: CR Snapshot Update Request for <title>
 labels: Awaiting Director, Updating CR
 assignees: swickr
