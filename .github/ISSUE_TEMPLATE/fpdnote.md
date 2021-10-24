@@ -1,5 +1,5 @@
 ---
-name: FPNote
+name: FPDNote
 about: Request Director's approval for First Public Draft Group Note
 title: FPDNote for <title>
 labels: Entering FPDNote, Awaiting Director
