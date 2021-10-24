@@ -15,4 +15,4 @@ assignees: plehegar
 
 # Link to group's decision to request transition
 
-# Information about implementations known to the Group (if relevant)
+# Is it intended to be a W3C Statement?
