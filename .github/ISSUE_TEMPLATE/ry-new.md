@@ -1,8 +1,8 @@
 ---
-name: REC-update
-about: Incorporating Proposed Amendments into a Recommendation
-title: REC Request for <title>
-labels: Awaiting Director, Updating REC
+name: RY-new
+about: Request Director's Approval for a Registry
+title: Registry Request for <title>
+labels: Awaiting Director, Entering RY
 assignees: swickr
 
 ---
@@ -13,11 +13,14 @@ assignees: swickr
 
 # Status
 
-# Link to Last Call for Review of Proposed Amendments
+# Link to group's decision to request transition
 [TODO: eg minutes, CfC in GitHub, email]
 
 # Wide Review of Proposed Amendments
 [TODO: list of issues? email thread? horizontal review?]
+
+# Dependencies
+[TODO: are your dependencies likely to change and impact your document?]
 
 # Issues addressed
 
@@ -27,6 +30,3 @@ assignees: swickr
 # Formal Objections
 [TODO: link to those if any. All Formal Objects must have a public record]
 
-# Implementation
-
-# Patent disclosures

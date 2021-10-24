@@ -9,6 +9,6 @@ assignees: swickr
 
 # Link to internal transition
 
-(typically an archived email in w3t-comm)
+(typically to the actual transition request archived in w3t-comm)
 
 # Link to previous transition

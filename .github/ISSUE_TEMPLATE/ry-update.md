@@ -1,8 +1,8 @@
 ---
-name: REC-update
-about: Incorporating Proposed Amendments into a Recommendation
-title: REC Request for <title>
-labels: Awaiting Director, Updating REC
+name: RY-update
+about: Incorporating Proposed Amendments into a Registry
+title: Registry Request for <title>
+labels: Awaiting Director, Updating RY
 assignees: swickr
 
 ---
@@ -27,6 +27,4 @@ assignees: swickr
 # Formal Objections
 [TODO: link to those if any. All Formal Objects must have a public record]
 
-# Implementation
-
-# Patent disclosures
+NOTE: Changes to the contents of registry tables that are in accordance with the registry definition do not need Director's approval
