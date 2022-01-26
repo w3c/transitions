@@ -504,8 +504,8 @@ For the TAG, no First Public Working Draft transition request is required; the r
 <span>A <a href="https://lists.w3.org/Archives/Public/public-transition-announce/">public archive of transition requests</a> is available (since October 2019).</span>
 </li>
 
-<li  class="transitionmtg" data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|snapshot|rec-update|rec-amended">
-Following an initial review by the Director, the <span data-profile="CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|snapshot|rec-update">Team Contact</span><span
+<li  class="transitionmtg" data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|snapshot|rec-update|rec-amended">
+Following an initial review by the Director, the <span data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|snapshot|rec-update">Team Contact</span><span
 class="transitionreqwho" data-profile="CR" data-cr="rec-amended"><a href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></span> <span class="rfc2119">MAY</span> be asked to organize a <a href="#dir-mtg">transition meeting
 with the Director</a> to discuss the request.
 </li>
@@ -757,9 +757,12 @@ Track transition</a> as defined in the W3C Process.</p>
 		<a data-link-type="dfn" href="https://www.w3.org/2021/Process-20211102/#def-w3c-decision" id="ref-for-def-w3c-decision">W3C Decision</a>.</p>
 	<p>The <span data-profile='FPWD|CR|PR' data-pr='new' data-cr='new|draft|snapshot|rec-update'>Working Group</span><span data-profile='CR|PR|REC' data-cr='rec-amended' data-pr='rec-amended'>W3C</span>:</p>
 	<ul>
-		<li> <em class="rfc2119">must</em> record the <span data-profile='FPWD|CR|PR' data-pr='new' data-cr='new|draft|snapshot|rec-update'>group’s</span><span data-profile='CR|PR' data-cr='rec-amended' data-pr='rec-amended'>individual(s)</span> decision to request advancement.
+		<li> <em class="rfc2119">must</em> record the <span data-profile='FPWD|CR|PR|REC' data-pr='new' data-cr='new|draft|snapshot|rec-update'>group’s</span><span data-profile='CR|PR' data-cr='rec-amended' data-pr='rec-amended'>individual(s)</span> decision to request advancement.
 			<p class='note'>Provide a link to meeting minutes, github issues, or email announcing the decision.</p>
-		</li><li> <em class="rfc2119">must </em> obtain <a data-link-type="dfn" href="https://www.w3.org/2021/Process-20211102/#def-Director" id="ref-for-def-Director①②">Director</a> approval.
+
+			<p data-profile='REC' class='note'>For a Recommendation, you may reuse the group's decision to move to Proposed Recommendation.</p>
+		</li><li> <em class="rfc2119">must </em> obtain <a data-link-type="dfn" href="https://www.w3.org/2020/Process-20200915/#def-Director" id="ref-for-def-Director①②">Director</a> approval.
+
 			<p class='note'>Submit a transition request.</p>
     </li><li data-profile='CR' data-cr='new|draft|snapshot|rec-update'> <em class="rfc2119 ">must</em> publicly document all new features
 			(<a href="https://www.w3.org/2021/Process-20211102/#correction-classes">class 4 changes</a>) to the technical report
@@ -1281,6 +1284,146 @@ a <a href="https://www.w3.org/2005/07/13-pubrules-about#delta">delta specificati
 <li data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND">Has anything changed on the patent disclosure page since the previous transition? Have there been any incomplete or problematic disclosures?</li>
 </ol>
 </div>
+</div>
+
+<div class="trans-mtg-section" data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-rec="new|editorial" data-cr="new|substantive|rec-update|rec-amended">
+	<h2 id="dir-mtg">Transition
+	Meeting with the Director</h2>
+
+	<p>For a<span data-profile="OBSL">n</span> <span class="status-name">STATUS</span> transition,
+	the Director, or its delegates, may request a transition
+	meeting attended by:</p>
+
+	<ul>
+	<li>The Team contact(s)</li>
+
+	<li data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">The <a href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></li>
+
+	<li>The Project Management Lead (or someone appointed by him), who generally
+	chairs the meeting.</li>
+
+	<li>Those delegated by the Director to approve the transition.</li>
+
+	<li>The Director should be invited to attend the meeting if the
+	transition involves contentious issues such as IPR, technical or
+	other concerns.</li>
+
+	<li class="mtg-attendees-chair" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">The <span data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update">Working Group Chair(s)</span><span
+		data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">individual(s)</span></li>
+
+	<li  class="mtg-attendees-others" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">Others invited by the Project Management Lead (or whoever is chairing the
+	transition meeting)</li>
+
+	<li  class="mtg-attendees-dependent" data-profile="CR|PR|PR-OBSL|PR-RSCND" data-cr="new|substantive|rec-update|rec-amended">In the event that the specification significantly affects the
+	work of another WG, a (non-Team) representative of that Group
+	should be invited to the call.</li>
+
+	</ul>
+
+	<p>The Team Contact is responsible for the execution of the
+	following (under the supervision of the Project Management Lead):</p>
+
+	<ol>
+	<li>Scheduling the meeting. To allow chairs of WGs with
+	dependencies and other commenters time to review the treatment of
+	review comments in the disposition of comments document, the
+	transition request <span class="rfc2119">MUST</span> be sent a minimum of seven days prior to the transition meeting.</li>
+
+	<li>Reserving a <a
+	href="https://www.w3.org/Guide/1998/08/TeleconferenceHowTo.htm">teleconference
+	bridge</a>.</li>
+
+	<li>Choosing a scribe prior to the meeting.</li>
+
+	<li>Ensuring that the meeting record is distributed to the
+	participants. The meeting record (typically a link to an IRC log)
+	<strong>must</strong> include the decision, and should
+	highlight all recommendations. The meeting record should be sent to
+	all participants attendees, and
+	<span class="rfc2119">MUST</span>
+	 be cc'ed to <a
+	href="mailto:w3t-archive@w3.org">w3t-archive@w3.org</a>.</li>
+	</ol>
+
+	<h3><a name="sample-agenda" id="sample-agenda">Sample agenda</a></h3>
+
+	<dl>
+	<dt>Administrative</dt>
+
+	<dd>
+	<ol>
+	<li>Is everyone here?</li>
+
+	<li>Confirmation of Chair, Scribe</li>
+
+	<li>Are any changes required to the agenda?</li>
+	</ol>
+	</dd>
+
+	<dt>Review of the <a href="#transreq">transition request</a></dt>
+	<dd>In particular, review those items highlighted as
+	requiring the Director's attention.</dd>
+
+	<dt>Decision</dt>
+
+	<dd>The Director assesses whether the W3C Process has been followed
+	and whether there is sufficient consensus to support the transition
+	request.
+	In most cases the decision to make the transition
+	is made during the teleconference.
+	However the decision could take up to two weeks if any difficult
+	issues arise during the meeting. The Director may delegate the
+	W3C decision; see <a href="https://www.w3.org/Project/Reports.html">Team processes for TR
+	publications</a>.</dd>
+
+	<dt>Next steps</dt>
+
+	<dd>
+	<ol>
+	<li>If the decision is negative: how do we repair the problem? what
+	happens next? who does what? <strong>Note:</strong> If documents
+	have been copied to /TR space, please remove them.</li>
+
+	<li>If the decision is positive: how do we announce this decision?
+	when? what is the plan and schedule for any
+	communications opportunities, including <a
+	href="https://www.w3.org/2004/12/testimonial_pr-guidelines.html">Member
+	testimonials</a>?
+	any action items from this meeting?</li>
+	</ol>
+	</dd>
+	</dl>
+
+	<h3>Some reasons for declining a transition request</h3>
+
+	<ul>
+	<li data-profile="FPWD|WD|WG-NOTE|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-notehistory="first|none" data-pr="new">
+	The Director is not satisfied with how the Working Group has
+	addressed issues.</li>
+
+	<li data-profile="FPWD|WD|WG-NOTE|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND" data-cr="new|substantive|rec-update" data-pr="new">
+	The Working Group has issued a transition request despite a
+	<a href='https://www.w3.org/2020/Process-20200915/#FormalObjection'>Formal Objection</a> and the Director is not satisfied with
+	the Working Group's rationale.</li>
+
+	<li  data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">
+		The Director is not satisfied with how the individual(s) has
+		addressed issues.</li>
+
+	 <li class="extra-criteria-not-met" data-profile="PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial">The Director believes that special
+	entrance criteria have not been satisfied.</li>
+	</ul>
+
+	<p data-profile="PR-OBSL|PR-RSCND|REC" data-rec="new">Per <a href="https://www.w3.org/2020/Process-20200915/#rec-rescind">section 6.2.12.3</a>, in some conditions, the Director is required
+	to accept the transition request.</p>
+
+	<p>Per <a href="https://www.w3.org/2020/Process-20200915/#recs-and-notes">section 6.2</a> of the Process, "The Director
+	<span class="rfc2119">MUST</span> inform the
+	Advisory Committee and Working Group Chairs when a Working Group's
+	request for a specification to advance in maturity level is declined
+	and the specification is returned to a Working Group for further
+	work."</p>
+
 </div>
 
 <div class="pubreq-section" data-profile="WD|FPWD|CR|PR|REC|OBSL|RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-echidna="false">
