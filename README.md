@@ -2,7 +2,7 @@
 
 For all requests to advance a specification to a new [maturity level](https://www.w3.org/Consortium/Process/#maturity-levels) other than [Note](), the Working Group must obtain [Director approval](https://www.w3.org/Consortium/Process/#transition-reqs). This is a  repository for managing the Director approval workflow when advancing on the W3C Recommendation track. It contains the transition requirements document, available from [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions), and an issues tracker for managing transition requests. Tags are used to manage the transitions, keeping track of who has the “ball”. Notifications are sent by email to various mailing lists, include [public-transition-announce](https://lists.w3.org/Archives/Public/public-transition-announce/) and [chairs](https://lists.w3.org/Archives/Member/chairs/).
 
-Select one of the transition templates below:
+Select one of the Recommendation-track transition templates below:
 
 * First Public Working Draft: [FPWD transition](https://github.com/w3c/transitions/issues/new/choose)
 * First Public Working|Interest Note: [FPNote transition](https://github.com/w3c/transitions/issues/new/choose)
@@ -16,6 +16,8 @@ Select one of the transition templates below:
 * Proposal to Obsolete a Recommendation: [Obsoleted transition](https://github.com/w3c/transitions/issues/new/choose)
 * Recommendation: Due to the need to look at the AC Review comments, those transitions are  [done by the Team](https://github.com/w3c/transitions/issues/new/choose) separately. But you can find traces of them in [issues](https://github.com/w3c/transitions/issues/).
 * Edited Recommendation: [Edited REC transition](https://github.com/w3c/transitions/issues/new/choose)
+
+For the Note and Registry tracks, use [these templates](https://github.com/w3c/transitions/issues/new/choose)
 
 If you're not sure what transition template to use, check out our [next step finder](https://w3c.github.io/transitions/nextstep.html) to see your choices.
 
