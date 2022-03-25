@@ -25,7 +25,7 @@ Select one of the transition templates below:
 * Statement that is making proposed amendments normative: [Updating a W3C Statement](https://github.com/w3c/transitions/issues/new/choose)
 * Statement: [W3C Statement](https://github.com/w3c/transitions/issues/new/choose)
 * First Draft Registry: [First publication of a Draft Registry](https://github.com/w3c/transitions/issues/new/choose)
-* ordinary Draft Registry: no Director's approval needed, just use Echidna.
+* Ordinary Draft Registry: no Director's approval needed, just use Echidna.
 * Transitioning to Candidate Registry: [Candidate Registry](https://github.com/w3c/transitions/issues/new/choose)
 * Transitioning to Registry: [Registry](https://github.com/w3c/transitions/issues/new/choose)
 * Updating a Candidate Registry Snapshot: [Candidate Registry Snapshot](https://github.com/w3c/transitions/issues/new/choose)
