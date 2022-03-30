@@ -282,6 +282,7 @@
 					<option value="RSCND" label="Rescinded Recommendation">Rescinded Recommendation</option>
 					<option value="OBSL" label="Obsolete or Superseded Recommendation">Obsolete or Superseded Recommendation
 					</option>
+					<option value="DISC" label="Discontinued Draft">Discontinued Draft</option>
 				</optgroup>
 				<optgroup label="Notes">
 					<option value="FPIG-NOTE" label="First Public Interest Group Note" data-status="Interest Group Note">First
@@ -416,13 +417,13 @@
 		interactions with the W3C Communications Team.</p>
 
 
-	<div data-profile="WD|FPWD|CR|PR|PR-OBSL|PR-RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND">
+	<div data-profile="WD|FPWD|CR|PR|PR-OBSL|PR-RSCND|WG-NOTE|DISC|IG-NOTE|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND">
 
 		<h2 id="steps">Steps for
 			<span data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|FPWG-NOTE|FPIG-NOTE|REC|OBSL|RSCND" data-rec='new'
 				data-cr="new">transition to</span>
 			<span data-profile="CR|REC" data-cr='snapshot' data-rec='substantive|features'>an update request for a</span>
-			<span data-profile="WD|WG-NOTE|CR|REC" data-cr="draft"
+			<span data-profile="WD|WG-NOTE|CR|REC|DISC" data-cr="draft"
 				data-rec='editorial|candidate-corrections|candidate-additions|proposed-corrections|proposed-additions'>publication of a</span>
 			<span data-profile="IG-NOTE">publication of an</span>
 			<span class="label-name">LABEL</span>
@@ -679,7 +680,7 @@
 					</li>
 				</ul>
 			</dd>
-			<dt data-profile="FPWD|CR|PR|FPIG-NOTE|FPWG-NOTE|WD|CR|WG-NOTE|IG-NOTE|REC|OBSL|RSCND">Publication Planning</dt>
+			<dt data-profile="FPWD|CR|PR|FPIG-NOTE|FPWG-NOTE|WD|CR|WG-NOTE|DISC|IG-NOTE|REC|OBSL|RSCND">Publication Planning</dt>
 			<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-cr="draft|snapshot" data-echidna="true">
 				<ul>
 					<li class="mailinglist-prep" data-profile="REC">
@@ -704,7 +705,7 @@
 
 				</ul>
 			</dd>
-			<dd class="docpreparation" data-profile="WD|WG-NOTE|IG-NOTE|FPWD|CR|PR|REC|OBSL|RSCND|FPWG-NOTE|FPIG-NOTE"
+			<dd class="docpreparation" data-profile="WD|WG-NOTE|DISC|IG-NOTE|FPWD|CR|PR|REC|OBSL|RSCND|FPWG-NOTE|FPIG-NOTE"
 				data-echidna="false">
 				<ul>
 					<li class="mailinglist-prep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE">
@@ -749,7 +750,7 @@
 						<a href="#title-page-date">scheduling a publication</a>, and specifically requirements about advance notice
 						to the Webmaster.
 
-						<span data-profile="FPWG-NOTE|WG-NOTE|IG-NOTE" data-notehistory="none|closure">
+						<span data-profile="FPWG-NOTE|WG-NOTE|DISC|IG-NOTE" data-notehistory="none|closure">
 							If the publication is the result
 							of stopping work on a specification, the <a
 								href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a>
@@ -813,17 +814,17 @@
 				data-cr="new" data-notehistory="first"
 				data-rec="new|proposed-corrections|proposed-additions|substantive|features">Publication and Transition Announcement</dt>
 			<dt class="transition-announcement" data-profile="CR" data-cr="snapshot">Publication and Update Announcement</dt>
-			<dt class="transition-announcement" data-profile="WD|WG-NOTE|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|REC" data-cr="draft"
+			<dt class="transition-announcement" data-profile="WD|WG-NOTE|DISC|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|REC" data-cr="draft"
 				data-notehistory="none|notchartered|closure"
 				data-rec="editorial|candidate-corrections|candidate-additions">Publication</dt>
 			<dt class="transition-announcement" data-profile="PR-OBSL|PR-RSCND">Transition Announcement</dt>
 			<dd>
 				<ul>
-					<li class="publication-announcement" data-profile="WD|FPWD|CR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE|REC"
+					<li class="publication-announcement" data-profile="WD|FPWD|CR|WG-NOTE|DISC|IG-NOTE|FPWG-NOTE|FPIG-NOTE|REC"
 					data-rec="editorial|candidate-corrections|candidate-additions"
 					data-echidna="false">The Webmaster completes <a href="#publication">publication</a> and notifies the Chair
 						and Team Contact of publication, cc'ing webreq@w3.org<span
-							data-profile="FPWD|CR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-cr="new|snapshot">
+							data-profile="FPWD|CR|WG-NOTE|DISC|IG-NOTE|FPWG-NOTE|FPIG-NOTE" data-cr="new|snapshot">
 							and w3t-comm@w3.org</span>.
 					</li>
 
@@ -1635,7 +1636,7 @@
 		</ul>
 	</div>
 
-	<div data-profile='PR-RSCND|PR-OBSL|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE'>
+	<div data-profile='PR-RSCND|PR-OBSL|WG-NOTE|DISC|IG-NOTE|FPWG-NOTE|FPIG-NOTE'>
 		<h2>Requirements for requesting a <span class="status-name">STATUS</span></h2>
 		<p>The request:</p>
 		<ul>
@@ -1900,12 +1901,12 @@
 		<h3>Some reasons for declining a transition request</h3>
 
 		<ul>
-			<li data-profile="FPWD|WD|WG-NOTE|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND"
+			<li data-profile="FPWD|WD|WG-NOTE|DISC|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND"
 				data-cr="new|substantive" data-notehistory="first|none" data-pr="new">
 				The Director is not satisfied with how the Working Group has
 				addressed issues.</li>
 
-			<li data-profile="FPWD|WD|WG-NOTE|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND"
+			<li data-profile="FPWD|WD|WG-NOTE|DISC|IG-NOTE|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|OBSL|RSCND"
 				data-cr="new|substantive" data-pr="new">
 				The Working Group has issued a transition request despite a
 				<a href='https://www.w3.org/2021/Process-20211102/#FormalObjection'>Formal Objection</a> and the Director is not
@@ -1938,7 +1939,7 @@
 
 	</div>
 
-	<div class="pubreq-section" data-profile="WD|FPWD|CR|PR|REC|OBSL|RSCND|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE"
+	<div class="pubreq-section" data-profile="WD|FPWD|CR|PR|REC|OBSL|RSCND|WG-NOTE|DISC|IG-NOTE|FPWG-NOTE|FPIG-NOTE"
 		data-echidna="false">
 
 		<h2>
@@ -1998,14 +1999,14 @@
 						*Description: Used in <a href="https://www.w3.org/TR/wcag/all/">TR/xx/all</a> page (only needed if differ
 						from the 'Abstract' of the document)
 					</li>
-					<li data-profile="WD|CR|PR|WG-NOTE|IG-NOTE" data-echidna="false">
+					<li data-profile="WD|CR|PR|WG-NOTE|DISC|IG-NOTE" data-echidna="false">
 						*Description Update: Used in <a href="https://www.w3.org/TR/wcag/all/">TR/xx/all</a> page (only needed if
 						differ from the 'Abstract' of the document)
 					</li>
 					<li data-profile="FPWD|FPWG-NOTE|FPIG-NOTE">
 						Document tags: (<a href="https://w3c.github.io/tr-pages/tags" target="_blank">see the list of tags here</a>)
 					</li>
-					<li data-profile="WD|CR|PR|WG-NOTE|IG-NOTE" data-echidna="false">
+					<li data-profile="WD|CR|PR|WG-NOTE|DISC|IG-NOTE" data-echidna="false">
 						*Document tags update: (<a href="https://w3c.github.io/tr-pages/tags" target="_blank">see the list of tags
 							here</a>)
 					</li>
@@ -2102,7 +2103,7 @@
 
 		<h2> <a id="publication" name="publication">Publication</a></h2>
 
-		<div data-profile="WD|FPWD|CR|PR|WG-NOTE|IG-NOTE|FPWG-NOTE|FPIG-NOTE|REC">
+		<div data-profile="WD|FPWD|CR|PR|WG-NOTE|DISC|IG-NOTE|FPWG-NOTE|FPIG-NOTE|REC">
 			<p>In order to ensure publication standards, upon receiving a
 				publication request the Webmaster <span class="rfc2119">SHALL</span> make a best effort to verify that the
 				document satisfies the <a href="https://www.w3.org/pubrules/">pubrules

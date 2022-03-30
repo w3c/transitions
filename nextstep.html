@@ -248,7 +248,7 @@
 
 		// For debugging
 		var trace = function () { };
-		if (window.location.href.includes("file:")) {
+		if (window.location.href.includes("file:") || true) {
 			trace = function trace(msg) {
 				console.log(msg);
 			};
@@ -343,24 +343,24 @@
 				}
 				list.innerHTML = WD + listItem("Update the Working Draft", "profile=WD")
 					+ listItem("Advance to Candidate Recommendation", "profile=CR&cr=new")
-					+ listItem("Publish to Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
+					+ listItem("Publish as a Discontinued Draft", "profile=DISC");
 			} else if (spec.status === "Candidate Recommendation") {
 				list.innerHTML = listItem("Update the Candidate Recommendation Draft", "profile=CR&cr=draft")
 					+ listItem("Update as a Candidate Recommendation Snapshot", "profile=CR&cr=snapshot")
 					+ listItem("Advance to Proposed Recommendation", "profile=PR")
 					+ listItem("Return to Working Draft", "profile=WD&returning=true")
-					+ listItem("Publish as a Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
+					+ listItem("Publish as a Discontinued Draft", "profile=DISC");
 			} else if (spec.status === "Candidate Recommendation Draft"
 				|| spec.status === "Candidate Recommendation Snapshot") {
 				list.innerHTML = listItem("Update the Candidate Recommendation Draft", "profile=CR&cr=draft")
 					+ listItem("Update as a Candidate Recommendation Snapshot", "profile=CR&cr=snapshot")
 					+ listItem("Advance to Proposed Recommendation", "profile=PR")
 					+ listItem("Return to Working Draft", "profile=WD&returning=true")
-					+ listItem("Publish as a Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
+					+ listItem("Publish as a Discontinued Draft", "profile=DISC");
 			} else if (spec.status === "Proposed Recommendation") {
 				list.innerHTML = listItem("Advance to Recommendation", "profile=REC&rec=new")
 					+ listItem("Return to Working Draft", "profile=WD&returning=true")
-					+ listItem("Publish as a Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
+					+ listItem("Publish as a Discontinued Draft", "profile=DISC");
 			} else if (spec.status === "Recommendation") {
 				list.innerHTML = INPLACE + listItem("Update the Recommendation with only editorial changes", "profile=REC&rec=editorial")
 					+ listItem("Publish as a Recommendation with candidate corrections (substantive changes)", "profile=REC&cr=candidate-corrections")
@@ -370,8 +370,17 @@
 					+ listItem("Publish as a First Public Working Draft with new features (if your current Recommendation doesn't allow those)", "profile=FPWD")
 					+ listItem("Propose to rescind the Recommendation", "profile=PR-RSCND")
 					+ listItem("Propose to obsolete or supersede the Recommendation", "profile=PR-OBSL");
-			} else if (spec.status === "Group Note") {
-				list.innerHTML = INPLACE + listItem("Update the Working Group Note (which you may mark as retired)", "profile=WG-NOTE");
+			} else if (spec.status === "Draft Note") {
+				list.innerHTML = INPLACE
+				 + listItem("Update the Draft Note", "profile=DRAFT-NOTE");
+				 + listItem("Publish as a Note (which you may mark as retired)", "profile=WG-NOTE");
+   		} else if (spec.status === "Group Note"
+			     || spec.status === "Note") {
+				list.innerHTML = INPLACE
+				 + listItem("Return to Draft Note", "profile=DRAFT-NOTE")
+				 + listItem("Update the Draft Note", "profile=WG-NOTE")
+				 + listItem("Advance to W3C Statement", "profile=STMT")
+				 + listItem("Update the Note (which you may mark as retired)", "profile=WG-NOTE");
 			} else if (spec.status === "Retired") {
 				list.innerHTML = listItem("Propose to restore the Recommendation", "");
 			} else {
