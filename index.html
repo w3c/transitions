@@ -294,7 +294,7 @@
 				</optgroup>
 			</select>
 		</p>
-		<ul id='echidna-selection' style="margin-left: 3em" data-profile="WD|WG-NOTE|IG-NOTE|CR" data-cr="draft|snapshot">
+		<ul id='echidna-selection' style="margin-left: 3em" data-profile="WD|WG-NOTE|IG-NOTE|CR|REC" data-cr="draft|snapshot" data-rec="editorial|candidate-corrections|candidate-additions">
 			<li style="list-style: none">
 				<input type="checkbox" id="echidna-checkbox" name="echidna-checkbox" />
 				<label for="echidna-checkbox">With the <a href="https://github.com/w3c/echidna/wiki">W3C automatic publishing
@@ -681,7 +681,7 @@
 				</ul>
 			</dd>
 			<dt data-profile="FPWD|CR|PR|FPIG-NOTE|FPWG-NOTE|WD|CR|WG-NOTE|DISC|IG-NOTE|REC|OBSL|RSCND">Publication Planning</dt>
-			<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-cr="draft|snapshot" data-echidna="true">
+			<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE|REC" data-cr="draft|snapshot" data-rec="editorial|candidate-corrections|candidate-additions" data-echidna="true">
 				<ul>
 					<li class="mailinglist-prep" data-profile="REC">
 						The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> ensures that
@@ -828,7 +828,8 @@
 							and w3t-comm@w3.org</span>.
 					</li>
 
-					<li class="publication-announcement" data-profile="WD|CR|WG-NOTE|IG-NOTE" data-cr="draft|snapshot"
+					<li class="publication-announcement" data-profile="WD|CR|REC|WG-NOTE|IG-NOTE" data-cr="draft|snapshot"
+						data-rec="editorial|candidate-corrections|candidate-additions"
 						data-echidna="true">The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document
 							Contact</a>
 						publishes the document using the <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>.
@@ -2435,6 +2436,7 @@ Note: Info about features at risk is required in status section per pubrules
 				return (config.profile === "WD"
 					|| config.profile === "WG-NOTE"
 					|| config.profile === "IG-NOTE"
+					|| (config.profile === "REC" && (config.rec === "editorial" || config.rec === "candidate-corrections" || config.rec === "candidate-additions"))
 					|| (config.profile === "CR" && (config.cr === "draft" || config.cr === "snapshot")));
 			}
 
