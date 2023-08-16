@@ -2420,7 +2420,7 @@ Note: Info about features at risk is required in status section per pubrules
 		(function () {
 			// For debugging
 			var trace = function () { };
-			if (window.location.href.includes("file:")) {
+			if (window.location.href.includes("file:") || window.location.href.includes("localhost:")) {
 				trace = function trace(msg) {
 					console.log(msg);
 				};
@@ -2634,7 +2634,7 @@ Note: Info about features at risk is required in status section per pubrules
 				onpushstate();
 			}
 			function changeCheckbox(e) {
-				trace("changeCheckbox for " + e.target.name + " = " + e.target.checked);
+				trace("changeCheckbox for " + e.target.name.split('-')[0] + " = " + e.target.checked);
 				config[e.target.name.split('-')[0]] = "" + e.target.checked;
 				onpushstate();
 			}
