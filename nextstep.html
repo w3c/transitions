@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-apiary-key="23x3ljxwhdhcscc44gckk888ww4oksc">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -223,9 +223,7 @@
 	</address>
 
 	<script type="module">
-		import { setW3CKey, fetchW3C } from 'https://w3c.github.io/gargantua/fetch-utils.js';
-
-		setW3CKey(document.documentElement.getAttribute("data-apiary-key"));
+		import { fetchW3C } from 'https://w3c.github.io/gargantua/fetch-utils.js';
 
 		function getLatestSpec(shortname) {
 			return fetchW3C("https://api.w3.org/specifications/" + shortname).then(spec => {
