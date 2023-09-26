@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
 	<meta charset="utf-8">
@@ -539,9 +539,15 @@
 						<span data-profile="CR" data-cr="new">The Group <span class="rfc2119">MUST</span> show that the
 							specification has received
 							wide review in order to move to Candidate Recommendation.</span>
+						<span data-profile="CR" data-cr="new">The Group <span class="rfc2119">MUST</span> show that 
+						    all horizontal <code>*-needs-resolution</code> issues have been closed by the relevant 
+						    horizontal group in the <a href='https://www.w3.org/PM/horizontal/'>horizontal group's tracker</a>
+							in order to publish the <span class="status-name">STATUS</span>.</span>
+						<span data-profile="CR" data-cr="snapshot">The Group <span class="rfc2119">MUST</span> show that any
+						    horizontal <code>*-needs-resolution</code> issues have been acknowledged in order to publish 
+						    the <span class="status-name">STATUS</span>.</span>
 						<span data-profile="CR" data-cr="snapshot">The Group <span class="rfc2119">MUST</span> show that the changes
-							have received
-							wide review in order to publish the <span class="status-name">STATUS</span>.</span>
+							have received wide review in order to publish the <span class="status-name">STATUS</span>.</span>
 						See the <a href="https://www.w3.org/Guide/documentreview">considerations, guidelines and best practices</a>
 						that groups should follow to get early and wide review of a document.
 					</li>
@@ -1869,6 +1875,10 @@
 			<dt>Review of the <a href="#transreq">transition request</a></dt>
 			<dd>In particular, review those items highlighted as
 				requiring the Team's attention.</dd>
+				
+			<dt>Review of the horizontal <a rel="nofollow" class="external text" href="https://w3c.github.io/horizontal-issue-tracker/index">tracker boards</a></dt>
+			<dd>Ensure that all horizontal <code>*-needs-resolution</code> issues are closed
+			    by the relevant horizontal review group.</dd>
 
 			<dt>Decision</dt>
 
@@ -1923,6 +1933,11 @@
 			<li class="extra-criteria-not-met" data-profile="PR|REC|PR-OBSL|PR-RSCND" data-rec="editorial">The Team
 				believes that special
 				entrance criteria have not been satisfied.</li>
+				
+			<li data-profile="CR|PR|REC" data-cr="new|substantive|snapshot">
+				There are horizontal <code>*-needs-resolution</code> issues open in one or more
+				of the horizontal <a rel="nofollow" class="external text" href="https://w3c.github.io/horizontal-issue-tracker/index">tracker boards</a>.
+			</li>
 		</ul>
 
 		<p data-profile="PR-OBSL|PR-RSCND|REC" data-rec="new">Per <a
