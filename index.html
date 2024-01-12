@@ -567,7 +567,7 @@
 						a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should
 						send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
 					<li id="edrec-webreqmail" data-profile="REC" data-rec="editorial">If an individual made a request to the
-						relevant Working Group, or the <a href="details">maintenance contact</a> if such a group does not exist, to update a
+						relevant Working Group, or the <a href="details#MaintainerContact">maintainer contact</a> if such a group does not exist, to update a
 						Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should
 						create a <a href="#transreq">transition request</a> in <a
 							href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.</li>
@@ -690,11 +690,12 @@
 			<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE|REC" data-cr="draft|snapshot" data-rec="editorial|candidate-corrections|candidate-additions" data-echidna="true">
 				<ul>
 					<li class="mailinglist-prep" data-profile="REC">
-						The <a href="details#DocContact">Document Contact</a> ensures that
+						The <a href="details#DocContact">Document Contact</a>, or the <a href="details#MaintainerContact">maintainer contact</a> if such the Working Group does not exist, ensures that
 						there is a public archived github repository
 						available for comments.
 					</li>
-					<li>The <a href="details#DocContact">Document Contact</a> prepares the
+
+					<li>The <a href="details#DocContact">Document Contact</a>, or the <a href="details#MaintainerContact">maintainer contact</a> if such the Working Group does not exist, prepares the
 						document in accordance with <a href="https://www.w3.org/pubrules/">pubrules</a> (use the "Echidna-ready"
 						check).
 					</li>
@@ -736,7 +737,7 @@
 					<li>Before sending the publication request, the Team Contact <span class="rfc2119">SHOULD</span> install the
 						document in its final
 						location. The <a href="details#DocContact">Document
-							Contact</a> <span class="rfc2119">MAY</span> request publication of a
+							Contact</a>, or the <a href="details#MaintainerContact">maintainer contact</a> if such the Working Group does not exist, <span class="rfc2119">MAY</span> request publication of a
 						document that is not yet installed at its final location, but in this
 						case <span class="rfc2119">MUST</span> provide installation
 						instructions to the Webmaster.
@@ -748,7 +749,7 @@
 					</li>
 
 					<li id="pubreqmail">
-						The <a href="details#DocContact">Document Contact</a> sends a <a
+						The <a href="details#DocContact">Document Contact</a>, or the <a href="details#MaintainerContact">maintainer contact</a> if such the Working Group does not exist, sends a <a
 							href="#pubreq">publication request</a> to the
 						<a href="details#Webmaster">Webmaster</a> at webreq@w3.org,
 						optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
