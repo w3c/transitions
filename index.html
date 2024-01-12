@@ -249,12 +249,12 @@
 		<h4>Resources</h4>
 		<ul>
 			<li>Organize Recommendation Track Transition</li>
-			<li><a href="https://www.w3.org/Guide/transitions-about">Details of Rec Track transitions</a></li>
-			<li><a href="https://www.w3.org/2023/Process-20231103/#Reports">Recommendation
+			<li><a href="details">Details of Rec Track transitions</a></li>
+			<li><a href="/Consortium/Process/#Reports">Recommendation
 					Track Process</a></li>
-			<li><a href="https://www.w3.org/2003/Editors/">W3C Editors' Home Page</a></li>
-			<li><a href="https://www.w3.org/2001/06/manual/">Manual of Style</a></li>
-			<li><a href="https://www.w3.org/2005/03/28-editor-style.html">Style Guidelines for Group-Internal Drafts</a></li>
+			<li><a href="/Guide/editor/">W3C Editors' Home Page</a></li>
+			<li><a href="/Guide/manual-of-style/">Manual of Style</a></li>
+			<li><a href="/Guide/editor/editors-draft">Style Guidelines for Group-Internal Drafts</a></li>
 		</ul>
 		<h4>Tools</h4>
 		<ul>
@@ -266,7 +266,7 @@
 	</div>
 	<form>
 		<p>
-			Select your steps <label><a href="https://www.w3.org/Consortium/Process/tr">transition steps</a> to</label>:
+			Select your steps <label><a href="/Consortium/Process/#maturity-stages">transition steps</a> to</label>:
 			<select id="profile" name="profile">
 				<!-- @@ Mozilla Firefox  doesn't understand the label attribute ?!? so keeping the option element text content :( -->
 				<optgroup label="Recommendations">
@@ -412,7 +412,7 @@
 	<h2 id="sotd">About This Document</h2>
 
 	<p>This resource describes the internal W3C Technical Report
-		publication processes. A <a href="https://www.w3.org/2005/08/01-transitions-about">companion document</a> provides
+		publication processes. A <a href="details">companion document</a> provides
 		more information about roles involved in these processes and
 		interactions with the W3C Communications Team.</p>
 
@@ -567,7 +567,7 @@
 						a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should
 						send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
 					<li id="edrec-webreqmail" data-profile="REC" data-rec="editorial">If an individual made a request to the
-						relevant Working Group, or the maintenance contact if such a group does not exist, to update a
+						relevant Working Group, or the <a href="details">maintenance contact</a> if such a group does not exist, to update a
 						Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should
 						create a <a href="#transreq">transition request</a> in <a
 							href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.</li>
@@ -582,10 +582,10 @@
 						<span class="transitionreqwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND"
 							data-rec="editorial" data-cr="new|snapshot"
 							data-notehistory="notchartered|first"><a
-								href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a></span><span
+								href="details#DocContact">Document Contact</a></span><span
 							class="transitionreqwho" data-profile="REC|OBSL|RSCND" data-rec="new">Team
 							Contact</span><span class="transitionreqwho" data-profile="CR" data-cr="rec-amended"><a
-								href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></span>
+								href="details#MaintainerContact">Maintainer Contact</a></span>
 
 						<span class="transwho" data-profile="FPWD|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND"
 							data-cr="new|snapshot" data-notehistory="notchartered|first">
@@ -614,7 +614,7 @@
 						Following an initial review by the Team, the <span
 							data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|snapshot">Team
 							Contact</span><span class="transitionreqwho" data-profile="CR" data-cr="rec-amended"><a
-								href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></span>
+								href="details#MaintainerContact">Maintainer Contact</a></span>
 						<span class="rfc2119">MAY</span> be asked to organize a <a href="#dir-mtg">transition meeting
 							with the Team</a> to discuss the request.
 					</li>
@@ -651,7 +651,7 @@
 			<dd data-profile="CR|REC" data-cr="snapshot" data-rec='substantive|features'>
 				<ul>
 					<li>
-						The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> issue an <a
+						The <a href="details#DocContact">Document Contact</a> issue an <a
 							href='#updaterequest'>update request</a>
 						in <a href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>, if there are substantive changes
 						other than to remove features explicitly identified as at risk.
@@ -690,11 +690,11 @@
 			<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE|REC" data-cr="draft|snapshot" data-rec="editorial|candidate-corrections|candidate-additions" data-echidna="true">
 				<ul>
 					<li class="mailinglist-prep" data-profile="REC">
-						The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> ensures that
+						The <a href="details#DocContact">Document Contact</a> ensures that
 						there is a public archived github repository
 						available for comments.
 					</li>
-					<li>The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> prepares the
+					<li>The <a href="details#DocContact">Document Contact</a> prepares the
 						document in accordance with <a href="https://www.w3.org/pubrules/">pubrules</a> (use the "Echidna-ready"
 						check).
 					</li>
@@ -702,9 +702,9 @@
 					<li data-profile="WG-NOTE|IG-NOTE">
 						If the publication is the result
 						of stopping work on a specification, the <a
-							href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a>
+							href="details#DocContact">Document Contact</a>
 						alerts the
-						<a href="01-transitions-about#Webmaster">Webmaster</a> at webreq@w3.org,
+						<a href="details#Webmaster">Webmaster</a> at webreq@w3.org,
 						optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
 					</li>
 
@@ -715,17 +715,17 @@
 				data-echidna="false">
 				<ul>
 					<li class="mailinglist-prep" data-profile="FPWD|FPIG-NOTE|FPWG-NOTE">
-						The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> ensures that
+						The <a href="details#DocContact">Document Contact</a> ensures that
 						there is a public archived place (github or mailing list)
 						available for comments; (for mailing list, the Team Contact uses the <a
 							href="https://www.w3.org/Systems/Mail/ListRequest">mailing list request
 							form</a>).</li>
 					<li class="mailinglist-prep" data-profile="REC">
-						The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> ensures that
+						The <a href="details#DocContact">Document Contact</a> ensures that
 						there is a public archived github repository
 						available for comments.
 					</li>
-					<li>The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> prepares the
+					<li>The <a href="details#DocContact">Document Contact</a> prepares the
 						document in accordance with <a href="https://www.w3.org/pubrules/">pubrules</a> and develops a proposed
 						<a href="#schedule-pubreq">publication schedule</a>, taking into
 						account possible <a href="https://www.w3.org/Guide/#current">publishing moratoria</a>. The
@@ -735,7 +735,7 @@
 
 					<li>Before sending the publication request, the Team Contact <span class="rfc2119">SHOULD</span> install the
 						document in its final
-						location. The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document
+						location. The <a href="details#DocContact">Document
 							Contact</a> <span class="rfc2119">MAY</span> request publication of a
 						document that is not yet installed at its final location, but in this
 						case <span class="rfc2119">MUST</span> provide installation
@@ -748,9 +748,9 @@
 					</li>
 
 					<li id="pubreqmail">
-						The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a <a
+						The <a href="details#DocContact">Document Contact</a> sends a <a
 							href="#pubreq">publication request</a> to the
-						<a href="01-transitions-about#Webmaster">Webmaster</a> at webreq@w3.org,
+						<a href="details#Webmaster">Webmaster</a> at webreq@w3.org,
 						optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
 						See below for details about
 						<a href="#title-page-date">scheduling a publication</a>, and specifically requirements about advance notice
@@ -759,9 +759,9 @@
 						<span data-profile="FPWG-NOTE|WG-NOTE|DISC|IG-NOTE" data-notehistory="none|closure">
 							If the publication is the result
 							of stopping work on a specification, the <a
-								href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a>
+								href="details#DocContact">Document Contact</a>
 							alerts the
-							<a href="01-transitions-about#Webmaster">Webmaster</a> as well.
+							<a href="details#Webmaster">Webmaster</a> as well.
 						</span>
 					</li>
 
@@ -778,7 +778,7 @@
 				<ul>
 					<li class="transannc-draft" data-profile="WD" data-returning="true">
 						The
-						<a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a draft <a
+						<a href="details#DocContact">Document Contact</a> sends a draft <a
 							href="#trans-annc">transition announcement</a>
 						to the Communications Team at w3t-comm@w3.org, which explains why the document was returned for further
 						work.
@@ -799,7 +799,7 @@
 					</li>
 					<li class="transannc-draft" data-profile="CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND"
 						data-cr="new|snapshot">The
-						<a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> sends a draft <a
+						<a href="details#DocContact">Document Contact</a> sends a draft <a
 							href="#trans-annc">transition announcement</a>
 						to the Communications Team at w3t-comm@w3.org.
 						<span data-profile="CR" data-cr="new">If the publication is the result
@@ -836,7 +836,7 @@
 
 					<li class="publication-announcement" data-profile="WD|CR|REC|WG-NOTE|IG-NOTE" data-cr="draft|snapshot"
 						data-rec="editorial|candidate-corrections|candidate-additions"
-						data-echidna="true">The <a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document
+						data-echidna="true">The <a href="details#DocContact">Document
 							Contact</a>
 						publishes the document using the <a href="https://github.com/w3c/echidna/wiki">W3C automatic system</a>.
 
@@ -847,7 +847,7 @@
 						After coordination with the Communications Team on the transition
 						announcement timing (especially those accompanied
 						by press releases; see more about
-						<a href="https://www.w3.org/2005/08/01-transitions-about#commteam">interactions with the
+						<a href="details#commteam">interactions with the
 							Communications Team</a>), the Webmaster completes <a href="#publication">publication</a> and notifies the
 						person who
 						sent the request, cc'ing webreq@w3.org and w3t-comm@w3.org.
@@ -892,7 +892,7 @@
 						send any Member-confidential information to a public list.</li>
 
 					<li class="trans-announcement" data-profile="CR" data-cr="snapshot" data-echidna="true">The
-						<a href="https://www.w3.org/2005/08/01-transitions-about#DocContact">Document Contact</a> <span
+						<a href="details#DocContact">Document Contact</a> <span
 							class="rfc2119">SHOULD</span> forward the announcement to the Working
 						Group's public mailing list.
 					</li>
@@ -1804,7 +1804,7 @@
 			<li>The Team contact(s)</li>
 
 			<li data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">The <a
-					href="https://www.w3.org/2005/08/01-transitions-about#MaintainerContact">Maintainer Contact</a></li>
+					href="details#MaintainerContact">Maintainer Contact</a></li>
 
 			<li>The Project Management Lead (or someone appointed by him), who generally
 				chairs the meeting.</li>
