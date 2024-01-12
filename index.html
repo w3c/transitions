@@ -441,7 +441,7 @@
 
 		<p>
 			<span data-profile="FPWD|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND"
-				data-cr="new|snapshot|snapshot">
+				data-cr="new|snapshot|snapshot" data-rec="new|candidate-corrections|candidate-additions|proposed-corrections|proposed-additions|substantive|features">
 				Once the Process Document <a id="reqs-adv">requirements for the transition to
 					<span class="label-name">LABEL</span></a> have been satisfied
 				(see
@@ -457,8 +457,6 @@
 				<span class="procdocsection" data-profile="REC" data-rec="substantive|features"><a
 					href="https://www.w3.org/2023/Process-20231103/#change-review">section
 						6.3.11.5</a> and <a href="https://www.w3.org/2023/Process-20231103/#update-requests">section 6.3.4</a></span>
-				<span class="procdocsection" data-profile="REC" data-rec="editorial"><a
-						href="https://www.w3.org/2023/Process-20231103/#revised-rec-editorial">section 6.3.11.2</a></span>
 				<span class="procdocsection" data-profile="REC" data-rec="candidate-corrections"><a
 					href="https://www.w3.org/2023/Process-20231103/#revised-rec-substantive">section 6.3.11.3</a></span>
 				<span class="procdocsection" data-profile="REC" data-rec="candidate-additions"><a
@@ -478,6 +476,12 @@
 			<span data-profile="WD">
 				Once the Group determined that the requirements of <span class="procdocsection"><a
 						href="https://www.w3.org/2023/Process-20231103/#revising-wd">section 6.3.6</a></span> apply, the W3C follows
+				the steps described below to update a
+				<span class="status-name">STATUS</span>.
+			</span>
+			<span data-profile="REC" data-rec="editorial">
+				Once the Group, or the <a href="details#MaintainerContact">Maintainer Contact</a>,  determined that the requirements of <span class="procdocsection"><a
+						href="https://www.w3.org/2023/Process-20231103/#revised-rec-editorial">section 6.3.11.2</a></span> apply, the W3C follows
 				the steps described below to update a
 				<span class="status-name">STATUS</span>.
 			</span>
@@ -566,11 +570,6 @@
 						to <span data-profile="PR-OBSL">obsolete or to supersede</span><span data-profile="PR-RSCND">rescind</span>
 						a Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should
 						send his request to webreq@w3.org, cc'ing plh@w3.org, www-archive@w3.org.</li>
-					<li id="edrec-webreqmail" data-profile="REC" data-rec="editorial">If an individual made a request to the
-						relevant Working Group, or the <a href="details#MaintainerContact">maintainer contact</a> if such a group does not exist, to update a
-						Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should
-						create a <a href="#transreq">transition request</a> in <a
-							href='https://github.com/w3c/transitions/issues'>w3c/transitions</a>.</li>
 					<li id="transreqmail" class="transitionreq"
 						data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-rec="new"
 						data-cr="new|snapshot" data-notehistory="notchartered|first">
@@ -578,14 +577,8 @@
 							data-cr="new|snapshot">At least one week prior to an expected
 							decision from or <a href="#team-mtg">meeting with the Team</a>, the</span>
 						<span class="transwhen" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE"
-							data-notehistory="notchartered|first">The</span>
-						<span class="transitionreqwho" data-profile="FPWD|FPWG-NOTE|FPIG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND"
-							data-rec="editorial" data-cr="new|snapshot"
-							data-notehistory="notchartered|first"><a
-								href="details#DocContact">Document Contact</a></span><span
-							class="transitionreqwho" data-profile="REC|OBSL|RSCND" data-rec="new">Team
-							Contact</span><span class="transitionreqwho" data-profile="CR" data-cr="rec-amended"><a
-								href="details#MaintainerContact">Maintainer Contact</a></span>
+							data-notehistory="notchartered|first">The <a
+								href="details#DocContact">Document Contact</a>
 
 						<span class="transwho" data-profile="FPWD|FPWG-NOTE|CR|PR|PR-OBSL|PR-RSCND"
 							data-cr="new|snapshot" data-notehistory="notchartered|first">
@@ -611,10 +604,8 @@
 
 					<li class="transitionmtg" data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND"
 						data-cr="new|snapshot">
-						Following an initial review by the Team, the <span
-							data-profile="FPWD|CR|PR|PR-OBSL|PR-RSCND|REC|OBSL|RSCND" data-cr="new|snapshot">Team
-							Contact</span><span class="transitionreqwho" data-profile="CR" data-cr="rec-amended"><a
-								href="details#MaintainerContact">Maintainer Contact</a></span>
+						Following an initial review by the Team, the <a
+						href="details#DocContact">Document Contact</a>
 						<span class="rfc2119">MAY</span> be asked to organize a <a href="#dir-mtg">transition meeting
 							with the Team</a> to discuss the request.
 					</li>
@@ -690,12 +681,12 @@
 			<dd class="docpreparation" data-profile="WD|CR|WG-NOTE|IG-NOTE|REC" data-cr="draft|snapshot" data-rec="editorial|candidate-corrections|candidate-additions" data-echidna="true">
 				<ul>
 					<li class="mailinglist-prep" data-profile="REC">
-						The <a href="details#DocContact">Document Contact</a>, or the <a href="details#MaintainerContact">maintainer contact</a> if such the Working Group does not exist, ensures that
+						The <a href="details#DocContact">Document Contact</a> ensures that
 						there is a public archived github repository
 						available for comments.
 					</li>
 
-					<li>The <a href="details#DocContact">Document Contact</a>, or the <a href="details#MaintainerContact">maintainer contact</a> if such the Working Group does not exist, prepares the
+					<li>The <a href="details#DocContact">Document Contact</a> prepares the
 						document in accordance with <a href="https://www.w3.org/pubrules/">pubrules</a> (use the "Echidna-ready"
 						check).
 					</li>
@@ -721,6 +712,12 @@
 						available for comments; (for mailing list, the Team Contact uses the <a
 							href="https://www.w3.org/Systems/Mail/ListRequest">mailing list request
 							form</a>).</li>
+		  			    <li id="edrec-webreqmail" data-profile="REC" data-rec="editorial">If an individual made a request to the
+								relevant Working Group, or the <a href="details#MaintainerContact">Maintainer Contact</a>, to update a
+								Recommendation, <strong>and</strong> the request was not answered within 90 days, the individual should
+								create a <a href="#transreq">transition request</a> in <a
+								href='https://github.com/w3c/transitions/issues'>w3c/transitions</a> to draw attention.</li>
+		
 					<li class="mailinglist-prep" data-profile="REC">
 						The <a href="details#DocContact">Document Contact</a> ensures that
 						there is a public archived github repository
@@ -737,7 +734,7 @@
 					<li>Before sending the publication request, the Team Contact <span class="rfc2119">SHOULD</span> install the
 						document in its final
 						location. The <a href="details#DocContact">Document
-							Contact</a>, or the <a href="details#MaintainerContact">maintainer contact</a> if such the Working Group does not exist, <span class="rfc2119">MAY</span> request publication of a
+							Contact</a> <span class="rfc2119">MAY</span> request publication of a
 						document that is not yet installed at its final location, but in this
 						case <span class="rfc2119">MUST</span> provide installation
 						instructions to the Webmaster.
@@ -749,7 +746,7 @@
 					</li>
 
 					<li id="pubreqmail">
-						The <a href="details#DocContact">Document Contact</a>, or the <a href="details#MaintainerContact">maintainer contact</a> if such the Working Group does not exist, sends a <a
+						The <a href="details#DocContact">Document Contact</a> sends a <a
 							href="#pubreq">publication request</a> to the
 						<a href="details#Webmaster">Webmaster</a> at webreq@w3.org,
 						optionally cc'ing w3c-archive@w3.org (which has a Member-visible archive).
@@ -1451,6 +1448,8 @@
 				</div>
 			</li>
 		</ul>
+		<p>If there is no Working Group, the <a href="details#MaintainerContact">Maintainer Contact</a> should provide the rational/record
+		for requesting the publication.</p>
 	</div>
 
 	<div data-profile='REC' data-rec='candidate-corrections|candidate-additions|candidate-corrections|candidate-additions'>
@@ -1804,7 +1803,7 @@
 		<ul>
 			<li>The Team contact(s)</li>
 
-			<li data-profile="CR|PR" data-cr="rec-amended" data-pr="rec-amended">The <a
+			<li data-profile="REC" data-rec="editorial">The <a
 					href="details#MaintainerContact">Maintainer Contact</a></li>
 
 			<li>The Project Management Lead (or someone appointed by him), who generally
