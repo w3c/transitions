@@ -12,7 +12,7 @@ Select one of the transition templates below:
 * Proposed Recommendation: [PR transition](https://github.com/w3c/transitions/issues/new/choose)
 * Proposal to Supersede a Recommendation: [Superseded transition](https://github.com/w3c/transitions/issues/new/choose)
 * Proposal to Obsolete a Recommendation: [Obsoleted transition](https://github.com/w3c/transitions/issues/new/choose)
-* Recommendation: Due to the need to look at the AC Review comments, those transitions are  [done by the Team](https://github.com/w3c/transitions/issues/new/choose) separately. But you can find traces of them in [issues](https://github.com/w3c/transitions/issues/).
+* Recommendation: Due to the need to look at the AC Review comments, those transitions are  [done by the Team](https://github.com/w3c/transitions/issues/new/choose) separately. But the Team does still track those requests in [transition issues](https://github.com/w3c/transitions/issues/).
 * Recommendation with new candidate amendments: no Team verification needed, send publication request to webreq@w3.org.
 * Recommendation with new proposed amendments: no Team verification needed, send publication request to webreq@w3.org.
 * Recommendation that is making proposed amendments normative: [Recommendation Track - Update a Recommendation](https://github.com/w3c/transitions/issues/new/choose)
