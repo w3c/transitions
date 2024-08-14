@@ -42,17 +42,18 @@ To add or remove a document status, one must:
 1. remove or add the status in the HTML option elements (id="profile")
 2. add or remove HTML input elements if applicable
 3. Update the data-profile attributes
-4. If HTML input elements were added or removed:
-  a- update the corresponding data- attributes
-  b- update the config object near the top of the script
-  c- update the JS functions onpushstate (URL) and titleMatch (attribute matching)
+
+If HTML input elements were added or removed:
+1. update the corresponding data- attributes
+1. update the config object near the top of the script
+1. update the JS functions onpushstate (URL) and titleMatch (attribute matching)
 
 # New Echidna updates
 
 For echidna updates:
 1. Update data-profile on the ul element with id='echidna-selection"
 2. Update the data-echidna as needed (you're likely to add data-echidna="false"')
-3- Update the JS function hasEchidna()
+3. Update the JS function hasEchidna()
 
 # History
 
