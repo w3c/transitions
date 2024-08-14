@@ -18,7 +18,7 @@ If no data attributes are present, the element will get displayed for all possib
 
 The data attributes may be combined but, if data attributes are used, one of them must be `data-profile`, otherwise the other data attributes will be ignored.
 
-If you may use multiple values for each attribute, separated by `|`. For example, to display an element for all types of Recommendations and Candidate Recommendations, use `data-profile="REC|CR"`.
+You may use multiple values for each attribute, separated by `|`. For example, to display an element for all types of Recommendations and Candidate Recommendations, use `data-profile="REC|CR"`.
 
 e.g.
 ```
