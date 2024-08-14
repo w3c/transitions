@@ -27,15 +27,19 @@ e.g.
   <p id='e2' data-profile="CR" data-cr="new|snapshot">It will a snapshot (which might be the first snapshot).</p>
   <p id='e3' data-profile="CR" data-cr="draft">It will be a draft.</p>
   <p id='e4' data-profile="REC">This is bogus.</p>
+  <p id='e5' data-rec="new">I did not mean to display this.</p>
 </div>
 ```
 
-If the user selected any of the Candidate Recommendation options (the URL contains the parameter `profile=CR` ):
+If the user selected an updated Candidate Recommendation Snapshot (the URL contains the parameters `profile=CR&cr=snapshot` ):
 
-* `d1` and `e1` will get displayed.
-* `e2` will get displayed only for snapshots, including the first one.
-* `e3` will get displayed only for CR drafts.
-* `e4` will never get displayed since the scope of its parent element is CR (and a document can't be a CR and a REC at the same time).
+* `d1`, `e1`, `e2` and `e5` will get displayed. `e3`, `e4` will not get displayed.
+* `d1` gets displayed because the profile matches.
+* `e1` gets displayed because it's within `d1`.
+* `e2` gets displayed because the profile and the cr match.  
+* `e3` will not get displayed because the cr does not match.
+* `e4` will never get displayed since the scope of its parent element `d1` is `data-profile="CR"` (and a document can't be a CR and a REC at the same time).
+* `e5` will get displayed because, since there is no `data-profile` on that element, `data-rec` gets ignored. So `e5` is similar to `e1`.
 
 To find the possible values for each data attribute, look at the HTML option and input HTML elements in [the document](https://github.com/w3c/transitions/blob/main/index.html#L269). Or, if you're looking for a particular document transition, use the form to select and see the values of the URL parameters.
 
