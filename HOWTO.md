@@ -14,18 +14,19 @@ So far, we have the following data attributes (each matching a URL parameter):
 5. data-notehistory for a |-separated list of first [working|interest] group note paths
 7. data-echidna for automatic publishing
 
-If no data attributes are not present, the element will get displayed for all possible states within the scope of the parent element. For example, to display an element for all types of Recommendations, use data-profile="rec"
-and don't use the data-rec attribute on that element.'
+If no data attributes are present, the element will get displayed for all possible states within the scope of the parent element. For example, to display an element for all types of Recommendations, use data-profile="rec" and don't use the data-rec attribute on that element.'
+
+If data attributes are used, one of them must be @data-profile, otherwise the other data attributes will be ignored.
 
 e.g.
-``
+```
 <div id='d1' data-profile="CR">
   <p id='e1'>This is a new publication.</p>
   <p id='e2' data-profile="CR" data-cr="new|snapshot">It will a snapshot (which might be the first snapshot).</p>
   <p id='e3' data-profile="CR" data-cr="draft">It will be a draft.</p>
   <p id='e4' data-profile="REC">This is bogus.</p>
 </div>
-``
+```
 
 * d1 and e1 will get displayed if the user selected any of the Candidate Recommendation options (the URL contains the parameter profile=CR ).
 * e2 will get displayed only for snapshots, including the first one.
@@ -33,8 +34,6 @@ e.g.
 * e4 will never get displayed since the scope of its parent element is CR (and a document can't be a CR and a REC at the same time).
 
 To find the possible values for each data attribute, look at the HTML option and input HTML elements in [the document](https://github.com/w3c/transitions/blob/main/index.html#L269). Or, if you're looking for a particular document transition, use the form to select and see the values of the URL parameters.
-
-If data attributes are used, one of them must be @data-profile, otherwise the other data attributes will be ignored.
 
 # New W3C Process
 
