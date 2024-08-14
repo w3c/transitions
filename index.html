@@ -2667,50 +2667,6 @@ Note: Info about features at risk is required in status section per pubrules
 			trace("restored " + window.location.href);
 		})();
 	</script>
-	<!--
-
-HTML elements are turned on or off by scripting using data attributes.
-
-So far, we have the following data attributes:
-1. data-profile for a |-separated list of profile
-2. data-rec for a |-separated list of REC paths
-3. data-cr for a |-separated list of CR paths
-3. data-informativeOnly for a |-separated list of FPWD and WD paths
-4. data-returning for a |-separated list of FPWD and WD paths
-5. data-notehistory for a |-separated list of first [working|interest] group note paths
-7. data-echidna for automatic publishing
-
-e.g.
-<div data-profile="FPWD|FPIG-NOTE|FPWG-NOTE|CR|PR|REC|PR-OBSL|PR-RSCND|OBSL|RSCND" data-cr="new|snapshot" data-notehistory="first">
-
-To find the possible values for each data attributes, look at the HTML option and input elements.
-
-If a data attribute is not present, it means the element will get displayed for all states
-of that attribute. eg to display an element for all types of Recommendations, use data-profile="rec"
-and don't use the data-rec attribute on that element.'
-
-If data attributes are used, one of them must be data-profile, otherwise the other data
-attributes will be ignored.
-
-To add or remove a document status, one must:
-
-1. remove or add the status in the HTML option elements (id="profile")
-2. add or remove HTML input elements if applicable
-3. Update the data-profile attributes
-4. If HTML input elements were added or removed:
-  a- update the corresponding data- attributes
-  b- update the config object near the top of the script
-  c- update the JS functions onpushstate (URL) and titleMatch (attribute matching)
-
-For echidna updates:
-1. Update data-profile on the ul element with id='echidna-selection"
-2. Update the data-echidna as needed (you're likely to add data-echidna="false"')
-3- Update the JS function hasEchidna()
-
-Originally based on
- https://services.w3.org/xslt?xmlfile=https://www.w3.org/2005/08/01-transitions2017.html&xslfile=https://www.w3.org/2005/08/transitions2017.xsl
-
-	-->
 </body>
 
 </html>
