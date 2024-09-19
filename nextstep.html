@@ -325,7 +325,7 @@
 				} else {
 					list.innerHTML = listItem("Publish as Working Group Note (oops, this should have been done already)", "profile=WG-NOTE");
 				}
-			} else if (spec.status === "Working Draft") { // !isGroupClosed(spec)
+			} else if (spec.status === "Working Draft" || spec.status === "First Public Working Draft") { // !isGroupClosed(spec)
 				let WD = "";
 				if (!spec["_links"]["predecessor-version"]) {
 					function formatNumber(n) {
@@ -389,13 +389,12 @@
 				list.innerHTML = INPLACE + listItem("Update the Registry", "profile=RY&rec=update")
 					+ listItem("Propose to obsolete or supersede the Registry", "profile=PRY-OBSL");
 			} else if (spec.status === "Draft Note") {
-				list.innerHTML = listItem("Update the Draft Note", "profile=DRAFT-NOTE");
+				list.innerHTML = listItem("Update the Draft Note", "profile=DRAFT-NOTE")
 				 + listItem("Publish as a Note (which you may mark as retired)", "profile=WG-NOTE");
      		} else if (spec.status === "Group Note"
 			     || spec.status === "Note") {
 				list.innerHTML = INPLACE
 				 + listItem("Return to Draft Note", "profile=DRAFT-NOTE")
-				 + listItem("Update the Draft Note", "profile=WG-NOTE")
 				 + listItem("Advance to W3C Statement", "profile=STMT")
 				 + listItem("Update the Note (which you may mark as retired)", "profile=WG-NOTE");
 			} else if (spec.status === "Retired") {
