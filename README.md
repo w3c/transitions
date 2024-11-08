@@ -1,6 +1,6 @@
 # Getting Team verification for a new W3C maturity level (aka transition requests)
 
-For all requests to advance a specification to a new [maturity level](https://www.w3.org/policies/process/#maturity-levels) other than [Note](), the Working Group must obtain [Team verification](https://www.w3.org/policies/process/#transition-reqs). This is a  repository for managing the verification workflow when advancing on the W3C Recommendation track. It contains the transition requirements document, available from [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions), and an issues tracker for managing transition requests. Tags are used to manage the transitions, keeping track of who has the “ball”. Notifications are sent by email to various mailing lists, include [public-transition-announce](https://lists.w3.org/Archives/Public/public-transition-announce/) and [chairs](https://lists.w3.org/Archives/Member/chairs/).
+For all requests to advance a specification to a new [maturity level](https://www.w3.org/policies/process/#maturity-levels) other than [Note](), the Working Group must obtain [Team verification](https://www.w3.org/policies/process/#transition-reqs). This is a  repository for managing the verification workflow when advancing on the W3C Recommendation track. It contains the transition requirements document, available from [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions/), and an issues tracker for managing transition requests. Tags are used to manage the transitions, keeping track of who has the “ball”. Notifications are sent by email to various mailing lists, include [public-transition-announce](https://lists.w3.org/Archives/Public/public-transition-announce/) and [chairs](https://lists.w3.org/Archives/Member/chairs/).
 
 Select one of the transition templates below:
 
@@ -37,11 +37,11 @@ Select one of the transition templates below:
 
 For the Note and Registry tracks, use [these templates](https://github.com/w3c/transitions/issues/new/choose)
 
-If you're not sure what transition template to use, check out our [next step finder](https://w3c.github.io/transitions/nextstep.html) to see your choices.
+If you're not sure what transition template to use, check out our [next step finder](https://www.w3.org/Guide/transitions/nextstep.html) to see your choices.
 
 ## Further Guidance
 
-  * Start with [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions) for more detailed guidance on how to complete the templates.
+  * Start with [Organize a Technical Report Transition](https://www.w3.org/Guide/transitions/) for more detailed guidance on how to complete the templates.
   * If you need to convey Member-confidential information, start a thread on w3c-archive@w3.org and link it from your issue; lists.w3.org's access control will manage permissions. Use w3t-archive@w3.org instead for Team-confidential infos.
   * Assign your editor(s) and staff contact(s) to the transition request issue to facilitate automatic pestering.
   * Untag "Awaiting ..." if you intend to continue editing the issue before requesting action; you will need to add these back later.
