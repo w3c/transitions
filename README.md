@@ -4,7 +4,7 @@ For all requests to advance a specification to a new [maturity level](https://ww
 
 Select one of the transition templates below:
 
-* First Public Working Draft: [FPWD transition]([https://github.com/w3c/transitions/issues/new/choose](https://github.com/w3c/transitions/issues/new?template=6.3.05-publishing-first-public-working-draft.md))
+* First Public Working Draft: [FPWD transition](https://github.com/w3c/transitions/issues/new?template=6.3.05-publishing-first-public-working-draft.md)
 * Ordinary Working Draft: no Director's approval needed, just use Echidna.
 * Transitioning to Candidate Recommendation: [CR transition](https://github.com/w3c/transitions/issues/new/choose)
 * Publishing a Candidate Recommendation Draft: no Team verification needed, just use Echidna.
