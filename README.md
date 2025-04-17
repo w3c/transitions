@@ -6,23 +6,23 @@ Select one of the transition templates below:
 
 * First Public Working Draft: [FPWD transition](https://github.com/w3c/transitions/issues/new?template=6.3.05-publishing-first-public-working-draft.md)
 * Ordinary Working Draft: no Director's approval needed, just use Echidna.
-* Transitioning to Candidate Recommendation: [CR transition](https://github.com/w3c/transitions/issues/new/choose)
+* Transitioning to Candidate Recommendation: [CR transition](https://github.com/w3c/transitions/issues/new?template=6.3.07-candidate-recommendation.md)
 * Publishing a Candidate Recommendation Draft: no Team verification needed, just use Echidna.
-* Updating a Candidate Recommendation Snapshot: [Updated CR transition](https://github.com/w3c/transitions/issues/new/choose)
-* Proposed Recommendation: [PR transition](https://github.com/w3c/transitions/issues/new/choose)
-* Proposal to Supersede a Recommendation: [Superseded transition](https://github.com/w3c/transitions/issues/new/choose)
-* Proposal to Obsolete a Recommendation: [Obsoleted transition](https://github.com/w3c/transitions/issues/new/choose)
-* Recommendation: Due to the need to look at the AC Review comments, those transitions are  [done by the Team](https://github.com/w3c/transitions/issues/new/choose) separately. But the Team does still track those requests in [transition issues](https://github.com/w3c/transitions/issues/).
+* Updating a Candidate Recommendation Snapshot: [Updated CR transition](https://github.com/w3c/transitions/issues/new?template=6.3.08.1-candidate-recommendation-snapshot.md)
+* Proposed Recommendation: [PR transition](https://github.com/w3c/transitions/issues/new?template=6.3.09-proposed-recommendation.md)
+* Proposal to Supersede a Recommendation: [Superseded transition](https://github.com/w3c/transitions/issues/new?template=6.3.12.4-2-supersede-recommendation.md)
+* Proposal to Obsolete a Recommendation: [Obsoleted transition](https://github.com/w3c/transitions/issues/new?template=6.3.12.4-1-obsolete-recommendation.md)
+* Recommendation: Due to the need to look at the AC Review comments, those transitions are  [done by the Team](https://github.com/w3c/transitions/issues/new?template=6.3.10-recommendation.md) separately. But the Team does still track those requests in [transition issues](https://github.com/w3c/transitions/issues/).
 * Recommendation with new candidate amendments: no Team verification needed, send publication request to webreq@w3.org.
 * Recommendation with new proposed amendments:  [Update a Recommendation](https://github.com/w3c/transitions/issues/new/choose).
-* Recommendation that is making proposed amendments normative: [Recommendation Track - Update a Recommendation](https://github.com/w3c/transitions/issues/new/choose)
-* First Public Draft Note: [First publication of a Group Note or Draft Group Note](https://github.com/w3c/transitions/issues/new/choose)
+* Recommendation that is making proposed amendments normative: [Recommendation Track - Update a Recommendation](https://github.com/w3c/transitions/issues/new?template=6.3.11.5-incorporating-amendments.md)
+* First Public Draft Note: [First publication of a Group Note or Draft Group Note](https://github.com/w3c/transitions/issues/new?template=6.4.2-publishing-notes.md)
 * Ordinary Draft Group Note: no Team verification needed, just use Echidna.
-* First Public Note: [First publication of a Group Note or Draft Group Note](https://github.com/w3c/transitions/issues/new/choose)
+* First Public Note: [First publication of a Group Note or Draft Group Note](https://github.com/w3c/transitions/issues/new?template=6.4.2-publishing-notes.md)
 * Ordinary Group Note: no Team verification needed, just use Echidna.
 * Statement with new candidate amendments: no Team verification needed, send publication request to webreq@w3.org.
 * Statement with new proposed amendments: no Team verification needed, send publication request to webreq@w3.org.
-* Statement that is making proposed amendments normative: [Updating a W3C Statement](https://github.com/w3c/transitions/issues/new/choose)
+* Statement that is making proposed amendments normative: [Updating a W3C Statement](https://github.com/w3c/transitions/issues/new?template=6.4.4-revising-w3c-statement.md)
 * Statement: [W3C Statement](https://github.com/w3c/transitions/issues/new/choose)
 * First Draft Registry: [First publication of a Draft Registry](https://github.com/w3c/transitions/issues/new/choose)
 * Ordinary Draft Registry: no Team verification needed, just use Echidna.
